@@ -1,0 +1,195 @@
+{
+  "name": "Park 101",
+  "brandName": "PRK 101",
+  "tagline": "Where Coast Meets Country",
+  "description": "Multi-level rooftop bar and restaurant in Carlsbad Village. BBQ, craft beer, cocktails, big screens, game day headquarters, family and pet friendly, weekly events, brunch, and private event spaces.",
+  "shortDescription": "Carlsbad's rooftop sports bar, BBQ, and game day headquarters — one block from the beach in Carlsbad Village.",
+  "url": "https://park101carlsbad.com",
+  "logo": "/images/logo/park101-logo.webp",
+  "logoLight": "/images/logo/park101-logo-light.webp",
+
+  "contact": {
+    "phone": "(858) 408-6948",
+    "phoneDial": "+18584086948",
+    "email": "",
+    "address": {
+      "street": "3040 Carlsbad Boulevard",
+      "city": "Carlsbad",
+      "state": "CA",
+      "zip": "92008",
+      "full": "3040 Carlsbad Boulevard, Carlsbad, CA 92008"
+    },
+    "coordinates": {
+      "lat": 33.15813,
+      "lng": -117.35033
+    },
+    "neighborhood": "Carlsbad Village",
+    "googleMapsUrl": "https://maps.google.com/?q=Park+101,+3040+Carlsbad+Boulevard,+Carlsbad,+CA+92008"
+  },
+
+  "hours": {
+    "monday":    { "open": "4:00 PM", "close": "9:00 PM" },
+    "tuesday":   { "open": "4:00 PM", "close": "9:00 PM" },
+    "wednesday": { "open": "4:00 PM", "close": "9:00 PM" },
+    "thursday":  { "open": "4:00 PM", "close": "10:00 PM" },
+    "friday":    { "open": "11:00 AM", "close": "11:00 PM" },
+    "saturday":  { "open": "10:00 AM", "close": "11:00 PM" },
+    "sunday":    { "open": "10:00 AM", "close": "9:00 PM" }
+  },
+
+  "hoursDisplay": [
+    { "days": "Monday – Wednesday", "hours": "4:00 PM – 9:00 PM" },
+    { "days": "Thursday",           "hours": "4:00 PM – 10:00 PM" },
+    { "days": "Friday",             "hours": "11:00 AM – 11:00 PM" },
+    { "days": "Saturday",           "hours": "10:00 AM – 11:00 PM" },
+    { "days": "Sunday",             "hours": "10:00 AM – 9:00 PM" }
+  ],
+
+  "social": {
+    "instagram": "https://www.instagram.com/park101_/",
+    "facebook": "https://www.facebook.com/prk101cbad/",
+    "yelp": "",
+    "tiktok": ""
+  },
+
+  "ordering": {
+    "toastUrl": "https://park101carlsbad.com/order",
+    "reservationsUrl": "https://tables.toasttab.com/restaurants/b853a506-313a-4be5-99d2-ffaf0c250021/findTime"
+  },
+
+  "stats": [
+    { "label": "Levels",        "value": "2" },
+    { "label": "Location",      "value": "Carlsbad Village" },
+    { "label": "Screens",       "value": "20+" },
+    { "label": "Vibe",          "value": "Coast Meets Country" }
+  ],
+
+  "features": [
+    "Rooftop Deck",
+    "Open-Air Courtyard",
+    "Massive LED TV Wall",
+    "20+ Screens",
+    "Private Event Spaces",
+    "Family Friendly",
+    "Pet Friendly",
+    "Live Music",
+    "Weekly Specials",
+    "Brunch",
+    "BBQ & Smoked Meats",
+    "Craft Beer",
+    "Signature Cocktails",
+    "Game Day Headquarters"
+  ],
+
+  "cuisine": [
+    "American",
+    "BBQ",
+    "Bar Food",
+    "Comfort Food"
+  ],
+
+  "priceRange": "$$",
+
+  "venue": {
+    "rooftop": {
+      "headline": "The Rooftop",
+      "description": "Open-air rooftop deck with sweeping views of Carlsbad Village and the Pacific. Fire pits, communal tables, and California skies year-round.",
+      "features": ["Open-Air Deck", "Fire Pits", "Ocean Views", "Communal Tables", "Year-Round"]
+    },
+    "sports": {
+      "headline": "Game Day Headquarters",
+      "description": "North County's game day destination. Massive LED TV wall in the open-air courtyard, 20+ screens throughout, and a crowd that shows up for every kickoff, first pitch, and fight night.",
+      "features": ["LED TV Wall", "20+ Screens", "NFL Sundays", "MLB Games", "UFC Fight Nights", "Fantasy Draft Events"]
+    },
+    "familiesPets": {
+      "headline": "Everyone's Welcome",
+      "description": "Families and four-legged friends are always welcome at Park 101. Dog-friendly patio, a relaxed atmosphere, and a menu built for groups of all ages.",
+      "features": ["Dog-Friendly Patio", "Family Friendly", "Kid-Friendly Menu", "Relaxed Atmosphere"]
+    },
+    "liveEvents": {
+      "headline": "Live Music & Events",
+      "description": "Weekly live music, themed nights, seasonal events, and community gatherings. Park 101 is where North County comes together.",
+      "features": ["Live Music", "Themed Nights", "Seasonal Events", "Community Gatherings"]
+    }
+  },
+
+  "privateEvents": [
+    {
+      "slug": "birthday-parties",
+      "name": "Birthday Parties",
+      "headline": "Your Birthday, Our Rooftop",
+      "description": "Celebrate with the whole crew. Private or semi-private spaces, custom menus, and a rooftop setting that makes every birthday unforgettable.",
+      "capacity": "Up to 150 guests",
+      "features": ["Private & Semi-Private Spaces", "Custom Menus", "Bar Packages", "Rooftop Access"]
+    },
+    {
+      "slug": "corporate-events",
+      "name": "Corporate Events",
+      "headline": "Team Events That Actually Deliver",
+      "description": "Company happy hours, team outings, client entertaining, and corporate buyouts. Full AV capability, flexible spaces, and catering that impresses.",
+      "capacity": "Up to 200 guests",
+      "features": ["AV Capability", "Flexible Layouts", "Catering Packages", "Private Buyout Option"]
+    },
+    {
+      "slug": "venue-buyout",
+      "name": "Full Venue Buyout",
+      "headline": "The Whole Place Is Yours",
+      "description": "Take over the entire Park 101 experience — rooftop, courtyard, indoor bars, and all. Full buyouts available for large events, filming, and exclusive gatherings.",
+      "capacity": "Up to 300 guests",
+      "features": ["Full Venue Access", "All Spaces Included", "Custom Programming", "Dedicated Staff"]
+    },
+    {
+      "slug": "game-day-parties",
+      "name": "Game Day Parties",
+      "headline": "Reserve the Rooftop for the Big Game",
+      "description": "Book a private section for your crew on game day. LED wall, dedicated screens, table service, and food and drink packages built for the occasion.",
+      "capacity": "Up to 80 guests",
+      "features": ["Dedicated Screen Access", "Table Service", "Food & Drink Packages", "Game Day Atmosphere"]
+    },
+    {
+      "slug": "rehearsal-dinners",
+      "name": "Rehearsal Dinners",
+      "headline": "Start the Celebration Right",
+      "description": "A relaxed, elevated setting for the night before the big day. Semi-private spaces, family-style menus, and a rooftop sunset that sets the tone.",
+      "capacity": "Up to 80 guests",
+      "features": ["Semi-Private Space", "Family-Style Menus", "Rooftop Sunset Views", "Relaxed Atmosphere"]
+    }
+  ],
+
+  "seo": {
+    "defaultTitle": "Park 101 | Rooftop Bar & Restaurant in Carlsbad Village CA",
+    "titleTemplate": "%s | Park 101 Carlsbad",
+    "defaultDescription": "Multi-level rooftop bar and restaurant in Carlsbad Village, CA. BBQ, craft beer, cocktails, 20+ screens, game day headquarters, family and pet friendly. One block from the beach.",
+    "keywords": [
+      "rooftop bar carlsbad",
+      "sports bar carlsbad",
+      "game day bar carlsbad",
+      "carlsbad village bar",
+      "bbq restaurant carlsbad",
+      "rooftop restaurant carlsbad ca",
+      "bar near carlsbad beach",
+      "private events carlsbad",
+      "park 101 carlsbad",
+      "prk 101"
+    ],
+    "ogImage": "/images/venue/park101-carlsbad-rooftop-og.webp"
+  },
+
+  "schema": {
+    "type": ["BarOrPub", "Restaurant"],
+    "servesCuisine": ["American", "BBQ", "Bar Food"],
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card",
+    "amenityFeature": [
+      "Rooftop Seating",
+      "Outdoor Seating",
+      "Dog-Friendly Patio",
+      "Private Event Spaces",
+      "Full Bar",
+      "Live Music",
+      "Sports Screens",
+      "Parking Available"
+    ]
+  }
+}
