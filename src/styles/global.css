@@ -1,1 +1,113 @@
 @import "tailwindcss";
+
+@theme {
+  /* ─── Brand Colors ─────────────────────────────────────── */
+  --color-brand-steel:  #3D4A5C;   /* primary — nav, headings */
+  --color-brand-orange: #C4622D;   /* CTAs, accents, eyebrow labels */
+  --color-brand-brown:  #7A4F2E;   /* secondary sections, earthy fills */
+  --color-brand-tan:    #C49A6A;   /* warm accents, borders, dividers */
+  --color-brand-cream:  #F5EFE6;   /* page background canvas */
+  --color-brand-dark:   #1B140F;   /* footer, dark sections */
+  --color-brand-white:  #FDFAF7;   /* light text, inverse sections */
+
+  /* ─── Extended Palette ─────────────────────────────────── */
+  --color-brand-steel-light:  #5A6A80;   /* hover states, lighter headings */
+  --color-brand-steel-dark:   #2A3447;   /* active nav, deeper headers */
+  --color-brand-orange-light: #D97840;   /* hover CTA */
+  --color-brand-orange-dark:  #A84F22;   /* pressed CTA */
+  --color-brand-cream-dark:   #EBE2D4;   /* section dividers, card bg */
+  --color-brand-dark-light:   #2C2219;   /* dark section variant */
+
+  /* ─── Typography — Font Families ───────────────────────── */
+  /* Barlow Condensed: bold condensed slab energy — scoreboard/stadium feel */
+  /* Inter: clean modern sans for body */
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* ─── Typography — Scale ────────────────────────────────── */
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+  --text-4xl:  2.25rem;    /* 36px */
+  --text-5xl:  3rem;       /* 48px */
+  --text-6xl:  3.75rem;    /* 60px */
+  --text-7xl:  4.5rem;     /* 72px */
+  --text-8xl:  6rem;       /* 96px */
+
+  /* ─── Spacing ───────────────────────────────────────────── */
+  --spacing-section: 5rem;       /* 80px — standard section padding */
+  --spacing-section-lg: 7.5rem;  /* 120px — hero / feature section padding */
+
+  /* ─── Border Radius ─────────────────────────────────────── */
+  --radius-sm:  0.25rem;
+  --radius-md:  0.5rem;
+  --radius-lg:  1rem;
+  --radius-full: 9999px;
+
+  /* ─── Transitions ───────────────────────────────────────── */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Base Styles ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-dark);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+/* ─── Typography Base ─────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--color-brand-steel);
+  text-transform: uppercase;
+}
+
+/* ─── Google Fonts Import ─────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ─── Focus Visible ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 3px;
+}
+
+/* ─── Image Defaults ──────────────────────────────────────── */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Link Defaults ───────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Reduced Motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
