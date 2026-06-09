@@ -1,0 +1,94 @@
+---
+interface Props {
+  image: string;
+  imageAlt: string;
+  eyebrow?: string;
+  heading: string;
+  body: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaSecondaryLabel?: string;
+  ctaSecondaryHref?: string;
+  imageRight?: boolean;
+  variant?: 'cream' | 'dark' | 'steel';
+}
+
+const {
+  image,
+  imageAlt,
+  eyebrow,
+  heading,
+  body,
+  ctaLabel,
+  ctaHref,
+  ctaSecondaryLabel,
+  ctaSecondaryHref,
+  imageRight = false,
+  variant = 'cream',
+} = Astro.props;
+
+const variantClasses = {
+  cream: 'bg-brand-cream text-brand-dark',
+  dark:  'bg-brand-dark text-brand-white',
+  steel: 'bg-brand-steel text-brand-white',
+};
+
+const eyebrowColor = variant === 'cream' ? 'text-brand-orange' : 'text-brand-tan';
+const headingColor = variant === 'cream' ? 'text-brand-steel' : 'text-brand-white';
+const bodyColor    = variant === 'cream' ? 'text-brand-dark/70' : 'text-brand-white/70';
+---
+
+<section class={`${variantClasses[variant]}`}>
+  <div class={`flex flex-col ${imageRight ? 'lg:flex-row-reverse' : 'lg:flex-row'} min-h-[560px]`}>
+
+    <!-- Image Side -->
+    <div class="relative w-full lg:w-1/2 min-h-[360px] lg:min-h-0 overflow-hidden">
+      <img
+        src={image}
+        alt={imageAlt}
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <!-- Copy Side -->
+    <div class="w-full lg:w-1/2 flex items-center">
+      <div class="px-8 py-16 lg:px-16 lg:py-20 max-w-xl">
+        {eyebrow && (
+          <p class={`font-display font-700 text-xs uppercase tracking-widest mb-4 ${eyebrowColor}`}>
+            {eyebrow}
+          </p>
+        )}
+        <h2 class={`font-display font-900 text-4xl lg:text-5xl uppercase leading-none mb-6 ${headingColor}`}>
+          {heading}
+        </h2>
+        <p class={`text-base leading-relaxed mb-8 ${bodyColor}`}>
+          {body}
+        </p>
+        {(ctaLabel || ctaSecondaryLabel) && (
+          <div class="flex flex-wrap gap-4">
+            {ctaLabel && ctaHref && (
+              <a
+                href={ctaHref}
+                class="inline-block px-6 py-3 font-display font-700 text-sm uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
+              >
+                {ctaLabel}
+              </a>
+            )}
+            {ctaSecondaryLabel && ctaSecondaryHref && (
+              <a
+                href={ctaSecondaryHref}
+                class={`inline-block px-6 py-3 font-display font-700 text-sm uppercase tracking-wider border transition-colors duration-200 rounded-sm ${variant === 'cream' ? 'border-brand-steel text-brand-steel hover:bg-brand-steel hover:text-brand-white' : 'border-brand-white/40 text-brand-white hover:border-brand-white hover:bg-brand-white/10'}`}
+              >
+                {ctaSecondaryLabel}
+              </a>
+            )}
+          </div>
+        )}
+        <slot />
+      </div>
+    </div>
+
+  </div>
+</section>

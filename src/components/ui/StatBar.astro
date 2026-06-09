@@ -1,0 +1,42 @@
+---
+interface Stat {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  stats: Stat[];
+  variant?: 'dark' | 'orange' | 'steel';
+}
+
+const { stats, variant = 'dark' } = Astro.props;
+
+const variantClasses = {
+  dark:   'bg-brand-dark text-brand-white',
+  orange: 'bg-brand-orange text-brand-white',
+  steel:  'bg-brand-steel text-brand-white',
+};
+
+const dividerClasses = {
+  dark:   'bg-brand-white/10',
+  orange: 'bg-brand-white/20',
+  steel:  'bg-brand-white/20',
+};
+---
+
+<div class={`${variantClasses[variant]} w-full`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4">
+      {stats.map((stat, i) => (
+        <div class={`relative flex flex-col items-center justify-center py-5 px-4 text-center ${i > 0 ? `before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-px before:${dividerClasses[variant]}` : ''}`}>
+          <span class="font-display font-900 text-2xl lg:text-3xl uppercase tracking-wide leading-none">
+            {stat.value}
+          </span>
+          <span class="font-display font-600 text-xs uppercase tracking-widest mt-1 opacity-60">
+            {stat.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

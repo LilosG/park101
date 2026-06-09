@@ -1,0 +1,80 @@
+---
+interface Props {
+  image: string;
+  imageAlt?: string;
+  eyebrow?: string;
+  heading: string;
+  body?: string;
+  ctaLabel: string;
+  ctaHref: string;
+  ctaSecondaryLabel?: string;
+  ctaSecondaryHref?: string;
+  overlayStrength?: 'light' | 'medium' | 'heavy';
+}
+
+const {
+  image,
+  imageAlt = '',
+  eyebrow,
+  heading,
+  body,
+  ctaLabel,
+  ctaHref,
+  ctaSecondaryLabel,
+  ctaSecondaryHref,
+  overlayStrength = 'heavy',
+} = Astro.props;
+
+const overlayClass = {
+  light:  'bg-brand-dark/40',
+  medium: 'bg-brand-dark/60',
+  heavy:  'bg-brand-dark/75',
+};
+---
+
+<section class="relative overflow-hidden min-h-[480px] flex items-center">
+  <!-- Background Image -->
+  <img
+    src={image}
+    alt={imageAlt}
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <!-- Overlay -->
+  <div class={`absolute inset-0 ${overlayClass[overlayStrength]}`}></div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+    {eyebrow && (
+      <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-4">
+        {eyebrow}
+      </p>
+    )}
+    <h2 class="font-display font-900 text-5xl lg:text-6xl uppercase leading-none text-brand-white mb-6">
+      {heading}
+    </h2>
+    {body && (
+      <p class="text-base lg:text-lg text-brand-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+        {body}
+      </p>
+    )}
+    <div class="flex flex-wrap justify-center gap-4">
+      <a
+        href={ctaHref}
+        class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
+      >
+        {ctaLabel}
+      </a>
+      {ctaSecondaryLabel && ctaSecondaryHref && (
+        <a
+          href={ctaSecondaryHref}
+          class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider border border-brand-white/50 text-brand-white hover:border-brand-white hover:bg-brand-white/10 transition-all duration-200 rounded-sm"
+        >
+          {ctaSecondaryLabel}
+        </a>
+      )}
+    </div>
+  </div>
+</section>
