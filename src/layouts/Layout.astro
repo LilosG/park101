@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import LocalSEO from '../components/core/LocalSEO.astro';
+import SiteNav from '../components/ui/SiteNav.astro';
+import SiteFooter from '../components/ui/SiteFooter.astro';
+import siteProfile from '../data/site-profile.json';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  transparentNav?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  noindex = false,
+  transparentNav = false,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <LocalSEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      noindex={noindex}
+    />
+  </head>
+  <body class="bg-brand-cream text-brand-dark antialiased">
+    <SiteNav transparent={transparentNav} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
