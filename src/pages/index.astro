@@ -1,17 +1,264 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import StatBar from '../components/ui/StatBar.astro';
+import SplitSection from '../components/ui/SplitSection.astro';
+import CTABand from '../components/ui/CTABand.astro';
+import PhotoGrid from '../components/ui/PhotoGrid.astro';
+import siteProfile from '../data/site-profile.json';
 
+const stats = siteProfile.stats;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Park 101 | Rooftop Bar & Restaurant in Carlsbad Village CA"
+  description="Multi-level rooftop bar and restaurant in Carlsbad Village, CA. BBQ, craft beer, cocktails, 20+ screens, game day headquarters, family and pet friendly. One block from the beach."
+  transparentNav={true}
+>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden min-h-screen flex flex-col justify-end">
+    <img
+      src="/images/venue/park-101-outdoor-rooftop-string-lights-tropical-vibes-carlsbad.jpg"
+      alt="Packed rooftop courtyard at Park 101 Carlsbad with LED wall, string lights, and crowd"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-40 w-full">
+      <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-4">
+        Carlsbad Village, CA &mdash; One Block From the Beach
+      </p>
+      <h1 class="font-display font-900 text-6xl sm:text-7xl lg:text-8xl uppercase leading-none text-brand-white mb-6 max-w-4xl">
+        Where Coast<br />Meets Country
+      </h1>
+      <p class="text-lg text-brand-white/80 leading-relaxed mb-10 max-w-xl">
+        North County&rsquo;s rooftop sports bar, BBQ, and game day headquarters. Two levels, open air, all year.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href={siteProfile.ordering.reservationsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
+        >
+          Reserve a Table
+        </a>
+        <a
+          href="/menu"
+          class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider border border-brand-white/50 text-brand-white hover:border-brand-white hover:bg-brand-white/10 transition-all duration-200 rounded-sm"
+        >
+          View the Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BAR -->
+  <StatBar stats={stats} variant="dark" />
+
+  <!-- THE ROOFTOP -->
+  <SplitSection
+    image="/images/venue/park-101-rooftop-bar-lounge-venue-carlsbad.jpg"
+    imageAlt="Open rooftop deck at Park 101 Carlsbad Village with views over the neighborhood"
+    eyebrow="The Venue"
+    heading="Two Levels. Open Air. All Year."
+    body="PRK 101 is built for the California outdoor life. An open-air rooftop deck with views over Carlsbad Village, a covered courtyard with the biggest screen in North County, indoor bars, fire pits, and communal tables — all one block from the Pacific. Sun up or sun down, there's always a spot with your name on it."
+    ctaLabel="See the Rooftop"
+    ctaHref="/venue/rooftop"
+    ctaSecondaryLabel="Private Events"
+    ctaSecondaryHref="/private-events"
+    variant="cream"
+  />
+
+  <!-- GAME DAY -->
+  <SplitSection
+    image="/images/venue/park-101-outdoor-rooftop-sports-bar-lounge-carlsbad.jpg"
+    imageAlt="Guests watching NFL on the LED wall at Park 101 game day headquarters Carlsbad"
+    eyebrow="Game Day Headquarters"
+    heading="North County's Stadium."
+    body="NFL Sundays. Padres games. UFC fight nights. Fantasy drafts. Whatever's on, PRK 101 is where North County shows up. Massive LED TV wall in the open-air courtyard, 20+ screens inside and out, and a crowd that brings the energy every single time."
+    ctaLabel="Game Day Info"
+    ctaHref="/venue/sports"
+    ctaSecondaryLabel="Reserve Your Spot"
+    ctaSecondaryHref={siteProfile.ordering.reservationsUrl}
+    imageRight={true}
+    variant="steel"
+  />
+
+  <!-- FOOD SECTION -->
+  <section class="bg-brand-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 text-center">
+      <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-4">The Menu</p>
+      <h2 class="font-display font-900 text-5xl lg:text-6xl uppercase leading-none text-brand-steel mb-6">
+        BBQ. Comfort. California.
+      </h2>
+      <p class="text-base text-brand-dark/70 max-w-2xl mx-auto mb-4">
+        Signature smoked tri-tip, Brisket Shack plates, shrimp tacos, loaded fries, and shareable plates built for groups.
+      </p>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+      <div class="relative overflow-hidden aspect-video lg:aspect-[21/8] rounded-sm">
+        <img
+          src="/images/food/park-101-prk-food-spread-02-carlsbad.jpg"
+          alt="Full food spread at Park 101 — tacos, fries, tenders, and loaded dishes"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+    <PhotoGrid
+      columns={3}
+      images={[
+        { src: '/images/food/park-101-smoked-tri-tip-carlsbad.jpg',                  alt: 'Smoked tri-tip at Park 101 Carlsbad',             label: 'Smoked Tri-Tip',   href: '/menu' },
+        { src: '/images/food/park-101-smoked-wings-carlsbad.jpg',                    alt: 'Smoked wings at Park 101 Carlsbad',               label: 'Smoked Wings',     href: '/menu' },
+        { src: '/images/food/park-101-brisket-loaded-fries-bbq-nachos-carlsbad.jpg', alt: 'Brisket Shack loaded fries at Park 101',          label: 'Brisket Shack',    href: '/menu' },
+        { src: '/images/food/park-101-shrimp-tacos-carlsbad.jpg',                    alt: 'Shrimp tacos at Park 101 Carlsbad',               label: 'Shrimp Tacos',     href: '/menu' },
+        { src: '/images/food/park-101-loaded-bbq-mac-06-carlsbad.jpg',               alt: 'Loaded BBQ mac and cheese at Park 101 Carlsbad',  label: 'Loaded BBQ Mac',   href: '/menu' },
+        { src: '/images/food/park-101-rodeo-barrel-nachos-carlsbad.jpg',             alt: 'Rodeo barrel nachos at Park 101 Carlsbad',        label: 'Rodeo Nachos',     href: '/menu' },
+      ]}
+    />
+    <div class="text-center py-10">
+      <a href="/menu" class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider bg-brand-steel text-brand-white hover:bg-brand-steel-dark transition-colors duration-200 rounded-sm">
+        View Full Menu
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA BAND: PRIVATE EVENTS -->
+  <CTABand
+    image="/images/venue/park-101-outdoor-rooftop-bar-evening-crowd-carlsbad.jpg"
+    imageAlt="Evening crowd at Park 101 rooftop Carlsbad for a private event"
+    eyebrow="Private Events"
+    heading="The Whole Rooftop. Just Your Crew."
+    body="Birthdays, corporate buyouts, game day parties, rehearsal dinners — PRK 101 has the space, the staff, and the vibe to make it unforgettable."
+    ctaLabel="Plan Your Event"
+    ctaHref="/private-events"
+    ctaSecondaryLabel="Contact Us"
+    ctaSecondaryHref="/contact"
+    overlayStrength="heavy"
+  />
+
+  <!-- BBQ SPLIT -->
+  <SplitSection
+    image="/images/food/park-101-bbq-brisket-platter-rice-slaw-carlsbad.jpg"
+    imageAlt="Brisket Shack BBQ platter with rice and slaw at Park 101 Carlsbad"
+    eyebrow="The Brisket Shack"
+    heading="Low & Slow. Built Right."
+    body="The Brisket Shack at PRK 101 smokes everything in-house. Brisket plates, pulled pork, St. Louis ribs, smoked tri-tip — served with slaw, rice, and the kind of BBQ that keeps people coming back every week."
+    ctaLabel="See the BBQ Menu"
+    ctaHref="/menu"
+    variant="dark"
+  />
+
+  <!-- WEEKLY SPECIALS STRIP -->
+  <section class="bg-brand-orange">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+        <div class="flex-shrink-0">
+          <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-white/70 mb-3">Every Week</p>
+          <h2 class="font-display font-900 text-4xl lg:text-5xl uppercase leading-none text-brand-white">
+            Specials Worth<br />Showing Up For
+          </h2>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:max-w-xl">
+          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Monday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">50% Off Drinks for Carlsbad Residents</p></div>
+          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Tuesday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Taco Tuesday + Trivia Night at 7pm</p></div>
+          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Wednesday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Bingo Night — $16 Beer &amp; Burger</p></div>
+          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Thursday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Wing Night — $1.25/Wing, 6 Minimum</p></div>
+          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Friday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Dukes N Boots — Line Dancing Bi-Weekly</p></div>
+          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Happy Hour</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Mon–Fri 3–6 PM Drinks &amp; Food</p></div>
+        </div>
+        <a href="/weekly-specials" class="flex-shrink-0 inline-block px-7 py-4 font-display font-700 text-sm uppercase tracking-wider border-2 border-brand-white text-brand-white hover:bg-brand-white hover:text-brand-orange transition-all duration-200 rounded-sm">
+          Full Specials
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRUNCH SPLIT -->
+  <SplitSection
+    image="/images/brunch/park-101-brunch-dsc03776-carlsbad.jpg"
+    imageAlt="Tri-tip chilaquiles brunch bowl with fried egg at Park 101 Carlsbad Village"
+    eyebrow="Weekend Brunch"
+    heading="Rooftop Brunch. Every Weekend."
+    body="Saturday and Sunday on the rooftop is something else. Tri-tip chilaquiles, chicken and waffles, loaded breakfast burritos, and a Bloody Mary with a smoked rib on top. Brunch at PRK 101 is the reason you make plans on Sunday."
+    ctaLabel="Brunch Menu"
+    ctaHref="/menu"
+    ctaSecondaryLabel="Reserve"
+    ctaSecondaryHref={siteProfile.ordering.reservationsUrl}
+    imageRight={true}
+    variant="cream"
+  />
+
+  <!-- DRINKS GRID -->
+  <section class="bg-brand-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 text-center">
+      <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-4">The Bar</p>
+      <h2 class="font-display font-900 text-5xl lg:text-6xl uppercase leading-none text-brand-white mb-6">
+        Craft Beer. Signature Cocktails.
+      </h2>
+      <p class="text-base text-brand-white/60 max-w-xl mx-auto mb-12">
+        Cold drafts, hand-crafted cocktails, and a full bar stocked for every occasion. Happy hour Monday through Friday, 3 to 6 PM.
+      </p>
+    </div>
+    <PhotoGrid
+      columns={4}
+      images={[
+        { src: '/images/brunch/park-101-brunch-dsc08255-carlsbad.jpg',                        alt: 'Smoked rib Bloody Mary at Park 101 Carlsbad brunch bar' },
+        { src: '/images/drinks/park-101-pink-cocktail-flower-garnish-02-carlsbad.jpg',         alt: 'Pink cocktail with flower garnish at Park 101 Carlsbad' },
+        { src: '/images/drinks/park-101-spiced-rim-citrus-cocktail-carlsbad.jpg',              alt: 'Spiced rim citrus cocktail at Park 101 Carlsbad bar' },
+        { src: '/images/drinks/park-101-tropical-pink-cocktail-flower-garnish-carlsbad.jpg',   alt: 'Tropical pink cocktail at Park 101 Carlsbad' },
+      ]}
+    />
+    <div class="text-center py-10">
+      <a href={siteProfile.ordering.toastUrl} target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider border border-brand-white/30 text-brand-white hover:border-brand-orange hover:text-brand-orange transition-all duration-200 rounded-sm">
+        Order Takeout
+      </a>
+    </div>
+  </section>
+
+  <!-- LIVE EVENTS CTA BAND -->
+  <CTABand
+    image="/images/venue/park-101-outdoor-venue-string-lights-live-music-carlsbad.jpg"
+    imageAlt="Live country band performing at Park 101 Carlsbad with crowd dancing"
+    eyebrow="Live Music & Events"
+    heading="The Party Comes to You."
+    body="Live bands, line dancing, themed nights, and weekly events that pack the courtyard. PRK 101 is where North County comes out to play."
+    ctaLabel="See Live Events"
+    ctaHref="/venue/live-events"
+    ctaSecondaryLabel="Weekly Specials"
+    ctaSecondaryHref="/weekly-specials"
+    overlayStrength="heavy"
+  />
+
+  <!-- FAMILIES & PETS -->
+  <SplitSection
+    image="/images/venue/park-101-outdoor-family-friendly-gathering-carlsbad.jpg"
+    imageAlt="Family friendly outdoor gathering at Park 101 Carlsbad Village"
+    eyebrow="All Are Welcome"
+    heading="Bring the Family. Bring the Dog."
+    body="PRK 101 is a North County community spot at its core. Dog-friendly patio, relaxed outdoor seating, and a menu that works for every age. Whether it's a Sunday with the kids or a weeknight after work, there's always a table waiting."
+    ctaLabel="Families & Pets"
+    ctaHref="/venue/families-pets"
+    variant="cream"
+    imageRight={true}
+  />
+
+  <!-- FINAL CTA BAND -->
+  <CTABand
+    image="/images/venue/park-101-outdoor-fire-pit-patio-venue-carlsbad.jpg"
+    imageAlt="Fire pit seating area at Park 101 Carlsbad with LED wall at dusk"
+    eyebrow="3040 Carlsbad Boulevard"
+    heading="Come Find Your Spot."
+    body="Open daily in Carlsbad Village. One block from the beach. No excuses."
+    ctaLabel="Reserve a Table"
+    ctaHref={siteProfile.ordering.reservationsUrl}
+    ctaSecondaryLabel="Get Directions"
+    ctaSecondaryHref={siteProfile.contact.googleMapsUrl}
+    overlayStrength="heavy"
+  />
+
+</Layout>
