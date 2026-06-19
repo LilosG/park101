@@ -11,14 +11,14 @@ import siteProfile from '../../data/site-profile.json';
       <!-- Col 1: Brand -->
       <div>
         <a href="/" aria-label="Park 101 Home">
-          <span class="font-display font-900 text-4xl tracking-widest uppercase text-brand-white">
+          <span class="font-display font-black text-4xl tracking-widest uppercase text-brand-white">
             PRK 101
           </span>
         </a>
         <p class="mt-4 text-sm text-brand-white/60 leading-relaxed max-w-xs">
           {siteProfile.shortDescription}
         </p>
-        <p class="mt-4 text-xs font-display font-600 uppercase tracking-widest text-brand-orange">
+        <p class="mt-4 text-xs font-display font-bold uppercase tracking-widest text-brand-orange">
           {siteProfile.tagline}
         </p>
         <!-- Social -->
@@ -54,27 +54,25 @@ import siteProfile from '../../data/site-profile.json';
 
       <!-- Col 2: Nav Links -->
       <div>
-        <h3 class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-6">
+        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">
           Explore
         </h3>
         <nav aria-label="Footer navigation">
           <ul class="flex flex-col gap-3">
-            <li><a href="/menu" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">Menu</a></li>
-            <li><a href="/weekly-specials" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">Weekly Specials</a></li>
-            <li><a href="/venue/rooftop" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">The Rooftop</a></li>
-            <li><a href="/venue/sports" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">Sports & Game Day</a></li>
-            <li><a href="/venue/families-pets" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">Families & Pets</a></li>
-            <li><a href="/venue/live-events" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">Live Events</a></li>
-            <li><a href="/private-events" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">Private Events</a></li>
-            <li><a href="/blog" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">Blog</a></li>
-            <li><a href="/contact" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-600 uppercase tracking-wide">Contact</a></li>
+            <li><a href="/menu" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Menu</a></li>
+            <li><a href="/brunch" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Brunch</a></li>
+            <li><a href="/north-county-lineup" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">North County Lineup</a></li>
+            <li><a href="/venue" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">The Venue</a></li>
+            <li><a href="/private-events" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Private Events</a></li>
+            <li><a href="/blog" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Blog</a></li>
+            <li><a href="/contact" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Contact</a></li>
           </ul>
         </nav>
       </div>
 
       <!-- Col 3: Hours + Address -->
       <div>
-        <h3 class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-6">
+        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">
           Visit Us
         </h3>
 
@@ -93,19 +91,19 @@ import siteProfile from '../../data/site-profile.json';
 
         <!-- Phone -->
         <a
-          href={siteProfile.contact.phoneDial}
-          class="block text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 mb-6 font-display font-600 tracking-wide"
+          href={`tel:${siteProfile.contact.phoneDial}`}
+          class="block text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 mb-6 font-display font-semibold tracking-wide"
         >
           {siteProfile.contact.phone}
         </a>
 
         <!-- Hours -->
         <div>
-          <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-white/40 mb-3">Hours</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest text-brand-white/40 mb-3">Hours</p>
           <ul class="flex flex-col gap-1.5">
             {siteProfile.hoursDisplay.map((row) => (
               <li class="flex justify-between gap-4 text-xs text-brand-white/60">
-                <span class="font-display font-600 uppercase tracking-wide">{row.days}</span>
+                <span class="font-display font-semibold uppercase tracking-wide">{row.days}</span>
                 <span class="text-brand-white/80 whitespace-nowrap">{row.hours}</span>
               </li>
             ))}
@@ -118,7 +116,7 @@ import siteProfile from '../../data/site-profile.json';
             href={siteProfile.ordering.toastUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex-1 py-2.5 text-center text-xs font-display font-700 uppercase tracking-wider border border-brand-white/30 text-brand-white/70 hover:border-brand-orange hover:text-brand-orange transition-all duration-200 rounded-sm"
+            class="flex-1 py-2.5 text-center text-xs font-display font-bold uppercase tracking-wider border border-brand-white/30 text-brand-white/70 hover:border-brand-orange hover:text-brand-orange transition-all duration-200 rounded-sm"
           >
             Order
           </a>
@@ -126,7 +124,7 @@ import siteProfile from '../../data/site-profile.json';
             href={siteProfile.ordering.reservationsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex-1 py-2.5 text-center text-xs font-display font-700 uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
+            class="flex-1 py-2.5 text-center text-xs font-display font-bold uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
           >
             Reserve
           </a>
@@ -140,10 +138,10 @@ import siteProfile from '../../data/site-profile.json';
   <div class="border-t border-brand-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
       <p class="text-xs text-brand-white/30">
-        &copy; {new Date().getFullYear()} Park 101. All rights reserved.
+        &copy; {new Date().getFullYear()} {siteProfile.name}. All rights reserved.
       </p>
       <p class="text-xs text-brand-white/20">
-        Carlsbad Village, CA &mdash; Where Coast Meets Country
+        {siteProfile.contact.neighborhood}, {siteProfile.contact.address.state} &mdash; {siteProfile.tagline}
       </p>
     </div>
   </div>
