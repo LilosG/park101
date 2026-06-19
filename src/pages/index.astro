@@ -98,7 +98,7 @@ const drinkItems = [
         </a>
         <a
           href="/venue"
-          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 font-display font-bold uppercase tracking-[0.12em] text-sm transition-all duration-200 text-center" style="color: #FDFAF7;"
+          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-all duration-200 text-center"
         >
           Explore the Venue
         </a>
@@ -176,7 +176,7 @@ const drinkItems = [
           </div>
           <a
             href="/north-county-lineup"
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200" style="color: #FDFAF7;"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
           >
             View the Lineup
           </a>
@@ -225,7 +225,7 @@ const drinkItems = [
       <div class="mt-10 text-center">
         <a
           href="/menu"
-          class="inline-block px-8 py-4 bg-brand-dark hover:bg-brand-dark-light text-brand-white font-display font-bold uppercase tracking-[0.15em] text-sm transition-colors duration-200"
+          class="inline-block px-8 py-4 bg-brand-dark hover:bg-brand-dark/80 text-brand-white font-display font-bold uppercase tracking-[0.15em] text-sm transition-colors duration-200"
         >
           View Full Menu
         </a>
@@ -258,7 +258,7 @@ const drinkItems = [
           </p>
           <a
             href="/menu"
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200" style="color: #FDFAF7;"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
           >
             Full Smokehouse Menu
           </a>
@@ -289,7 +289,7 @@ const drinkItems = [
             <img
               src={item.src}
               alt={item.alt}
-              class="absolute inset-0 w-full h-full object-cover" style="height:100%;"
+              class="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
           </div>
@@ -304,7 +304,7 @@ const drinkItems = [
       <img
         src="/images/venue/park-101-live-music-country-wide-carlsbad.jpg"
         alt="Country guitarist performing live at Park 101 Carlsbad with the LED screen and crowd behind him"
-        class="w-full h-full object-cover" style="object-position: 50% 62%;"
+        class="w-full h-full object-cover object-[50%_62%]"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-brand-dark/72"></div>
@@ -369,7 +369,7 @@ const drinkItems = [
         <img
           src="/images/venue/park-101-families-kids-game-day-carlsbad.jpg"
           alt="Families and kids in Padres jerseys enjoying game day together at Park 101 Carlsbad"
-          class="absolute inset-0 w-full h-full object-cover" style="object-position: 50% 55%;"
+          class="absolute inset-0 w-full h-full object-cover object-[50%_75%]"
           loading="lazy"
         />
       </div>
@@ -407,7 +407,7 @@ const drinkItems = [
       <img
         src="/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg"
         alt="Packed crowd at Park 101 Carlsbad with the Home of the San Diego Padres banner and full multi-level venue"
-        class="w-full h-full object-cover" style="object-position: 50% 45%;"
+        class="w-full h-full object-cover object-[50%_35%]"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-brand-dark/72"></div>
@@ -441,7 +441,7 @@ const drinkItems = [
             href={siteProfile.contact.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="font-body text-sm hover:text-brand-orange transition-colors duration-150" style="color: rgba(245,239,230,0.8);"
+            class="font-body text-sm text-brand-cream/80 hover:text-brand-orange transition-colors duration-150"
           >
             {siteProfile.contact.address.full}
           </a>
@@ -450,7 +450,7 @@ const drinkItems = [
           <span class="block font-display font-bold text-brand-orange text-[10px] tracking-widest uppercase mb-1">Phone</span>
           <a
             href={`tel:${siteProfile.contact.phoneDial}`}
-            class="font-body text-sm hover:text-brand-orange transition-colors duration-150" style="color: rgba(245,239,230,0.8);"
+            class="font-body text-sm text-brand-cream/80 hover:text-brand-orange transition-colors duration-150"
           >
             {siteProfile.contact.phone}
           </a>
