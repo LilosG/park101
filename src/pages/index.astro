@@ -98,7 +98,7 @@ const drinkItems = [
         </a>
         <a
           href="/venue"
-          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-all duration-200 text-center"
+          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 font-display font-bold uppercase tracking-[0.12em] text-sm transition-all duration-200 text-center" style="color: #FDFAF7;"
         >
           Explore the Venue
         </a>
@@ -176,7 +176,7 @@ const drinkItems = [
           </div>
           <a
             href="/north-county-lineup"
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200" style="color: #FDFAF7;"
           >
             View the Lineup
           </a>
@@ -212,7 +212,7 @@ const drinkItems = [
             <img
               src={item.src}
               alt={item.alt}
-              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               loading="lazy"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
@@ -258,7 +258,7 @@ const drinkItems = [
           </p>
           <a
             href="/menu"
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200" style="color: #FDFAF7;"
           >
             Full Smokehouse Menu
           </a>
@@ -270,17 +270,15 @@ const drinkItems = [
   <!-- ── DRINKS ────────────────────────────────────────────── -->
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12 gap-6">
-        <div class="max-w-xl">
-          <span class="block font-body text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
-            The Bar
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-[0.92]">
-            Cold Drinks.<br />Big Selection.
-          </h2>
-          <div class="w-12 h-[2px] bg-brand-orange mt-5"></div>
-        </div>
-        <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg max-w-sm leading-relaxed">
+      <div class="max-w-xl mb-12">
+        <span class="block font-body text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
+          The Bar
+        </span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-[0.92]">
+          Cold Drinks.<br />Big Selection.
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-orange mt-5 mb-5"></div>
+        <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg max-w-lg leading-relaxed">
           Signature cocktails, frozen margaritas, local craft beers on draft, and the Rodeo Tower — Park 101's most celebrated creation.
         </p>
       </div>
@@ -291,7 +289,7 @@ const drinkItems = [
             <img
               src={item.src}
               alt={item.alt}
-              class="w-full h-full object-cover"
+              class="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
           </div>
@@ -306,7 +304,7 @@ const drinkItems = [
       <img
         src="/images/venue/park-101-live-music-country-guitar-carlsbad.jpg"
         alt="Country guitarist performing live at Park 101 Carlsbad with the LED screen and crowd behind him"
-        class="w-full h-full object-cover object-[50%_65%]"
+        class="w-full h-full object-cover object-bottom"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-brand-dark/72"></div>
@@ -371,7 +369,7 @@ const drinkItems = [
         <img
           src="/images/venue/park-101-families-kids-game-day-carlsbad.jpg"
           alt="Families and kids in Padres jerseys enjoying game day together at Park 101 Carlsbad"
-          class="absolute inset-0 w-full h-full object-cover object-[50%_75%]"
+          class="absolute inset-0 w-full h-full object-cover object-bottom"
           loading="lazy"
         />
       </div>
@@ -407,9 +405,9 @@ const drinkItems = [
   <section class="relative min-h-[500px] flex items-center justify-center text-center px-6 py-24 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/venue/park-101-outdoor-firepit-string-lights-evening-crowd-carlsbad.jpg"
-        alt="Friends toasting drinks around the Park 101 fire pit with string lights and the full outdoor venue at dusk"
-        class="w-full h-full object-cover object-[50%_70%]"
+        src="/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg"
+        alt="Packed crowd at Park 101 Carlsbad with the Home of the San Diego Padres banner and full multi-level venue"
+        class="w-full h-full object-cover object-[50%_40%]"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-brand-dark/72"></div>
@@ -443,7 +441,7 @@ const drinkItems = [
             href={siteProfile.contact.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="font-body text-sm text-brand-cream/80 hover:text-brand-orange transition-colors duration-150"
+            class="font-body text-sm hover:text-brand-orange transition-colors duration-150" style="color: rgba(245,239,230,0.8);"
           >
             {siteProfile.contact.address.full}
           </a>
@@ -452,7 +450,7 @@ const drinkItems = [
           <span class="block font-display font-bold text-brand-orange text-[10px] tracking-widest uppercase mb-1">Phone</span>
           <a
             href={`tel:${siteProfile.contact.phoneDial}`}
-            class="font-body text-sm text-brand-cream/80 hover:text-brand-orange transition-colors duration-150"
+            class="font-body text-sm hover:text-brand-orange transition-colors duration-150" style="color: rgba(245,239,230,0.8);"
           >
             {siteProfile.contact.phone}
           </a>
