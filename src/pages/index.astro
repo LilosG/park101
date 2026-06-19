@@ -1,141 +1,191 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import siteProfile from '../data/site-profile.json';
+
+const foodItems = [
+  {
+    src: '/images/food/park-101-tri-tip-tacos-07-carlsbad.jpg',
+    alt: 'St. Louis ribs with BBQ sauce and pickles at Park 101 Carlsbad',
+    name: 'St. Louis Ribs',
+  },
+  {
+    src: '/images/food/park-101-the-chick-02-carlsbad.jpg',
+    alt: 'Sliced smoked brisket platter with sauce at Park 101 Carlsbad',
+    name: 'Smoked Brisket',
+  },
+  {
+    src: '/images/food/park-101-surf-n-turf-fries-08-carlsbad.jpg',
+    alt: 'Shrimp tacos with chipotle sauce and lime at Park 101 Carlsbad',
+    name: 'Shrimp Tacos',
+  },
+  {
+    src: '/images/food/park-101-smoked-wings-carlsbad.jpg',
+    alt: 'Loaded bacon cheeseburger with fries at Park 101 Carlsbad',
+    name: 'The Western Burger',
+  },
+  {
+    src: '/images/food/park-101-tri-tip-x-arugula-08-carlsbad.jpg',
+    alt: 'Smoked tri-tip Philly cheesesteak sandwich at Park 101 Carlsbad',
+    name: 'Smoked Tri-Tip Philly',
+  },
+  {
+    src: '/images/food/park-101-chicky-chicky-boom-boom-08-carlsbad.jpg',
+    alt: 'Tri-tip tacos with chimichurri and cotija at Park 101 Carlsbad',
+    name: 'Tri-Tip Tacos',
+  },
+];
+
+const drinkItems = [
+  {
+    src: '/images/drinks/park-101-rodeo-tower-prk101-carlsbad.jpg',
+    alt: 'Signature Rodeo Tower cocktail display at Park 101 Carlsbad with PRK 101 sign',
+  },
+  {
+    src: '/images/drinks/park-101-dont-mess-with-me-cocktail-carlsbad.jpg',
+    alt: "Don't At Me cocktail at Park 101 Carlsbad",
+  },
+  {
+    src: '/images/drinks/park-101-gun-powder-lead-cocktail-carlsbad.jpg',
+    alt: 'Gun Powder and Lead cocktail with fresh mint at Park 101 Carlsbad',
+  },
+  {
+    src: '/images/drinks/park-101-talking-irons-cocktail-carlsbad.jpg',
+    alt: 'Talking Irons whiskey cocktail on the rooftop at Park 101 Carlsbad',
+  },
+];
 ---
 
-<Layout title="Where Coast Meets Country | Carlsbad BBQ & Rooftop Bar">
-  <section class="relative h-screen w-full overflow-hidden bg-brand-dark flex flex-col justify-between">
-    <div class="absolute inset-0 w-full h-full z-0">
-      <img 
-        src="/images/venue/park-101-outdoor-rooftop-string-lights-tropical-vibes-carlsbad.jpg" 
-        alt="Park 101 outdoor courtyard and multi-level rooftop deck with string lights in Carlsbad" 
-        class="w-full h-full object-cover object-center transform scale-101"
+<Layout
+  title={siteProfile.seo.defaultTitle}
+  description={siteProfile.seo.defaultDescription}
+  ogImage={siteProfile.seo.ogImage}
+  transparentNav={true}
+>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="relative h-screen w-full bg-brand-dark flex flex-col justify-between overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/venue/park-101-outdoor-rooftop-string-lights-tropical-vibes-carlsbad.jpg"
+        alt="Park 101 packed outdoor courtyard with string lights, palm trees, and multi-level venue in Carlsbad Village"
+        class="w-full h-full object-cover object-center"
         loading="eager"
+        fetchpriority="high"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/45 to-brand-dark/20 z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/55 to-brand-dark/10"></div>
     </div>
 
     <div></div>
 
-    <div class="relative z-20 max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pt-32 text-center md:text-left">
-      <span class="inline-block font-sans text-xs sm:text-sm font-bold tracking-[0.3em] uppercase text-brand-orange mb-4">
-        Carlsbad Village &middot; One Block From The Beach
+    <div class="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pb-8">
+      <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
+        {siteProfile.contact.neighborhood} &middot; One Block From The Beach
       </span>
-      <h1 class="font-['Barlow_Condensed'] font-bold text-5xl sm:text-7xl lg:text-8xl text-brand-white uppercase leading-[0.9] tracking-tight max-w-4xl mb-6">
-        Where Coast <br class="hidden md:block" />Meets Country
+      <h1 class="font-display font-black text-5xl sm:text-7xl lg:text-[6.5rem] text-brand-white uppercase leading-[0.88] tracking-tight max-w-4xl mb-6">
+        Where Coast<br />Meets Country
       </h1>
-      <p class="font-sans font-light text-brand-cream/80 text-lg sm:text-xl max-w-xl mb-8 leading-relaxed">
-        Welcome to Carlsbad’s premier multi-level open-air dining and garden layout. Fresh California air meets wood-fired heritage.
+      <p class="font-body font-light text-brand-cream/75 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed">
+        {siteProfile.shortDescription}
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-        <a 
-          href="/menu" 
-          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange/90 text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-sm transition-all duration-300 shadow-lg text-center"
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href={siteProfile.ordering.reservationsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-colors duration-200 text-center"
         >
-          View The Menu
+          Reserve a Table
         </a>
-        <a 
-          href="/private-events" 
-          class="px-8 py-4 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-sm transition-all duration-300 text-center"
+        <a
+          href="/venue"
+          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-all duration-200 text-center"
         >
-          Book An Event
+          Explore the Venue
         </a>
       </div>
     </div>
 
-    <div class="relative z-20 w-full bg-brand-dark/85 backdrop-blur-md border-t border-brand-white/10 py-6 sm:py-8 mt-12">
-      <div class="max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 divide-x-0 md:divide-x divide-brand-white/10 text-center">
-          <div class="px-2">
-            <span class="block font-['Barlow_Condensed'] font-bold text-2xl sm:text-3xl text-brand-white tracking-wide">8,000 SQ FT</span>
-            <span class="block font-sans text-[10px] sm:text-xs tracking-[0.2em] uppercase text-brand-orange mt-1 font-medium">Multi-Level Space</span>
-          </div>
-          <div class="px-2">
-            <span class="block font-['Barlow_Condensed'] font-bold text-2xl sm:text-3xl text-brand-white tracking-wide">ROOFTOP DECK</span>
-            <span class="block font-sans text-[10px] sm:text-xs tracking-[0.2em] uppercase text-brand-orange mt-1 font-medium">Ocean Air Views</span>
-          </div>
-          <div class="px-2">
-            <span class="block font-['Barlow_Condensed'] font-bold text-2xl sm:text-3xl text-brand-white tracking-wide">GAME DAY HQ</span>
-            <span class="block font-sans text-[10px] sm:text-xs tracking-[0.2em] uppercase text-brand-orange mt-1 font-medium">Massive LED Wall</span>
-          </div>
-          <div class="px-2">
-            <span class="block font-['Barlow_Condensed'] font-bold text-2xl sm:text-3xl text-brand-white tracking-wide">PET FRIENDLY</span>
-            <span class="block font-sans text-[10px] sm:text-xs tracking-[0.2em] uppercase text-brand-orange mt-1 font-medium">Dogs Welcome Always</span>
-          </div>
+    <!-- Stat Bar -->
+    <div class="relative z-10 w-full bg-brand-dark/80 backdrop-blur-sm border-t border-brand-white/10 py-5 sm:py-6">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-4 md:divide-x divide-brand-white/10 text-center">
+          {siteProfile.stats.map((stat) => (
+            <div class="px-4">
+              <span class="block font-display font-black text-2xl sm:text-3xl text-brand-white uppercase tracking-wide leading-tight">{stat.value}</span>
+              <span class="block font-body text-[10px] sm:text-xs tracking-[0.22em] uppercase text-brand-orange mt-1">{stat.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <section class="relative bg-brand-cream min-h-[700px] flex items-center overflow-hidden border-b border-brand-dark/5">
-    <div class="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
-      <div class="relative lg:col-span-7 min-h-[350px] lg:min-h-full">
-        <img 
-          src="/images/venue/park-101-rooftop-bar-lounge-venue-carlsbad.jpg" 
-          alt="Park 101 open rooftop deck bar lounge at golden hour" 
+  <!-- ── THE VENUE ─────────────────────────────────────────── -->
+  <section class="relative bg-brand-cream">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
+      <div class="relative lg:col-span-7 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/venue/park-101-outdoor-fire-pit-patio-venue-carlsbad.jpg"
+          alt="Park 101 full outdoor courtyard at dusk with fire pit seating, LED screen, tables, and multi-level venue"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-sans text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
-            The Garden Rooftop
+          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+            {siteProfile.contact.neighborhood}
           </span>
-          <h2 class="font-['Barlow_Condensed'] font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.95] tracking-tight mb-6">
-            Two Levels.<br />One View.<br />All Carlsbad.
+          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
+            Rooftop.<br />Courtyard.<br />Indoor Bar.
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-sans font-light text-brand-dark/80 text-base sm:text-lg leading-relaxed mb-8">
-            Escape to the Garden Rooftop Lounge, where coastal vibes meet village sights. Enjoy refreshing signature cocktails, crisp local craft microbrews, and shared plates curated for sun-soaked afternoons and fire pit conversations.
+          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
+            Three distinct spaces under one open sky. The central courtyard with the massive LED wall. The elevated rooftop deck with views of Carlsbad Village. The indoor bar with wall-to-wall screens and long communal tables. One block from the beach.
           </p>
-          <a 
-            href="/venue/rooftop" 
-            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-xs transition-all duration-300"
+          <a
+            href="/venue"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
           >
-            Explore The Rooftop
+            See All Spaces
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="relative bg-brand-dark min-h-[700px] flex items-center overflow-hidden">
-    <div class="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
-      <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark z-10">
+  <!-- ── SPORTS / GAME DAY ────────────────────────────────── -->
+  <section class="relative bg-brand-dark">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
+      <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-sans text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
-            Sports Headquarters
+          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+            {siteProfile.venue.sports.headline}
           </span>
-          <h2 class="font-['Barlow_Condensed'] font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-[0.95] tracking-tight mb-6">
-            Your Stadium Experience In The Village
+          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-white uppercase leading-[0.92] tracking-tight mb-6">
+            Golden Hour.<br />Cold Beer.<br />Big Screens.
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-sans font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
-            Catch every second of action on our massive outdoor plaza LED wall. With complete multi-game sound capabilities, vibrant fan energy, and direct table-service drink buckets, we turn game days into local celebrations.
+          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
+            {siteProfile.venue.sports.description}
           </p>
-          
-          <div class="flex flex-wrap gap-x-6 gap-y-3 mb-8 pb-8 border-b border-brand-white/10">
-            <span class="font-['Barlow_Condensed'] font-semibold text-sm uppercase tracking-[0.15em] text-brand-white">NFL TICKET</span>
-            <span class="text-brand-orange/40">&middot;</span>
-            <span class="font-['Barlow_Condensed'] font-semibold text-sm uppercase tracking-[0.15em] text-brand-white">UFC MAIN CARDS</span>
-            <span class="text-brand-orange/40">&middot;</span>
-            <span class="font-['Barlow_Condensed'] font-semibold text-sm uppercase tracking-[0.15em] text-brand-white">PADRES HQ</span>
-            <span class="text-brand-orange/40">&middot;</span>
-            <span class="font-['Barlow_Condensed'] font-semibold text-sm uppercase tracking-[0.15em] text-brand-white">FANTASY</span>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 mb-8 pb-8 border-b border-brand-white/10">
+            {siteProfile.venue.sports.features.map((feature) => (
+              <span class="font-display font-bold text-xs uppercase tracking-[0.15em] text-brand-white">{feature}</span>
+            ))}
           </div>
-
-          <a 
-            href="/venue/sports" 
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-xs transition-all duration-300"
+          <a
+            href="/north-county-lineup"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
           >
-            Game Day Schedules
+            View the Lineup
           </a>
         </div>
       </div>
-      <div class="relative lg:col-span-7 order-1 lg:order-2 min-h-[350px] lg:min-h-full">
-        <img 
-          src="/images/venue/park-101-outdoor-rooftop-sports-bar-lounge-carlsbad.jpg" 
-          alt="Fans gathering around custom fire pits to watch sports on the giant LED wall screen" 
+      <div class="relative lg:col-span-7 order-1 lg:order-2 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/venue/park-101-outdoor-rooftop-bar-string-lights-carlsbad.jpg"
+          alt="Packed crowd watching NFL football on the massive LED wall at Park 101 Carlsbad with the Carlsbad sign visible"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
@@ -143,191 +193,170 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="relative bg-brand-cream py-24 px-6 sm:px-8 lg:px-12 border-b border-brand-dark/5">
-    <div class="max-w-7xl w-full mx-auto">
-      <div class="text-center max-w-xl mx-auto mb-16">
-        <span class="block font-sans text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
+  <!-- ── FOOD GRID ─────────────────────────────────────────── -->
+  <section class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <span class="block font-body text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
           The Kitchen
         </span>
-        <h2 class="font-['Barlow_Condensed'] font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">
+        <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">
           Food Worth Staying For
         </h2>
-        <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-4 mb-4"></div>
+        <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        <div class="group relative overflow-hidden bg-brand-dark shadow-md aspect-[4/3]">
-          <img src="/images/food/park-101-prk-food-spread-02-carlsbad.jpg" alt="Overhead flatlay spread of Park 101 signature items" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="font-['Barlow_Condensed'] font-semibold text-lg uppercase tracking-wide text-brand-white">Signature Food Spread</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+        {foodItems.map((item) => (
+          <div class="group relative overflow-hidden bg-brand-dark aspect-[4/3]">
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <span class="font-display font-bold text-base uppercase tracking-wider text-brand-white">{item.name}</span>
+            </div>
           </div>
-        </div>
-        <div class="group relative overflow-hidden bg-brand-dark shadow-md aspect-[4/3]">
-          <img src="/images/food/park-101-smoked-tri-tip-carlsbad.jpg" alt="House smoked premium Tri-Tip plate slice" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="font-['Barlow_Condensed'] font-semibold text-lg uppercase tracking-wide text-brand-white">Smoked Tri-Tip Platter</span>
-          </div>
-        </div>
-        <div class="group relative overflow-hidden bg-brand-dark shadow-md aspect-[4/3]">
-          <img src="/images/food/park-101-shrimp-tacos-04-carlsbad.jpg" alt="Gourmet crisp shrimp tacos with fresh lime" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="font-['Barlow_Condensed'] font-semibold text-lg uppercase tracking-wide text-brand-white">Coastal Shrimp Tacos</span>
-          </div>
-        </div>
-        <div class="group relative overflow-hidden bg-brand-dark shadow-md aspect-[4/3]">
-          <img src="/images/food/park-101-rodeo-barrel-nachos-carlsbad.jpg" alt="Stacked Rodeo Barrel nachos with smoked meats cheese sauces" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="font-['Barlow_Condensed'] font-semibold text-lg uppercase tracking-wide text-brand-white">Rodeo Barrel Nachos</span>
-          </div>
-        </div>
-        <div class="group relative overflow-hidden bg-brand-dark shadow-md aspect-[4/3]">
-          <img src="/images/food/park-101-loaded-bbq-mac-carlsbad.jpg" alt="Loaded skillet baked BBQ mac and cheese" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="font-['Barlow_Condensed'] font-semibold text-lg uppercase tracking-wide text-brand-white">Loaded BBQ Mac & Cheese</span>
-          </div>
-        </div>
-        <div class="group relative overflow-hidden bg-brand-dark shadow-md aspect-[4/3]">
-          <img src="/images/food/park-101-chicky-chicky-boom-boom-carlsbad.jpg" alt="Crisp premium chicken sandwich with house pickles" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="font-['Barlow_Condensed'] font-semibold text-lg uppercase tracking-wide text-brand-white">Chicky Chicky Boom Boom</span>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <div class="mt-12 text-center">
-        <a 
-          href="/menu" 
-          class="inline-block px-8 py-4 bg-brand-dark hover:bg-brand-dark/90 text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.15em] text-sm transition-all duration-300 shadow-md"
+      <div class="mt-10 text-center">
+        <a
+          href="/menu"
+          class="inline-block px-8 py-4 bg-brand-dark hover:bg-brand-dark-light text-brand-white font-display font-bold uppercase tracking-[0.15em] text-sm transition-colors duration-200"
         >
-          View Full Menu Offerings
+          View Full Menu
         </a>
       </div>
     </div>
   </section>
 
-  <section class="relative bg-brand-dark min-h-[650px] flex items-center overflow-hidden">
-    <div class="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[650px]">
-      <div class="relative lg:col-span-6 min-h-[350px] lg:min-h-full">
-        <img 
-          src="/images/food/park-101-prk-smoked-meats-carlsbad.jpg" 
-          alt="Artisanal smoked house brisket and premium rib platter spreads from our smokehouse" 
+  <!-- ── BBQ FEATURE ──────────────────────────────────────── -->
+  <section class="relative bg-brand-dark">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[650px]">
+      <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/food/park-101-loaded-bbq-mac-06-carlsbad.jpg"
+          alt="Three BBQ platters of pulled pork, St. Louis ribs, and sliced brisket from the Park 101 smokehouse"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-sans text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
-            The Brisket Shack Program
+          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+            The Smokehouse
           </span>
-          <h2 class="font-['Barlow_Condensed'] font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-[0.95] tracking-tight mb-6">
+          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-white uppercase leading-[0.92] tracking-tight mb-6">
             Smoked Low.<br />Served Right.
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-sans font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
-            Our traditional wood-fired pits work round-the-clock. We source choice cuts, rub them simply with premium spice mixtures, and smoke them slowly over select hardwood species to create fall-off-the-bone tenderness and rich, smoky crust structures.
+          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
+            Brisket. Ribs. Pulled pork. All wood-smoked the right way. Served on a tray with pickles, bread, and sauce — the way it was meant to be eaten. No shortcuts, no compromises.
           </p>
-          <a 
-            href="/menu" 
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-xs transition-all duration-300"
+          <a
+            href="/menu"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
           >
-            Smokehouse Selections
+            Full Smokehouse Menu
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="relative bg-brand-steel py-24 px-6 sm:px-8 lg:px-12">
-    <div class="max-w-7xl w-full mx-auto">
-      <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12">
+  <!-- ── DRINKS ────────────────────────────────────────────── -->
+  <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12 gap-6">
         <div class="max-w-xl">
-          <span class="block font-sans text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
-            The Beverage Program
+          <span class="block font-body text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
+            The Bar
           </span>
-          <h2 class="font-['Barlow_Condensed'] font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-            Cold Drinks. Big Selection.
+          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-[0.92]">
+            Cold Drinks.<br />Big Selection.
           </h2>
-          <div class="w-12 h-[2px] bg-brand-orange mt-4 mb-4 lg:mb-0"></div>
+          <div class="w-12 h-[2px] bg-brand-orange mt-5"></div>
         </div>
-        <p class="font-sans font-light text-brand-cream/70 text-base sm:text-lg max-w-md">
-          From crisp regional Southern California draft IPAs to bright, hand-shaken artisanal tropical cocktails layered with seasonal flowers.
+        <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg max-w-sm leading-relaxed">
+          Signature cocktails, frozen margaritas, local craft beers on draft, and the Rodeo Tower — Park 101's most celebrated creation.
         </p>
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-        <div class="relative overflow-hidden bg-brand-dark aspect-square shadow-md">
-          <img src="/images/drinks/park-101-pink-cocktail-flower-garnish-carlsbad.jpg" alt="Signature pink craft cocktail with delicate floral garnishes" class="w-full h-full object-cover" loading="lazy" />
-        </div>
-        <div class="relative overflow-hidden bg-brand-dark aspect-square shadow-md">
-          <img src="/images/drinks/park-101-spiced-rim-citrus-cocktail-carlsbad.jpg" alt="Citrus margarita profile cocktail with custom spiced salt rimming" class="w-full h-full object-cover" loading="lazy" />
-        </div>
-        <div class="relative overflow-hidden bg-brand-dark aspect-square shadow-md">
-          <img src="/images/drinks/park-101-tropical-pink-cocktail-garnish-carlsbad.jpg" alt="Vibrant tropical cocktail configuration with citrus leaf additions" class="w-full h-full object-cover" loading="lazy" />
-        </div>
-        <div class="relative overflow-hidden bg-brand-dark aspect-square shadow-md">
-          <img src="/images/brunch/park-101-brunch-dsc08255-carlsbad.jpg" alt="House special loaded signature Bloody Mary profile item" class="w-full h-full object-cover" loading="lazy" />
-        </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+        {drinkItems.map((item) => (
+          <div class="relative overflow-hidden bg-brand-dark aspect-square">
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="relative min-h-[450px] w-full flex items-center justify-center text-center px-6 py-20 overflow-hidden bg-brand-dark">
-    <div class="absolute inset-0 w-full h-full">
-      <img 
-        src="/images/venue/park-101-outdoor-venue-string-lights-live-music-carlsbad.jpg" 
-        alt="Crowds enjoying an active live performance setup under complex string lighting designs" 
-        class="w-full h-full object-cover object-center"
+  <!-- ── NORTH COUNTY LINEUP ───────────────────────────────── -->
+  <section class="relative min-h-[520px] flex items-center justify-center text-center px-6 py-24">
+    <div class="absolute inset-0">
+      <img
+        src="/images/venue/park-101-live-music-country-guitar-carlsbad.jpg"
+        alt="Country guitarist performing live at Park 101 Carlsbad with the LED screen and crowd behind him"
+        class="w-full h-full object-cover object-[center_30%]"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-brand-dark/75 backdrop-blur-[1px]"></div>
+      <div class="absolute inset-0 bg-brand-dark/72"></div>
     </div>
-
     <div class="relative z-10 max-w-2xl w-full mx-auto">
-      <span class="inline-block font-sans text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-4">
-        Weekly Entertainment
+      <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
+        {siteProfile.venue.liveEvents.headline}
       </span>
-      <h2 class="font-['Barlow_Condensed'] font-bold text-4xl sm:text-6xl text-brand-white uppercase tracking-tight mb-6">
-        Live Music. Every Week.
+      <h2 class="font-display font-black text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-[0.88] mb-6">
+        Live Music.<br />Every Week.
       </h2>
-      <p class="font-sans font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">
-        We gather top regional artists, acoustic performance sets, and dynamic weekend curators directly underneath the open coastal evening sky. Check out our upcoming calendar listings.
+      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
+        Country nights. Live bands. Padres watch parties. UFC fight nights. From kickoff to the final buzzer, from the first song to last call — something's always happening at Park 101.
       </p>
-      <a 
-        href="/venue/live-events" 
-        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange/90 text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-sm transition-all duration-300 shadow-xl"
+      <a
+        href="/north-county-lineup"
+        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-colors duration-200"
       >
-        View Events Calendar
+        View the Lineup
       </a>
     </div>
   </section>
 
-  <section class="relative bg-brand-cream min-h-[700px] flex items-center overflow-hidden border-b border-brand-dark/5">
-    <div class="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
+  <!-- ── BRUNCH ─────────────────────────────────────────────── -->
+  <section class="relative bg-brand-cream">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-sans text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
-            Weekend Rituals
+          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+            Saturdays &amp; Sundays
           </span>
-          <h2 class="font-['Barlow_Condensed'] font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.95] tracking-tight mb-6">
-            Brunch On The Rooftop
+          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
+            Brunch on the Rooftop
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-sans font-light text-brand-dark/80 text-base sm:text-lg leading-relaxed mb-8">
-            Elevate your weekends with our exclusive open-air rooftop brunch. Indulge in wood-fired morning hashes, loaded breakfast skillets, and shared cocktail flights designed around local sunrays. Served Saturdays and Sundays.
+          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
+            Open-air rooftop. Smoked brisket chilaquiles. Breakfast burritos loaded with tri-tip. Rodeo Tower mimosas. The best way to spend a Saturday morning in Carlsbad Village.
           </p>
-          <a 
-            href="/menu" 
-            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-xs transition-all duration-300"
+          <a
+            href="/brunch"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
           >
-            Explore Brunch Menu
+            See the Brunch Menu
           </a>
         </div>
       </div>
-      <div class="relative lg:col-span-7 min-h-[350px] lg:min-h-full">
-        <img 
-          src="/images/brunch/park-101-brunch-dsc03776-carlsbad.jpg" 
-          alt="Overhead visualization of premium house smoked tri-tip chilaquiles bowl with fried egg decorations" 
+      <div class="relative lg:col-span-7 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg"
+          alt="Smoked tri-tip chilaquiles bowl with a fried egg, cotija cheese, pickled onions, and jalapeños at Park 101 weekend brunch"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
@@ -335,104 +364,125 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="relative bg-brand-tan py-20 px-6 sm:px-8 lg:px-12 text-center">
-    <div class="max-w-5xl w-full mx-auto">
-      <span class="inline-block font-sans text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-4">
-        Community Courtyard Space
-      </span>
-      <h2 class="font-['Barlow_Condensed'] font-bold text-3xl sm:text-5xl text-brand-dark uppercase tracking-tight mb-12">
-        Families Welcome. Dogs Welcome. Everyone's Welcome.
-      </h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto mb-12">
-        <div class="px-4 py-6 bg-brand-cream/40 rounded-sm">
-          <span class="block font-['Barlow_Condensed'] font-bold text-xl text-brand-dark tracking-wide uppercase mb-2">FAMILIES</span>
-          <p class="font-sans font-light text-brand-dark/70 text-sm">Spacious outdoor seating areas with casual lawn configurations perfect for gathering across generations.</p>
-        </div>
-        <div class="px-4 py-6 bg-brand-cream/40 rounded-sm">
-          <span class="block font-['Barlow_Condensed'] font-bold text-xl text-brand-dark tracking-wide uppercase mb-2">PETS</span>
-          <p class="font-sans font-light text-brand-dark/70 text-sm">Dedicated fresh water bowl allocations and curated premium pet-friendly house biscuits for your companion.</p>
-        </div>
-        <div class="px-4 py-6 bg-brand-cream/40 rounded-sm">
-          <span class="block font-['Barlow_Condensed'] font-bold text-xl text-brand-dark tracking-wide uppercase mb-2">KIDS</span>
-          <p class="font-sans font-light text-brand-dark/70 text-sm">Safe environment choices alongside intentional healthy menu variations crafted directly for little appetites.</p>
+  <!-- ── FAMILIES & COMMUNITY ─────────────────────────────── -->
+  <section class="relative bg-brand-tan">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[650px]">
+      <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/venue/park-101-families-kids-game-day-carlsbad.jpg"
+          alt="Families and kids in Padres jerseys enjoying game day together at Park 101 Carlsbad"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+      </div>
+      <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-tan">
+        <div class="max-w-md mx-auto lg:mx-0">
+          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+            {siteProfile.venue.familiesPets.headline}
+          </span>
+          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
+            Bring the Crew.<br />Bring the Dog.<br />Bring the Kids.
+          </h2>
+          <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
+          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
+            {siteProfile.venue.familiesPets.description}
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            {siteProfile.venue.familiesPets.features.map((feature) => (
+              <span class="px-3 py-1.5 border border-brand-dark/25 font-display font-bold text-xs uppercase tracking-wide text-brand-dark">{feature}</span>
+            ))}
+          </div>
+          <a
+            href="/venue"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
+          >
+            Plan Your Visit
+          </a>
         </div>
       </div>
-
-      <a 
-        href="/venue/families-pets" 
-        class="inline-block px-8 py-4 bg-brand-dark hover:bg-brand-dark/90 text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-sm transition-all duration-300 shadow-md"
-      >
-        Plan Your Group Visit
-      </a>
     </div>
   </section>
 
-  <section class="relative min-h-[450px] w-full flex items-center justify-center text-center px-6 py-20 overflow-hidden bg-brand-dark">
-    <div class="absolute inset-0 w-full h-full">
-      <img 
-        src="/images/venue/park-101-outdoor-fire-pit-patio-venue-carlsbad.jpg" 
-        alt="Atmospheric fire pit circular seating spaces under premium twilight tones" 
+  <!-- ── PRIVATE EVENTS ────────────────────────────────────── -->
+  <section class="relative min-h-[500px] flex items-center justify-center text-center px-6 py-24">
+    <div class="absolute inset-0">
+      <img
+        src="/images/venue/park-101-outdoor-firepit-string-lights-evening-crowd-carlsbad.jpg"
+        alt="Friends toasting drinks around the Park 101 fire pit with string lights and the full outdoor venue at dusk"
         class="w-full h-full object-cover object-center"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-brand-dark/80"></div>
+      <div class="absolute inset-0 bg-brand-dark/72"></div>
     </div>
-
     <div class="relative z-10 max-w-2xl w-full mx-auto">
-      <span class="inline-block font-sans text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-4">
-        Custom Celebrations
+      <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
+        Private Events
       </span>
-      <h2 class="font-['Barlow_Condensed'] font-bold text-4xl sm:text-6xl text-brand-white uppercase tracking-tight mb-6">
-        Your Event. Our Rooftop.
+      <h2 class="font-display font-black text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-[0.88] mb-6">
+        Your Event.<br />Our Venue.
       </h2>
-      <p class="font-sans font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">
-        From corporate mixers and rehearsal dinners to casual neighborhood milestones. Host your celebration across our custom micro-spaces, fire pit rings, or book full-venue buyouts.
+      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
+        Birthday parties, corporate happy hours, game day buyouts, rehearsal dinners — Park 101's spaces are yours to fill. Book a section, the rooftop, the courtyard, or the whole place.
       </p>
-      <a 
-        href="/private-events" 
-        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange/90 text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-sm transition-all duration-300 shadow-xl"
+      <a
+        href="/private-events"
+        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-colors duration-200"
       >
-        Inquire About Rates
+        Inquire About Events
       </a>
     </div>
   </section>
 
-  <section class="relative bg-brand-dark border-t border-brand-white/10 py-12 px-6 sm:px-8 lg:px-12 z-20">
-    <div class="max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-      <div class="flex flex-col md:flex-row items-center lg:items-start gap-y-4 gap-x-12 text-brand-white font-sans text-sm font-light">
+  <!-- ── BOTTOM INFO BAR ───────────────────────────────────── -->
+  <section class="bg-brand-dark border-t border-brand-white/10 py-10 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+      <div class="flex flex-col md:flex-row items-center lg:items-start gap-6 md:gap-10">
         <div>
-          <span class="block font-['Barlow_Condensed'] font-bold text-brand-orange text-xs tracking-widest uppercase mb-1">ADDRESS</span>
-          <p class="text-brand-cream/90">301 Carlsbad Village Dr, Carlsbad, CA 92008</p>
+          <span class="block font-display font-bold text-brand-orange text-[10px] tracking-widest uppercase mb-1">Address</span>
+          <a
+            href={siteProfile.contact.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-body text-sm text-brand-cream/80 hover:text-brand-orange transition-colors duration-150"
+          >
+            {siteProfile.contact.address.full}
+          </a>
         </div>
         <div>
-          <span class="block font-['Barlow_Condensed'] font-bold text-brand-orange text-xs tracking-widest uppercase mb-1">PHONE</span>
-          <p class="text-brand-cream/90">(760) 434-2124</p>
+          <span class="block font-display font-bold text-brand-orange text-[10px] tracking-widest uppercase mb-1">Phone</span>
+          <a
+            href={`tel:${siteProfile.contact.phoneDial}`}
+            class="font-body text-sm text-brand-cream/80 hover:text-brand-orange transition-colors duration-150"
+          >
+            {siteProfile.contact.phone}
+          </a>
         </div>
         <div>
-          <span class="block font-['Barlow_Condensed'] font-bold text-brand-orange text-xs tracking-widest uppercase mb-1">HOURS SUMMARY</span>
-          <p class="text-brand-cream/90">Open Daily from 11:30 AM &middot; Weekend Brunch from 10:00 AM</p>
+          <span class="block font-display font-bold text-brand-orange text-[10px] tracking-widest uppercase mb-1">Hours</span>
+          <p class="font-body text-sm text-brand-cream/80">
+            Fri–Sun from {siteProfile.hours.friday.open} &middot; Mon–Thu from {siteProfile.hours.monday.open}
+          </p>
         </div>
       </div>
-
-      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-        <a 
-          href="https://www.opentable.com" 
+      <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto flex-shrink-0">
+        <a
+          href={siteProfile.ordering.toastUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-6 py-3.5 bg-brand-orange hover:bg-brand-orange/90 text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-xs transition-all duration-300 text-center shadow-md"
+          class="px-6 py-3 border border-brand-white/40 hover:border-brand-orange hover:text-brand-orange text-brand-white/70 font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200 text-center whitespace-nowrap"
         >
-          Reserve Table Now
+          Order Takeout
         </a>
-        <a 
-          href="https://maps.google.com" 
+        <a
+          href={siteProfile.ordering.reservationsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-['Barlow_Condensed'] font-semibold uppercase tracking-[0.1em] text-xs transition-all duration-300 text-center"
+          class="px-6 py-3 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-colors duration-200 text-center whitespace-nowrap"
         >
-          Get Driving Directions
+          Reserve a Table
         </a>
       </div>
     </div>
   </section>
+
 </Layout>
