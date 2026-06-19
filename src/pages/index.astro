@@ -81,7 +81,7 @@ const drinkItems = [
       <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
         {siteProfile.contact.neighborhood} &middot; One Block From The Beach
       </span>
-      <h1 class="font-display font-black text-5xl sm:text-7xl lg:text-[6.5rem] text-brand-white uppercase leading-[0.88] tracking-tight max-w-4xl mb-6">
+      <h1 class="font-display font-bold text-5xl sm:text-7xl lg:text-[6.5rem] text-brand-white uppercase leading-[0.88] tracking-tight max-w-4xl mb-6">
         Where Coast<br />Meets Country
       </h1>
       <p class="font-body font-light text-brand-cream/75 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed">
@@ -111,7 +111,7 @@ const drinkItems = [
         <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-4 md:divide-x divide-brand-white/10 text-center">
           {siteProfile.stats.map((stat) => (
             <div class="px-4">
-              <span class="block font-display font-black text-2xl sm:text-3xl text-brand-white uppercase tracking-wide leading-tight">{stat.value}</span>
+              <span class="block font-display font-bold text-xl sm:text-2xl text-brand-white uppercase tracking-wide leading-tight">{stat.value}</span>
               <span class="block font-body text-[10px] sm:text-xs tracking-[0.22em] uppercase text-brand-orange mt-1">{stat.label}</span>
             </div>
           ))}
@@ -136,7 +136,7 @@ const drinkItems = [
           <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
             {siteProfile.contact.neighborhood}
           </span>
-          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
             Rooftop.<br />Courtyard.<br />Indoor Bar.
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
@@ -162,7 +162,7 @@ const drinkItems = [
           <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
             {siteProfile.venue.sports.headline}
           </span>
-          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-white uppercase leading-[0.92] tracking-tight mb-6">
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-[0.92] tracking-tight mb-6">
             Golden Hour.<br />Cold Beer.<br />Big Screens.
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
@@ -200,7 +200,7 @@ const drinkItems = [
         <span class="block font-body text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
           The Kitchen
         </span>
-        <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">
           Food Worth Staying For
         </h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
@@ -249,7 +249,7 @@ const drinkItems = [
           <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
             The Smokehouse
           </span>
-          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-white uppercase leading-[0.92] tracking-tight mb-6">
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-[0.92] tracking-tight mb-6">
             Smoked Low.<br />Served Right.
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
@@ -275,7 +275,7 @@ const drinkItems = [
           <span class="block font-body text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
             The Bar
           </span>
-          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-[0.92]">
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-[0.92]">
             Cold Drinks.<br />Big Selection.
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mt-5"></div>
@@ -301,12 +301,12 @@ const drinkItems = [
   </section>
 
   <!-- ── NORTH COUNTY LINEUP ───────────────────────────────── -->
-  <section class="relative min-h-[520px] flex items-center justify-center text-center px-6 py-24">
+  <section class="relative min-h-[520px] flex items-center justify-center text-center px-6 py-24 overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/venue/park-101-live-music-country-guitar-carlsbad.jpg"
         alt="Country guitarist performing live at Park 101 Carlsbad with the LED screen and crowd behind him"
-        class="w-full h-full object-cover object-[center_30%]"
+        class="w-full h-full object-cover object-[50%_65%]"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-brand-dark/72"></div>
@@ -315,7 +315,7 @@ const drinkItems = [
       <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
         {siteProfile.venue.liveEvents.headline}
       </span>
-      <h2 class="font-display font-black text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-[0.88] mb-6">
+      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-[0.88] mb-6">
         Live Music.<br />Every Week.
       </h2>
       <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
@@ -338,7 +338,7 @@ const drinkItems = [
           <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
             Saturdays &amp; Sundays
           </span>
-          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
             Brunch on the Rooftop
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
@@ -371,7 +371,7 @@ const drinkItems = [
         <img
           src="/images/venue/park-101-families-kids-game-day-carlsbad.jpg"
           alt="Families and kids in Padres jerseys enjoying game day together at Park 101 Carlsbad"
-          class="absolute inset-0 w-full h-full object-cover object-center"
+          class="absolute inset-0 w-full h-full object-cover object-[50%_75%]"
           loading="lazy"
         />
       </div>
@@ -380,7 +380,7 @@ const drinkItems = [
           <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
             {siteProfile.venue.familiesPets.headline}
           </span>
-          <h2 class="font-display font-black text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
             Bring the Crew.<br />Bring the Dog.<br />Bring the Kids.
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
@@ -404,12 +404,12 @@ const drinkItems = [
   </section>
 
   <!-- ── PRIVATE EVENTS ────────────────────────────────────── -->
-  <section class="relative min-h-[500px] flex items-center justify-center text-center px-6 py-24">
+  <section class="relative min-h-[500px] flex items-center justify-center text-center px-6 py-24 overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/venue/park-101-outdoor-firepit-string-lights-evening-crowd-carlsbad.jpg"
         alt="Friends toasting drinks around the Park 101 fire pit with string lights and the full outdoor venue at dusk"
-        class="w-full h-full object-cover object-center"
+        class="w-full h-full object-cover object-[50%_70%]"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-brand-dark/72"></div>
@@ -418,7 +418,7 @@ const drinkItems = [
       <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
         Private Events
       </span>
-      <h2 class="font-display font-black text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-[0.88] mb-6">
+      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-[0.88] mb-6">
         Your Event.<br />Our Venue.
       </h2>
       <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
