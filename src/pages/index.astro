@@ -1,12 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import StatBar from '../components/ui/StatBar.astro';
-import SplitSection from '../components/ui/SplitSection.astro';
-import CTABand from '../components/ui/CTABand.astro';
-import PhotoGrid from '../components/ui/PhotoGrid.astro';
 import siteProfile from '../data/site-profile.json';
 
-const stats = siteProfile.stats;
+const { ordering, contact, hoursDisplay, stats } = siteProfile;
 ---
 
 <Layout
@@ -15,250 +11,468 @@ const stats = siteProfile.stats;
   transparentNav={true}
 >
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden min-h-screen flex flex-col justify-end">
-    <img
-      src="/images/venue/park-101-outdoor-rooftop-string-lights-tropical-vibes-carlsbad.jpg"
-      alt="Packed rooftop courtyard at Park 101 Carlsbad with LED wall, string lights, and crowd"
-      class="absolute inset-0 w-full h-full object-cover"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-40 w-full">
-      <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-4">
+  <!-- ═══════════════════════════════════════════════════════
+       §1  HERO
+       Technique: absolute-positioned image inside overflow-hidden
+       wrapper. Section itself has NO overflow-hidden so the stat
+       bar fuses cleanly at the bottom edge.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="relative min-h-hero flex flex-col justify-end">
+
+    <!-- Image container — overflow-hidden here, NEVER on section -->
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="/images/venue/park-101-outdoor-rooftop-string-lights-tropical-vibes-carlsbad.jpg"
+        alt="Packed rooftop courtyard at Park 101 Carlsbad with string lights, tropical palms, and LED wall"
+        class="w-full h-full object-cover scale-105"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        width="1920"
+        height="1080"
+      />
+    </div>
+
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/55 to-transparent"></div>
+
+    <!-- Decorative vertical spine — right edge editorial texture -->
+    <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex items-center" aria-hidden="true">
+      <span class="font-display font-900 text-xs uppercase tracking-ultra text-brand-white/8 writing-vertical select-none">
+        PRK&middot;101 &mdash; Carlsbad Village &mdash; Rooftop Bar &amp; Restaurant
+      </span>
+    </div>
+
+    <!-- Content anchor — bottom left -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-20 pt-48 w-full">
+      <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-5">
         Carlsbad Village, CA &mdash; One Block From the Beach
       </p>
-      <h1 class="font-display font-900 text-6xl sm:text-7xl lg:text-8xl uppercase leading-none text-brand-white mb-6 max-w-4xl">
+      <h1 class="font-display font-900 uppercase leading-ultra text-brand-white mb-6 max-w-4xl text-hero">
         Where Coast<br />Meets Country
       </h1>
-      <p class="text-lg text-brand-white/80 leading-relaxed mb-10 max-w-xl">
-        North County&rsquo;s rooftop sports bar, BBQ, and game day headquarters. Two levels, open air, all year.
+      <p class="font-editorial italic text-brand-white/70 mb-10 max-w-lg text-editorial leading-relaxed">
+        North County&rsquo;s rooftop sports bar, BBQ, and game day headquarters.
+        Two levels. Open air. All year.
       </p>
       <div class="flex flex-wrap gap-4">
         <a
-          href={siteProfile.ordering.reservationsUrl}
+          href={ordering.reservationsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
+          class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-cta border border-brand-white/50 text-brand-white hover:border-brand-orange hover:text-brand-orange transition-all duration-300"
         >
           Reserve a Table
         </a>
         <a
           href="/menu"
-          class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider border border-brand-white/50 text-brand-white hover:border-brand-white hover:bg-brand-white/10 transition-all duration-200 rounded-sm"
+          class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-cta bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200"
         >
           View the Menu
         </a>
       </div>
     </div>
-  </section>
 
-  <!-- STAT BAR -->
-  <StatBar stats={stats} variant="dark" />
-
-  <!-- THE ROOFTOP -->
-  <SplitSection
-    image="/images/venue/park-101-rooftop-bar-lounge-venue-carlsbad.jpg"
-    imageAlt="Open rooftop deck at Park 101 Carlsbad Village with views over the neighborhood"
-    eyebrow="The Venue"
-    heading="Two Levels. Open Air. All Year."
-    body="PRK 101 is built for the California outdoor life. An open-air rooftop deck with views over Carlsbad Village, a covered courtyard with the biggest screen in North County, indoor bars, fire pits, and communal tables — all one block from the Pacific. Sun up or sun down, there's always a spot with your name on it."
-    ctaLabel="See the Rooftop"
-    ctaHref="/venue/rooftop"
-    ctaSecondaryLabel="Private Events"
-    ctaSecondaryHref="/private-events"
-    variant="cream"
-  />
-
-  <!-- GAME DAY -->
-  <SplitSection
-    image="/images/venue/park-101-outdoor-rooftop-sports-bar-lounge-carlsbad.jpg"
-    imageAlt="Guests watching NFL on the LED wall at Park 101 game day headquarters Carlsbad"
-    eyebrow="Game Day Headquarters"
-    heading="North County's Stadium."
-    body="NFL Sundays. Padres games. UFC fight nights. Fantasy drafts. Whatever's on, PRK 101 is where North County shows up. Massive LED TV wall in the open-air courtyard, 20+ screens inside and out, and a crowd that brings the energy every single time."
-    ctaLabel="Game Day Info"
-    ctaHref="/venue/sports"
-    ctaSecondaryLabel="Reserve Your Spot"
-    ctaSecondaryHref={siteProfile.ordering.reservationsUrl}
-    imageRight={true}
-    variant="steel"
-  />
-
-  <!-- FOOD SECTION -->
-  <section class="bg-brand-cream">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 text-center">
-      <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-4">The Menu</p>
-      <h2 class="font-display font-900 text-5xl lg:text-6xl uppercase leading-none text-brand-steel mb-6">
-        BBQ. Comfort. California.
-      </h2>
-      <p class="text-base text-brand-dark/70 max-w-2xl mx-auto mb-4">
-        Signature smoked tri-tip, Brisket Shack plates, shrimp tacos, loaded fries, and shareable plates built for groups.
-      </p>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-      <div class="relative overflow-hidden aspect-video lg:aspect-[21/8] rounded-sm">
-        <img
-          src="/images/food/park-101-prk-food-spread-02-carlsbad.jpg"
-          alt="Full food spread at Park 101 — tacos, fries, tenders, and loaded dishes"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
+    <!-- Stat bar — fused to hero bottom, blends dark/glass -->
+    <div class="relative z-10 w-full border-t border-brand-white/10 bg-brand-dark/80 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-brand-white/10">
+          {stats.map((stat) => (
+            <div class="py-5 px-6 text-center">
+              <p class="font-display font-900 text-2xl lg:text-3xl text-brand-white uppercase">{stat.value}</p>
+              <p class="font-display font-600 text-xs uppercase tracking-label text-brand-white/40 mt-1">{stat.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-    <PhotoGrid
-      columns={3}
-      images={[
-        { src: '/images/food/park-101-smoked-tri-tip-carlsbad.jpg',                  alt: 'Smoked tri-tip at Park 101 Carlsbad',             label: 'Smoked Tri-Tip',   href: '/menu' },
-        { src: '/images/food/park-101-smoked-wings-carlsbad.jpg',                    alt: 'Smoked wings at Park 101 Carlsbad',               label: 'Smoked Wings',     href: '/menu' },
-        { src: '/images/food/park-101-brisket-loaded-fries-bbq-nachos-carlsbad.jpg', alt: 'Brisket Shack loaded fries at Park 101',          label: 'Brisket Shack',    href: '/menu' },
-        { src: '/images/food/park-101-shrimp-tacos-carlsbad.jpg',                    alt: 'Shrimp tacos at Park 101 Carlsbad',               label: 'Shrimp Tacos',     href: '/menu' },
-        { src: '/images/food/park-101-loaded-bbq-mac-06-carlsbad.jpg',               alt: 'Loaded BBQ mac and cheese at Park 101 Carlsbad',  label: 'Loaded BBQ Mac',   href: '/menu' },
-        { src: '/images/food/park-101-rodeo-barrel-nachos-carlsbad.jpg',             alt: 'Rodeo barrel nachos at Park 101 Carlsbad',        label: 'Rodeo Nachos',     href: '/menu' },
-      ]}
-    />
-    <div class="text-center py-10">
-      <a href="/menu" class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider bg-brand-steel text-brand-white hover:bg-brand-steel-dark transition-colors duration-200 rounded-sm">
-        View Full Menu
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       §2  THE VENUE — Asymmetric Editorial
+       Technique: CSS grid [3fr 2fr]. Main image has an
+       absolutely-positioned offset secondary image that bleeds
+       outside its container using translate-x / translate-y.
+       Section is dark to contrast against the cream that follows.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="relative bg-brand-dark-light">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-[3fr_2fr] gap-16 lg:gap-24 items-center">
+
+        <!-- Image column — staggered editorial pair -->
+        <div class="relative">
+          <div class="overflow-hidden aspect-venue">
+            <img
+              src="/images/venue/park-101-rooftop-bar-lounge-venue-carlsbad.jpg"
+              alt="Open rooftop deck at Park 101 Carlsbad Village with string lights and sweeping views"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </div>
+          <!-- Secondary staggered image — translate offset breaks the rectangle -->
+          <div class="absolute -bottom-10 -right-6 w-2/5 aspect-square overflow-hidden border-4 border-brand-dark-light hidden lg:block translate-y-4">
+            <img
+              src="/images/venue/park-101-outdoor-family-friendly-gathering-carlsbad.jpg"
+              alt="Guests at the outdoor patio at Park 101 Carlsbad"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              width="500"
+              height="500"
+            />
+          </div>
+        </div>
+
+        <!-- Text column -->
+        <div class="lg:pl-4 lg:pb-16">
+          <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-6">The Venue</p>
+          <h2 class="font-display font-900 uppercase text-brand-white leading-ultra text-section-lg mb-6">
+            Two Levels.<br />Open Air.<br />All Year.
+          </h2>
+          <p class="font-editorial italic text-brand-tan text-lg mb-10 leading-relaxed">
+            Open-air rooftop with Pacific views. Covered courtyard with the biggest
+            screen in North County. Fire pits, indoor bars, and communal tables.
+          </p>
+          <div class="flex flex-col gap-3 mb-10">
+            {['Rooftop Deck & Ocean Views', 'Massive LED TV Wall', 'Fire Pits & Communal Tables', 'Dog-Friendly Patio'].map((feat) => (
+              <div class="flex items-center gap-4">
+                <span class="w-8 h-px bg-brand-orange flex-shrink-0"></span>
+                <span class="font-display font-600 text-sm uppercase tracking-display text-brand-white/60">{feat}</span>
+              </div>
+            ))}
+          </div>
+          <div class="flex gap-4 flex-wrap">
+            <a href="/venue/rooftop" class="inline-block px-6 py-3 font-display font-700 text-sm uppercase tracking-cta border border-brand-white/25 text-brand-white hover:border-brand-orange hover:text-brand-orange transition-all duration-300">
+              See the Rooftop
+            </a>
+            <a href="/private-events" class="inline-block font-display font-700 text-sm uppercase tracking-cta text-brand-tan hover:text-brand-white transition-colors duration-200 self-center">
+              Private Events &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       §3  FOOD + BAR — Magazine Split
+       Technique: CSS grid [3fr 2fr] at full section height.
+       Left column = image fills 100% height via object-cover.
+       Right column = dark editorial panel with 2×2 drink grid.
+       Neither column has overflow-hidden on the section wrapper.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="relative bg-brand-dark lg:grid lg:grid-cols-[3fr_2fr]" style="min-height: 80vh;">
+
+    <!-- Left: full-height food image -->
+    <div class="overflow-hidden min-h-panel lg:min-h-0">
+      <img
+        src="/images/food/park-101-prk-food-spread-02-carlsbad.jpg"
+        alt="BBQ spread at Park 101 — smoked tri-tip, ribs, tacos, loaded fries, and bar bites"
+        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+        loading="lazy"
+        decoding="async"
+        width="1200"
+        height="1600"
+      />
+    </div>
+
+    <!-- Right: editorial panel -->
+    <div class="bg-brand-dark flex flex-col justify-center px-10 lg:px-14 py-16 lg:py-24">
+      <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-6">The Kitchen &amp; Bar</p>
+      <h2 class="font-display font-900 uppercase text-brand-white leading-ultra text-section-lg mb-6">
+        Real BBQ.<br />Cold Drinks.
+      </h2>
+      <p class="font-editorial italic text-brand-white/55 text-lg mb-10 leading-relaxed">
+        Low-and-slow brisket, St.&nbsp;Louis ribs, and smoked tri-tip alongside a
+        full craft bar and cocktails built for the California sun.
+      </p>
+
+      <!-- 2×2 drink image grid -->
+      <div class="grid grid-cols-2 gap-2 mb-10">
+        {[
+          { src: '/images/drinks/park-101-pink-cocktail-flower-garnish-02-carlsbad.jpg',       alt: 'Signature pink cocktail at Park 101' },
+          { src: '/images/drinks/park-101-spiced-rim-citrus-cocktail-carlsbad.jpg',            alt: 'Spiced rim citrus cocktail at Park 101' },
+          { src: '/images/brunch/park-101-brunch-dsc08255-carlsbad.jpg',                      alt: 'Bloody Mary with smoked rib at Park 101 brunch' },
+          { src: '/images/drinks/park-101-tropical-pink-cocktail-flower-garnish-carlsbad.jpg', alt: 'Tropical cocktail at Park 101' },
+        ].map(({ src, alt }) => (
+          <div class="overflow-hidden aspect-square">
+            <img
+              src={src}
+              alt={alt}
+              class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="400"
+            />
+          </div>
+        ))}
+      </div>
+
+      <a href="/menu" class="inline-block self-start px-8 py-4 font-display font-700 text-sm uppercase tracking-cta bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200">
+        Full Menu
       </a>
     </div>
   </section>
 
-  <!-- CTA BAND: PRIVATE EVENTS -->
-  <CTABand
-    image="/images/venue/park-101-outdoor-rooftop-bar-evening-crowd-carlsbad.jpg"
-    imageAlt="Evening crowd at Park 101 rooftop Carlsbad for a private event"
-    eyebrow="Private Events"
-    heading="The Whole Rooftop. Just Your Crew."
-    body="Birthdays, corporate buyouts, game day parties, rehearsal dinners — PRK 101 has the space, the staff, and the vibe to make it unforgettable."
-    ctaLabel="Plan Your Event"
-    ctaHref="/private-events"
-    ctaSecondaryLabel="Contact Us"
-    ctaSecondaryHref="/contact"
-    overlayStrength="heavy"
-  />
 
-  <!-- BBQ SPLIT -->
-  <SplitSection
-    image="/images/food/park-101-bbq-brisket-platter-rice-slaw-carlsbad.jpg"
-    imageAlt="Brisket Shack BBQ platter with rice and slaw at Park 101 Carlsbad"
-    eyebrow="The Brisket Shack"
-    heading="Low & Slow. Built Right."
-    body="The Brisket Shack at PRK 101 smokes everything in-house. Brisket plates, pulled pork, St. Louis ribs, smoked tri-tip — served with slaw, rice, and the kind of BBQ that keeps people coming back every week."
-    ctaLabel="See the BBQ Menu"
-    ctaHref="/menu"
-    variant="dark"
-  />
+  <!-- ═══════════════════════════════════════════════════════
+       §4  GAME DAY — Full-Bleed Cinematic
+       Technique: gradient covers left 65%, right 35% of image
+       is fully unobscured — cinematic, not a text-over-image box.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="relative min-h-cinematic flex flex-col justify-end">
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="/images/venue/park-101-outdoor-rooftop-sports-bar-lounge-carlsbad.jpg"
+        alt="Guests watching NFL on the LED wall at Park 101 game day headquarters Carlsbad"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+        width="1920"
+        height="1080"
+      />
+    </div>
+    <!-- Directional gradient — dark left, clear right -->
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/60 to-transparent"></div>
 
-  <!-- WEEKLY SPECIALS STRIP -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-20 pt-32 w-full">
+      <div class="max-w-xl">
+        <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-5">Game Day Headquarters</p>
+        <h2 class="font-display font-900 uppercase text-brand-white leading-ultra text-section-xl mb-6">
+          North County&rsquo;s<br />Outdoor Stadium.
+        </h2>
+        <p class="font-editorial italic text-brand-white/65 text-lg mb-10 leading-relaxed">
+          NFL Sundays. Padres games. UFC fight nights.
+          Massive LED TV wall, 20+ screens, and a crowd that brings the energy every time.
+        </p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="/venue/sports" class="inline-block px-7 py-4 font-display font-700 text-sm uppercase tracking-cta border border-brand-white/40 text-brand-white hover:border-brand-orange hover:text-brand-orange transition-all duration-300">
+            Game Day Info
+          </a>
+          <a href={ordering.reservationsUrl} target="_blank" rel="noopener noreferrer" class="inline-block px-7 py-4 font-display font-700 text-sm uppercase tracking-cta bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200">
+            Reserve Your Spot
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       §5  WEEKLY SPECIALS — Orange Brand Band
+       Intentional tonal break — only orange section on page.
+  ═══════════════════════════════════════════════════════ -->
   <section class="bg-brand-orange">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
         <div class="flex-shrink-0">
-          <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-white/70 mb-3">Every Week</p>
-          <h2 class="font-display font-900 text-4xl lg:text-5xl uppercase leading-none text-brand-white">
+          <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-white/55 mb-4">Every Week</p>
+          <h2 class="font-display font-900 uppercase text-brand-white leading-ultra text-section">
             Specials Worth<br />Showing Up For
           </h2>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:max-w-xl">
-          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Monday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">50% Off Drinks for Carlsbad Residents</p></div>
-          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Tuesday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Taco Tuesday + Trivia Night at 7pm</p></div>
-          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Wednesday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Bingo Night — $16 Beer &amp; Burger</p></div>
-          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Thursday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Wing Night — $1.25/Wing, 6 Minimum</p></div>
-          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Friday</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Dukes N Boots — Line Dancing Bi-Weekly</p></div>
-          <div class="bg-brand-white/10 rounded-sm px-4 py-4"><p class="font-display font-900 text-sm uppercase tracking-wider text-brand-white">Happy Hour</p><p class="text-xs text-brand-white/80 mt-1 leading-snug">Mon–Fri 3–6 PM Drinks &amp; Food</p></div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 flex-1 lg:max-w-2xl">
+          {[
+            { day: 'Monday',     copy: '50% Off Drinks for Carlsbad Residents' },
+            { day: 'Tuesday',    copy: 'Taco Tuesday + Trivia Night at 7pm' },
+            { day: 'Wednesday',  copy: 'Bingo Night — $16 Beer & Burger' },
+            { day: 'Thursday',   copy: 'Wing Night — $1.25/Wing, 6 Min.' },
+            { day: 'Friday',     copy: 'Dukes N Boots — Line Dancing Bi-Weekly' },
+            { day: 'Happy Hour', copy: 'Mon–Fri 3–6 PM Drinks & Food' },
+          ].map(({ day, copy }) => (
+            <div class="bg-brand-dark/20 px-4 py-4">
+              <p class="font-display font-800 text-sm uppercase tracking-display text-brand-white">{day}</p>
+              <p class="font-body text-xs text-brand-white/75 mt-1.5 leading-snug">{copy}</p>
+            </div>
+          ))}
         </div>
-        <a href="/weekly-specials" class="flex-shrink-0 inline-block px-7 py-4 font-display font-700 text-sm uppercase tracking-wider border-2 border-brand-white text-brand-white hover:bg-brand-white hover:text-brand-orange transition-all duration-200 rounded-sm">
+        <a href="/weekly-specials" class="flex-shrink-0 inline-block px-7 py-4 font-display font-700 text-sm uppercase tracking-cta border-2 border-brand-white text-brand-white hover:bg-brand-white hover:text-brand-orange transition-all duration-300">
           Full Specials
         </a>
       </div>
     </div>
   </section>
 
-  <!-- BRUNCH SPLIT -->
-  <SplitSection
-    image="/images/brunch/park-101-brunch-dsc03776-carlsbad.jpg"
-    imageAlt="Tri-tip chilaquiles brunch bowl with fried egg at Park 101 Carlsbad Village"
-    eyebrow="Weekend Brunch"
-    heading="Rooftop Brunch. Every Weekend."
-    body="Saturday and Sunday on the rooftop is something else. Tri-tip chilaquiles, chicken and waffles, loaded breakfast burritos, and a Bloody Mary with a smoked rib on top. Brunch at PRK 101 is the reason you make plans on Sunday."
-    ctaLabel="Brunch Menu"
-    ctaHref="/menu"
-    ctaSecondaryLabel="Reserve"
-    ctaSecondaryHref={siteProfile.ordering.reservationsUrl}
-    imageRight={true}
-    variant="cream"
-  />
 
-  <!-- DRINKS GRID -->
-  <section class="bg-brand-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 text-center">
-      <p class="font-display font-700 text-xs uppercase tracking-widest text-brand-orange mb-4">The Bar</p>
-      <h2 class="font-display font-900 text-5xl lg:text-6xl uppercase leading-none text-brand-white mb-6">
-        Craft Beer. Signature Cocktails.
-      </h2>
-      <p class="text-base text-brand-white/60 max-w-xl mx-auto mb-12">
-        Cold drafts, hand-crafted cocktails, and a full bar stocked for every occasion. Happy hour Monday through Friday, 3 to 6 PM.
-      </p>
+  <!-- ═══════════════════════════════════════════════════════
+       §6  LIVE MUSIC + BRUNCH — Two Cinematic Panels
+       Technique: CSS grid 50/50. Each panel is a self-contained
+       cinematic unit — full-bleed image + gradient + content.
+       NOT a stacked block. The two panels read as one section.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="grid lg:grid-cols-2" style="min-height: 65vh;">
+
+    <!-- Panel A: Live Music -->
+    <div class="relative flex flex-col justify-end min-h-panel lg:min-h-0">
+      <div class="absolute inset-0 overflow-hidden">
+        <img
+          src="/images/venue/park-101-outdoor-venue-string-lights-live-music-carlsbad.jpg"
+          alt="Live country band performing at Park 101 Carlsbad under string lights"
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+          decoding="async"
+          width="960"
+          height="1080"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/45 to-transparent"></div>
+      <div class="relative z-10 px-8 py-10">
+        <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-3">Every Week</p>
+        <h2 class="font-display font-900 uppercase text-brand-white leading-ultra text-panel mb-4">
+          Live Music.<br />Every Week.
+        </h2>
+        <p class="font-body text-sm text-brand-white/65 mb-7 max-w-xs leading-relaxed">
+          Live bands, themed nights, and events that pack the courtyard. PRK 101 is where North County comes out to play.
+        </p>
+        <a href="/venue/live-events" class="inline-block px-6 py-3 font-display font-700 text-sm uppercase tracking-cta border border-brand-white/40 text-brand-white hover:border-brand-orange hover:text-brand-orange transition-all duration-300">
+          See What&rsquo;s On
+        </a>
+      </div>
     </div>
-    <PhotoGrid
-      columns={4}
-      images={[
-        { src: '/images/brunch/park-101-brunch-dsc08255-carlsbad.jpg',                        alt: 'Smoked rib Bloody Mary at Park 101 Carlsbad brunch bar' },
-        { src: '/images/drinks/park-101-pink-cocktail-flower-garnish-02-carlsbad.jpg',         alt: 'Pink cocktail with flower garnish at Park 101 Carlsbad' },
-        { src: '/images/drinks/park-101-spiced-rim-citrus-cocktail-carlsbad.jpg',              alt: 'Spiced rim citrus cocktail at Park 101 Carlsbad bar' },
-        { src: '/images/drinks/park-101-tropical-pink-cocktail-flower-garnish-carlsbad.jpg',   alt: 'Tropical pink cocktail at Park 101 Carlsbad' },
-      ]}
-    />
-    <div class="text-center py-10">
-      <a href={siteProfile.ordering.toastUrl} target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 font-display font-700 text-sm uppercase tracking-wider border border-brand-white/30 text-brand-white hover:border-brand-orange hover:text-brand-orange transition-all duration-200 rounded-sm">
-        Order Takeout
+
+    <!-- Panel B: Brunch — reversed gradient direction for visual distinction -->
+    <div class="relative flex flex-col justify-end min-h-panel lg:min-h-0">
+      <div class="absolute inset-0 overflow-hidden">
+        <img
+          src="/images/brunch/park-101-brunch-dsc03776-carlsbad.jpg"
+          alt="Rooftop brunch at Park 101 — tri-tip chilaquiles with fried egg and fresh herbs"
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+          decoding="async"
+          width="960"
+          height="1080"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-brand-dark/35 to-transparent"></div>
+      <div class="relative z-10 px-8 py-10">
+        <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-3">Sat &amp; Sun</p>
+        <h2 class="font-display font-900 uppercase text-brand-white leading-ultra text-panel mb-4">
+          Brunch on<br />the Rooftop.
+        </h2>
+        <p class="font-body text-sm text-brand-white/65 mb-7 max-w-xs leading-relaxed">
+          Chilaquiles, chicken &amp; waffles, burritos, and a Bloody Mary with a smoked rib on top.
+        </p>
+        <a href="/menu" class="inline-block px-6 py-3 font-display font-700 text-sm uppercase tracking-cta border border-brand-white/40 text-brand-white hover:border-brand-orange hover:text-brand-orange transition-all duration-300">
+          Brunch Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       §7  PRIVATE EVENTS — Full-Bleed with Editorial Frame
+       Technique: decorative corner bracket elements (absolute
+       positioned border fragments) create an editorial frame
+       without any generic card/container structure.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="relative min-h-events flex flex-col justify-center items-center text-center">
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="/images/venue/park-101-outdoor-rooftop-bar-evening-crowd-carlsbad.jpg"
+        alt="Evening event crowd at Park 101 Carlsbad rooftop"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+        width="1920"
+        height="1080"
+      />
+    </div>
+    <div class="absolute inset-0 bg-brand-dark/78"></div>
+
+    <!-- Decorative corner frame — editorial micro-detail -->
+    <div class="absolute inset-10 pointer-events-none hidden lg:block" aria-hidden="true">
+      <span class="absolute top-0 left-0 w-16 h-16 border-t border-l border-brand-orange/35"></span>
+      <span class="absolute top-0 right-0 w-16 h-16 border-t border-r border-brand-orange/35"></span>
+      <span class="absolute bottom-0 left-0 w-16 h-16 border-b border-l border-brand-orange/35"></span>
+      <span class="absolute bottom-0 right-0 w-16 h-16 border-b border-r border-brand-orange/35"></span>
+    </div>
+
+    <div class="relative z-10 px-8 py-24 max-w-3xl">
+      <p class="font-display font-700 text-xs uppercase tracking-ultra text-brand-orange mb-6">Private Events</p>
+      <h2 class="font-display font-900 uppercase text-brand-white leading-ultra text-section-xl mb-8">
+        Your Event.<br />Our Venue.
+      </h2>
+      <p class="font-editorial italic text-brand-white/65 text-xl mb-10 max-w-xl mx-auto leading-relaxed">
+        Birthdays, corporate buyouts, game day parties, rehearsal dinners &mdash;
+        Carlsbad&rsquo;s best outdoor event space. One block from the beach.
+      </p>
+      <a href="/private-events" class="inline-block px-10 py-4 font-display font-700 text-sm uppercase tracking-cta border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-brand-white transition-all duration-300">
+        Plan Your Event
       </a>
     </div>
   </section>
 
-  <!-- LIVE EVENTS CTA BAND -->
-  <CTABand
-    image="/images/venue/park-101-outdoor-venue-string-lights-live-music-carlsbad.jpg"
-    imageAlt="Live country band performing at Park 101 Carlsbad with crowd dancing"
-    eyebrow="Live Music & Events"
-    heading="The Party Comes to You."
-    body="Live bands, line dancing, themed nights, and weekly events that pack the courtyard. PRK 101 is where North County comes out to play."
-    ctaLabel="See Live Events"
-    ctaHref="/venue/live-events"
-    ctaSecondaryLabel="Weekly Specials"
-    ctaSecondaryHref="/weekly-specials"
-    overlayStrength="heavy"
-  />
 
-  <!-- FAMILIES & PETS -->
-  <SplitSection
-    image="/images/venue/park-101-outdoor-family-friendly-gathering-carlsbad.jpg"
-    imageAlt="Family friendly outdoor gathering at Park 101 Carlsbad Village"
-    eyebrow="All Are Welcome"
-    heading="Bring the Family. Bring the Dog."
-    body="PRK 101 is a North County community spot at its core. Dog-friendly patio, relaxed outdoor seating, and a menu that works for every age. Whether it's a Sunday with the kids or a weeknight after work, there's always a table waiting."
-    ctaLabel="Families & Pets"
-    ctaHref="/venue/families-pets"
-    variant="cream"
-    imageRight={true}
-  />
+  <!-- ═══════════════════════════════════════════════════════
+       §8  INFO BAND — Compact Dark
+       Hours, address, and CTAs. Tonal resolution of the page.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="bg-brand-dark border-t border-brand-dark-light">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
 
-  <!-- FINAL CTA BAND -->
-  <CTABand
-    image="/images/venue/park-101-outdoor-fire-pit-patio-venue-carlsbad.jpg"
-    imageAlt="Fire pit seating area at Park 101 Carlsbad with LED wall at dusk"
-    eyebrow="3040 Carlsbad Boulevard"
-    heading="Come Find Your Spot."
-    body="Open daily in Carlsbad Village. One block from the beach. No excuses."
-    ctaLabel="Reserve a Table"
-    ctaHref={siteProfile.ordering.reservationsUrl}
-    ctaSecondaryLabel="Get Directions"
-    ctaSecondaryHref={siteProfile.contact.googleMapsUrl}
-    overlayStrength="heavy"
-  />
+        <!-- Address -->
+        <div>
+          <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-5">Find Us</p>
+          <p class="font-display font-700 text-lg uppercase tracking-display text-brand-white mb-1">
+            {contact.address.street}
+          </p>
+          <p class="font-display font-600 text-sm uppercase tracking-display text-brand-white/40 mb-6">
+            {contact.address.city}, {contact.address.state} {contact.address.zip}
+          </p>
+          <a
+            href={contact.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-display font-700 text-xs uppercase tracking-cta text-brand-orange hover:text-brand-orange-light transition-colors duration-200"
+          >
+            Get Directions &rarr;
+          </a>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-5">Hours</p>
+          <div class="flex flex-col gap-2.5">
+            {hoursDisplay.map((h) => (
+              <div class="flex justify-between gap-4">
+                <span class="font-display font-600 text-sm uppercase tracking-wider text-brand-white/40">{h.days}</span>
+                <span class="font-display font-700 text-sm uppercase tracking-wider text-brand-white">{h.hours}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col gap-4">
+          <p class="font-display font-700 text-xs uppercase tracking-eyebrow text-brand-orange mb-1">Reserve &amp; Order</p>
+          <a
+            href={ordering.reservationsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full py-4 text-center font-display font-700 text-sm uppercase tracking-cta bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200"
+          >
+            Reserve a Table
+          </a>
+          <a
+            href={ordering.toastUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full py-4 text-center font-display font-700 text-sm uppercase tracking-cta border border-brand-white/20 text-brand-white hover:border-brand-orange hover:text-brand-orange transition-all duration-300"
+          >
+            Order Takeout
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 </Layout>

@@ -1,56 +1,100 @@
+/* ─── Google Fonts Import ─────────────────────────────────── */
+/* MUST precede @import "tailwindcss" — CSS spec requirement  */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
 @import "tailwindcss";
 
 @theme {
   /* ─── Brand Colors ─────────────────────────────────────── */
-  --color-brand-steel:  #3D4A5C;   /* primary — nav, headings */
-  --color-brand-orange: #C4622D;   /* CTAs, accents, eyebrow labels */
-  --color-brand-brown:  #7A4F2E;   /* secondary sections, earthy fills */
-  --color-brand-tan:    #C49A6A;   /* warm accents, borders, dividers */
-  --color-brand-cream:  #F5EFE6;   /* page background canvas */
-  --color-brand-dark:   #1B140F;   /* footer, dark sections */
-  --color-brand-white:  #FDFAF7;   /* light text, inverse sections */
+  --color-brand-steel:        #3D4A5C;
+  --color-brand-orange:       #C4622D;
+  --color-brand-brown:        #7A4F2E;
+  --color-brand-tan:          #C49A6A;
+  --color-brand-cream:        #F5EFE6;
+  --color-brand-dark:         #1B140F;
+  --color-brand-white:        #FDFAF7;
 
   /* ─── Extended Palette ─────────────────────────────────── */
-  --color-brand-steel-light:  #5A6A80;   /* hover states, lighter headings */
-  --color-brand-steel-dark:   #2A3447;   /* active nav, deeper headers */
-  --color-brand-orange-light: #D97840;   /* hover CTA */
-  --color-brand-orange-dark:  #A84F22;   /* pressed CTA */
-  --color-brand-cream-dark:   #EBE2D4;   /* section dividers, card bg */
-  --color-brand-dark-light:   #2C2219;   /* dark section variant */
+  --color-brand-steel-light:  #5A6A80;
+  --color-brand-steel-dark:   #2A3447;
+  --color-brand-orange-light: #D97840;
+  --color-brand-orange-dark:  #A84F22;
+  --color-brand-cream-dark:   #EBE2D4;
+  --color-brand-dark-light:   #2C2219;
 
   /* ─── Typography — Font Families ───────────────────────── */
-  /* Barlow Condensed: bold condensed slab energy — scoreboard/stadium feel */
-  /* Inter: clean modern sans for body */
-  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
+  --font-display:   'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body:      'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-mono:      'JetBrains Mono', monospace;
 
-  /* ─── Typography — Scale ────────────────────────────────── */
-  --text-xs:   0.75rem;    /* 12px */
-  --text-sm:   0.875rem;   /* 14px */
-  --text-base: 1rem;       /* 16px */
-  --text-lg:   1.125rem;   /* 18px */
-  --text-xl:   1.25rem;    /* 20px */
-  --text-2xl:  1.5rem;     /* 24px */
-  --text-3xl:  1.875rem;   /* 30px */
-  --text-4xl:  2.25rem;    /* 36px */
-  --text-5xl:  3rem;       /* 48px */
-  --text-6xl:  3.75rem;    /* 60px */
-  --text-7xl:  4.5rem;     /* 72px */
-  --text-8xl:  6rem;       /* 96px */
+  /* ─── Fluid Typography Scale ────────────────────────────── */
+  /* Standard scale */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-6xl:  3.75rem;
+  --text-7xl:  4.5rem;
+  --text-8xl:  6rem;
+
+  /* Fluid editorial tokens — clamp-based, zero breakpoint jumps */
+  --text-hero:       clamp(3.5rem, 9vw, 7rem);
+  --text-section-xl: clamp(2.5rem, 6vw, 5rem);
+  --text-section-lg: clamp(2.2rem, 4.5vw, 3.75rem);
+  --text-section:    clamp(2rem, 4vw, 3rem);
+  --text-panel:      clamp(1.75rem, 3vw, 2.5rem);
+  --text-editorial:  clamp(1.1rem, 1.5vw, 1.3rem);
+
+  /* ─── Line Heights ──────────────────────────────────────── */
+  --leading-ultra:   0.88;
+  --leading-display: 0.92;
+  --leading-tight:   1.1;
+
+  /* ─── Letter Spacing ────────────────────────────────────── */
+  --tracking-ultra:   0.4em;
+  --tracking-eyebrow: 0.35em;
+  --tracking-display: 0.2em;
+  --tracking-cta:     0.2em;
+  --tracking-label:   0.25em;
+
+  /* ─── Min Heights ───────────────────────────────────────── */
+  --min-h-hero:      100svh;
+  --min-h-cinematic: 70vh;
+  --min-h-events:    65vh;
+  --min-h-panel:     50vh;
+
+  /* ─── Aspect Ratios ─────────────────────────────────────── */
+  --aspect-venue:    4 / 3;
+  --aspect-portrait: 3 / 4;
+  --aspect-cinema:   21 / 9;
 
   /* ─── Spacing ───────────────────────────────────────────── */
-  --spacing-section: 5rem;       /* 80px — standard section padding */
-  --spacing-section-lg: 7.5rem;  /* 120px — hero / feature section padding */
+  --spacing-section:    5rem;
+  --spacing-section-lg: 7.5rem;
 
   /* ─── Border Radius ─────────────────────────────────────── */
-  --radius-sm:  0.25rem;
-  --radius-md:  0.5rem;
-  --radius-lg:  1rem;
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
   --radius-full: 9999px;
 
   /* ─── Transitions ───────────────────────────────────────── */
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Utilities ────────────────────────────────────────────── */
+@layer utilities {
+  /* Vertical spine text — used for editorial decorative elements */
+  .writing-vertical {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+  }
 }
 
 /* ─── Base Styles ─────────────────────────────────────────── */
@@ -81,9 +125,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-brand-steel);
   text-transform: uppercase;
 }
-
-/* ─── Google Fonts Import ─────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
 
 /* ─── Focus Visible ───────────────────────────────────────── */
 :focus-visible {
