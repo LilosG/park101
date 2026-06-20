@@ -96,10 +96,20 @@
       "description": "Open-air rooftop deck with sweeping views of Carlsbad Village and the Pacific. Fire pits, communal tables, and California skies year-round.",
       "features": ["Open-Air Deck", "Fire Pits", "Ocean Views", "Communal Tables", "Year-Round"]
     },
+    "courtyard": {
+      "headline": "The Courtyard",
+      "description": "The heart of Park 101 — an open-air central courtyard with the massive LED wall, fire pit seating, multiple bars, and string lights overhead. This is where game day, happy hour, and everything in between happens.",
+      "features": ["Open-Air Courtyard", "Fire Pit Seating", "Multiple Bars", "String Lights", "Central LED Wall"]
+    },
     "sports": {
       "headline": "Game Day Headquarters",
       "description": "North County's game day destination. Massive LED TV wall in the open-air courtyard, 20+ screens throughout, and a crowd that shows up for every kickoff, first pitch, and fight night.",
       "features": ["LED TV Wall", "20+ Screens", "NFL Sundays", "MLB Games", "UFC Fight Nights", "Fantasy Draft Events"]
+    },
+    "indoorBar": {
+      "headline": "The Indoor Bar & Dining Room",
+      "description": "Climate-controlled indoor seating with a full bar, big screens, and communal tables — the spot for when you want the Park 101 energy without the weather.",
+      "features": ["Full Indoor Bar", "Climate-Controlled", "Communal Tables", "Big Screens"]
     },
     "familiesPets": {
       "headline": "Everyone's Welcome",
