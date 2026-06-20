@@ -78,7 +78,7 @@ const drinkItems = [
     <div class="h-20 shrink-0"></div>
 
     <div class="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pb-8">
-      <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
         {siteProfile.contact.neighborhood} &middot; One Block From The Beach
       </span>
       <h1 class="font-display font-bold text-5xl sm:text-7xl lg:text-[6.5rem] text-brand-white uppercase leading-[0.88] tracking-tight max-w-4xl mb-6">
@@ -92,13 +92,13 @@ const drinkItems = [
           href={siteProfile.ordering.reservationsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-colors duration-200 text-center"
+          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
         >
           Reserve a Table
         </a>
         <a
           href="/venue"
-          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-all duration-200 text-center"
+          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button text-sm transition-all duration-200 text-center"
         >
           Explore the Venue
         </a>
@@ -112,7 +112,7 @@ const drinkItems = [
           {siteProfile.stats.map((stat) => (
             <div class="px-4">
               <span class="block font-display font-bold text-xl sm:text-2xl text-brand-white uppercase tracking-wide leading-tight">{stat.value}</span>
-              <span class="block font-body text-[10px] sm:text-xs tracking-[0.22em] uppercase text-brand-orange mt-1">{stat.label}</span>
+              <span class="block font-body text-[10px] sm:text-xs tracking-stat uppercase text-brand-orange mt-1">{stat.label}</span>
             </div>
           ))}
         </div>
@@ -133,7 +133,7 @@ const drinkItems = [
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
             {siteProfile.contact.neighborhood}
           </span>
           <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
@@ -145,7 +145,7 @@ const drinkItems = [
           </p>
           <a
             href="/venue"
-            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
           >
             See All Spaces
           </a>
@@ -159,7 +159,7 @@ const drinkItems = [
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
             {siteProfile.venue.sports.headline}
           </span>
           <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-[0.92] tracking-tight mb-6">
@@ -171,12 +171,12 @@ const drinkItems = [
           </p>
           <div class="flex flex-wrap gap-x-4 gap-y-2 mb-8 pb-8 border-b border-brand-white/10">
             {siteProfile.venue.sports.features.map((feature) => (
-              <span class="font-display font-bold text-xs uppercase tracking-[0.15em] text-brand-white">{feature}</span>
+              <span class="font-display font-bold text-xs uppercase tracking-feature text-brand-white">{feature}</span>
             ))}
           </div>
           <a
             href="/north-county-lineup"
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
           >
             View the Lineup
           </a>
@@ -197,7 +197,7 @@ const drinkItems = [
   <section class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">
           The Kitchen
         </span>
         <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">
@@ -225,7 +225,7 @@ const drinkItems = [
       <div class="mt-10 text-center">
         <a
           href="/menu"
-          class="inline-block px-8 py-4 bg-brand-dark hover:bg-brand-dark/80 text-brand-white font-display font-bold uppercase tracking-[0.15em] text-sm transition-colors duration-200"
+          class="inline-block px-8 py-4 bg-brand-dark hover:bg-brand-dark/80 text-brand-white font-display font-bold uppercase tracking-feature text-sm transition-colors duration-200"
         >
           View Full Menu
         </a>
@@ -246,7 +246,7 @@ const drinkItems = [
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
             The Smokehouse
           </span>
           <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-[0.92] tracking-tight mb-6">
@@ -258,7 +258,7 @@ const drinkItems = [
           </p>
           <a
             href="/menu"
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
           >
             Full Smokehouse Menu
           </a>
@@ -271,7 +271,7 @@ const drinkItems = [
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-xl mb-12">
-        <span class="block font-body text-xs font-bold tracking-[0.3em] uppercase text-brand-orange mb-3">
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">
           The Bar
         </span>
         <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-[0.92]">
@@ -310,7 +310,7 @@ const drinkItems = [
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
     <div class="relative z-10 max-w-2xl w-full mx-auto">
-      <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
         {siteProfile.venue.liveEvents.headline}
       </span>
       <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-[0.88] mb-6">
@@ -321,7 +321,7 @@ const drinkItems = [
       </p>
       <a
         href="/north-county-lineup"
-        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-colors duration-200"
+        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
       >
         View the Lineup
       </a>
@@ -333,7 +333,7 @@ const drinkItems = [
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
             Saturdays &amp; Sundays
           </span>
           <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
@@ -345,7 +345,7 @@ const drinkItems = [
           </p>
           <a
             href="/brunch"
-            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
           >
             See the Brunch Menu
           </a>
@@ -375,7 +375,7 @@ const drinkItems = [
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-tan">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
             {siteProfile.venue.familiesPets.headline}
           </span>
           <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-[0.92] tracking-tight mb-6">
@@ -392,7 +392,7 @@ const drinkItems = [
           </div>
           <a
             href="/venue"
-            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
           >
             Plan Your Visit
           </a>
@@ -413,7 +413,7 @@ const drinkItems = [
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
     <div class="relative z-10 max-w-2xl w-full mx-auto">
-      <span class="inline-block font-body text-xs font-bold tracking-[0.32em] uppercase text-brand-orange mb-4">
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
         Private Events
       </span>
       <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-[0.88] mb-6">
@@ -424,7 +424,7 @@ const drinkItems = [
       </p>
       <a
         href="/private-events"
-        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-[0.12em] text-sm transition-colors duration-200"
+        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
       >
         Inquire About Events
       </a>
@@ -467,7 +467,7 @@ const drinkItems = [
           href={siteProfile.ordering.toastUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-6 py-3 border border-brand-white/40 hover:border-brand-orange hover:text-brand-orange text-brand-white/70 font-display font-bold uppercase tracking-[0.1em] text-xs transition-all duration-200 text-center whitespace-nowrap"
+          class="px-6 py-3 border border-brand-white/40 hover:border-brand-orange hover:text-brand-orange text-brand-white/70 font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200 text-center whitespace-nowrap"
         >
           Order Takeout
         </a>
@@ -475,7 +475,7 @@ const drinkItems = [
           href={siteProfile.ordering.reservationsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-6 py-3 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-[0.1em] text-xs transition-colors duration-200 text-center whitespace-nowrap"
+          class="px-6 py-3 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-colors duration-200 text-center whitespace-nowrap"
         >
           Reserve a Table
         </a>
