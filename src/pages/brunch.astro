@@ -1,0 +1,356 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteProfile from '../data/site-profile.json';
+
+const foodItems = [
+  {
+    src: '/images/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg',
+    alt: 'Smoked tri-tip chilaquiles with fried egg and cotija at Park 101 Carlsbad brunch',
+    name: 'Smoked Tri-Tip Chilaquiles',
+  },
+  {
+    src: '/images/brunch/park-101-brunch-brisket-burrito-01-carlsbad.jpg',
+    alt: 'Brisket breakfast burrito at Park 101 Carlsbad weekend brunch',
+    name: 'Brisket Breakfast Burrito',
+  },
+  {
+    src: '/images/brunch/park-101-brunch-chicken-waffle-sandwich-carlsbad.jpg',
+    alt: 'Chicken and waffle sandwich at Park 101 Carlsbad brunch',
+    name: 'Chicken & Waffle Sandwich',
+  },
+  {
+    src: '/images/brunch/park-101-brunch-breakfast-burrito-01-carlsbad.jpg',
+    alt: 'Classic breakfast burrito at Park 101 Carlsbad weekend brunch',
+    name: 'Classic Breakfast Burrito',
+  },
+  {
+    src: '/images/brunch/park-101-brunch-bacon-egg-cheese-carlsbad.jpg',
+    alt: 'Bacon, egg and cheese breakfast sandwich at Park 101 Carlsbad',
+    name: 'Bacon, Egg & Cheese',
+  },
+];
+
+const drinkItems = [
+  {
+    src: '/images/drinks/park-101-aloha-vice-margarita-carlsbad.jpg',
+    alt: 'Aloha Vice Margarita cocktail at Park 101 Carlsbad brunch',
+    name: 'Aloha Vice Margarita',
+  },
+  {
+    src: '/images/drinks/park-101-rodeo-tower-sunflower-carlsbad.jpg',
+    alt: 'Rodeo Tower cocktail tower on the rooftop at Park 101 Carlsbad',
+    name: 'Rodeo Tower',
+  },
+  {
+    src: '/images/drinks/park-101-cocktail-lineup-carlsbad.jpg',
+    alt: 'Brunch cocktail lineup at Park 101 Carlsbad',
+    name: 'Brunch Cocktail Lineup',
+  },
+];
+
+const faqs = [
+  {
+    q: 'What time does brunch start at Park 101?',
+    a: 'Brunch starts at 10:00 AM Saturday and Sunday on the rooftop.',
+  },
+  {
+    q: 'Do I need a reservation for brunch?',
+    a: 'Reservations are recommended for weekend brunch, especially for larger groups, since the rooftop fills up quickly.',
+  },
+  {
+    q: "What's on the brunch menu?",
+    a: 'A BBQ-driven brunch program — smoked tri-tip chilaquiles, brisket and classic breakfast burritos, a chicken and waffle sandwich, and bacon, egg and cheese plates.',
+  },
+  {
+    q: 'Are brunch cocktails available?',
+    a: 'Yes — the Rodeo Tower, Aloha Vice Margarita, and the full cocktail program are all available starting at open.',
+  },
+  {
+    q: 'Can I book a private brunch event?',
+    a: 'Yes. Park 101 hosts private brunch gatherings, birthday brunches, and group events on the rooftop and throughout the venue.',
+  },
+  {
+    q: 'Is Park 101 dog-friendly for brunch?',
+    a: "Yes — the patio is dog-friendly, and brunch is built for groups of all ages.",
+  },
+];
+
+const pageTitle = 'Weekend Brunch in Carlsbad Village | PRK 101';
+const pageDescription =
+  'BBQ-inspired weekend brunch on the rooftop at Park 101 in Carlsbad Village. Smoked tri-tip chilaquiles, breakfast burritos, and Rodeo Tower mimosas. Saturdays & Sundays from 10 AM.';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} ogImage={siteProfile.seo.ogImage}>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="relative bg-brand-dark overflow-hidden pt-32 pb-20 px-6 sm:px-8 lg:px-12">
+    <div class="absolute inset-0">
+      <img
+        src="/images/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg"
+        alt="Smoked tri-tip chilaquiles brunch plate at Park 101 Carlsbad"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-brand-dark/70"></div>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
+        Saturdays & Sundays
+      </span>
+      <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">
+        Brunch on the Rooftop
+      </h1>
+      <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+        Open-air rooftop. Smoked brisket chilaquiles. Breakfast burritos loaded with tri-tip. Rodeo Tower mimosas. The best way to spend a Saturday morning in Carlsbad Village.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={siteProfile.ordering.reservationsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
+        >
+          Reserve for Brunch
+        </a>
+        <a
+          href="/menu"
+          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
+        >
+          View Brunch Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STAT BAR ─────────────────────────────────────────── -->
+  <section class="bg-brand-dark/95 border-t border-brand-white/10 py-8 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 md:divide-x divide-brand-white/10 text-center">
+      <div class="px-4">
+        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">10 AM</span>
+        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Start Time</span>
+      </div>
+      <div class="px-4">
+        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">Sat & Sun</span>
+        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Days Available</span>
+      </div>
+      <div class="px-4">
+        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">Rooftop</span>
+        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Open-Air</span>
+      </div>
+      <div class="px-4">
+        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">Dog-Friendly</span>
+        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Patio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NOT JUST BRUNCH ──────────────────────────────────── -->
+  <section class="relative bg-brand-cream">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
+      <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/brunch/park-101-brunch-brisket-burrito-02-carlsbad.jpg"
+          alt="Brisket breakfast burrito with fries at Park 101 Carlsbad brunch"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+      </div>
+      <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
+        <div class="max-w-md mx-auto lg:mx-0">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+            The Experience
+          </span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
+            Not Just Brunch.<br />A Whole Morning.
+          </h2>
+          <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
+          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
+            Park 101's brunch isn't eggs and toast — it's the smokehouse meeting the morning. Chilaquiles built on smoked tri-tip, burritos loaded with brisket, and a rooftop that catches the California sun from the first plate to the last mimosa.
+          </p>
+          <a
+            href={siteProfile.ordering.reservationsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
+          >
+            Reserve a Table
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOD GRID ─────────────────────────────────────────── -->
+  <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">
+          The Menu
+        </span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
+          Creole Brunch — Park 101 Style
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+        {foodItems.map((item) => (
+          <div class="group relative overflow-hidden bg-brand-dark-light aspect-[4/3]">
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <span class="font-display font-bold text-base uppercase tracking-wider text-brand-white">{item.name}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="/menu"
+          class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
+        >
+          Full Brunch Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRUNCH COCKTAILS ─────────────────────────────────── -->
+  <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+          The Bar
+        </span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
+          Brunch Cocktails
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        {drinkItems.map((item) => (
+          <div class="relative overflow-hidden bg-brand-dark aspect-square">
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/85 via-transparent to-transparent flex items-end p-4">
+              <span class="font-display font-bold text-sm uppercase tracking-wide text-brand-white">{item.name}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRIVATE BRUNCH CROSS-LINK ─────────────────────────── -->
+  <section class="relative bg-brand-cream">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[500px]">
+      <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-20 bg-brand-cream">
+        <div class="max-w-md mx-auto lg:mx-0">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+            Group Bookings
+          </span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase leading-display tracking-tight mb-6">
+            Private Brunch Events
+          </h2>
+          <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
+          <p class="font-body font-light text-brand-dark/75 text-base leading-relaxed mb-8">
+            Birthday brunches, baby showers, and weekend group gatherings — reserve the rooftop or a section of the venue for your crew.
+          </p>
+          <a
+            href="/private-events"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
+          >
+            Inquire About Your Event
+          </a>
+        </div>
+      </div>
+      <div class="relative lg:col-span-6 min-h-[350px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/venue/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg"
+          alt="Rooftop dining at Park 101 Carlsbad, ideal for private brunch events"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────────── -->
+  <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+          Need to Know
+        </span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
+          Brunch FAQ
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
+      </div>
+
+      <div class="space-y-6">
+        {faqs.map((item) => (
+          <div class="border-b border-brand-white/15 pb-6">
+            <h3 class="font-display font-bold text-base uppercase tracking-tight text-brand-white mb-2">{item.q}</h3>
+            <p class="font-body font-light text-brand-cream/70 text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ─────────────────────────────────────────── -->
+  <section class="relative bg-brand-tan py-20 px-6 sm:px-8 lg:px-12 text-center">
+    <div class="max-w-2xl mx-auto">
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-dark/70 mb-4">
+        Join Us This Weekend
+      </span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
+        Brunch at Park 101
+      </h2>
+      <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
+        Saturdays & Sundays from 10 AM. Reserve your table before the rooftop fills up.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={siteProfile.ordering.reservationsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
+        >
+          Reserve for Brunch
+        </a>
+        <a
+          href="/menu"
+          class="px-8 py-4 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
+        >
+          View Brunch Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+</Layout>
