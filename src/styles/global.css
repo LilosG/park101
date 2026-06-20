@@ -98,22 +98,24 @@
 }
 
 /* ─── Base Styles ─────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-body {
-  background-color: var(--color-brand-cream);
-  color: var(--color-brand-dark);
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.6;
+  body {
+    background-color: var(--color-brand-cream);
+    color: var(--color-brand-dark);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
 }
 
 /* ─── Typography Base ─────────────────────────────────────── */
