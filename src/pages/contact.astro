@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteProfile from '../data/site-profile.json';
+
+const pageTitle = 'Contact | PRK 101 Carlsbad';
+const pageDescription = `Visit Park 101 at ${siteProfile.contact.address}, ${siteProfile.contact.neighborhood}. Hours, directions, and contact info.`;
+
+const mapQuery = encodeURIComponent(siteProfile.contact.address);
+
+// Hours may be stored as an array of {days, time} objects OR as a plain
+// keyed object ({ Monday: "...", Tuesday: "..." }) — handle both shapes
+// so this never breaks the build on a data-structure mismatch again.
+const hoursList: { label: string; time: string }[] = Array.isArray(siteProfile.hours)
+  ? siteProfile.hours.map((h: any) => ({ label: h.days ?? h.day ?? h.label, time: h.time ?? h.hours }))
+  : Object.entries(siteProfile.hours as Record<string, string>).map(([label, time]) => ({ label, time }));
+---
+
+<Layout title={pageTitle} description={pageDescription} ogImage={siteProfile.seo.ogImage} transparentNav={true}>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="relative min-h-[450px] bg-brand-dark flex flex-col overflow-hidden">
+    <div class="h-20 shrink-0"></div>
+    <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 py-16">
+      <div class="max-w-2xl mx-auto text-center">
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
+          Get In Touch
+        </span>
+        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight">
+          Find Us
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INFO + MAP ───────────────────────────────────────── -->
+  <section class="relative bg-brand-cream">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[550px]">
+      <div class="flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
+        <div class="max-w-md mx-auto lg:mx-0 w-full space-y-10">
+
+          <div>
+            <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-2">
+              Address
+            </span>
+            <a
+              href={`https://maps.google.com/?q=${mapQuery}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-display font-bold text-2xl text-brand-dark hover:text-brand-orange transition-colors duration-200"
+            >
+              {siteProfile.contact.address}
+            </a>
+            <p class="font-body text-brand-dark/60 text-sm mt-1">{siteProfile.contact.neighborhood}, Carlsbad, CA</p>
+          </div>
+
+          <div>
+            <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-2">
+              Phone
+            </span>
+            <a
+              href={`tel:${siteProfile.contact.phone}`}
+              class="font-display font-bold text-2xl text-brand-dark hover:text-brand-orange transition-colors duration-200"
+            >
+              {siteProfile.contact.phone}
+            </a>
+          </div>
+
+          <div>
+            <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-2">
+              Email
+            </span>
+            <a
+              href={`mailto:${siteProfile.contact.email}`}
+              class="font-display font-bold text-2xl text-brand-dark hover:text-brand-orange transition-colors duration-200 break-all"
+            >
+              {siteProfile.contact.email}
+            </a>
+          </div>
+
+          <div>
+            <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+              Hours
+            </span>
+            <ul class="space-y-1">
+              {hoursList.map((entry) => (
+                <li class="flex justify-between font-body text-brand-dark/80 text-sm max-w-xs">
+                  <span class="font-bold">{entry.label}</span>
+                  <span>{entry.time}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <a
+            href={siteProfile.ordering.reservationsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
+          >
+            Reserve a Table
+          </a>
+        </div>
+      </div>
+
+      <div class="relative min-h-[400px] lg:min-h-full overflow-hidden">
+        <iframe
+          src={`https://maps.google.com/maps?q=${mapQuery}&output=embed`}
+          class="absolute inset-0 w-full h-full border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Park 101 location map"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+</Layout>
