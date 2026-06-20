@@ -5,14 +5,18 @@ import siteProfile from '../data/site-profile.json';
 const pageTitle = 'Contact | PRK 101 Carlsbad';
 const pageDescription = `Visit Park 101 at ${siteProfile.contact.address}, ${siteProfile.contact.neighborhood}. Hours, directions, and contact info.`;
 
-const mapQuery = encodeURIComponent(siteProfile.contact.address);
+const mapQuery = encodeURIComponent(siteProfile.contact.address.full);
 
-// Hours may be stored as an array of {days, time} objects OR as a plain
-// keyed object ({ Monday: "...", Tuesday: "..." }) — handle both shapes
-// so this never breaks the build on a data-structure mismatch again.
-const hoursList: { label: string; time: string }[] = Array.isArray(siteProfile.hours)
-  ? siteProfile.hours.map((h: any) => ({ label: h.days ?? h.day ?? h.label, time: h.time ?? h.hours }))
-  : Object.entries(siteProfile.hours as Record<string, string>).map(([label, time]) => ({ label, time }));
+// hours are stored as { monday: {open, close}, ... } — format properly,
+// don't interpolate the nested object directly
+const hoursList = Object.entries(
+  siteProfile.hours as Record<string, { open: string; close: string }>
+).map(([day, time]) => ({
+  label: day.charAt(0).toUpperCase() + day.slice(1),
+  time: `${time.open} – ${time.close}`,
+}));
+
+const hasEmail = Boolean(siteProfile.contact.email);
 ---
 
 <Layout title={pageTitle} description={pageDescription} ogImage={siteProfile.seo.ogImage} transparentNav={true}>
@@ -48,7 +52,7 @@ const hoursList: { label: string; time: string }[] = Array.isArray(siteProfile.h
               rel="noopener noreferrer"
               class="font-display font-bold text-2xl text-brand-dark hover:text-brand-orange transition-colors duration-200"
             >
-              {siteProfile.contact.address}
+              {siteProfile.contact.address.full}
             </a>
             <p class="font-body text-brand-dark/60 text-sm mt-1">{siteProfile.contact.neighborhood}, Carlsbad, CA</p>
           </div>
@@ -65,17 +69,19 @@ const hoursList: { label: string; time: string }[] = Array.isArray(siteProfile.h
             </a>
           </div>
 
-          <div>
-            <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-2">
-              Email
-            </span>
-            <a
-              href={`mailto:${siteProfile.contact.email}`}
-              class="font-display font-bold text-2xl text-brand-dark hover:text-brand-orange transition-colors duration-200 break-all"
-            >
-              {siteProfile.contact.email}
-            </a>
-          </div>
+          {hasEmail && (
+            <div>
+              <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-2">
+                Email
+              </span>
+              <a
+                href={`mailto:${siteProfile.contact.email}`}
+                class="font-display font-bold text-2xl text-brand-dark hover:text-brand-orange transition-colors duration-200 break-all"
+              >
+                {siteProfile.contact.email}
+              </a>
+            </div>
+          )}
 
           <div>
             <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
