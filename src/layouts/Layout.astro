@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import LocalSEO from '../components/core/LocalSEO.astro';
+import Analytics from '../components/core/Analytics.astro';
 import SiteNav from '../components/ui/SiteNav.astro';
 import SiteFooter from '../components/ui/SiteFooter.astro';
 import siteProfile from '../data/site-profile.json';
@@ -39,6 +40,7 @@ const {
       ogImage={ogImage}
       noindex={noindex}
     />
+    <Analytics />
   </head>
   <body class="bg-brand-cream text-brand-dark antialiased">
     <SiteNav transparent={transparentNav} />
