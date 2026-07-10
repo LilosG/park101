@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
+import MenuItemCard from '../components/menu/MenuItemCard.astro';
 
 const menuItems = [
   {
@@ -50,6 +51,33 @@ const menuItems = [
     alt: 'Smoked beef tacos with chimichurri and cotija at Park 101 Carlsbad',
     name: 'Smoked Beef Tacos',
     description: 'Arugula, pickled red onion, cotija, chimichurri.',
+  },
+];
+
+const cocktailItems = [
+  {
+    src: '/images/drinks/park-101-talking-irons-cocktail-carlsbad.jpg',
+    alt: 'Talking Irons cocktail on the rooftop at Park 101 Carlsbad',
+    name: 'Talking Irons',
+    description: 'A whiskey old fashioned with an orange twist.',
+  },
+  {
+    src: '/images/drinks/park-101-rodeo-tower-menu-carlsbad.jpg',
+    alt: 'Rodeo Tower cocktail tower with sunflowers at Park 101 Carlsbad',
+    name: 'Rodeo Tower',
+    description: "Park 101's signature cocktail tower — built for the table.",
+  },
+  {
+    src: '/images/drinks/park-101-frozen-drinks-carlsbad.jpg',
+    alt: 'Frozen drinks lineup at Park 101 Carlsbad',
+    name: 'Frozen Drinks',
+    description: 'Rotating frozen cocktails, blended fresh.',
+  },
+  {
+    src: '/images/drinks/park-101-gun-powder-lead-cocktail-carlsbad.jpg',
+    alt: 'Gun Powder & Lead cocktail with fresh mint at Park 101 Carlsbad',
+    name: 'Gun Powder & Lead',
+    description: 'A tall, refreshing build finished with fresh mint.',
   },
 ];
 
@@ -112,24 +140,7 @@ const breadcrumbSchema = {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {menuItems.map((item) => (
-          <div class="group bg-brand-white overflow-hidden">
-            <div class="relative aspect-square overflow-hidden">
-              <img
-                src={item.src}
-                alt={item.alt}
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-4">
-              <h3 class="font-display font-bold text-sm uppercase tracking-wide text-brand-dark mb-1">
-                {item.name}
-              </h3>
-              <p class="font-body text-xs text-brand-dark/60 leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          </div>
+          <MenuItemCard src={item.src} alt={item.alt} name={item.name} description={item.description} />
         ))}
       </div>
 
@@ -142,6 +153,27 @@ const breadcrumbSchema = {
         >
           Order Online
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COCKTAILS ────────────────────────────────────────── -->
+  <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+          The Bar
+        </span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
+          Cocktails
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {cocktailItems.map((item) => (
+          <MenuItemCard src={item.src} alt={item.alt} name={item.name} description={item.description} />
+        ))}
       </div>
     </div>
   </section>
