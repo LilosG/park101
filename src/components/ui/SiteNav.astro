@@ -29,9 +29,13 @@ const navLinks = [
 
       <!-- Logo -->
       <a href="/" class="flex items-center flex-shrink-0" aria-label="Park 101 Home">
-        <span class="font-display font-black text-3xl tracking-widest uppercase nav-logo-text transition-colors duration-300">
-          PRK 101
-        </span>
+        <img
+          src={siteProfile.logoLight}
+          alt="Park 101"
+          class="h-10 w-auto"
+          width="100"
+          height="108"
+        />
       </a>
 
       <!-- Desktop Nav -->
@@ -106,7 +110,13 @@ const navLinks = [
 
   <!-- Mobile Logo -->
   <div class="mb-10">
-    <span class="font-display font-black text-4xl tracking-widest uppercase text-brand-white">PRK 101</span>
+    <img
+      src={siteProfile.logoLight}
+      alt="Park 101"
+      class="h-14 w-auto"
+      width="100"
+      height="108"
+    />
   </div>
 
   <!-- Mobile Links -->
@@ -148,7 +158,6 @@ const navLinks = [
     background: transparent;
   }
   .nav-transparent .nav-link,
-  .nav-transparent .nav-logo-text,
   .nav-transparent #mobile-menu-btn {
     color: var(--color-brand-white);
   }
@@ -163,7 +172,6 @@ const navLinks = [
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
   }
   .nav-solid .nav-link,
-  .nav-solid .nav-logo-text,
   .nav-solid #mobile-menu-btn {
     color: var(--color-brand-white);
   }
@@ -183,7 +191,6 @@ const navLinks = [
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
   }
   .nav-scrolled .nav-link,
-  .nav-scrolled .nav-logo-text,
   .nav-scrolled #mobile-menu-btn {
     color: var(--color-brand-white) !important;
   }
