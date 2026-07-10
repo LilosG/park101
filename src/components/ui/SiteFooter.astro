@@ -14,9 +14,13 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
       <!-- Col 1: Brand -->
       <div>
         <a href="/" aria-label="Park 101 Home">
-          <span class="font-display font-black text-4xl tracking-widest uppercase text-brand-white">
-            PRK 101
-          </span>
+          <img
+            src={siteProfile.logoLight}
+            alt="Park 101"
+            class="h-12 w-auto"
+            width="100"
+            height="108"
+          />
         </a>
         <p class="mt-4 text-sm text-brand-white/60 leading-relaxed max-w-xs">
           {siteProfile.shortDescription}
