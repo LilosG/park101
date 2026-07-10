@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import siteProfile from '../../data/site-profile.json';
 import { privateEventsHubImage, privateEventImages } from '../../data/private-events-images';
+import EventInquiryForm from '../../components/core/EventInquiryForm.astro';
+import PrivateEventCard from '../../components/private-events/PrivateEventCard.astro';
 
 const events = siteProfile.privateEvents;
 
@@ -82,10 +84,10 @@ const faqSchema = {
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href={`mailto:${siteProfile.contact.email}?subject=Private Event Inquiry`}
+          href="#inquiry"
           class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
         >
-          Email Us
+          Request Availability
         </a>
         <a
           href={`tel:${siteProfile.contact.phoneDial}`}
@@ -169,27 +171,7 @@ const faqSchema = {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {events.map((event) => (
-          <a href={`/private-events/${event.slug}`} class="group block bg-brand-dark-light overflow-hidden">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img
-                src={privateEventImages[event.slug]}
-                alt={`${event.name} at Park 101 Carlsbad`}
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6">
-              <h3 class="font-display font-bold text-xl uppercase tracking-tight text-brand-white mb-2">
-                {event.name}
-              </h3>
-              <p class="font-body font-light text-brand-cream/70 text-sm leading-relaxed mb-3">
-                {event.description}
-              </p>
-              <span class="font-display font-bold text-xs uppercase tracking-button text-brand-orange">
-                Learn More →
-              </span>
-            </div>
-          </a>
+          <PrivateEventCard event={event} image={privateEventImages[event.slug]} />
         ))}
       </div>
     </div>
@@ -220,8 +202,11 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- ── INQUIRY FORM ─────────────────────────────────────── -->
+  <EventInquiryForm />
+
   <!-- ── FAQ ───────────────────────────────────────────────── -->
-  <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
+  <section id="faq" class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
         <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
@@ -258,10 +243,10 @@ const faqSchema = {
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href={`mailto:${siteProfile.contact.email}?subject=Private Event Inquiry`}
+          href="#inquiry"
           class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
         >
-          Email Us
+          Request Availability
         </a>
         <a
           href={`tel:${siteProfile.contact.phoneDial}`}

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
+import EventInquiryForm from '../components/core/EventInquiryForm.astro';
 
 const eventTypes = siteProfile.eventTypes;
 const upcomingEvents = siteProfile.upcomingEvents;
@@ -164,23 +165,12 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <!-- ── CTA ──────────────────────────────────────────────── -->
-  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-display font-bold text-section-lg text-brand-steel uppercase leading-display tracking-tight mb-4">
-        Planning a Watch Party?
-      </h2>
-      <p class="font-body text-brand-dark/70 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-        Book a dedicated space for your crew — fantasy drafts, big fights, and full-season Sunday plans.
-      </p>
-      <a
-        href="/private-events/game-day-parties"
-        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
-      >
-        Book a Game Day Space
-      </a>
-    </div>
-  </section>
+  <!-- ── CTA / INQUIRY FORM ───────────────────────────────── -->
+  <EventInquiryForm
+    eyebrow="Planning a Watch Party?"
+    heading="Book a Game Day Space"
+    subtext="Fantasy drafts, big fights, and full-season Sunday plans — send us your date and headcount and our events team responds within 24 hours."
+  />
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </Layout>

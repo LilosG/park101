@@ -1,0 +1,50 @@
+---
+import siteProfile from '../../data/site-profile.json';
+
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  heading?: string;
+  subtext?: string;
+}
+
+const {
+  id = 'inquiry',
+  eyebrow = 'Start Planning',
+  heading = 'Request Your Date',
+  subtext = 'Send us your date and headcount — our events team responds within 24 hours with availability and a custom plan.',
+} = Astro.props;
+---
+
+<section id={id} class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12 scroll-mt-24">
+  <div class="max-w-2xl mx-auto text-center mb-10">
+    <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+      {eyebrow}
+    </span>
+    <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-4">
+      {heading}
+    </h2>
+    <div class="w-12 h-[2px] bg-brand-orange mx-auto mb-5"></div>
+    <p class="font-body font-light text-brand-dark/70 text-base sm:text-lg leading-relaxed">
+      {subtext}
+    </p>
+  </div>
+
+  <div class="max-w-2xl mx-auto bg-brand-white border border-brand-dark/10 rounded-lg shadow-sm overflow-hidden">
+    <div class="min-h-[800px] bg-brand-cream-dark/40">
+      <iframe
+        src="https://www.toasttab.com/invoice/lead?rx=b853a506-313a-4be5-99d2-ffaf0c250021&ot=76b4caca-fb98-4747-b6ce-d97735957821&form=1"
+        title="Park 101 event inquiry form"
+        loading="lazy"
+        style="margin:auto; display:block; border:0; width:100%; height:800px;"
+      ></iframe>
+    </div>
+  </div>
+
+  <p class="max-w-2xl mx-auto text-center font-body text-xs text-brand-dark/50 mt-4">
+    Prefer to talk it through? Call{' '}
+    <a href={`tel:${siteProfile.contact.phoneDial}`} class="text-brand-orange hover:text-brand-orange-dark underline underline-offset-2">
+      {siteProfile.contact.phone}
+    </a>.
+  </p>
+</section>

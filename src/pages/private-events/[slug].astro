@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import siteProfile from '../../data/site-profile.json';
 import { privateEventImages } from '../../data/private-events-images';
+import EventInquiryForm from '../../components/core/EventInquiryForm.astro';
+import PrivateEventCard from '../../components/private-events/PrivateEventCard.astro';
 
 export function getStaticPaths() {
   return siteProfile.privateEvents.map((event) => ({
@@ -10,8 +12,10 @@ export function getStaticPaths() {
   }));
 }
 
-const { event } = Astro.props;
+const { event } = Astro.props as any;
 const image = privateEventImages[event.slug];
+
+const otherEvents = siteProfile.privateEvents.filter((e: any) => e.slug !== event.slug).slice(0, 3);
 
 const pageTitle = `${event.name} Venue in Carlsbad | PRK 101`;
 const pageDescription = `${event.description} ${event.capacity} in Carlsbad Village.`;
@@ -25,6 +29,16 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 3, name: event.name, item: `${siteProfile.url}/private-events/${event.slug}` },
   ],
 };
+
+const faqSchema = event.faqs ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: event.faqs.map((f: any) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+} : null;
 ---
 
 <Layout title={pageTitle} description={pageDescription} ogImage={siteProfile.seo.ogImage}>
@@ -68,10 +82,10 @@ const breadcrumbSchema = {
           </div>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
-              href={`mailto:${siteProfile.contact.email}?subject=Private Event Inquiry - ${event.name}`}
+              href="#inquiry"
               class="px-6 py-3.5 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-xs transition-colors duration-200 text-center"
             >
-              Email Us
+              Request Availability
             </a>
             <a
               href={`tel:${siteProfile.contact.phoneDial}`}
@@ -109,7 +123,7 @@ const breadcrumbSchema = {
         </h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {event.features.map((feature) => (
+        {event.features.map((feature: string) => (
           <div class="flex items-center gap-3 bg-brand-cream/60 px-5 py-4">
             <span class="w-1.5 h-1.5 bg-brand-orange flex-shrink-0"></span>
             <span class="font-display font-bold text-sm uppercase tracking-wide text-brand-dark">{feature}</span>
@@ -119,35 +133,66 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <!-- ── BACK + CROSS-LINK ────────────────────────────────── -->
-  <section class="bg-brand-dark py-16 px-6 sm:px-8 lg:px-12 text-center">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-white uppercase leading-display tracking-tight mb-6">
-        Ready to Book {event.name}?
-      </h2>
-      <p class="font-body font-light text-brand-cream/70 text-base leading-relaxed mb-8">
-        Our events team responds within 24 hours with availability and a custom plan.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-        <a
-          href={`mailto:${siteProfile.contact.email}?subject=Private Event Inquiry - ${event.name}`}
-          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
-        >
-          Email Us
-        </a>
-        <a
-          href="/venue"
-          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
-        >
-          See the Venue
+  <!-- ── EVENT-SPECIFIC FAQ ───────────────────────────────── -->
+  {event.faqs && (
+    <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+            Common Questions
+          </span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
+            {event.name} FAQ
+          </h2>
+          <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
+        </div>
+        <div class="space-y-6">
+          {event.faqs.map((item: any) => (
+            <div class="border-b border-brand-white/15 pb-6">
+              <h3 class="font-display font-bold text-base uppercase tracking-tight text-brand-white mb-2">{item.q}</h3>
+              <p class="font-body font-light text-brand-cream/70 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center font-body text-sm text-brand-cream/60 mt-10">
+          More general questions? See the full <a href="/private-events#faq" class="text-brand-orange hover:text-brand-orange-light underline underline-offset-2">Private Events FAQ</a>.
+        </p>
+      </div>
+    </section>
+  )}
+
+  <!-- ── INQUIRY FORM ─────────────────────────────────────── -->
+  <EventInquiryForm
+    heading={`Book Your ${event.name}`}
+    subtext={`Send us your date and headcount for ${event.capacity.toLowerCase()} — our events team responds within 24 hours with availability and a custom plan.`}
+  />
+
+  <!-- ── OTHER WAYS TO CELEBRATE ──────────────────────────── -->
+  <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">
+          Other Ways to Celebrate
+        </span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
+          More Event Types
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {otherEvents.map((other: any) => (
+          <PrivateEventCard event={other} image={privateEventImages[other.slug]} />
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/private-events" class="font-body text-sm text-brand-cream/60 hover:text-brand-orange transition-colors duration-150">
+          ← All Event Types
         </a>
       </div>
-      <a href="/private-events" class="font-body text-sm text-brand-cream/60 hover:text-brand-orange transition-colors duration-150">
-        ← All Event Types
-      </a>
     </div>
   </section>
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
 </Layout>
