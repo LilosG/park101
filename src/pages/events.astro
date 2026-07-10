@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteProfile from '../data/site-profile.json';
+
+const eventTypes = siteProfile.eventTypes;
+const upcomingEvents = siteProfile.upcomingEvents;
+
+// Local image mapping — same pattern as other pages (index.astro, brunch.astro):
+// page-level content array paired with centralized site-profile data.
+const eventTypeImages: Record<string, { src: string; alt: string }> = {
+  'nfl-sundays': {
+    src: '/images/venue/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg',
+    alt: 'Outdoor sports bar viewing area with big screen at Park 101 Carlsbad',
+  },
+  'mlb-games': {
+    src: '/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg',
+    alt: 'Packed crowd at Park 101 Carlsbad during a San Diego Padres game',
+  },
+  'ufc-fight-nights': {
+    src: '/images/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg',
+    alt: 'Crowd watching a big screen at Park 101 Carlsbad',
+  },
+  'fantasy-draft-events': {
+    src: '/images/venue/park-101-outdoor-patio-sports-bar-crowd-carlsbad.jpg',
+    alt: 'Group gathered around screens at Park 101 Carlsbad',
+  },
+  'live-music': {
+    src: '/images/venue/park-101-live-music-country-wide-carlsbad.jpg',
+    alt: 'Live music performance at Park 101 Carlsbad',
+  },
+  'themed-nights': {
+    src: '/images/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg',
+    alt: 'Themed night crowd celebration at Park 101 Carlsbad',
+  },
+};
+
+const pageTitle = 'Events & Game Day | PRK 101 Carlsbad';
+const pageDescription =
+  "What's happening at Park 101 — NFL Sundays, Padres games, UFC fight nights, live music, and themed nights in Carlsbad Village.";
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteProfile.url },
+    { '@type': 'ListItem', position: 2, name: 'Events', item: `${siteProfile.url}/events` },
+  ],
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} ogImage={siteProfile.seo.ogImage} transparentNav={true}>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg"
+        alt="Packed crowd at Park 101 Carlsbad during a game day event"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-brand-dark/65"></div>
+    </div>
+    <div class="h-20 shrink-0"></div>
+    <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow uppercase text-brand-orange mb-4">
+          {siteProfile.contact.neighborhood}
+        </span>
+        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">
+          Always Something<br />On
+        </h1>
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+          NFL Sundays, Padres games, fight nights, and live music every week — Park 101's LED wall and 20+ screens make sure you don't miss it.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={siteProfile.ordering.reservationsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
+          >
+            Reserve a Table
+          </a>
+          <a
+            href="/private-events/game-day-parties"
+            class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
+          >
+            Book a Watch Party
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT'S ALWAYS ON ─────────────────────────────────── -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+          Every Week
+        </span>
+        <h2 class="font-display font-bold text-section text-brand-steel uppercase leading-display tracking-tight">
+          What's Always On
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {eventTypes.map((type: any) => {
+          const image = eventTypeImages[type.slug];
+          return (
+            <div class="group relative aspect-[4/3] rounded-lg overflow-hidden">
+              {image && (
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+              )}
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-6">
+                <h3 class="font-display font-bold text-xl text-brand-white uppercase tracking-tight mb-1">
+                  {type.name}
+                </h3>
+                <p class="font-body text-sm text-brand-white/80 leading-snug">
+                  {type.description}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UPCOMING EVENTS ──────────────────────────────────── -->
+  <section class="bg-brand-dark px-6 sm:px-8 lg:px-12 py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+        Coming Up
+      </span>
+      <h2 class="font-display font-bold text-section text-brand-white uppercase leading-display tracking-tight mb-8">
+        Upcoming Events
+      </h2>
+      {upcomingEvents.length === 0 ? (
+        <p class="font-body text-brand-white/60 text-base max-w-lg mx-auto">
+          Specific dates for upcoming games, fight nights, and live music are added here as they're scheduled.
+          Follow along on
+          {' '}<a href={siteProfile.social.instagram} target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:text-brand-orange-light underline">Instagram</a>
+          {' '}for the latest.
+        </p>
+      ) : (
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+          {upcomingEvents.map((event: any) => (
+            <div class="bg-brand-dark-light rounded-lg p-6 border border-brand-white/10">
+              <p class="font-body text-xs font-bold uppercase tracking-label text-brand-orange mb-2">{event.date}</p>
+              <h3 class="font-display font-bold text-lg text-brand-white uppercase mb-1">{event.name}</h3>
+              <p class="font-body text-sm text-brand-white/70">{event.description}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- ── CTA ──────────────────────────────────────────────── -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-display font-bold text-section-lg text-brand-steel uppercase leading-display tracking-tight mb-4">
+        Planning a Watch Party?
+      </h2>
+      <p class="font-body text-brand-dark/70 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+        Book a dedicated space for your crew — fantasy drafts, big fights, and full-season Sunday plans.
+      </p>
+      <a
+        href="/private-events/game-day-parties"
+        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
+      >
+        Book a Game Day Space
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

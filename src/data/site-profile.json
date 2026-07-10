@@ -166,6 +166,47 @@
     }
   ],
 
+  "eventTypes": [
+    {
+      "slug": "nfl-sundays",
+      "name": "NFL Sundays",
+      "description": "Every NFL Sunday, all season long, across the LED wall and 20+ screens throughout the venue.",
+      "recurring": true
+    },
+    {
+      "slug": "mlb-games",
+      "name": "MLB Games",
+      "description": "A regular spot for Padres games and MLB action all season.",
+      "recurring": true
+    },
+    {
+      "slug": "ufc-fight-nights",
+      "name": "UFC Fight Nights",
+      "description": "Fight night viewing on the biggest screen in the courtyard.",
+      "recurring": true
+    },
+    {
+      "slug": "fantasy-draft-events",
+      "name": "Fantasy Draft Events",
+      "description": "Bring the league — space and screens for fantasy draft day.",
+      "recurring": true
+    },
+    {
+      "slug": "live-music",
+      "name": "Live Music",
+      "description": "Live bands and country nights in the courtyard.",
+      "recurring": true
+    },
+    {
+      "slug": "themed-nights",
+      "name": "Themed Nights & Seasonal Events",
+      "description": "Seasonal programming and themed nights throughout the year.",
+      "recurring": true
+    }
+  ],
+
+  "upcomingEvents": [],
+
   "seo": {
     "defaultTitle": "Park 101 | Rooftop Bar & Restaurant in Carlsbad Village CA",
     "titleTemplate": "%s | Park 101 Carlsbad",
