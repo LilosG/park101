@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteProfile from '../data/site-profile.json';
+
+const menuItems = [
+  {
+    src: '/images/food/park-101-tri-tip-x-arugula-hero-carlsbad.jpg',
+    alt: 'Tri-Tip x Arugula salad with pickled onion and cotija at Park 101 Carlsbad',
+    name: 'Tri-Tip x Arugula Salad',
+    description: 'Smoked tri-tip, arugula, cotija, pickled onion, chimichurri, avocado.',
+  },
+  {
+    src: '/images/food/park-101-bbq-chicken-salad-hero-carlsbad.jpg',
+    alt: 'BBQ chicken salad with crispy tortilla strips at Park 101 Carlsbad',
+    name: 'BBQ Chicken Salad',
+    description: 'Fried BBQ chicken, romaine, cherry tomato, black beans, avocado ranch, crispy tortilla strips.',
+  },
+  {
+    src: '/images/food/park-101-yto-chicken-tenders-hero-carlsbad.jpg',
+    alt: 'YTO chicken tenders and fries at Park 101 Carlsbad',
+    name: 'YTO Tenders',
+    description: 'House-seasoned chicken tenders with fries.',
+  },
+  {
+    src: '/images/food/park-101-surf-n-turf-fries-hero-carlsbad.jpg',
+    alt: 'Surf and turf loaded fries with smoked meat and shrimp at Park 101 Carlsbad',
+    name: 'Surf & Turf Fries',
+    description: 'House-made cheese sauce, smoked meat, ancho shrimp, bacon, poblano sauce.',
+  },
+  {
+    src: '/images/food/park-101-smoked-tri-tip-philly-hero-carlsbad.jpg',
+    alt: 'Smoked tri-tip Philly cheesesteak sandwich at Park 101 Carlsbad',
+    name: 'Smoked Tri-Tip Philly',
+    description: 'Smoked tri-tip, sauteed peppers and onions, melted cheddar, toasted hoagie.',
+  },
+  {
+    src: '/images/food/park-101-the-chick-hero-carlsbad.jpg',
+    alt: 'The Chick fried chicken sandwich at Park 101 Carlsbad',
+    name: 'The Chick',
+    description: 'Fried or grilled chicken sandwich with jalapeno coleslaw and sriracha aioli.',
+  },
+  {
+    src: '/images/food/park-101-shrimp-tacos-hero-carlsbad.jpg',
+    alt: 'Shrimp tacos with chipotle sauce and lime at Park 101 Carlsbad',
+    name: 'Shrimp Tacos',
+    description: 'Ancho shrimp, coleslaw, pico de gallo, taco sauce, lime.',
+  },
+  {
+    src: '/images/food/park-101-tri-tip-tacos-hero-carlsbad.jpg',
+    alt: 'Smoked beef tacos with chimichurri and cotija at Park 101 Carlsbad',
+    name: 'Smoked Beef Tacos',
+    description: 'Arugula, pickled red onion, cotija, chimichurri.',
+  },
+];
+
+const pageTitle = 'The Menu | PRK 101 Carlsbad';
+const pageDescription =
+  'BBQ-forward plates built for the rooftop and game day at Park 101 in Carlsbad Village — smoked meats, loaded fries, tacos, and more.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteProfile.url },
+    { '@type': 'ListItem', position: 2, name: 'Menu', item: `${siteProfile.url}/menu` },
+  ],
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} ogImage={siteProfile.seo.ogImage} transparentNav={true}>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/food/park-101-prk-food-spread-carlsbad.jpg"
+        alt="A spread of BBQ dishes at Park 101 Carlsbad"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-brand-dark/60"></div>
+    </div>
+    <div class="h-20 shrink-0"></div>
+    <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
+      <div class="max-w-2xl mx-auto text-center">
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
+          Food &amp; BBQ
+        </span>
+        <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight mb-6">
+          The Menu
+        </h1>
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed max-w-lg mx-auto">
+          Wood-smoked BBQ, loaded fries, and shareable plates built for the rooftop and game day.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MENU GRID ────────────────────────────────────────── -->
+  <section class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
+          On The Menu
+        </span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">
+          Fan Favorites
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {menuItems.map((item) => (
+          <div class="group bg-brand-white overflow-hidden">
+            <div class="relative aspect-square overflow-hidden">
+              <img
+                src={item.src}
+                alt={item.alt}
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="font-display font-bold text-sm uppercase tracking-wide text-brand-dark mb-1">
+                {item.name}
+              </h3>
+              <p class="font-body text-xs text-brand-dark/60 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-14">
+        <a
+          href={siteProfile.ordering.toastUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
+        >
+          Order Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>
