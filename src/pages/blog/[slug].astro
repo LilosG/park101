@@ -1,0 +1,169 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import siteProfile from '../../data/site-profile.json';
+import { getCategoryMeta } from '../../data/blog-categories';
+import BlogPostCard from '../../components/blog/BlogPostCard.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }: any) => !data.draft);
+  return posts.map((post: any) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as any;
+const { Content } = await render(post);
+const allPosts = await getCollection('blog', ({ data }: any) => !data.draft);
+
+const category = getCategoryMeta(post.data.category);
+
+const relatedPosts = allPosts
+  .filter((p: any) => p.id !== post.id && p.data.category === post.data.category)
+  .slice(0, 3);
+
+// Reading time — ~200 wpm, estimated from rendered markdown source length.
+const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+const readingTime = Math.max(1, Math.round(wordCount / 200));
+
+const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+const formattedUpdated = post.data.updatedDate
+  ? post.data.updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
+
+const pageTitle = `${post.data.title} | Park 101 Blog`;
+const canonical = `${siteProfile.url}/blog/${post.id}`;
+const ogImageUrl = post.data.image
+  ? (post.data.image.startsWith('http') ? post.data.image : `${siteProfile.url}${post.data.image}`)
+  : undefined;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  image: ogImageUrl ?? `${siteProfile.url}${siteProfile.seo.ogImage}`,
+  author: { '@type': 'Organization', name: post.data.author },
+  publisher: {
+    '@type': 'Organization',
+    name: siteProfile.name,
+    logo: { '@type': 'ImageObject', url: `${siteProfile.url}${siteProfile.logo}` },
+  },
+  datePublished: post.data.publishDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.publishDate).toISOString(),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteProfile.url },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteProfile.url}/blog` },
+    { '@type': 'ListItem', position: 3, name: category.label, item: `${siteProfile.url}/blog/category/${category.slug}` },
+    { '@type': 'ListItem', position: 4, name: post.data.title, item: canonical },
+  ],
+};
+---
+
+<Layout title={pageTitle} description={post.data.description} canonical={canonical} ogImage={ogImageUrl} transparentNav={true}>
+
+  <!-- ── BREADCRUMB ───────────────────────────────────────── -->
+  <nav aria-label="Breadcrumb" class="bg-brand-dark pt-28 pb-4 px-6 sm:px-8 lg:px-12">
+    <ol class="max-w-3xl mx-auto flex flex-wrap items-center gap-2 font-body text-xs text-brand-white/60">
+      <li><a href="/" class="hover:text-brand-orange transition-colors duration-150">Home</a></li>
+      <li>/</li>
+      <li><a href="/blog" class="hover:text-brand-orange transition-colors duration-150">Blog</a></li>
+      <li>/</li>
+      <li><a href={`/blog/category/${category.slug}`} class="hover:text-brand-orange transition-colors duration-150">{category.label}</a></li>
+    </ol>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <header class="bg-brand-dark pb-12 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-3xl mx-auto">
+      <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-4">
+        {category.label}
+      </span>
+      <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-brand-white leading-display tracking-tight mb-6">
+        {post.data.title}
+      </h1>
+      <div class="flex flex-wrap items-center gap-3 font-body text-sm text-brand-white/60">
+        <span>By {post.data.author}</span>
+        <span aria-hidden="true">·</span>
+        <time datetime={post.data.publishDate.toISOString()}>{formattedDate}</time>
+        <span aria-hidden="true">·</span>
+        <span>{readingTime} min read</span>
+      </div>
+      {formattedUpdated && (
+        <p class="font-body text-xs text-brand-white/40 mt-2">Updated {formattedUpdated}</p>
+      )}
+    </div>
+  </header>
+
+  {post.data.image && (
+    <div class="relative aspect-[16/9] max-w-5xl mx-auto -mt-6 mb-4 px-6 sm:px-8 lg:px-0">
+      <img
+        src={post.data.image}
+        alt={post.data.imageAlt ?? post.data.title}
+        class="w-full h-full object-cover rounded-lg"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  )}
+
+  <!-- ── QUICK ANSWER (answer-engine optimization) ───────── -->
+  {post.data.answerSummary && (
+    <div class="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12 mt-8">
+      <div class="bg-brand-cream-dark border-l-4 border-brand-orange rounded-r-lg p-6">
+        {post.data.answerTarget && (
+          <p class="font-body text-xs font-bold uppercase tracking-label text-brand-orange mb-2">
+            {post.data.answerTarget}
+          </p>
+        )}
+        <p class="font-body text-base text-brand-dark leading-relaxed">
+          {post.data.answerSummary}
+        </p>
+      </div>
+    </div>
+  )}
+
+  <!-- ── ARTICLE BODY ─────────────────────────────────────── -->
+  <article class="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12 py-10">
+    <div class="prose-blog font-body text-brand-dark leading-relaxed">
+      <Content />
+    </div>
+
+    {post.data.tags && post.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mt-10 pt-8 border-t border-brand-dark/10">
+        {post.data.tags.map((tag: string) => (
+          <span class="font-body text-xs uppercase tracking-label text-brand-dark/50 bg-brand-cream-dark px-3 py-1 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </article>
+
+  <!-- ── RELATED POSTS ────────────────────────────────────── -->
+  {relatedPosts.length > 0 && (
+    <section class="bg-brand-cream-dark px-6 sm:px-8 lg:px-12 py-16">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display font-bold text-2xl sm:text-3xl text-brand-steel uppercase tracking-tight mb-8">
+          More From {category.label}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {relatedPosts.map((related: any) => (
+            <BlogPostCard post={related} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

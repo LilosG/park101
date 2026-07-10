@@ -1,0 +1,38 @@
+---
+interface Props {
+  currentPage: number;
+  lastPage: number;
+  baseUrl: string; // e.g. "/blog" or "/blog/category/game-day"
+}
+
+const { currentPage, lastPage, baseUrl } = Astro.props;
+
+function pageUrl(page: number) {
+  if (page <= 1) return baseUrl === '' ? '/blog' : baseUrl;
+  return `${baseUrl}/${page}`;
+}
+---
+
+{lastPage > 1 && (
+  <nav aria-label="Blog pagination" class="flex items-center justify-center gap-2 mt-12">
+    {currentPage > 1 && (
+      <a
+        href={pageUrl(currentPage - 1)}
+        class="font-body text-sm font-semibold uppercase tracking-cta px-5 py-2.5 rounded-full border border-brand-dark/20 hover:border-brand-orange hover:text-brand-orange transition-colors duration-150"
+      >
+        Previous
+      </a>
+    )}
+    <span class="font-body text-sm text-brand-dark/60 px-3">
+      Page {currentPage} of {lastPage}
+    </span>
+    {currentPage < lastPage && (
+      <a
+        href={pageUrl(currentPage + 1)}
+        class="font-body text-sm font-semibold uppercase tracking-cta px-5 py-2.5 rounded-full bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-150"
+      >
+        Next
+      </a>
+    )}
+  </nav>
+)}
