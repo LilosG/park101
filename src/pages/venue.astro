@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
+import StatBar from '../components/core/StatBar.astro';
 
 const venue = siteProfile.venue;
 
@@ -56,26 +57,12 @@ const pageDescription =
   </section>
 
   <!-- ── STAT BAR ─────────────────────────────────────────── -->
-  <section class="bg-brand-dark/95 border-t border-brand-white/10 py-8 px-6 sm:px-8 lg:px-12">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 md:divide-x divide-brand-white/10 text-center">
-      <div class="px-4">
-        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">2</span>
-        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Levels</span>
-      </div>
-      <div class="px-4">
-        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">20+</span>
-        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Screens</span>
-      </div>
-      <div class="px-4">
-        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">Multiple</span>
-        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Bars</span>
-      </div>
-      <div class="px-4">
-        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">Dog-Friendly</span>
-        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Patio</span>
-      </div>
-    </div>
-  </section>
+  <StatBar stats={[
+    { value: '2', label: 'Levels' },
+    { value: '20+', label: 'Screens' },
+    { value: 'Multiple', label: 'Bars' },
+    { value: 'Dog-Friendly', label: 'Patio' },
+  ]} />
 
   <!-- ── THE ROOFTOP ──────────────────────────────────────── -->
   <section class="relative bg-brand-dark">

@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
+import StatBar from '../components/core/StatBar.astro';
+import SplitIntro from '../components/core/SplitIntro.astro';
 
 const foodItems = [
   {
@@ -127,62 +129,24 @@ const faqSchema = {
   </section>
 
   <!-- ── STAT BAR ─────────────────────────────────────────── -->
-  <section class="bg-brand-dark/95 border-t border-brand-white/10 py-8 px-6 sm:px-8 lg:px-12">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 md:divide-x divide-brand-white/10 text-center">
-      <div class="px-4">
-        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">10 AM</span>
-        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Start Time</span>
-      </div>
-      <div class="px-4">
-        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">Sat & Sun</span>
-        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Days Available</span>
-      </div>
-      <div class="px-4">
-        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">Rooftop</span>
-        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Open-Air</span>
-      </div>
-      <div class="px-4">
-        <span class="block font-display font-bold text-2xl text-brand-white uppercase tracking-wide">Dog-Friendly</span>
-        <span class="block font-body text-xs tracking-stat uppercase text-brand-orange mt-1">Patio</span>
-      </div>
-    </div>
-  </section>
+  <StatBar stats={[
+    { value: '10 AM', label: 'Start Time' },
+    { value: 'Sat & Sun', label: 'Days Available' },
+    { value: 'Rooftop', label: 'Open-Air' },
+    { value: 'Dog-Friendly', label: 'Patio' },
+  ]} />
 
   <!-- ── NOT JUST BRUNCH ──────────────────────────────────── -->
-  <section class="relative bg-brand-cream">
-    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
-      <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
-        <img
-          src="/images/brunch/park-101-brunch-brisket-burrito-02-carlsbad.jpg"
-          alt="Brisket breakfast burrito with fries at Park 101 Carlsbad brunch"
-          class="absolute inset-0 w-full h-full object-cover object-center"
-          loading="lazy"
-        />
-      </div>
-      <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
-        <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            The Experience
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            Not Just Brunch.<br />A Whole Morning.
-          </h2>
-          <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
-            Park 101's brunch isn't eggs and toast — it's the smokehouse meeting the morning. Chilaquiles built on smoked tri-tip, burritos loaded with brisket, and a rooftop that catches the California sun from the first plate to the last mimosa.
-          </p>
-          <a
-            href={siteProfile.ordering.reservationsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
-          >
-            Reserve a Table
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <SplitIntro
+    image="/images/brunch/park-101-brunch-brisket-burrito-02-carlsbad.jpg"
+    imageAlt="Brisket breakfast burrito with fries at Park 101 Carlsbad brunch"
+    eyebrow="The Experience"
+    heading="Not Just Brunch.<br />A Whole Morning."
+    body="Park 101's brunch isn't eggs and toast — it's the smokehouse meeting the morning. Chilaquiles built on smoked tri-tip, burritos loaded with brisket, and a rooftop that catches the California sun from the first plate to the last mimosa."
+    ctaLabel="Reserve a Table"
+    ctaHref={siteProfile.ordering.reservationsUrl}
+    ctaExternal={true}
+  />
 
   <!-- ── FOOD GRID ─────────────────────────────────────────── -->
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
