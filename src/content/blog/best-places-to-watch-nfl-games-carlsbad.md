@@ -1,6 +1,7 @@
 ---
 title: "Best Places to Watch NFL Games in Carlsbad, CA"
-description: "Looking for the best sports bar to watch NFL Sundays in Carlsbad? Here's what to look for — and why Park 101's rooftop and courtyard setup is built for game day."
+seoTitle: "Best NFL Bars in Carlsbad, CA"
+description: "Looking for the best sports bar to watch NFL Sundays in Carlsbad? Here's why Park 101's rooftop and courtyard setup is built for game day."
 publishDate: 2026-07-10
 author: "Park 101"
 image: "/images/venue/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg"

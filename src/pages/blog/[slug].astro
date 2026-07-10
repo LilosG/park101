@@ -34,8 +34,8 @@ const formattedUpdated = post.data.updatedDate
   ? post.data.updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   : null;
 
-const pageTitle = `${post.data.title} | Park 101 Blog`;
-const canonical = `${siteProfile.url}/blog/${post.id}`;
+const pageTitle = `${post.data.seoTitle ?? post.data.title} | Park 101 Blog`;
+const canonical = `${siteProfile.url}/blog/${post.id}/`;
 const ogImageUrl = post.data.image
   ? (post.data.image.startsWith('http') ? post.data.image : `${siteProfile.url}${post.data.image}`)
   : undefined;

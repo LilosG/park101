@@ -1,6 +1,6 @@
 ---
 title: "Best Rooftop Bars in Carlsbad, CA"
-description: "Searching for a rooftop bar in Carlsbad? Here's what separates a real rooftop experience from a patio with a view — and why Park 101's rooftop deck is one block from the beach."
+description: "Searching for a rooftop bar in Carlsbad? Here's what makes a real rooftop experience — and why Park 101's rooftop deck is one block from the beach."
 publishDate: 2026-07-10
 author: "Park 101"
 image: "/images/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"

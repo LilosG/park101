@@ -1,6 +1,7 @@
 ---
 title: "Best Family-Friendly Restaurants in Carlsbad Village"
-description: "Traveling with kids — or your dog — in Carlsbad Village? Here's what makes a restaurant genuinely family-friendly, and why Park 101 is built for groups of all ages."
+seoTitle: "Family-Friendly Restaurants in Carlsbad"
+description: "Traveling with kids or your dog in Carlsbad Village? Here's what makes a restaurant genuinely family-friendly, and why Park 101 fits the bill."
 publishDate: 2026-07-10
 author: "Park 101"
 image: "/images/venue/park-101-families-kids-game-day-carlsbad.jpg"

@@ -18,7 +18,12 @@ const image = privateEventImages[event.slug];
 const otherEvents = siteProfile.privateEvents.filter((e: any) => e.slug !== event.slug).slice(0, 3);
 
 const pageTitle = `${event.name} Venue in Carlsbad | PRK 101`;
-const pageDescription = `${event.description} ${event.capacity} in Carlsbad Village.`;
+const descriptionSuffix = ` ${event.capacity} in Carlsbad Village.`;
+const maxDescLength = 160 - descriptionSuffix.length;
+const trimmedDescription = event.description.length > maxDescLength
+  ? `${event.description.slice(0, maxDescLength - 1).trimEnd()}…`
+  : event.description;
+const pageDescription = `${trimmedDescription}${descriptionSuffix}`;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -41,7 +46,7 @@ const faqSchema = event.faqs ? {
 } : null;
 ---
 
-<Layout title={pageTitle} description={pageDescription} ogImage={siteProfile.seo.ogImage}>
+<Layout title={pageTitle} description={pageDescription} ogImage={image}>
 
   <!-- ── BREADCRUMB ───────────────────────────────────────── -->
   <nav aria-label="Breadcrumb" class="bg-brand-cream pt-28 pb-4 px-6 sm:px-8 lg:px-12">

@@ -31,8 +31,8 @@ const pageTitle = page.currentPage === 1
 const pageDescription = categoryMeta.description || `${categoryMeta.label} posts from Park 101 in Carlsbad Village.`;
 
 const canonical = page.currentPage === 1
-  ? `${siteProfile.url}/blog/category/${categoryMeta.slug}`
-  : `${siteProfile.url}/blog/category/${categoryMeta.slug}/${page.currentPage}`;
+  ? `${siteProfile.url}/blog/category/${categoryMeta.slug}/`
+  : `${siteProfile.url}/blog/category/${categoryMeta.slug}/${page.currentPage}/`;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -45,7 +45,7 @@ const breadcrumbSchema = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription} canonical={canonical} ogImage={siteProfile.seo.ogImage} transparentNav={true}>
+<Layout title={pageTitle} description={pageDescription} canonical={canonical} ogImage={categoryMeta.image} transparentNav={true}>
 
   <!-- ── BREADCRUMB ───────────────────────────────────────── -->
   <nav aria-label="Breadcrumb" class="bg-brand-dark pt-28 pb-4 px-6 sm:px-8 lg:px-12">
