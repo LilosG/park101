@@ -130,7 +130,12 @@
       "headline": "Your Birthday, Our Rooftop",
       "description": "Celebrate with the whole crew. Private or semi-private spaces, custom menus, and a rooftop setting that makes every birthday unforgettable.",
       "capacity": "Up to 150 guests",
-      "features": ["Private & Semi-Private Spaces", "Custom Menus", "Bar Packages", "Rooftop Access"]
+      "features": ["Private & Semi-Private Spaces", "Custom Menus", "Bar Packages", "Rooftop Access"],
+      "faqs": [
+        { "q": "How many guests can a birthday party hold at Park 101?", "a": "Up to 150 guests, across private or semi-private spaces depending on your group size." },
+        { "q": "Can I customize the menu for a birthday party?", "a": "Yes — custom menus and bar packages are built around your event and your crowd." },
+        { "q": "Do I need a deposit to lock in my date?", "a": "Yes. Once your plan is finalized, a deposit secures the date." }
+      ]
     },
     {
       "slug": "corporate-events",
@@ -138,7 +143,12 @@
       "headline": "Team Events That Actually Deliver",
       "description": "Company happy hours, team outings, client entertaining, and corporate buyouts. Full AV capability, flexible spaces, and catering that impresses.",
       "capacity": "Up to 200 guests",
-      "features": ["AV Capability", "Flexible Layouts", "Catering Packages", "Private Buyout Option"]
+      "features": ["AV Capability", "Flexible Layouts", "Catering Packages", "Private Buyout Option"],
+      "faqs": [
+        { "q": "Does Park 101 have AV for presentations?", "a": "Yes — full AV capability is available for presentations, client entertaining, and team events." },
+        { "q": "Can we book a full corporate buyout?", "a": "Yes. Corporate events can scale up to a full private buyout for up to 200 guests." },
+        { "q": "Is catering included?", "a": "Catering packages are built around your event as part of the corporate events program." }
+      ]
     },
     {
       "slug": "venue-buyout",
@@ -146,7 +156,12 @@
       "headline": "The Whole Place Is Yours",
       "description": "Take over the entire Park 101 experience — rooftop, courtyard, indoor bars, and all. Full buyouts available for large events, filming, and exclusive gatherings.",
       "capacity": "Up to 300 guests",
-      "features": ["Full Venue Access", "All Spaces Included", "Custom Programming", "Dedicated Staff"]
+      "features": ["Full Venue Access", "All Spaces Included", "Custom Programming", "Dedicated Staff"],
+      "faqs": [
+        { "q": "How many guests fit in a full venue buyout?", "a": "Up to 300 guests across the rooftop, courtyard, and indoor bar combined." },
+        { "q": "Can a full buyout be used for filming?", "a": "Yes — full buyouts are available for large events, filming, and exclusive gatherings." },
+        { "q": "Is staffing included with a buyout?", "a": "Yes — dedicated staff and custom programming are included with a full venue buyout." }
+      ]
     },
     {
       "slug": "game-day-parties",
@@ -154,7 +169,12 @@
       "headline": "Reserve the Rooftop for the Big Game",
       "description": "Book a private section for your crew on game day. LED wall, dedicated screens, table service, and food and drink packages built for the occasion.",
       "capacity": "Up to 80 guests",
-      "features": ["Dedicated Screen Access", "Table Service", "Food & Drink Packages", "Game Day Atmosphere"]
+      "features": ["Dedicated Screen Access", "Table Service", "Food & Drink Packages", "Game Day Atmosphere"],
+      "faqs": [
+        { "q": "How many guests can a game day party hold?", "a": "Up to 80 guests, with dedicated screen access for your section." },
+        { "q": "Do I have to book the whole venue for a game day party?", "a": "No — you can reserve a section, the rooftop, or the courtyard depending on your group size." },
+        { "q": "Is table service included?", "a": "Yes — table service and food and drink packages are built into game day party bookings." }
+      ]
     },
     {
       "slug": "rehearsal-dinners",
@@ -162,9 +182,55 @@
       "headline": "Start the Celebration Right",
       "description": "A relaxed, elevated setting for the night before the big day. Semi-private spaces, family-style menus, and a rooftop sunset that sets the tone.",
       "capacity": "Up to 80 guests",
-      "features": ["Semi-Private Space", "Family-Style Menus", "Rooftop Sunset Views", "Relaxed Atmosphere"]
+      "features": ["Semi-Private Space", "Family-Style Menus", "Rooftop Sunset Views", "Relaxed Atmosphere"],
+      "faqs": [
+        { "q": "How many guests can a rehearsal dinner hold?", "a": "Up to 80 guests, in a semi-private space." },
+        { "q": "Is the menu customizable for a rehearsal dinner?", "a": "Yes — family-style menus are built around your group." },
+        { "q": "Can we get rooftop sunset views for a rehearsal dinner?", "a": "Yes — the rooftop's sunset views are one of the most popular settings for rehearsal dinners." }
+      ]
     }
   ],
+
+  "eventTypes": [
+    {
+      "slug": "nfl-sundays",
+      "name": "NFL Sundays",
+      "description": "Every NFL Sunday, all season long, across the LED wall and 20+ screens throughout the venue.",
+      "recurring": true
+    },
+    {
+      "slug": "mlb-games",
+      "name": "MLB Games",
+      "description": "A regular spot for Padres games and MLB action all season.",
+      "recurring": true
+    },
+    {
+      "slug": "ufc-fight-nights",
+      "name": "UFC Fight Nights",
+      "description": "Fight night viewing on the biggest screen in the courtyard.",
+      "recurring": true
+    },
+    {
+      "slug": "fantasy-draft-events",
+      "name": "Fantasy Draft Events",
+      "description": "Bring the league — space and screens for fantasy draft day.",
+      "recurring": true
+    },
+    {
+      "slug": "live-music",
+      "name": "Live Music",
+      "description": "Live bands and country nights in the courtyard.",
+      "recurring": true
+    },
+    {
+      "slug": "themed-nights",
+      "name": "Themed Nights & Seasonal Events",
+      "description": "Seasonal programming and themed nights throughout the year.",
+      "recurring": true
+    }
+  ],
+
+  "upcomingEvents": [],
 
   "seo": {
     "defaultTitle": "Park 101 | Rooftop Bar & Restaurant in Carlsbad Village CA",

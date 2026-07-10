@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://park101carlsbad.com/sitemap-index.xml

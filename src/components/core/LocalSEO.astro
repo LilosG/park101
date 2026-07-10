@@ -23,7 +23,7 @@ const siteUrl = siteProfile.url;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
-const fullTitle = title.includes('Park 101')
+const fullTitle = (title.includes('Park 101') || title.includes('PRK 101'))
   ? title
   : `${title} | Park 101 Carlsbad`;
 
