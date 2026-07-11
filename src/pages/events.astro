@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
 import EventInquiryForm from '../components/core/EventInquiryForm.astro';
+import EventMatchupCard from '../components/events/EventMatchupCard.astro';
 
 const eventTypes = siteProfile.eventTypes;
 const upcomingEvents = siteProfile.upcomingEvents;
@@ -154,11 +155,15 @@ const breadcrumbSchema = {
       ) : (
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
           {upcomingEvents.map((event: any) => (
-            <div class="bg-brand-dark-light rounded-lg p-6 border border-brand-white/10">
-              <p class="font-body text-xs font-bold uppercase tracking-label text-brand-orange mb-2">{event.date}</p>
-              <h3 class="font-display font-bold text-lg text-brand-white uppercase mb-1">{event.name}</h3>
-              <p class="font-body text-sm text-brand-white/70">{event.description}</p>
-            </div>
+            <EventMatchupCard
+              category={event.category}
+              sideA={event.sideA}
+              sideB={event.sideB}
+              date={event.date}
+              time={event.time}
+              image={event.image}
+              imageAlt={event.imageAlt}
+            />
           ))}
         </div>
       )}

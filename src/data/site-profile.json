@@ -230,7 +230,26 @@
     }
   ],
 
-  "upcomingEvents": [],
+  "upcomingEvents": [
+    {
+      "category": "World Cup — Quarterfinals",
+      "sideA": "Norway",
+      "sideB": "England",
+      "date": "Sat, Jul 11",
+      "time": "2:00 PM",
+      "image": "/images/venue/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg",
+      "imageAlt": "Sports bar viewing area at Park 101 Carlsbad"
+    },
+    {
+      "category": "World Cup — Quarterfinals",
+      "sideA": "Argentina",
+      "sideB": "Switzerland",
+      "date": "Sat, Jul 11",
+      "time": "6:00 PM",
+      "image": "/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg",
+      "imageAlt": "Packed crowd at Park 101 Carlsbad for a big game"
+    }
+  ],
 
   "seo": {
     "defaultTitle": "Park 101 | Rooftop Bar & Restaurant in Carlsbad Village",

@@ -1,0 +1,40 @@
+---
+interface Props {
+  category: string;
+  sideA: string;
+  sideB: string;
+  date: string;
+  time: string;
+  image: string;
+  imageAlt: string;
+}
+
+const { category, sideA, sideB, date, time, image, imageAlt } = Astro.props;
+---
+
+<div class="flex items-stretch bg-brand-dark-light border border-brand-white/10 rounded-lg overflow-hidden">
+  <div class="flex-1 p-6">
+    <span class="block font-body text-xs font-bold uppercase tracking-label text-brand-orange mb-4">
+      {category}
+    </span>
+    <p class="font-display font-bold text-xl text-brand-white uppercase leading-tight mb-1">{sideA}</p>
+    <p class="font-display font-bold text-xl text-brand-white uppercase leading-tight">{sideB}</p>
+  </div>
+
+  <div class="w-px bg-brand-white/10"></div>
+
+  <div class="w-32 sm:w-40 flex-shrink-0 flex flex-col">
+    <div class="text-center pt-5 pb-3 px-3">
+      <span class="block font-body text-xs font-bold uppercase tracking-label text-brand-white/60">{date}</span>
+      <span class="block font-display font-bold text-lg text-brand-white uppercase mt-0.5">{time}</span>
+    </div>
+    <div class="relative flex-1 min-h-[90px]">
+      <img
+        src={image}
+        alt={imageAlt}
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</div>
