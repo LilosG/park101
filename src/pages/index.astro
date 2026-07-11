@@ -1,35 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
+import { Image } from 'astro:assets';
+
+import stLouisRibs from '../assets/food/park-101-st-louis-ribs-carlsbad.jpg';
+import smokedBrisket from '../assets/food/park-101-bbq-brisket-platter-sides-carlsbad.jpg';
+import shrimpTacosImg from '../assets/food/park-101-shrimp-tacos-carlsbad.jpg';
+import theWesternBurger from '../assets/food/park-101-the-western-carlsbad.jpg';
+import smokedTriTipPhillyImg from '../assets/food/park-101-smoked-tri-tip-philly-carlsbad.jpg';
+import triTipTacosImg from '../assets/food/park-101-tri-tip-tacos-carlsbad.jpg';
+import loadedBbqMac from '../assets/food/park-101-loaded-bbq-mac-06-carlsbad.jpg';
+
+import rodeoTowerPrk101 from '../assets/drinks/park-101-rodeo-tower-prk101-carlsbad.jpg';
+import dontMessWithMe from '../assets/drinks/park-101-dont-mess-with-me-cocktail-carlsbad.jpg';
+import gunPowderLead from '../assets/drinks/park-101-gun-powder-lead-cocktail-carlsbad.jpg';
+import talkingIrons from '../assets/drinks/park-101-talking-irons-cocktail-carlsbad.jpg';
+
+import heroImage from '../assets/venue/park-101-outdoor-rooftop-string-lights-tropical-vibes-carlsbad.jpg';
+import firePitPatio from '../assets/venue/park-101-outdoor-fire-pit-patio-venue-carlsbad.jpg';
+import padresGameDay from '../assets/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg';
+import liveMusicCountry from '../assets/venue/park-101-live-music-country-wide-carlsbad.jpg';
+import familiesKidsGameDay from '../assets/venue/park-101-families-kids-game-day-carlsbad.jpg';
+import rooftopEveningGroup from '../assets/venue/park-101-rooftop-evening-group-carlsbad.jpg';
+
+import brunchChilaquiles from '../assets/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg';
 
 const foodItems = [
   {
-    src: '/images/food/park-101-st-louis-ribs-carlsbad.jpg',
+    src: stLouisRibs,
     alt: 'St. Louis ribs with BBQ sauce and pickles at Park 101 Carlsbad',
     name: 'St. Louis Ribs',
   },
   {
-    src: '/images/food/park-101-bbq-brisket-platter-sides-carlsbad.jpg',
+    src: smokedBrisket,
     alt: 'Sliced smoked brisket platter with sauce at Park 101 Carlsbad',
     name: 'Smoked Brisket',
   },
   {
-    src: '/images/food/park-101-shrimp-tacos-carlsbad.jpg',
+    src: shrimpTacosImg,
     alt: 'Shrimp tacos with chipotle sauce and lime at Park 101 Carlsbad',
     name: 'Shrimp Tacos',
   },
   {
-    src: '/images/food/park-101-the-western-carlsbad.jpg',
+    src: theWesternBurger,
     alt: 'Loaded bacon cheeseburger with fries at Park 101 Carlsbad',
     name: 'The Western Burger',
   },
   {
-    src: '/images/food/park-101-smoked-tri-tip-philly-carlsbad.jpg',
+    src: smokedTriTipPhillyImg,
     alt: 'Smoked tri-tip Philly cheesesteak sandwich at Park 101 Carlsbad',
     name: 'Smoked Tri-Tip Philly',
   },
   {
-    src: '/images/food/park-101-tri-tip-tacos-carlsbad.jpg',
+    src: triTipTacosImg,
     alt: 'Tri-tip tacos with chimichurri and cotija at Park 101 Carlsbad',
     name: 'Tri-Tip Tacos',
   },
@@ -37,19 +60,19 @@ const foodItems = [
 
 const drinkItems = [
   {
-    src: '/images/drinks/park-101-rodeo-tower-prk101-carlsbad.jpg',
+    src: rodeoTowerPrk101,
     alt: 'Signature Rodeo Tower cocktail display at Park 101 Carlsbad with PRK 101 sign',
   },
   {
-    src: '/images/drinks/park-101-dont-mess-with-me-cocktail-carlsbad.jpg',
+    src: dontMessWithMe,
     alt: "Don't At Me cocktail at Park 101 Carlsbad",
   },
   {
-    src: '/images/drinks/park-101-gun-powder-lead-cocktail-carlsbad.jpg',
+    src: gunPowderLead,
     alt: 'Gun Powder and Lead cocktail with fresh mint at Park 101 Carlsbad',
   },
   {
-    src: '/images/drinks/park-101-talking-irons-cocktail-carlsbad.jpg',
+    src: talkingIrons,
     alt: 'Talking Irons whiskey cocktail on the rooftop at Park 101 Carlsbad',
   },
 ];
@@ -65,12 +88,13 @@ const drinkItems = [
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-screen w-full bg-brand-dark flex flex-col justify-between overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img
-        src="/images/venue/park-101-outdoor-rooftop-string-lights-tropical-vibes-carlsbad.jpg"
+      <Image
+        src={heroImage}
         alt="Park 101 packed outdoor courtyard with string lights, palm trees, and multi-level venue in Carlsbad Village"
         class="w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
+        width={1920}
       />
       <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/55 to-brand-dark/10"></div>
     </div>
@@ -127,11 +151,12 @@ const drinkItems = [
   <section class="relative bg-brand-cream">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
       <div class="relative lg:col-span-7 min-h-[400px] lg:min-h-full overflow-hidden">
-        <img
-          src="/images/venue/park-101-outdoor-fire-pit-patio-venue-carlsbad.jpg"
+        <Image
+          src={firePitPatio}
           alt="Park 101 full outdoor courtyard at dusk with fire pit seating, LED screen, tables, and multi-level venue"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
+          width={1400}
         />
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
@@ -186,11 +211,12 @@ const drinkItems = [
         </div>
       </div>
       <div class="relative lg:col-span-7 order-1 lg:order-2 min-h-[400px] lg:min-h-full overflow-hidden">
-        <img
-          src="/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg"
+        <Image
+          src={padresGameDay}
           alt="Packed crowd at Park 101 Carlsbad during a San Diego Padres game with the Home of the San Diego Padres banner and LED wall"
           class="absolute inset-0 w-full h-full object-cover object-[50%_35%]"
           loading="lazy"
+          width={1400}
         />
       </div>
     </div>
@@ -212,11 +238,12 @@ const drinkItems = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
         {foodItems.map((item) => (
           <div class="group relative overflow-hidden bg-brand-dark aspect-[4/3]">
-            <img
+            <Image
               src={item.src}
               alt={item.alt}
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               loading="lazy"
+              width={800}
             />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
               <span class="font-display font-bold text-base uppercase tracking-wider text-brand-white">{item.name}</span>
@@ -240,11 +267,12 @@ const drinkItems = [
   <section class="relative bg-brand-dark">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[650px]">
       <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
-        <img
-          src="/images/food/park-101-loaded-bbq-mac-06-carlsbad.jpg"
+        <Image
+          src={loadedBbqMac}
           alt="Three BBQ platters of pulled pork, St. Louis ribs, and sliced brisket from the Park 101 smokehouse"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
+          width={1400}
         />
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
@@ -289,11 +317,12 @@ const drinkItems = [
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
         {drinkItems.map((item) => (
           <div class="relative overflow-hidden bg-brand-dark aspect-square">
-            <img
+            <Image
               src={item.src}
               alt={item.alt}
               class="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
+              width={800}
             />
           </div>
         ))}
@@ -304,11 +333,12 @@ const drinkItems = [
   <!-- ── NORTH COUNTY LINEUP ───────────────────────────────── -->
   <section class="relative min-h-[520px] flex items-center justify-center text-center px-6 py-24 overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/venue/park-101-live-music-country-wide-carlsbad.jpg"
+      <Image
+        src={liveMusicCountry}
         alt="Country guitarist performing live at Park 101 Carlsbad with the LED screen and crowd behind him"
         class="w-full h-full object-cover object-[50%_62%]"
         loading="lazy"
+        width={1920}
       />
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
@@ -355,11 +385,12 @@ const drinkItems = [
         </div>
       </div>
       <div class="relative lg:col-span-7 min-h-[400px] lg:min-h-full overflow-hidden">
-        <img
-          src="/images/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg"
+        <Image
+          src={brunchChilaquiles}
           alt="Smoked tri-tip chilaquiles bowl with a fried egg, cotija cheese, pickled onions, and jalapeños at Park 101 weekend brunch"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
+          width={1400}
         />
       </div>
     </div>
@@ -369,11 +400,12 @@ const drinkItems = [
   <section class="relative bg-brand-tan">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[650px]">
       <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
-        <img
-          src="/images/venue/park-101-families-kids-game-day-carlsbad.jpg"
+        <Image
+          src={familiesKidsGameDay}
           alt="Families and kids in Padres jerseys enjoying game day together at Park 101 Carlsbad"
           class="absolute inset-0 w-full h-full object-cover object-[50%_75%]"
           loading="lazy"
+          width={1400}
         />
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-tan">
@@ -407,11 +439,12 @@ const drinkItems = [
   <!-- ── PRIVATE EVENTS ────────────────────────────────────── -->
   <section class="relative min-h-[500px] flex items-center justify-center text-center px-6 py-24 overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/venue/park-101-rooftop-evening-group-carlsbad.jpg"
+      <Image
+        src={rooftopEveningGroup}
         alt="Evening group gathering on the rooftop at Park 101 Carlsbad with string lights and open-air venue"
         class="w-full h-full object-cover object-center"
         loading="lazy"
+        width={1920}
       />
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
