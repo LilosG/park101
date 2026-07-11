@@ -4,52 +4,70 @@ import siteProfile from '../data/site-profile.json';
 import MenuItemCard from '../components/menu/MenuItemCard.astro';
 import StatBar from '../components/core/StatBar.astro';
 import SplitIntro from '../components/core/SplitIntro.astro';
+import { Image } from 'astro:assets';
+
+import triTipArugulaHero from '../assets/food/park-101-tri-tip-x-arugula-hero-carlsbad.jpg';
+import bbqChickenSaladHero from '../assets/food/park-101-bbq-chicken-salad-hero-carlsbad.jpg';
+import ytoTendersHero from '../assets/food/park-101-yto-chicken-tenders-hero-carlsbad.jpg';
+import surfTurfFriesHero from '../assets/food/park-101-surf-n-turf-fries-hero-carlsbad.jpg';
+import smokedTriTipPhillyHero from '../assets/food/park-101-smoked-tri-tip-philly-hero-carlsbad.jpg';
+import theChickHero from '../assets/food/park-101-the-chick-hero-carlsbad.jpg';
+import shrimpTacosHero from '../assets/food/park-101-shrimp-tacos-hero-carlsbad.jpg';
+import triTipTacosHero from '../assets/food/park-101-tri-tip-tacos-hero-carlsbad.jpg';
+
+import talkingIronsMenu from '../assets/drinks/park-101-talking-irons-cocktail-carlsbad.jpg';
+import rodeoTowerMenuImg from '../assets/drinks/park-101-rodeo-tower-menu-carlsbad.jpg';
+import frozenDrinksImg from '../assets/drinks/park-101-frozen-drinks-carlsbad.jpg';
+import gunPowderLeadMenu from '../assets/drinks/park-101-gun-powder-lead-cocktail-carlsbad.jpg';
+
+import foodSpreadImg from '../assets/food/park-101-prk-food-spread-carlsbad.jpg';
+import foodSpreadIntroImg from '../assets/food/park-101-food-spread-intro-carlsbad.jpg';
 
 const menuItems = [
   {
-    src: '/images/food/park-101-tri-tip-x-arugula-hero-carlsbad.jpg',
+    src: triTipArugulaHero,
     alt: 'Tri-Tip x Arugula salad with pickled onion and cotija at Park 101 Carlsbad',
     name: 'Tri-Tip x Arugula Salad',
     description: 'Smoked tri-tip, arugula, cotija, pickled onion, chimichurri, avocado.',
   },
   {
-    src: '/images/food/park-101-bbq-chicken-salad-hero-carlsbad.jpg',
+    src: bbqChickenSaladHero,
     alt: 'BBQ chicken salad with crispy tortilla strips at Park 101 Carlsbad',
     name: 'BBQ Chicken Salad',
     description: 'Fried BBQ chicken, romaine, cherry tomato, black beans, avocado ranch, crispy tortilla strips.',
   },
   {
-    src: '/images/food/park-101-yto-chicken-tenders-hero-carlsbad.jpg',
+    src: ytoTendersHero,
     alt: 'YTO chicken tenders and fries at Park 101 Carlsbad',
     name: 'YTO Tenders',
     description: 'House-seasoned chicken tenders with fries.',
   },
   {
-    src: '/images/food/park-101-surf-n-turf-fries-hero-carlsbad.jpg',
+    src: surfTurfFriesHero,
     alt: 'Surf and turf loaded fries with smoked meat and shrimp at Park 101 Carlsbad',
     name: 'Surf & Turf Fries',
     description: 'House-made cheese sauce, smoked meat, ancho shrimp, bacon, poblano sauce.',
   },
   {
-    src: '/images/food/park-101-smoked-tri-tip-philly-hero-carlsbad.jpg',
+    src: smokedTriTipPhillyHero,
     alt: 'Smoked tri-tip Philly cheesesteak sandwich at Park 101 Carlsbad',
     name: 'Smoked Tri-Tip Philly',
     description: 'Smoked tri-tip, sauteed peppers and onions, melted cheddar, toasted hoagie.',
   },
   {
-    src: '/images/food/park-101-the-chick-hero-carlsbad.jpg',
+    src: theChickHero,
     alt: 'The Chick fried chicken sandwich at Park 101 Carlsbad',
     name: 'The Chick',
     description: 'Fried or grilled chicken sandwich with jalapeno coleslaw and sriracha aioli.',
   },
   {
-    src: '/images/food/park-101-shrimp-tacos-hero-carlsbad.jpg',
+    src: shrimpTacosHero,
     alt: 'Shrimp tacos with chipotle sauce and lime at Park 101 Carlsbad',
     name: 'Shrimp Tacos',
     description: 'Ancho shrimp, coleslaw, pico de gallo, taco sauce, lime.',
   },
   {
-    src: '/images/food/park-101-tri-tip-tacos-hero-carlsbad.jpg',
+    src: triTipTacosHero,
     alt: 'Smoked beef tacos with chimichurri and cotija at Park 101 Carlsbad',
     name: 'Smoked Beef Tacos',
     description: 'Arugula, pickled red onion, cotija, chimichurri.',
@@ -58,25 +76,25 @@ const menuItems = [
 
 const cocktailItems = [
   {
-    src: '/images/drinks/park-101-talking-irons-cocktail-carlsbad.jpg',
+    src: talkingIronsMenu,
     alt: 'Talking Irons cocktail on the rooftop at Park 101 Carlsbad',
     name: 'Talking Irons',
     description: 'A whiskey old fashioned with an orange twist.',
   },
   {
-    src: '/images/drinks/park-101-rodeo-tower-menu-carlsbad.jpg',
+    src: rodeoTowerMenuImg,
     alt: 'Rodeo Tower cocktail tower with sunflowers at Park 101 Carlsbad',
     name: 'Rodeo Tower',
     description: "Park 101's signature cocktail tower — built for the table.",
   },
   {
-    src: '/images/drinks/park-101-frozen-drinks-carlsbad.jpg',
+    src: frozenDrinksImg,
     alt: 'Frozen drinks lineup at Park 101 Carlsbad',
     name: 'Frozen Drinks',
     description: 'Rotating frozen cocktails, blended fresh.',
   },
   {
-    src: '/images/drinks/park-101-gun-powder-lead-cocktail-carlsbad.jpg',
+    src: gunPowderLeadMenu,
     alt: 'Gun Powder & Lead cocktail with fresh mint at Park 101 Carlsbad',
     name: 'Gun Powder & Lead',
     description: 'A tall, refreshing build finished with fresh mint.',
@@ -102,12 +120,13 @@ const breadcrumbSchema = {
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/food/park-101-prk-food-spread-carlsbad.jpg"
+      <Image
+        src={foodSpreadImg}
         alt="A spread of BBQ dishes at Park 101 Carlsbad"
         class="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
+        width={1920}
       />
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
@@ -137,7 +156,7 @@ const breadcrumbSchema = {
 
   <!-- ── INTRO ────────────────────────────────────────────── -->
   <SplitIntro
-    image="/images/food/park-101-food-spread-intro-carlsbad.jpg"
+    image={foodSpreadIntroImg}
     imageAlt="A spread of wood-smoked BBQ dishes at Park 101 Carlsbad"
     eyebrow="The Kitchen"
     heading="Wood-Smoked.<br />Built to Share."

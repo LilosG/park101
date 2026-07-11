@@ -3,20 +3,29 @@ import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
 import StatBar from '../components/core/StatBar.astro';
 import SplitIntro from '../components/core/SplitIntro.astro';
+import { Image } from 'astro:assets';
+import brunchChilaquilesImg from '../assets/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg';
+import brunchBurrito01 from '../assets/brunch/park-101-brunch-brisket-burrito-01-carlsbad.jpg';
+import brunchBaconEggCheese from '../assets/brunch/park-101-brunch-bacon-egg-cheese-carlsbad.jpg';
+import coschieBootImg from '../assets/drinks/park-101-coschie-boot-cocktail-carlsbad.jpg';
+import rodeoTowerSunflower from '../assets/drinks/park-101-rodeo-tower-sunflower-carlsbad.jpg';
+import cocktailLineupImg from '../assets/drinks/park-101-cocktail-lineup-carlsbad.jpg';
+import brunchBurrito02 from '../assets/brunch/park-101-brunch-brisket-burrito-02-carlsbad.jpg';
+import rooftopDiningImg from '../assets/venue/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg';
 
 const foodItems = [
   {
-    src: '/images/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg',
+    src: brunchChilaquilesImg,
     alt: 'Smoked tri-tip chilaquiles with fried egg and cotija at Park 101 Carlsbad brunch',
     name: 'Smoked Tri-Tip Chilaquiles',
   },
   {
-    src: '/images/brunch/park-101-brunch-brisket-burrito-01-carlsbad.jpg',
+    src: brunchBurrito01,
     alt: 'Breakfast burrito at Park 101 Carlsbad weekend brunch',
     name: 'Breakfast Burrito',
   },
   {
-    src: '/images/brunch/park-101-brunch-bacon-egg-cheese-carlsbad.jpg',
+    src: brunchBaconEggCheese,
     alt: 'Bacon, egg and cheese breakfast sandwich at Park 101 Carlsbad',
     name: 'Bacon, Egg & Cheese',
   },
@@ -24,17 +33,17 @@ const foodItems = [
 
 const drinkItems = [
   {
-    src: '/images/drinks/park-101-coschie-boot-cocktail-carlsbad.jpg',
+    src: coschieBootImg,
     alt: 'Coschie Boot cocktail served in a boot-shaped vessel at Park 101 Carlsbad',
     name: 'Coschie Boot',
   },
   {
-    src: '/images/drinks/park-101-rodeo-tower-sunflower-carlsbad.jpg',
+    src: rodeoTowerSunflower,
     alt: 'Rodeo Tower cocktail tower on the rooftop at Park 101 Carlsbad',
     name: 'Rodeo Tower',
   },
   {
-    src: '/images/drinks/park-101-cocktail-lineup-carlsbad.jpg',
+    src: cocktailLineupImg,
     alt: 'Brunch cocktail lineup at Park 101 Carlsbad',
     name: 'Brunch Cocktail Lineup',
   },
@@ -87,12 +96,13 @@ const faqSchema = {
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[650px] bg-brand-dark flex flex-col overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg"
+      <Image
+        src={brunchChilaquilesImg}
         alt="Smoked tri-tip chilaquiles brunch plate at Park 101 Carlsbad"
         class="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
+        width={1920}
       />
       <div class="absolute inset-0 bg-brand-dark/70"></div>
     </div>
@@ -138,7 +148,7 @@ const faqSchema = {
 
   <!-- ── NOT JUST BRUNCH ──────────────────────────────────── -->
   <SplitIntro
-    image="/images/brunch/park-101-brunch-brisket-burrito-02-carlsbad.jpg"
+    image={brunchBurrito02}
     imageAlt="Brisket breakfast burrito with fries at Park 101 Carlsbad brunch"
     eyebrow="The Experience"
     heading="Not Just Brunch.<br />A Whole Morning."
@@ -164,11 +174,12 @@ const faqSchema = {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
         {foodItems.map((item) => (
           <div class="group relative overflow-hidden bg-brand-dark-light aspect-[4/3]">
-            <img
+            <Image
               src={item.src}
               alt={item.alt}
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               loading="lazy"
+              width={800}
             />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
               <span class="font-display font-bold text-base uppercase tracking-wider text-brand-white">{item.name}</span>
@@ -204,11 +215,12 @@ const faqSchema = {
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
         {drinkItems.map((item) => (
           <div class="relative overflow-hidden bg-brand-dark aspect-square">
-            <img
+            <Image
               src={item.src}
               alt={item.alt}
               class="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
+              width={800}
             />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/85 via-transparent to-transparent flex items-end p-4">
               <span class="font-display font-bold text-sm uppercase tracking-wide text-brand-white">{item.name}</span>
@@ -243,11 +255,12 @@ const faqSchema = {
         </div>
       </div>
       <div class="relative lg:col-span-6 min-h-[350px] lg:min-h-full overflow-hidden">
-        <img
-          src="/images/venue/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg"
+        <Image
+          src={rooftopDiningImg}
           alt="Rooftop dining at Park 101 Carlsbad, ideal for private brunch events"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
+          width={1400}
         />
       </div>
     </div>

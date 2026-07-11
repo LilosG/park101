@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
+import { Image } from 'astro:assets';
+import storefrontImage from '../assets/venue/park-101-modern-brick-storefront-neon-signage-carlsbad.jpg';
 
 const pageTitle = 'Contact | PRK 101 Carlsbad';
 const pageDescription = `Visit Park 101 at ${siteProfile.contact.address.full}. Hours, directions, and contact info.`;
@@ -24,12 +26,13 @@ const hasEmail = Boolean(siteProfile.contact.email);
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[600px] bg-brand-dark flex flex-col overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/venue/park-101-modern-brick-storefront-neon-signage-carlsbad.jpg"
+      <Image
+        src={storefrontImage}
         alt="Park 101 storefront and signage in Carlsbad Village"
         class="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
+        width={1920}
       />
       <div class="absolute inset-0 bg-brand-dark/65"></div>
     </div>

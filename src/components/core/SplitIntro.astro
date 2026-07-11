@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
-  image: string;
+  image: ImageMetadata;
   imageAlt: string;
   eyebrow: string;
   heading: string;
@@ -16,11 +18,12 @@ const { image, imageAlt, eyebrow, heading, body, ctaLabel, ctaHref, ctaExternal 
 <section class="relative bg-brand-cream">
   <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
     <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
-      <img
+      <Image
         src={image}
         alt={imageAlt}
         class="absolute inset-0 w-full h-full object-cover object-center"
         loading="lazy"
+        width={1400}
       />
     </div>
     <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">

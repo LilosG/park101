@@ -3,35 +3,43 @@ import Layout from '../layouts/Layout.astro';
 import siteProfile from '../data/site-profile.json';
 import EventInquiryForm from '../components/core/EventInquiryForm.astro';
 import EventMatchupCard from '../components/events/EventMatchupCard.astro';
+import { Image } from 'astro:assets';
+
+import sportsBarViewingImg from '../assets/venue/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg';
+import padresGameDayEvents from '../assets/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg';
+import stadiumViewingImg from '../assets/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg';
+import patioSportsBarCrowdImg from '../assets/venue/park-101-outdoor-patio-sports-bar-crowd-carlsbad.jpg';
+import liveMusicEventsImg from '../assets/venue/park-101-live-music-country-wide-carlsbad.jpg';
+import patioCelebrationImg from '../assets/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg';
 
 const eventTypes = siteProfile.eventTypes;
 const upcomingEvents = siteProfile.upcomingEvents;
 
 // Local image mapping — same pattern as other pages (index.astro, brunch.astro):
 // page-level content array paired with centralized site-profile data.
-const eventTypeImages: Record<string, { src: string; alt: string }> = {
+const eventTypeImages: Record<string, { src: ImageMetadata; alt: string }> = {
   'nfl-sundays': {
-    src: '/images/venue/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg',
+    src: sportsBarViewingImg,
     alt: 'Outdoor sports bar viewing area with big screen at Park 101 Carlsbad',
   },
   'mlb-games': {
-    src: '/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg',
+    src: padresGameDayEvents,
     alt: 'Packed crowd at Park 101 Carlsbad during a San Diego Padres game',
   },
   'ufc-fight-nights': {
-    src: '/images/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg',
+    src: stadiumViewingImg,
     alt: 'Crowd watching a big screen at Park 101 Carlsbad',
   },
   'fantasy-draft-events': {
-    src: '/images/venue/park-101-outdoor-patio-sports-bar-crowd-carlsbad.jpg',
+    src: patioSportsBarCrowdImg,
     alt: 'Group gathered around screens at Park 101 Carlsbad',
   },
   'live-music': {
-    src: '/images/venue/park-101-live-music-country-wide-carlsbad.jpg',
+    src: liveMusicEventsImg,
     alt: 'Live music performance at Park 101 Carlsbad',
   },
   'themed-nights': {
-    src: '/images/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg',
+    src: patioCelebrationImg,
     alt: 'Themed night crowd celebration at Park 101 Carlsbad',
   },
 };
@@ -55,12 +63,13 @@ const breadcrumbSchema = {
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg"
+      <Image
+        src={padresGameDayEvents}
         alt="Packed crowd at Park 101 Carlsbad during a game day event"
         class="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
+        width={1920}
       />
       <div class="absolute inset-0 bg-brand-dark/65"></div>
     </div>
@@ -113,11 +122,12 @@ const breadcrumbSchema = {
           return (
             <div class="group relative aspect-[4/3] rounded-lg overflow-hidden">
               {image && (
-                <img
+                <Image
                   src={image.src}
                   alt={image.alt}
                   class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                   loading="lazy"
+                  width={800}
                 />
               )}
               <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent"></div>
