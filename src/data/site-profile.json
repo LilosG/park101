@@ -28,21 +28,18 @@
   },
 
   "hours": {
-    "monday":    { "open": "4:00 PM", "close": "9:00 PM" },
-    "tuesday":   { "open": "4:00 PM", "close": "9:00 PM" },
-    "wednesday": { "open": "4:00 PM", "close": "9:00 PM" },
-    "thursday":  { "open": "4:00 PM", "close": "10:00 PM" },
-    "friday":    { "open": "11:00 AM", "close": "11:00 PM" },
-    "saturday":  { "open": "10:00 AM", "close": "11:00 PM" },
-    "sunday":    { "open": "10:00 AM", "close": "9:00 PM" }
+    "monday":    { "open": "11:00 AM", "close": "9:00 PM" },
+    "tuesday":   { "open": "11:00 AM", "close": "9:00 PM" },
+    "wednesday": { "open": "11:00 AM", "close": "9:00 PM" },
+    "thursday":  { "open": "11:00 AM", "close": "9:00 PM" },
+    "friday":    { "open": "11:00 AM", "close": "12:00 AM" },
+    "saturday":  { "open": "11:00 AM", "close": "12:00 AM" },
+    "sunday":    { "open": "11:00 AM", "close": "9:00 PM" }
   },
 
   "hoursDisplay": [
-    { "days": "Monday – Wednesday", "hours": "4:00 PM – 9:00 PM" },
-    { "days": "Thursday",           "hours": "4:00 PM – 10:00 PM" },
-    { "days": "Friday",             "hours": "11:00 AM – 11:00 PM" },
-    { "days": "Saturday",           "hours": "10:00 AM – 11:00 PM" },
-    { "days": "Sunday",             "hours": "10:00 AM – 9:00 PM" }
+    { "days": "Sunday – Thursday",   "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Friday – Saturday",   "hours": "11:00 AM – 12:00 AM" }
   ],
 
   "social": {
