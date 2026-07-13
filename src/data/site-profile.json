@@ -54,7 +54,8 @@
 
   "ordering": {
     "toastUrl": "https://order.toasttab.com/online/park-101-3040-carlsbad-blvd",
-    "reservationsUrl": "https://tables.toasttab.com/restaurants/b853a506-313a-4be5-99d2-ffaf0c250021/findTime"
+    "reservationsUrl": "https://tables.toasttab.com/restaurants/b853a506-313a-4be5-99d2-ffaf0c250021/findTime",
+    "inquiryFormUrl": "https://www.toasttab.com/invoice/lead?rx=b853a506-313a-4be5-99d2-ffaf0c250021&ot=76b4caca-fb98-4747-b6ce-d97735957821&form=1"
   },
 
   "stats": [

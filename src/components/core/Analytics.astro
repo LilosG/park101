@@ -15,17 +15,21 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
       // since GA4 can't see completions inside Toast's own domain.
       // This only fires an event on click (intent), not confirmation.
       document.addEventListener('click', function (e) {
-        const link = e.target.closest('a[href*="toasttab.com"]');
+        const link = e.target.closest('a[href*="toasttab.com"], a[href^="tel:"]');
         if (!link) return;
 
         let eventName = 'toast_link_click';
-        try {
-          const host = new URL(link.href).hostname;
-          if (host.includes('tables.toasttab.com')) eventName = 'reservation_click';
-          else if (host.includes('order.toasttab.com')) eventName = 'order_click';
-          else if (link.href.includes('invoice/lead')) eventName = 'inquiry_form_click';
-          else if (link.href.toLowerCase().includes('gift')) eventName = 'gift_card_click';
-        } catch (err) {}
+        if (link.href.startsWith('tel:')) {
+          eventName = 'phone_click';
+        } else {
+          try {
+            const host = new URL(link.href).hostname;
+            if (host.includes('tables.toasttab.com')) eventName = 'reservation_click';
+            else if (host.includes('order.toasttab.com')) eventName = 'order_click';
+            else if (link.href.includes('invoice/lead')) eventName = 'inquiry_form_click';
+            else if (link.href.toLowerCase().includes('gift')) eventName = 'gift_card_click';
+          } catch (err) {}
+        }
 
         if (typeof gtag === 'function') {
           gtag('event', eventName, {

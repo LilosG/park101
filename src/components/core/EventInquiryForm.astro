@@ -31,13 +31,15 @@ const {
   </div>
 
   <div class="max-w-2xl mx-auto bg-brand-white border border-brand-dark/10 rounded-lg shadow-sm overflow-hidden">
-    <div class="min-h-[800px] bg-brand-cream-dark/40">
-      <iframe
-        src="https://www.toasttab.com/invoice/lead?rx=b853a506-313a-4be5-99d2-ffaf0c250021&ot=76b4caca-fb98-4747-b6ce-d97735957821&form=1"
-        title="Park 101 event inquiry form"
-        loading="lazy"
-        style="margin:auto; display:block; border:0; width:100%; height:800px;"
-      ></iframe>
+    <div class="py-16 px-8 flex flex-col items-center text-center bg-brand-cream-dark/40">
+      <a
+        href={siteProfile.ordering.inquiryFormUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
+      >
+        Send Your Event Details
+      </a>
     </div>
   </div>
 
