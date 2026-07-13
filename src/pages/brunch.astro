@@ -21,7 +21,7 @@ const foodItems = [
   },
   {
     src: brunchBurrito01,
-    alt: 'Breakfast burrito at Park 101 Carlsbad weekend brunch',
+    alt: 'Breakfast burrito at Park 101 Carlsbad brunch',
     name: 'Breakfast Burrito',
   },
   {
@@ -52,11 +52,11 @@ const drinkItems = [
 const faqs = [
   {
     q: 'What time does brunch start at Park 101?',
-    a: 'Brunch starts at 10:00 AM Saturday and Sunday on the rooftop.',
+    a: 'Brunch is served daily starting at 11:00 AM on the rooftop, until 2:00 PM.',
   },
   {
     q: 'Do I need a reservation for brunch?',
-    a: 'Reservations are recommended for weekend brunch, especially for larger groups, since the rooftop fills up quickly.',
+    a: 'Reservations are recommended for brunch, especially for larger groups, since the rooftop fills up quickly.',
   },
   {
     q: "What's on the brunch menu?",
@@ -76,9 +76,9 @@ const faqs = [
   },
 ];
 
-const pageTitle = 'Weekend Brunch in Carlsbad Village | PRK 101';
+const pageTitle = 'Brunch in Carlsbad Village | PRK 101';
 const pageDescription =
-  'BBQ brunch on the rooftop at Park 101 in Carlsbad Village. Smoked tri-tip chilaquiles, breakfast burritos, Rodeo Tower mimosas. Sat & Sun from 10 AM.';
+  'BBQ brunch on the rooftop at Park 101 in Carlsbad Village. Smoked tri-tip chilaquiles, breakfast burritos, Rodeo Tower mimosas. Served daily, 11 AM to 2 PM.';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -140,8 +140,8 @@ const faqSchema = {
 
   <!-- ── STAT BAR ─────────────────────────────────────────── -->
   <StatBar stats={[
-    { value: '10 AM', label: 'Start Time' },
-    { value: 'Sat & Sun', label: 'Days Available' },
+    { value: '11 AM', label: 'Start Time' },
+    { value: 'Daily', label: 'Days Available' },
     { value: 'Rooftop', label: 'Open-Air' },
     { value: 'Dog-Friendly', label: 'Patio' },
   ]} />
@@ -300,7 +300,7 @@ const faqSchema = {
         Brunch at Park 101
       </h2>
       <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
-        Saturdays & Sundays from 10 AM. Reserve your table before the rooftop fills up.
+        Every day from 11 AM to 2 PM. Reserve your table before the rooftop fills up.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
