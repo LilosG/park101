@@ -38,8 +38,13 @@
   },
 
   "hoursDisplay": [
-    { "days": "Sunday – Thursday",   "hours": "11:00 AM – 9:00 PM" },
-    { "days": "Friday – Saturday",   "hours": "11:00 AM – 12:00 AM" }
+    { "days": "Sunday",    "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Monday",    "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Tuesday",   "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Wednesday", "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Thursday",  "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Friday",    "hours": "11:00 AM – 12:00 AM" },
+    { "days": "Saturday",  "hours": "11:00 AM – 12:00 AM" }
   ],
 
   "social": {
