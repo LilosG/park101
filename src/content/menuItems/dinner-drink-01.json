@@ -1,0 +1,9 @@
+{
+  "menu": "dinner",
+  "section": "drink",
+  "name": "Talking Irons",
+  "description": "A whiskey old fashioned with an orange twist.",
+  "image": "/src/assets/drinks/park-101-talking-irons-cocktail-carlsbad.jpg",
+  "imageAlt": "Talking Irons cocktail on the rooftop at Park 101 Carlsbad",
+  "order": 1
+}

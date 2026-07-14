@@ -1,50 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import siteProfile from '../../data/site-profile.json';
-import { privateEventsHubImage, privateEventImages } from '../../data/private-events-images';
+import { getCollection, getEntry } from 'astro:content';
 import EventInquiryForm from '../../components/core/EventInquiryForm.astro';
 import StatBar from '../../components/core/StatBar.astro';
 import PrivateEventCard from '../../components/private-events/PrivateEventCard.astro';
 
-const events = siteProfile.privateEvents;
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const page = (await getCollection('privateEventsIndex'))[0].data;
+const eventOrder = ['birthday-parties', 'corporate-events', 'venue-buyout', 'game-day-parties', 'rehearsal-dinners'];
+const events = (await getCollection('privateEvents'))
+  .map(({ data }) => data)
+  .sort((a, b) => eventOrder.indexOf(a.slug) - eventOrder.indexOf(b.slug));
+const faqs = page.faqs!;
+const howItWorks = page.howItWorks!;
+const privateEventsHubImage = page.seo.ogImage;
 
-const faqs = [
-  {
-    q: "What's the minimum guest count for a private event?",
-    a: "Smaller semi-private setups work for intimate groups, and full buyouts scale up from there. Tell us your headcount and we'll find the right space.",
-  },
-  {
-    q: 'Can I customize the food and drink menu?',
-    a: 'Yes. Smokehouse platters, taco bars, and drink packages — we build the menu around your event and your crowd.',
-  },
-  {
-    q: 'Can I book just the rooftop, or does it have to be the whole venue?',
-    a: "Either works. Reserve a section, the rooftop, the courtyard, or buy out the entire place — it depends on your group size and what you're celebrating.",
-  },
-  {
-    q: 'Do you have AV or sound for music and presentations?',
-    a: 'Yes — the LED wall, sound system, and screens are available for game day watch parties, presentations, or your own playlist.',
-  },
-  {
-    q: 'How far in advance should I book?',
-    a: 'We recommend reaching out as early as possible, especially for weekend dates and game day buyouts — but we always do what we can to accommodate shorter timelines.',
-  },
-  {
-    q: 'Is parking available nearby?',
-    a: 'Park 101 is one block from the beach in Carlsbad Village. Street parking and public lots are available nearby.',
-  },
-];
-
-const howItWorks = [
-  { step: '01', title: 'Reach Out', body: "Tell us your date, headcount, and what you're celebrating. We respond within 24 hours." },
-  { step: '02', title: 'Get a Custom Plan', body: 'Menu, space, drink packages, and pricing built around your event.' },
-  { step: '03', title: 'Lock It In', body: 'Confirm the details and secure your date with a deposit.' },
-  { step: '04', title: 'Show Up', body: 'We handle the rest. You and your crew just show up and enjoy it.' },
-];
-
-const pageTitle = 'Private Event Venue in Carlsbad Village | PRK 101';
-const pageDescription =
-  'Host your next birthday, corporate event, or full venue buyout at Park 101 in Carlsbad Village. Up to 300 guests, rooftop and courtyard spaces.';
+const pageTitle = page.seo.title;
+const pageDescription = page.seo.description;
+const blockText = (value: string) => `\n${value}\n`;
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -74,15 +47,9 @@ const faqSchema = {
     <div class="h-20 shrink-0"></div>
     <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
     <div class="max-w-3xl mx-auto text-center">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-        Group Bookings
-      </span>
-      <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">
-        Private Events
-      </h1>
-      <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-        Birthdays, corporate buyouts, game day takeovers, and everything in between. Park 101's rooftop, courtyard, and indoor spaces are yours to fill.
-      </p>
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.hero.eyebrow)}</span>
+      <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
+      <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto"><Fragment set:html={blockText(page.hero.body!)} /></p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="#inquiry"
@@ -122,16 +89,10 @@ const faqSchema = {
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Why Park 101
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            A Venue Worth Filling
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.intro!.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(page.intro!.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
-            Park 101 isn't a banquet room — it's the rooftop deck, the open-air courtyard with the LED wall, and the indoor bar, all under one roof in Carlsbad Village. Each space has its own character and can be configured for groups of any size.
-          </p>
+          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8"><Fragment set:html={blockText(page.intro!.body!)} /></p>
           <a
             href="/venue"
             class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
@@ -147,18 +108,14 @@ const faqSchema = {
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">
-          Browse by Event Type
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          Every Occasion, Handled
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(page.sections.types.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.types.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {events.map((event) => (
-          <PrivateEventCard event={event} image={privateEventImages[event.slug]} />
+          <PrivateEventCard event={event} image={event.image} />
         ))}
       </div>
     </div>
@@ -168,12 +125,8 @@ const faqSchema = {
   <section class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-5xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-          How It Works
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">
-          From First Inquiry to Your Event
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.process.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">{blockText(page.sections.process.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -196,12 +149,8 @@ const faqSchema = {
   <section id="faq" class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-          Common Questions
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          Private Events FAQ
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.faq.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.faq.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -219,15 +168,9 @@ const faqSchema = {
   <!-- ── FINAL CTA ─────────────────────────────────────────── -->
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12 text-center">
     <div class="max-w-2xl mx-auto">
-      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-        Let's Make It Happen
-      </span>
-      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">
-        Ready to Start Planning?
-      </h2>
-      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">
-        Our events team responds within 24 hours with availability and a custom plan.
-      </p>
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={blockText(page.sections.final.eyebrow)} /></span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{blockText(page.sections.final.heading)}</h2>
+      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.final.body!)}</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="#inquiry"

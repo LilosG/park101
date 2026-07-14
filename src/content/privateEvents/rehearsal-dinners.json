@@ -1,0 +1,29 @@
+{
+  "slug": "rehearsal-dinners",
+  "name": "Rehearsal Dinners",
+  "headline": "Start the Celebration Right",
+  "description": "A relaxed, elevated setting for the night before the big day. Semi-private spaces, family-style menus, and a rooftop sunset that sets the tone.",
+  "capacity": "Up to 80 guests",
+  "features": [
+    "Semi-Private Space",
+    "Family-Style Menus",
+    "Rooftop Sunset Views",
+    "Relaxed Atmosphere"
+  ],
+  "faqs": [
+    {
+      "q": "How many guests can a rehearsal dinner hold?",
+      "a": "Up to 80 guests, in a semi-private space."
+    },
+    {
+      "q": "Is the menu customizable for a rehearsal dinner?",
+      "a": "Yes — family-style menus are built around your group."
+    },
+    {
+      "q": "Can we get rooftop sunset views for a rehearsal dinner?",
+      "a": "Yes — the rooftop's sunset views are one of the most popular settings for rehearsal dinners."
+    }
+  ],
+  "image": "/images/venue/park-101-outdoor-rooftop-bar-evening-crowd-carlsbad.jpg",
+  "imageAlt": "Rehearsal Dinners venue space at Park 101 Carlsbad"
+}

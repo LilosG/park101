@@ -1,0 +1,84 @@
+{
+  "seo": {
+    "title": "Private Event Venue in Carlsbad Village | PRK 101",
+    "description": "Host your next birthday, corporate event, or full venue buyout at Park 101 in Carlsbad Village. Up to 300 guests, rooftop and courtyard spaces.",
+    "ogImage": "/images/venue/park-101-rooftop-evening-group-carlsbad.jpg"
+  },
+  "hero": {
+    "eyebrow": "Group Bookings",
+    "heading": "Private Events",
+    "body": "Birthdays, corporate buyouts, game day takeovers, and everything in between. Park 101's rooftop, courtyard, and indoor spaces are yours to fill."
+  },
+  "intro": {
+    "eyebrow": "Why Park 101",
+    "heading": "A Venue Worth Filling",
+    "body": "Park 101 isn't a banquet room — it's the rooftop deck, the open-air courtyard with the LED wall, and the indoor bar, all under one roof in Carlsbad Village. Each space has its own character and can be configured for groups of any size."
+  },
+  "sections": {
+    "types": {
+      "eyebrow": "Browse by Event Type",
+      "heading": "Every Occasion, Handled"
+    },
+    "process": {
+      "eyebrow": "How It Works",
+      "heading": "From First Inquiry to Your Event"
+    },
+    "faq": {
+      "eyebrow": "Common Questions",
+      "heading": "Private Events FAQ"
+    },
+    "final": {
+      "eyebrow": "Let's Make It Happen",
+      "heading": "Ready to Start Planning?",
+      "body": "Our events team responds within 24 hours with availability and a custom plan."
+    }
+  },
+  "howItWorks": [
+    {
+      "step": "01",
+      "title": "Reach Out",
+      "body": "Tell us your date, headcount, and what you're celebrating. We respond within 24 hours."
+    },
+    {
+      "step": "02",
+      "title": "Get a Custom Plan",
+      "body": "Menu, space, drink packages, and pricing built around your event."
+    },
+    {
+      "step": "03",
+      "title": "Lock It In",
+      "body": "Confirm the details and secure your date with a deposit."
+    },
+    {
+      "step": "04",
+      "title": "Show Up",
+      "body": "We handle the rest. You and your crew just show up and enjoy it."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What's the minimum guest count for a private event?",
+      "a": "Smaller semi-private setups work for intimate groups, and full buyouts scale up from there. Tell us your headcount and we'll find the right space."
+    },
+    {
+      "q": "Can I customize the food and drink menu?",
+      "a": "Yes. Smokehouse platters, taco bars, and drink packages — we build the menu around your event and your crowd."
+    },
+    {
+      "q": "Can I book just the rooftop, or does it have to be the whole venue?",
+      "a": "Either works. Reserve a section, the rooftop, the courtyard, or buy out the entire place — it depends on your group size and what you're celebrating."
+    },
+    {
+      "q": "Do you have AV or sound for music and presentations?",
+      "a": "Yes — the LED wall, sound system, and screens are available for game day watch parties, presentations, or your own playlist."
+    },
+    {
+      "q": "How far in advance should I book?",
+      "a": "We recommend reaching out as early as possible, especially for weekend dates and game day buyouts — but we always do what we can to accommodate shorter timelines."
+    },
+    {
+      "q": "Is parking available nearby?",
+      "a": "Park 101 is one block from the beach in Carlsbad Village. Street parking and public lots are available nearby."
+    }
+  ]
+}

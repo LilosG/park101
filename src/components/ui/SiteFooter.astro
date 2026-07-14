@@ -1,8 +1,12 @@
 ---
-import siteProfile from '../../data/site-profile.json';
-import { GPH_NETWORK, GRIND_AND_PROSPER_URL } from '../../data/gphNetwork';
+import { getEntry } from 'astro:content';
+import { GPH_NETWORK } from '../../data/gphNetwork';
 
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const navigation = (await getEntry('navigation', 'navigation'))!.data;
 const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
+const [menuLink, brunchLink, eventsLink, venueLink, privateEventsLink, blogLink, contactLink] = navigation.footerLinks;
+const blockText = (value: string) => `\n${value}\n`;
 ---
 
 <footer class="bg-brand-dark text-brand-white">
@@ -13,7 +17,7 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
 
       <!-- Col 1: Brand -->
       <div>
-        <a href="/" aria-label="Park 101 Home">
+        <a href={navigation.links.home} aria-label={navigation.labels.homeAria}>
           <img
             src={siteProfile.logoLight}
             alt="Park 101"
@@ -61,27 +65,23 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
 
       <!-- Col 2: Nav Links -->
       <div>
-        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">
-          Explore
-        </h3>
-        <nav aria-label="Footer navigation">
+        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">{blockText(navigation.labels.footerExplore)}</h3>
+        <nav aria-label={navigation.labels.footerNavigationAria}>
           <ul class="flex flex-col gap-3">
-            <li><a href="/menu" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Menu</a></li>
-            <li><a href="/brunch" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Brunch</a></li>
-            <li><a href="/events" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Events</a></li>
-            <li><a href="/venue" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">The Venue</a></li>
-            <li><a href="/private-events" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Private Events</a></li>
-            <li><a href="/blog" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Blog</a></li>
-            <li><a href="/contact" class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">Contact</a></li>
+            <li><a href={menuLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{menuLink.label}</a></li>
+            <li><a href={brunchLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{brunchLink.label}</a></li>
+            <li><a href={eventsLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{eventsLink.label}</a></li>
+            <li><a href={venueLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{venueLink.label}</a></li>
+            <li><a href={privateEventsLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{privateEventsLink.label}</a></li>
+            <li><a href={blogLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{blogLink.label}</a></li>
+            <li><a href={contactLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{contactLink.label}</a></li>
           </ul>
         </nav>
       </div>
 
       <!-- Col 3: Hours + Address -->
       <div>
-        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">
-          Visit Us
-        </h3>
+        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">{blockText(navigation.labels.footerVisit)}</h3>
 
         <!-- Address -->
         <a
@@ -106,9 +106,9 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
 
         <!-- Hours -->
         <div>
-          <p class="font-display font-bold text-xs uppercase tracking-widest text-brand-white/40 mb-3">Hours</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest text-brand-white/40 mb-3">{navigation.labels.footerHours}</p>
           <ul class="flex flex-col gap-1.5">
-            {siteProfile.hoursDisplay.map((row) => (
+            {siteProfile.hoursDisplay.map((row: { days: string; hours: string }) => (
               <li class="flex justify-between gap-4 text-xs text-brand-white/60">
                 <span class="font-display font-semibold uppercase tracking-wide">{row.days}</span>
                 <span class="text-brand-white/80 whitespace-nowrap">{row.hours}</span>
@@ -124,17 +124,13 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
             target="_blank"
             rel="noopener noreferrer"
             class="flex-1 py-2.5 text-center text-xs font-display font-bold uppercase tracking-wider border border-brand-white/30 text-brand-white/70 hover:border-brand-orange hover:text-brand-orange transition-all duration-200 rounded-sm"
-          >
-            Order
-          </a>
+          >{blockText(navigation.labels.footerOrder)}</a>
           <a
             href={siteProfile.ordering.reservationsUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="flex-1 py-2.5 text-center text-xs font-display font-bold uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
-          >
-            Reserve
-          </a>
+          >{blockText(navigation.labels.footerReserve)}</a>
         </div>
       </div>
 
@@ -145,10 +141,8 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
   <div class="border-t border-brand-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-        <a href={GRIND_AND_PROSPER_URL} target="_blank" rel="noopener noreferrer"
-          class="text-[10px] font-display font-bold uppercase tracking-widest text-brand-white/30 hover:text-brand-orange transition-colors whitespace-nowrap">
-          Grind &amp; Prosper Hospitality
-        </a>
+        <a href={navigation.links.network} target="_blank" rel="noopener noreferrer"
+          class="text-[10px] font-display font-bold uppercase tracking-widest text-brand-white/30 hover:text-brand-orange transition-colors whitespace-nowrap">{blockText(navigation.labels.network)}</a>
         <div class="flex flex-wrap gap-x-6 gap-y-2">
           {portfolio.map((v) => (
             <a href={v.url} target="_blank" rel="noopener noreferrer"
@@ -171,10 +165,8 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
         <p class="text-xs text-brand-white/20">
           {siteProfile.contact.neighborhood}, {siteProfile.contact.address.state} &mdash; {siteProfile.tagline}
         </p>
-        <a href="https://lilosgrowth.com" target="_blank" rel="noopener noreferrer"
-          class="text-brand-white/50 hover:text-brand-orange text-[13px] transition-colors">
-          Website by Lilos Growth
-        </a>
+        <a href={navigation.links.websiteCredit} target="_blank" rel="noopener noreferrer"
+          class="text-brand-white/50 hover:text-brand-orange text-[13px] transition-colors">{blockText(navigation.labels.websiteCredit)}</a>
       </div>
     </div>
   </div>

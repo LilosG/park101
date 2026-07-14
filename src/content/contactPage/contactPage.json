@@ -1,0 +1,18 @@
+{
+  "seo": {
+    "title": "Contact | PRK 101 Carlsbad",
+    "description": "Visit Park 101 at 3040 Carlsbad Boulevard, Carlsbad, CA 92008. Hours, directions, and contact info.",
+    "ogImage": "/images/venue/park-101-modern-brick-storefront-neon-signage-carlsbad.jpg"
+  },
+  "hero": {
+    "eyebrow": "Get In Touch",
+    "heading": "Find Us",
+    "body": "One block from the beach in Carlsbad Village."
+  },
+  "sections": {
+    "visit": {
+      "eyebrow": "Visit Us",
+      "heading": "Carlsbad Village"
+    }
+  }
+}

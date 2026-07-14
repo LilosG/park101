@@ -1,0 +1,9 @@
+{
+  "menu": "dinner",
+  "section": "drink",
+  "name": "Rodeo Tower",
+  "description": "Park 101's signature cocktail tower — built for the table.",
+  "image": "/src/assets/drinks/park-101-rodeo-tower-menu-carlsbad.jpg",
+  "imageAlt": "Rodeo Tower cocktail tower with sunflowers at Park 101 Carlsbad",
+  "order": 2
+}

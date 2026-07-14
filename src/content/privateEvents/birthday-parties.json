@@ -1,0 +1,29 @@
+{
+  "slug": "birthday-parties",
+  "name": "Birthday Parties",
+  "headline": "Your Birthday, Our Rooftop",
+  "description": "Celebrate with the whole crew. Private or semi-private spaces, custom menus, and a rooftop setting that makes every birthday unforgettable.",
+  "capacity": "Up to 150 guests",
+  "features": [
+    "Private & Semi-Private Spaces",
+    "Custom Menus",
+    "Bar Packages",
+    "Rooftop Access"
+  ],
+  "faqs": [
+    {
+      "q": "How many guests can a birthday party hold at Park 101?",
+      "a": "Up to 150 guests, across private or semi-private spaces depending on your group size."
+    },
+    {
+      "q": "Can I customize the menu for a birthday party?",
+      "a": "Yes — custom menus and bar packages are built around your event and your crowd."
+    },
+    {
+      "q": "Do I need a deposit to lock in my date?",
+      "a": "Yes. Once your plan is finalized, a deposit secures the date."
+    }
+  ],
+  "image": "/images/venue/park-101-outdoor-firepit-string-lights-evening-crowd-carlsbad.jpg",
+  "imageAlt": "Birthday Parties venue space at Park 101 Carlsbad"
+}

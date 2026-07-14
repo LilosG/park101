@@ -1,7 +1,6 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import siteProfile from '../../data/site-profile.json';
 import { getCategoryMeta } from '../../data/blog-categories';
 import BlogPostCard from '../../components/blog/BlogPostCard.astro';
 
@@ -14,6 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props as any;
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const { Content } = await render(post);
 const allPosts = await getCollection('blog', ({ data }: any) => !data.draft);
 

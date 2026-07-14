@@ -1,0 +1,9 @@
+{
+  "menu": "brunch",
+  "section": "drink",
+  "name": "Rodeo Tower",
+  "description": "",
+  "image": "/src/assets/drinks/park-101-rodeo-tower-sunflower-carlsbad.jpg",
+  "imageAlt": "Rodeo Tower cocktail tower on the rooftop at Park 101 Carlsbad",
+  "order": 2
+}

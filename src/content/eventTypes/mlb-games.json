@@ -1,0 +1,8 @@
+{
+  "slug": "mlb-games",
+  "name": "MLB Games",
+  "description": "A regular spot for Padres games and MLB action all season.",
+  "recurring": true,
+  "image": "/src/assets/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg",
+  "imageAlt": "Packed crowd at Park 101 Carlsbad during a San Diego Padres game"
+}

@@ -1,0 +1,9 @@
+{
+  "menu": "brunch",
+  "section": "food",
+  "name": "Breakfast Sandwich",
+  "description": "",
+  "image": "/src/assets/brunch/park-101-brunch-breakfast-sandwich-carlsbad.jpg",
+  "imageAlt": "Breakfast sandwich with bacon, egg and cheese and tater tots at Park 101 Carlsbad brunch",
+  "order": 1
+}

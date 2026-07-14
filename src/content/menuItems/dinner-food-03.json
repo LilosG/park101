@@ -1,0 +1,9 @@
+{
+  "menu": "dinner",
+  "section": "food",
+  "name": "YTO Tenders",
+  "description": "House-seasoned chicken tenders with fries.",
+  "image": "/src/assets/food/park-101-yto-chicken-tenders-hero-carlsbad.jpg",
+  "imageAlt": "YTO chicken tenders and fries at Park 101 Carlsbad",
+  "order": 3
+}

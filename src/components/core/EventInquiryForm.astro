@@ -1,5 +1,5 @@
 ---
-import siteProfile from '../../data/site-profile.json';
+import { getEntry } from 'astro:content';
 
 interface Props {
   id?: string;
@@ -7,6 +7,8 @@ interface Props {
   heading?: string;
   subtext?: string;
 }
+
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 
 const {
   id = 'inquiry',

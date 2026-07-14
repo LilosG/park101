@@ -1,0 +1,9 @@
+{
+  "menu": "dinner",
+  "section": "drink",
+  "name": "Frozen Drinks",
+  "description": "Rotating frozen cocktails, blended fresh.",
+  "image": "/src/assets/drinks/park-101-frozen-drinks-carlsbad.jpg",
+  "imageAlt": "Frozen drinks lineup at Park 101 Carlsbad",
+  "order": 3
+}

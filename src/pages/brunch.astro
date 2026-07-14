@@ -1,54 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import siteProfile from '../data/site-profile.json';
+import { getCollection, getEntry } from 'astro:content';
 import StatBar from '../components/core/StatBar.astro';
 import SplitIntro from '../components/core/SplitIntro.astro';
 import { Image } from 'astro:assets';
 import brunchChilaquilesImg from '../assets/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg';
-import brunchSandwich02Img from '../assets/brunch/park-101-brunch-breakfast-sandwich-carlsbad.jpg';
-import brunchBurrito01 from '../assets/brunch/park-101-brunch-brisket-burrito-01-carlsbad.jpg';
-import brunchBaconEggCheese from '../assets/brunch/park-101-brunch-bacon-egg-cheese-carlsbad.jpg';
-import coschieBootImg from '../assets/drinks/park-101-coschie-boot-cocktail-carlsbad.jpg';
-import rodeoTowerSunflower from '../assets/drinks/park-101-rodeo-tower-sunflower-carlsbad.jpg';
-import cocktailLineupImg from '../assets/drinks/park-101-cocktail-lineup-carlsbad.jpg';
 import brunchBurrito02 from '../assets/brunch/park-101-brunch-brisket-burrito-02-carlsbad.jpg';
 import rooftopDiningImg from '../assets/venue/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg';
 
-const foodItems = [
-  {
-    src: brunchSandwich02Img,
-    alt: 'Breakfast sandwich with bacon, egg and cheese and tater tots at Park 101 Carlsbad brunch',
-    name: 'Breakfast Sandwich',
-  },
-  {
-    src: brunchBurrito01,
-    alt: 'Breakfast burrito at Park 101 Carlsbad brunch',
-    name: 'Breakfast Burrito',
-  },
-  {
-    src: brunchBaconEggCheese,
-    alt: 'Bacon, egg and cheese breakfast sandwich at Park 101 Carlsbad',
-    name: 'Bacon, Egg & Cheese',
-  },
-];
-
-const drinkItems = [
-  {
-    src: coschieBootImg,
-    alt: 'Coschie Boot cocktail served in a boot-shaped vessel at Park 101 Carlsbad',
-    name: 'Coschie Boot',
-  },
-  {
-    src: rodeoTowerSunflower,
-    alt: 'Rodeo Tower cocktail tower on the rooftop at Park 101 Carlsbad',
-    name: 'Rodeo Tower',
-  },
-  {
-    src: cocktailLineupImg,
-    alt: 'Brunch cocktail lineup at Park 101 Carlsbad',
-    name: 'Brunch Cocktail Lineup',
-  },
-];
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const page = (await getCollection('brunchPage'))[0].data;
+const assetImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
+const allMenuItems = (await getCollection('menuItems')).sort((a, b) => a.data.order - b.data.order);
+const toGridItem = ({ data }: (typeof allMenuItems)[number]) => ({
+  ...data,
+  src: assetImages[data.image].default,
+  alt: data.imageAlt,
+});
+const foodItems = allMenuItems
+  .filter(({ data }) => data.menu === 'brunch' && data.section === 'food')
+  .map(toGridItem);
+const drinkItems = allMenuItems
+  .filter(({ data }) => data.menu === 'brunch' && data.section === 'drink')
+  .map(toGridItem);
 
 const faqs = [
   {
@@ -77,9 +51,9 @@ const faqs = [
   },
 ];
 
-const pageTitle = 'Brunch in Carlsbad Village | PRK 101';
-const pageDescription =
-  'BBQ brunch on the rooftop at Park 101 in Carlsbad Village. Smoked tri-tip chilaquiles, breakfast burritos, Rodeo Tower mimosas. Served daily, 11 AM to 2 PM.';
+const pageTitle = page.seo.title;
+const pageDescription = page.seo.description;
+const blockText = (value: string) => `\n${value}\n`;
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -92,7 +66,7 @@ const faqSchema = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription} ogImage="/images/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg" transparentNav={true}>
+<Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[650px] bg-brand-dark flex flex-col overflow-hidden">
@@ -110,15 +84,9 @@ const faqSchema = {
     <div class="h-20 shrink-0"></div>
     <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
     <div class="max-w-3xl mx-auto text-center">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-        Saturdays & Sundays
-      </span>
-      <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">
-        Brunch on the Rooftop
-      </h1>
-      <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-        Open-air rooftop. Smoked brisket chilaquiles. Breakfast burritos loaded with tri-tip. Rodeo Tower mimosas. The best way to spend a Saturday morning in Carlsbad Village.
-      </p>
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={blockText(page.hero.eyebrow)} /></span>
+      <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
+      <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body!)}</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href={siteProfile.ordering.reservationsUrl}
@@ -151,9 +119,9 @@ const faqSchema = {
   <SplitIntro
     image={brunchBurrito02}
     imageAlt="Brisket breakfast burrito with fries at Park 101 Carlsbad brunch"
-    eyebrow="The Experience"
-    heading="Not Just Brunch.<br />A Whole Morning."
-    body="Park 101's brunch isn't eggs and toast — it's the smokehouse meeting the morning. Chilaquiles built on smoked tri-tip, burritos loaded with brisket, and a rooftop that catches the California sun from the first plate to the last mimosa."
+    eyebrow={page.intro!.eyebrow}
+    heading={page.intro!.heading}
+    body={page.intro!.body!}
     ctaLabel="Reserve a Table"
     ctaHref={siteProfile.ordering.reservationsUrl}
     ctaExternal={true}
@@ -163,12 +131,8 @@ const faqSchema = {
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">
-          The Menu
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          Brunch — Park 101 Style
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(page.sections.food.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.food.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -204,12 +168,8 @@ const faqSchema = {
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-5xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-12">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-          The Bar
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          Brunch Cocktails
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.drink.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.drink.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -237,16 +197,10 @@ const faqSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[500px]">
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-20 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Group Bookings
-          </span>
-          <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            Private Brunch Events
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.privateEvents.eyebrow)}</span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(page.sections.privateEvents.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-body font-light text-brand-dark/75 text-base leading-relaxed mb-8">
-            Birthday brunches, baby showers, and weekend group gatherings — reserve the rooftop or a section of the venue for your crew.
-          </p>
+          <p class="font-body font-light text-brand-dark/75 text-base leading-relaxed mb-8">{blockText(page.sections.privateEvents.body!)}</p>
           <a
             href="/private-events"
             class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
@@ -271,12 +225,8 @@ const faqSchema = {
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-          Need to Know
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          Brunch FAQ
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.faq.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.faq.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -294,15 +244,9 @@ const faqSchema = {
   <!-- ── FINAL CTA ─────────────────────────────────────────── -->
   <section class="relative bg-brand-tan py-20 px-6 sm:px-8 lg:px-12 text-center">
     <div class="max-w-2xl mx-auto">
-      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-dark/70 mb-4">
-        Join Us This Weekend
-      </span>
-      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-        Brunch at Park 101
-      </h2>
-      <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
-        Every day from 11 AM to 2 PM. Reserve your table before the rooftop fills up.
-      </p>
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-dark/70 mb-4">{blockText(page.sections.final.eyebrow)}</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(page.sections.final.heading)}</h2>
+      <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.final.body!)}</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href={siteProfile.ordering.reservationsUrl}

@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import siteProfile from '../data/site-profile.json';
+import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import storefrontImage from '../assets/venue/park-101-modern-brick-storefront-neon-signage-carlsbad.jpg';
 
-const pageTitle = 'Contact | PRK 101 Carlsbad';
-const pageDescription = `Visit Park 101 at ${siteProfile.contact.address.full}. Hours, directions, and contact info.`;
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const page = (await getCollection('contactPage'))[0].data;
+const pageTitle = page.seo.title;
+const pageDescription = page.seo.description;
+const blockText = (value: string) => `\n${value}\n`;
 
 const mapQuery = encodeURIComponent(siteProfile.contact.address.full);
 
@@ -21,7 +24,7 @@ const hoursList = Object.entries(
 const hasEmail = Boolean(siteProfile.contact.email);
 ---
 
-<Layout title={pageTitle} description={pageDescription} ogImage="/images/venue/park-101-modern-brick-storefront-neon-signage-carlsbad.jpg" transparentNav={true}>
+<Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[600px] bg-brand-dark flex flex-col overflow-hidden">
@@ -39,15 +42,9 @@ const hasEmail = Boolean(siteProfile.contact.email);
     <div class="h-20 shrink-0"></div>
     <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
       <div class="max-w-2xl mx-auto text-center">
-        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-          Get In Touch
-        </span>
-        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">
-          Find Us
-        </h1>
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-          One block from the beach in Carlsbad Village.
-        </p>
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.hero.eyebrow)}</span>
+        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body!)}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={siteProfile.ordering.reservationsUrl}
@@ -73,12 +70,8 @@ const hasEmail = Boolean(siteProfile.contact.email);
     <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[550px]">
       <div class="flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0 w-full">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Visit Us
-          </span>
-          <h2 class="font-display font-bold text-3xl text-brand-dark uppercase leading-display tracking-tight mb-4">
-            Carlsbad Village
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.visit.eyebrow)}</span>
+          <h2 class="font-display font-bold text-3xl text-brand-dark uppercase leading-display tracking-tight mb-4">{blockText(page.sections.visit.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-10"></div>
 
           <div class="space-y-10">
