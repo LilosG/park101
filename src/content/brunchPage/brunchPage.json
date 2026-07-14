@@ -1,0 +1,41 @@
+{
+  "seo": {
+    "title": "Brunch in Carlsbad Village | PRK 101",
+    "description": "BBQ brunch on the rooftop at Park 101 in Carlsbad Village. Smoked tri-tip chilaquiles, breakfast burritos, Rodeo Tower mimosas. Served daily, 11 AM to 2 PM.",
+    "ogImage": "/images/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg"
+  },
+  "hero": {
+    "eyebrow": "Saturdays & Sundays",
+    "heading": "Brunch on the Rooftop",
+    "body": "Open-air rooftop. Smoked brisket chilaquiles. Breakfast burritos loaded with tri-tip. Rodeo Tower mimosas. The best way to spend a Saturday morning in Carlsbad Village."
+  },
+  "intro": {
+    "eyebrow": "The Experience",
+    "heading": "Not Just Brunch.<br />A Whole Morning.",
+    "body": "Park 101's brunch isn't eggs and toast — it's the smokehouse meeting the morning. Chilaquiles built on smoked tri-tip, burritos loaded with brisket, and a rooftop that catches the California sun from the first plate to the last mimosa."
+  },
+  "sections": {
+    "food": {
+      "eyebrow": "The Menu",
+      "heading": "Brunch — Park 101 Style"
+    },
+    "drink": {
+      "eyebrow": "The Bar",
+      "heading": "Brunch Cocktails"
+    },
+    "privateEvents": {
+      "eyebrow": "Group Bookings",
+      "heading": "Private Brunch Events",
+      "body": "Birthday brunches, baby showers, and weekend group gatherings — reserve the rooftop or a section of the venue for your crew."
+    },
+    "faq": {
+      "eyebrow": "Need to Know",
+      "heading": "Brunch FAQ"
+    },
+    "final": {
+      "eyebrow": "Join Us This Weekend",
+      "heading": "Brunch at Park 101",
+      "body": "Every day from 11 AM to 2 PM. Reserve your table before the rooftop fills up."
+    }
+  }
+}

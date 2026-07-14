@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "The Venue | Rooftop, Courtyard & Indoor Bar | PRK 101",
+    "description": "Park 101's multi-level venue in Carlsbad Village — rooftop deck, open-air courtyard with LED wall, indoor bar, and dog-friendly spaces.",
+    "ogImage": "/images/venue/park-101-outdoor-waterfront-rooftop-bar-carlsbad.jpg"
+  },
+  "hero": {
+    "eyebrow": "Carlsbad Village",
+    "heading": "Rooftop. Courtyard.<br />Indoor Bar.",
+    "body": "Three distinct spaces under one open sky. The central courtyard with the massive LED wall, the elevated rooftop deck, and the indoor bar with wall-to-wall screens — one block from the beach."
+  },
+  "sections": {
+    "rooftop": {
+      "eyebrow": "Upstairs",
+      "heading": "The Rooftop"
+    },
+    "courtyard": {
+      "eyebrow": "Ground Level",
+      "heading": "The Courtyard"
+    },
+    "sports": {
+      "eyebrow": "Every Kickoff, Every Fight",
+      "heading": "Game Day Headquarters"
+    },
+    "indoor": {
+      "eyebrow": "Indoors",
+      "heading": "The Indoor Bar & Dining Room"
+    },
+    "families": {
+      "eyebrow": "Everyone's Welcome",
+      "heading": "Bring the Crew.<br />Bring the Dog."
+    },
+    "final": {
+      "eyebrow": "Come See It",
+      "heading": "Park 101 Awaits.",
+      "body": "One block from the beach in Carlsbad Village. Open daily."
+    }
+  }
+}

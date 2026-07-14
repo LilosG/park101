@@ -1,7 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Layout from '../../../../layouts/Layout.astro';
-import siteProfile from '../../../../data/site-profile.json';
 import { blogCategories, getCategoryMeta } from '../../../../data/blog-categories';
 import BlogPostCard from '../../../../components/blog/BlogPostCard.astro';
 import BlogPagination from '../../../../components/blog/BlogPagination.astro';
@@ -23,6 +22,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
 
 const { category } = Astro.params;
 const { page } = Astro.props as any;
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const categoryMeta = getCategoryMeta(category as string);
 
 const pageTitle = page.currentPage === 1

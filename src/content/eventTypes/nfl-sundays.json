@@ -1,0 +1,8 @@
+{
+  "slug": "nfl-sundays",
+  "name": "NFL Sundays",
+  "description": "Every NFL Sunday, all season long, across the LED wall and 20+ screens throughout the venue.",
+  "recurring": true,
+  "image": "/src/assets/venue/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg",
+  "imageAlt": "Outdoor sports bar viewing area with big screen at Park 101 Carlsbad"
+}

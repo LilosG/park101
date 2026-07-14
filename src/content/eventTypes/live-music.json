@@ -1,0 +1,8 @@
+{
+  "slug": "live-music",
+  "name": "Live Music",
+  "description": "Live bands and country nights in the courtyard.",
+  "recurring": true,
+  "image": "/src/assets/venue/park-101-live-music-country-wide-carlsbad.jpg",
+  "imageAlt": "Live music performance at Park 101 Carlsbad"
+}

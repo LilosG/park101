@@ -1,5 +1,5 @@
 ---
-import siteProfile from '../../data/site-profile.json';
+import { getEntry } from 'astro:content';
 
 interface Props {
   title: string;
@@ -9,6 +9,8 @@ interface Props {
   schemaType?: string;
   noindex?: boolean;
 }
+
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 
 const {
   title,

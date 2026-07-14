@@ -1,52 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import siteProfile from '../data/site-profile.json';
+import { getCollection, getEntry } from 'astro:content';
 import EventInquiryForm from '../components/core/EventInquiryForm.astro';
 import EventMatchupCard from '../components/events/EventMatchupCard.astro';
 import { Image } from 'astro:assets';
 
-import sportsBarViewingImg from '../assets/venue/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg';
 import padresGameDayEvents from '../assets/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg';
-import stadiumViewingImg from '../assets/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg';
-import patioSportsBarCrowdImg from '../assets/venue/park-101-outdoor-patio-sports-bar-crowd-carlsbad.jpg';
-import liveMusicEventsImg from '../assets/venue/park-101-live-music-country-wide-carlsbad.jpg';
-import patioCelebrationImg from '../assets/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg';
 
-const eventTypes = siteProfile.eventTypes;
-const upcomingEvents = siteProfile.upcomingEvents;
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const page = (await getCollection('eventsPage'))[0].data;
+const eventTypeOrder = ['nfl-sundays', 'mlb-games', 'ufc-fight-nights', 'fantasy-draft-events', 'live-music', 'themed-nights'];
+const eventTypes = (await getCollection('eventTypes'))
+  .sort((a, b) => eventTypeOrder.indexOf(a.data.slug) - eventTypeOrder.indexOf(b.data.slug));
+const upcomingEventOrder = [
+  'world-cup-quarterfinals-norway-england',
+  'world-cup-quarterfinals-argentina-switzerland',
+];
+const upcomingEvents = (await getCollection('upcomingEvents'))
+  .sort((a, b) => upcomingEventOrder.indexOf(a.id) - upcomingEventOrder.indexOf(b.id));
+const assetImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
 
-// Local image mapping — same pattern as other pages (index.astro, brunch.astro):
-// page-level content array paired with centralized site-profile data.
-const eventTypeImages: Record<string, { src: ImageMetadata; alt: string }> = {
-  'nfl-sundays': {
-    src: sportsBarViewingImg,
-    alt: 'Outdoor sports bar viewing area with big screen at Park 101 Carlsbad',
-  },
-  'mlb-games': {
-    src: padresGameDayEvents,
-    alt: 'Packed crowd at Park 101 Carlsbad during a San Diego Padres game',
-  },
-  'ufc-fight-nights': {
-    src: stadiumViewingImg,
-    alt: 'Crowd watching a big screen at Park 101 Carlsbad',
-  },
-  'fantasy-draft-events': {
-    src: patioSportsBarCrowdImg,
-    alt: 'Group gathered around screens at Park 101 Carlsbad',
-  },
-  'live-music': {
-    src: liveMusicEventsImg,
-    alt: 'Live music performance at Park 101 Carlsbad',
-  },
-  'themed-nights': {
-    src: patioCelebrationImg,
-    alt: 'Themed night crowd celebration at Park 101 Carlsbad',
-  },
-};
-
-const pageTitle = 'Events & Game Day | PRK 101 Carlsbad';
-const pageDescription =
-  "What's happening at Park 101 — NFL Sundays, Padres games, UFC fight nights, live music, and themed nights in Carlsbad Village.";
+const pageTitle = page.seo.title;
+const pageDescription = page.seo.description;
+const blockText = (value: string) => `\n${value}\n`;
+const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
+const inlineText = (value: string) => ` ${value} `;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -58,7 +36,7 @@ const breadcrumbSchema = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription} ogImage="/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg" transparentNav={true}>
+<Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
@@ -76,15 +54,9 @@ const breadcrumbSchema = {
     <div class="h-20 shrink-0"></div>
     <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
       <div class="max-w-3xl mx-auto text-center">
-        <span class="inline-block font-body text-xs font-bold tracking-eyebrow uppercase text-brand-orange mb-4">
-          {siteProfile.contact.neighborhood}
-        </span>
-        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">
-          Always Something<br />On
-        </h1>
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-          NFL Sundays, Padres games, fight nights, and live music every week — Park 101's LED wall and 20+ screens make sure you don't miss it.
-        </p>
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow uppercase text-brand-orange mb-4">{inlineText(page.hero.eyebrow)}</span>
+        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6"><Fragment set:html={blockHtml(page.hero.heading)} /></h1>
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto"><Fragment set:html={blockText(page.hero.body!)} /></p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={siteProfile.ordering.reservationsUrl}
@@ -109,22 +81,18 @@ const breadcrumbSchema = {
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-          Every Week
-        </span>
-        <h2 class="font-display font-bold text-section text-brand-steel uppercase leading-display tracking-tight">
-          What's Always On
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.eventTypes.eyebrow)}</span>
+        <h2 class="font-display font-bold text-section text-brand-steel uppercase leading-display tracking-tight"><Fragment set:html={blockText(page.sections.eventTypes.heading)} /></h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {eventTypes.map((type: any) => {
-          const image = eventTypeImages[type.slug];
+        {eventTypes.map(({ data: type }) => {
+          const image = assetImages[type.image]?.default;
           return (
             <div class="group relative aspect-[4/3] rounded-lg overflow-hidden">
               {image && (
                 <Image
-                  src={image.src}
-                  alt={image.alt}
+                  src={image}
+                  alt={type.imageAlt}
                   class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                   loading="lazy"
                   width={800}
@@ -149,12 +117,8 @@ const breadcrumbSchema = {
   <!-- ── UPCOMING EVENTS ──────────────────────────────────── -->
   <section class="bg-brand-dark px-6 sm:px-8 lg:px-12 py-20">
     <div class="max-w-4xl mx-auto text-center">
-      <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-        Coming Up
-      </span>
-      <h2 class="font-display font-bold text-section text-brand-white uppercase leading-display tracking-tight mb-8">
-        Upcoming Events
-      </h2>
+      <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.upcoming.eyebrow)}</span>
+      <h2 class="font-display font-bold text-section text-brand-white uppercase leading-display tracking-tight mb-8">{blockText(page.sections.upcoming.heading)}</h2>
       {upcomingEvents.length === 0 ? (
         <p class="font-body text-brand-white/60 text-base max-w-lg mx-auto">
           Specific dates for upcoming games, fight nights, and live music are added here as they're scheduled.
@@ -164,7 +128,7 @@ const breadcrumbSchema = {
         </p>
       ) : (
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
-          {upcomingEvents.map((event: any) => (
+          {upcomingEvents.map(({ data: event }) => (
             <EventMatchupCard
               category={event.category}
               sideA={event.sideA}
@@ -182,9 +146,9 @@ const breadcrumbSchema = {
 
   <!-- ── CTA / INQUIRY FORM ───────────────────────────────── -->
   <EventInquiryForm
-    eyebrow="Planning a Watch Party?"
-    heading="Book a Game Day Space"
-    subtext="Fantasy drafts, big fights, and full-season Sunday plans — send us your date and headcount and our events team responds within 24 hours."
+    eyebrow={page.sections.inquiry.eyebrow}
+    heading={page.sections.inquiry.heading}
+    subtext={page.sections.inquiry.body}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

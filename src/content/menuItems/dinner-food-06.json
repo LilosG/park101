@@ -1,0 +1,9 @@
+{
+  "menu": "dinner",
+  "section": "food",
+  "name": "The Chick",
+  "description": "Fried or grilled chicken sandwich with jalapeno coleslaw and sriracha aioli.",
+  "image": "/src/assets/food/park-101-the-chick-hero-carlsbad.jpg",
+  "imageAlt": "The Chick fried chicken sandwich at Park 101 Carlsbad",
+  "order": 6
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "ufc-fight-nights",
+  "name": "UFC Fight Nights",
+  "description": "Fight night viewing on the biggest screen in the courtyard.",
+  "recurring": true,
+  "image": "/src/assets/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg",
+  "imageAlt": "Crowd watching a big screen at Park 101 Carlsbad"
+}

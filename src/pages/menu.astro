@@ -1,109 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import siteProfile from '../data/site-profile.json';
+import { getCollection, getEntry } from 'astro:content';
 import MenuItemCard from '../components/menu/MenuItemCard.astro';
 import StatBar from '../components/core/StatBar.astro';
 import SplitIntro from '../components/core/SplitIntro.astro';
 import { Image } from 'astro:assets';
 
-import triTipArugulaHero from '../assets/food/park-101-tri-tip-x-arugula-hero-carlsbad.jpg';
-import bbqChickenSaladHero from '../assets/food/park-101-bbq-chicken-salad-hero-carlsbad.jpg';
-import ytoTendersHero from '../assets/food/park-101-yto-chicken-tenders-hero-carlsbad.jpg';
-import surfTurfFriesHero from '../assets/food/park-101-surf-n-turf-fries-hero-carlsbad.jpg';
-import smokedTriTipPhillyHero from '../assets/food/park-101-smoked-tri-tip-philly-hero-carlsbad.jpg';
-import theChickHero from '../assets/food/park-101-the-chick-hero-carlsbad.jpg';
-import shrimpTacosHero from '../assets/food/park-101-shrimp-tacos-hero-carlsbad.jpg';
-import triTipTacosHero from '../assets/food/park-101-tri-tip-tacos-hero-carlsbad.jpg';
-
-import talkingIronsMenu from '../assets/drinks/park-101-talking-irons-cocktail-carlsbad.jpg';
-import rodeoTowerMenuImg from '../assets/drinks/park-101-rodeo-tower-menu-carlsbad.jpg';
-import frozenDrinksImg from '../assets/drinks/park-101-frozen-drinks-carlsbad.jpg';
-import gunPowderLeadMenu from '../assets/drinks/park-101-gun-powder-lead-cocktail-carlsbad.jpg';
-
 import foodSpreadImg from '../assets/food/park-101-prk-food-spread-carlsbad.jpg';
 import foodSpreadIntroImg from '../assets/food/park-101-food-spread-intro-carlsbad.jpg';
 
-const menuItems = [
-  {
-    src: triTipArugulaHero,
-    alt: 'Tri-Tip x Arugula salad with pickled onion and cotija at Park 101 Carlsbad',
-    name: 'Tri-Tip x Arugula Salad',
-    description: 'Smoked tri-tip, arugula, cotija, pickled onion, chimichurri, avocado.',
-  },
-  {
-    src: bbqChickenSaladHero,
-    alt: 'BBQ chicken salad with crispy tortilla strips at Park 101 Carlsbad',
-    name: 'BBQ Chicken Salad',
-    description: 'Fried BBQ chicken, romaine, cherry tomato, black beans, avocado ranch, crispy tortilla strips.',
-  },
-  {
-    src: ytoTendersHero,
-    alt: 'YTO chicken tenders and fries at Park 101 Carlsbad',
-    name: 'YTO Tenders',
-    description: 'House-seasoned chicken tenders with fries.',
-  },
-  {
-    src: surfTurfFriesHero,
-    alt: 'Surf and turf loaded fries with smoked meat and shrimp at Park 101 Carlsbad',
-    name: 'Surf & Turf Fries',
-    description: 'House-made cheese sauce, smoked meat, ancho shrimp, bacon, poblano sauce.',
-  },
-  {
-    src: smokedTriTipPhillyHero,
-    alt: 'Smoked tri-tip Philly cheesesteak sandwich at Park 101 Carlsbad',
-    name: 'Smoked Tri-Tip Philly',
-    description: 'Smoked tri-tip, sauteed peppers and onions, melted cheddar, toasted hoagie.',
-  },
-  {
-    src: theChickHero,
-    alt: 'The Chick fried chicken sandwich at Park 101 Carlsbad',
-    name: 'The Chick',
-    description: 'Fried or grilled chicken sandwich with jalapeno coleslaw and sriracha aioli.',
-  },
-  {
-    src: shrimpTacosHero,
-    alt: 'Shrimp tacos with chipotle sauce and lime at Park 101 Carlsbad',
-    name: 'Shrimp Tacos',
-    description: 'Ancho shrimp, coleslaw, pico de gallo, taco sauce, lime.',
-  },
-  {
-    src: triTipTacosHero,
-    alt: 'Smoked beef tacos with chimichurri and cotija at Park 101 Carlsbad',
-    name: 'Smoked Beef Tacos',
-    description: 'Arugula, pickled red onion, cotija, chimichurri.',
-  },
-];
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const page = (await getCollection('menuPage'))[0].data;
+const assetImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
+const allMenuItems = (await getCollection('menuItems')).sort((a, b) => a.data.order - b.data.order);
+const toCardItem = ({ data }: (typeof allMenuItems)[number]) => ({
+  ...data,
+  src: assetImages[data.image].default,
+  alt: data.imageAlt,
+});
+const menuItems = allMenuItems
+  .filter(({ data }) => data.menu === 'dinner' && data.section === 'food')
+  .map(toCardItem);
+const cocktailItems = allMenuItems
+  .filter(({ data }) => data.menu === 'dinner' && data.section === 'drink')
+  .map(toCardItem);
 
-const cocktailItems = [
-  {
-    src: talkingIronsMenu,
-    alt: 'Talking Irons cocktail on the rooftop at Park 101 Carlsbad',
-    name: 'Talking Irons',
-    description: 'A whiskey old fashioned with an orange twist.',
-  },
-  {
-    src: rodeoTowerMenuImg,
-    alt: 'Rodeo Tower cocktail tower with sunflowers at Park 101 Carlsbad',
-    name: 'Rodeo Tower',
-    description: "Park 101's signature cocktail tower — built for the table.",
-  },
-  {
-    src: frozenDrinksImg,
-    alt: 'Frozen drinks lineup at Park 101 Carlsbad',
-    name: 'Frozen Drinks',
-    description: 'Rotating frozen cocktails, blended fresh.',
-  },
-  {
-    src: gunPowderLeadMenu,
-    alt: 'Gun Powder & Lead cocktail with fresh mint at Park 101 Carlsbad',
-    name: 'Gun Powder & Lead',
-    description: 'A tall, refreshing build finished with fresh mint.',
-  },
-];
-
-const pageTitle = 'The Menu | PRK 101 Carlsbad';
-const pageDescription =
-  'BBQ-forward plates built for the rooftop and game day at Park 101 in Carlsbad Village — smoked meats, loaded fries, tacos, and more.';
+const pageTitle = page.seo.title;
+const pageDescription = page.seo.description;
+const blockText = (value: string) => `\n${value}\n`;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -115,7 +39,7 @@ const breadcrumbSchema = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription} ogImage="/images/food/park-101-prk-food-spread-carlsbad.jpg" transparentNav={true}>
+<Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
@@ -133,15 +57,9 @@ const breadcrumbSchema = {
     <div class="h-20 shrink-0"></div>
     <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
       <div class="max-w-2xl mx-auto text-center">
-        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-          Food &amp; BBQ
-        </span>
-        <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight mb-6">
-          The Menu
-        </h1>
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed max-w-lg mx-auto">
-          Wood-smoked BBQ, loaded fries, and shareable plates built for the rooftop and game day.
-        </p>
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.hero.eyebrow)}</span>
+        <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed max-w-lg mx-auto">{blockText(page.hero.body!)}</p>
       </div>
     </div>
   </section>
@@ -158,9 +76,9 @@ const breadcrumbSchema = {
   <SplitIntro
     image={foodSpreadIntroImg}
     imageAlt="A spread of wood-smoked BBQ dishes at Park 101 Carlsbad"
-    eyebrow="The Kitchen"
-    heading="Wood-Smoked.<br />Built to Share."
-    body="Park 101's kitchen runs on wood-smoked BBQ and shareable plates — tri-tip, brisket, and smoked meats built for the rooftop, the courtyard, and game day. Order a few, pass them around, and order more."
+    eyebrow={page.intro!.eyebrow}
+    heading={page.intro!.heading}
+    body={page.intro!.body!}
     ctaLabel="Order Online"
     ctaHref={siteProfile.ordering.toastUrl}
     ctaExternal={true}
@@ -170,12 +88,8 @@ const breadcrumbSchema = {
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-          On The Menu
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          Fan Favorites
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.food.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.food.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -202,12 +116,8 @@ const breadcrumbSchema = {
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-          The Bar
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          Cocktails
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.drink.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.drink.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 

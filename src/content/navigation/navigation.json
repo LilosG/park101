@@ -1,0 +1,86 @@
+{
+  "mainLinks": [
+    {
+      "label": "Menu",
+      "href": "/menu"
+    },
+    {
+      "label": "Brunch",
+      "href": "/brunch"
+    },
+    {
+      "label": "Events",
+      "href": "/events"
+    },
+    {
+      "label": "The Venue",
+      "href": "/venue"
+    },
+    {
+      "label": "Private Events",
+      "href": "/private-events"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "footerLinks": [
+    {
+      "label": "Menu",
+      "href": "/menu"
+    },
+    {
+      "label": "Brunch",
+      "href": "/brunch"
+    },
+    {
+      "label": "Events",
+      "href": "/events"
+    },
+    {
+      "label": "The Venue",
+      "href": "/venue"
+    },
+    {
+      "label": "Private Events",
+      "href": "/private-events"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "labels": {
+    "homeAria": "Park 101 Home",
+    "mainAria": "Main navigation",
+    "mobileAria": "Mobile navigation",
+    "openMenuAria": "Open menu",
+    "closeMenuAria": "Close menu",
+    "desktopOrder": "Order Takeout",
+    "desktopReserve": "Reserve",
+    "mobileOrder": "Order Takeout",
+    "mobileReserve": "Reserve a Table",
+    "footerExplore": "Explore",
+    "footerNavigationAria": "Footer navigation",
+    "footerVisit": "Visit Us",
+    "footerHours": "Hours",
+    "footerOrder": "Order",
+    "footerReserve": "Reserve",
+    "network": "Grind & Prosper Hospitality",
+    "websiteCredit": "Website by Lilos Growth"
+  },
+  "links": {
+    "home": "/",
+    "network": "https://grindprosper.com",
+    "websiteCredit": "https://lilosgrowth.com"
+  }
+}

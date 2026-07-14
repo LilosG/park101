@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import siteProfile from '../data/site-profile.json';
+import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 
 import stLouisRibs from '../assets/food/park-101-st-louis-ribs-carlsbad.jpg';
@@ -24,6 +24,13 @@ import familiesKidsGameDay from '../assets/venue/park-101-families-kids-game-day
 import rooftopEveningGroup from '../assets/venue/park-101-rooftop-evening-group-carlsbad.jpg';
 
 import brunchChilaquiles from '../assets/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg';
+
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const page = (await getCollection('home'))[0].data;
+const blockText = (value: string) => `\n${value}\n`;
+const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
+const inlineText = (value: string) => ` ${value} `;
+const homeEyebrowHtml = (value: string) => ` ${value}\n`;
 
 const foodItems = [
   {
@@ -79,9 +86,9 @@ const drinkItems = [
 ---
 
 <Layout
-  title={siteProfile.seo.defaultTitle}
-  description={siteProfile.seo.defaultDescription}
-  ogImage={siteProfile.seo.ogImage}
+  title={page.seo.title}
+  description={page.seo.description}
+  ogImage={page.seo.ogImage}
   transparentNav={true}
 >
 
@@ -102,18 +109,10 @@ const drinkItems = [
     <div class="h-20 shrink-0"></div>
 
     <div class="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pb-8">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-        {siteProfile.contact.neighborhood} &middot; One Block From The Beach
-      </span>
-      <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight max-w-4xl mb-3">
-        PRK 101
-      </h1>
-      <p class="font-display font-bold text-panel text-brand-orange uppercase tracking-tight leading-snug max-w-2xl mb-6">
-        Rooftop Restaurant &amp; Bar in Carlsbad Village
-      </p>
-      <p class="font-body font-light text-brand-cream/75 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed">
-        {siteProfile.shortDescription}
-      </p>
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={homeEyebrowHtml(page.hero.eyebrow)} /></span>
+      <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight max-w-4xl mb-3">{blockText(page.hero.heading)}</h1>
+      <p class="font-display font-bold text-panel text-brand-orange uppercase tracking-tight leading-snug max-w-2xl mb-6">{blockText(page.hero.subheading!)}</p>
+      <p class="font-body font-light text-brand-cream/75 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed">{inlineText(page.hero.body!)}</p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a
           href={siteProfile.ordering.reservationsUrl}
@@ -136,7 +135,7 @@ const drinkItems = [
     <div class="relative z-10 w-full bg-brand-dark/80 backdrop-blur-sm border-t border-brand-white/10 py-5 sm:py-6">
       <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-4 md:divide-x divide-brand-white/10 text-center">
-          {siteProfile.stats.map((stat) => (
+          {siteProfile.stats.map((stat: { label: string; value: string }) => (
             <div class="px-4">
               <span class="block font-display font-bold text-xl sm:text-2xl text-brand-white uppercase tracking-wide leading-tight">{stat.value}</span>
               <span class="block font-body text-[10px] sm:text-xs tracking-stat uppercase text-brand-orange mt-1">{stat.label}</span>
@@ -161,16 +160,10 @@ const drinkItems = [
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            {siteProfile.contact.neighborhood}
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            Rooftop.<br />Courtyard.<br />Indoor Bar.
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(page.sections.venue.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(page.sections.venue.heading)} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
-            Three distinct spaces under one open sky. The central courtyard with the massive LED wall. The elevated rooftop deck with views of Carlsbad Village. The indoor bar with wall-to-wall screens and long communal tables. One block from the beach.
-          </p>
+          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.venue.body!)}</p>
           <a
             href="/venue"
             class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
@@ -187,18 +180,14 @@ const drinkItems = [
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            {siteProfile.venue.sports.headline}
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">
-            Golden Hour.<br />Cold Beer.<br />Big Screens.
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(page.sections.sports.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(page.sections.sports.heading)} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
             {siteProfile.venue.sports.description}
           </p>
           <div class="flex flex-wrap gap-x-4 gap-y-2 mb-8 pb-8 border-b border-brand-white/10">
-            {siteProfile.venue.sports.features.map((feature) => (
+            {siteProfile.venue.sports.features.map((feature: string) => (
               <span class="font-display font-bold text-xs uppercase tracking-feature text-brand-white">{feature}</span>
             ))}
           </div>
@@ -226,12 +215,8 @@ const drinkItems = [
   <section class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">
-          The Kitchen
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">
-          Food Worth Staying For
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(page.sections.food.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">{blockText(page.sections.food.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -277,16 +262,10 @@ const drinkItems = [
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            The Smokehouse
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">
-            Smoked Low.<br />Served Right.
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.smokehouse.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(page.sections.smokehouse.heading)} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
-            Brisket. Ribs. Pulled pork. All wood-smoked the right way. Served on a tray with pickles, bread, and sauce — the way it was meant to be eaten. No shortcuts, no compromises.
-          </p>
+          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.smokehouse.body!)}</p>
           <a
             href="/menu"
             class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
@@ -302,16 +281,10 @@ const drinkItems = [
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-xl mb-12">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">
-          The Bar
-        </span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-display">
-          Cold Drinks.<br />Big Selection.
-        </h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(page.sections.drinks.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-display"><Fragment set:html={blockHtml(page.sections.drinks.heading)} /></h2>
         <div class="w-12 h-[2px] bg-brand-orange mt-5 mb-5"></div>
-        <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg max-w-lg leading-relaxed">
-          Signature cocktails, frozen margaritas, local craft beers on draft, and the Rodeo Tower — Park 101's most celebrated creation.
-        </p>
+        <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg max-w-lg leading-relaxed"><Fragment set:html={blockText(page.sections.drinks.body!)} /></p>
       </div>
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
@@ -343,15 +316,9 @@ const drinkItems = [
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
     <div class="relative z-10 max-w-2xl w-full mx-auto">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-        {siteProfile.venue.liveEvents.headline}
-      </span>
-      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6">
-        Live Music.<br />Every Week.
-      </h2>
-      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
-        Country nights. Live bands. Padres watch parties. UFC fight nights. From kickoff to the final buzzer, from the first song to last call — something's always happening at Park 101.
-      </p>
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{inlineText(page.sections.events.eyebrow)}</span>
+      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={blockHtml(page.sections.events.heading)} /></h2>
+      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto"><Fragment set:html={blockText(page.sections.events.body!)} /></p>
       <a
         href="/events"
         class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
@@ -366,16 +333,10 @@ const drinkItems = [
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Saturdays &amp; Sundays
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            Brunch on the Rooftop
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.brunch.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(page.sections.brunch.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
-            Open-air rooftop. Smoked brisket chilaquiles. Breakfast burritos loaded with tri-tip. Rodeo Tower mimosas. The best way to spend a Saturday morning in Carlsbad Village.
-          </p>
+          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.brunch.body!)}</p>
           <a
             href="/brunch"
             class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
@@ -410,18 +371,14 @@ const drinkItems = [
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-tan">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            {siteProfile.venue.familiesPets.headline}
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            Bring the Crew.<br />Bring the Dog.<br />Bring the Kids.
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(page.sections.families.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(page.sections.families.heading)} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {siteProfile.venue.familiesPets.description}
           </p>
           <div class="flex flex-wrap gap-2 mb-8">
-            {siteProfile.venue.familiesPets.features.map((feature) => (
+            {siteProfile.venue.familiesPets.features.map((feature: string) => (
               <span class="px-3 py-1.5 border border-brand-dark/25 font-display font-bold text-xs uppercase tracking-wide text-brand-dark">{feature}</span>
             ))}
           </div>
@@ -449,15 +406,9 @@ const drinkItems = [
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
     <div class="relative z-10 max-w-2xl w-full mx-auto">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-        Private Events
-      </span>
-      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6">
-        Your Event.<br />Our Venue.
-      </h2>
-      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
-        Birthday parties, corporate happy hours, game day buyouts, rehearsal dinners — Park 101's spaces are yours to fill. Book a section, the rooftop, the courtyard, or the whole place.
-      </p>
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.sections.privateEvents.eyebrow)}</span>
+      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={blockHtml(page.sections.privateEvents.heading)} /></h2>
+      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto"><Fragment set:html={blockText(page.sections.privateEvents.body!)} /></p>
       <a
         href="/private-events"
         class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"

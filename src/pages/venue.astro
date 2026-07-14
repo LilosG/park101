@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import siteProfile from '../data/site-profile.json';
+import { getCollection, getEntry } from 'astro:content';
 import StatBar from '../components/core/StatBar.astro';
 import { Image } from 'astro:assets';
 import waterfrontRooftop from '../assets/venue/park-101-outdoor-waterfront-rooftop-bar-carlsbad.jpg';
@@ -10,14 +10,18 @@ import padresGameDayVenue from '../assets/venue/park-101-padres-game-day-packed-
 import sportsBarInterior from '../assets/venue/park-101-modern-sports-bar-wood-interior-carlsbad.jpg';
 import familiesKidsVenue from '../assets/venue/park-101-families-kids-game-day-carlsbad.jpg';
 
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const page = (await getCollection('venuePage'))[0].data;
 const venue = siteProfile.venue;
 
-const pageTitle = 'The Venue | Rooftop, Courtyard & Indoor Bar | PRK 101';
-const pageDescription =
-  "Park 101's multi-level venue in Carlsbad Village — rooftop deck, open-air courtyard with LED wall, indoor bar, and dog-friendly spaces.";
+const pageTitle = page.seo.title;
+const pageDescription = page.seo.description;
+const blockText = (value: string) => `\n${value}\n`;
+const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
+const inlineText = (value: string) => ` ${value} `;
 ---
 
-<Layout title={pageTitle} description={pageDescription} ogImage="/images/venue/park-101-outdoor-waterfront-rooftop-bar-carlsbad.jpg" transparentNav={true}>
+<Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[650px] bg-brand-dark flex flex-col overflow-hidden">
@@ -35,15 +39,9 @@ const pageDescription =
     <div class="h-20 shrink-0"></div>
     <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
       <div class="max-w-3xl mx-auto text-center">
-        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-          {siteProfile.contact.neighborhood}
-        </span>
-        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">
-          Rooftop. Courtyard.<br />Indoor Bar.
-        </h1>
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-          Three distinct spaces under one open sky. The central courtyard with the massive LED wall, the elevated rooftop deck, and the indoor bar with wall-to-wall screens — one block from the beach.
-        </p>
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{inlineText(page.hero.eyebrow)}</span>
+        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6"><Fragment set:html={blockHtml(page.hero.heading)} /></h1>
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body!)}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={siteProfile.ordering.reservationsUrl}
@@ -86,18 +84,14 @@ const pageDescription =
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Upstairs
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">
-            {venue.rooftop.headline}
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.rooftop.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{inlineText(page.sections.rooftop.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
             {venue.rooftop.description}
           </p>
           <div class="flex flex-wrap gap-x-4 gap-y-2">
-            {venue.rooftop.features.map((feature) => (
+            {venue.rooftop.features.map((feature: string) => (
               <span class="font-display font-bold text-xs uppercase tracking-feature text-brand-white">{feature}</span>
             ))}
           </div>
@@ -111,18 +105,14 @@ const pageDescription =
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Ground Level
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            {venue.courtyard.headline}
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.courtyard.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{inlineText(page.sections.courtyard.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.courtyard.description}
           </p>
           <div class="flex flex-wrap gap-x-4 gap-y-2">
-            {venue.courtyard.features.map((feature) => (
+            {venue.courtyard.features.map((feature: string) => (
               <span class="font-display font-bold text-xs uppercase tracking-feature text-brand-dark">{feature}</span>
             ))}
           </div>
@@ -154,18 +144,14 @@ const pageDescription =
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Every Kickoff, Every Fight
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">
-            {venue.sports.headline}
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.sports.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{inlineText(page.sections.sports.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
             {venue.sports.description}
           </p>
           <div class="flex flex-wrap gap-x-4 gap-y-2">
-            {venue.sports.features.map((feature) => (
+            {venue.sports.features.map((feature: string) => (
               <span class="font-display font-bold text-xs uppercase tracking-feature text-brand-white">{feature}</span>
             ))}
           </div>
@@ -179,18 +165,14 @@ const pageDescription =
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Indoors
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            {venue.indoorBar.headline}
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.indoor.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{inlineText(page.sections.indoor.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.indoorBar.description}
           </p>
           <div class="flex flex-wrap gap-x-4 gap-y-2 mb-8">
-            {venue.indoorBar.features.map((feature) => (
+            {venue.indoorBar.features.map((feature: string) => (
               <span class="font-display font-bold text-xs uppercase tracking-feature text-brand-dark">{feature}</span>
             ))}
           </div>
@@ -228,18 +210,14 @@ const pageDescription =
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-tan">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            {venue.familiesPets.headline}
-          </span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">
-            Bring the Crew.<br />Bring the Dog.
-          </h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(page.sections.families.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(page.sections.families.heading)} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.familiesPets.description}
           </p>
           <div class="flex flex-wrap gap-2">
-            {venue.familiesPets.features.map((feature) => (
+            {venue.familiesPets.features.map((feature: string) => (
               <span class="px-3 py-1.5 border border-brand-dark/25 font-display font-bold text-xs uppercase tracking-wide text-brand-dark">{feature}</span>
             ))}
           </div>
@@ -251,15 +229,9 @@ const pageDescription =
   <!-- ── FINAL CTA ─────────────────────────────────────────── -->
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12 text-center">
     <div class="max-w-2xl mx-auto">
-      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">
-        Come See It
-      </span>
-      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">
-        Park 101 Awaits.
-      </h2>
-      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">
-        One block from the beach in Carlsbad Village. Open daily.
-      </p>
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.sections.final.eyebrow)}</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{blockText(page.sections.final.heading)}</h2>
+      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.final.body!)}</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href={siteProfile.ordering.reservationsUrl}

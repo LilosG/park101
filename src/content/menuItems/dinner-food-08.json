@@ -1,0 +1,9 @@
+{
+  "menu": "dinner",
+  "section": "food",
+  "name": "Smoked Beef Tacos",
+  "description": "Arugula, pickled red onion, cotija, chimichurri.",
+  "image": "/src/assets/food/park-101-tri-tip-tacos-hero-carlsbad.jpg",
+  "imageAlt": "Smoked beef tacos with chimichurri and cotija at Park 101 Carlsbad",
+  "order": 8
+}

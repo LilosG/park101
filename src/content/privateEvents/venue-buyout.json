@@ -1,0 +1,29 @@
+{
+  "slug": "venue-buyout",
+  "name": "Full Venue Buyout",
+  "headline": "The Whole Place Is Yours",
+  "description": "Take over the entire Park 101 experience — rooftop, courtyard, indoor bars, and all. Full buyouts available for large events, filming, and exclusive gatherings.",
+  "capacity": "Up to 300 guests",
+  "features": [
+    "Full Venue Access",
+    "All Spaces Included",
+    "Custom Programming",
+    "Dedicated Staff"
+  ],
+  "faqs": [
+    {
+      "q": "How many guests fit in a full venue buyout?",
+      "a": "Up to 300 guests across the rooftop, courtyard, and indoor bar combined."
+    },
+    {
+      "q": "Can a full buyout be used for filming?",
+      "a": "Yes — full buyouts are available for large events, filming, and exclusive gatherings."
+    },
+    {
+      "q": "Is staffing included with a buyout?",
+      "a": "Yes — dedicated staff and custom programming are included with a full venue buyout."
+    }
+  ],
+  "image": "/images/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg",
+  "imageAlt": "Full Venue Buyout venue space at Park 101 Carlsbad"
+}

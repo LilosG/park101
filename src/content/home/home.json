@@ -1,0 +1,57 @@
+{
+  "seo": {
+    "title": "Park 101 | Rooftop Bar & Restaurant in Carlsbad Village",
+    "description": "Multi-level rooftop bar and restaurant in Carlsbad Village, CA. BBQ, craft beer, cocktails, 20+ screens, game day headquarters — one block from the beach.",
+    "ogImage": "/images/venue/park101-carlsbad-rooftop-og.webp"
+  },
+  "hero": {
+    "eyebrow": "Carlsbad Village &middot; One Block From The Beach",
+    "heading": "PRK 101",
+    "subheading": "Rooftop Restaurant & Bar in Carlsbad Village",
+    "body": "Carlsbad's rooftop sports bar, BBQ, and game day headquarters — one block from the beach in Carlsbad Village."
+  },
+  "sections": {
+    "venue": {
+      "eyebrow": "Carlsbad Village",
+      "heading": "Rooftop.<br />Courtyard.<br />Indoor Bar.",
+      "body": "Three distinct spaces under one open sky. The central courtyard with the massive LED wall. The elevated rooftop deck with views of Carlsbad Village. The indoor bar with wall-to-wall screens and long communal tables. One block from the beach."
+    },
+    "sports": {
+      "eyebrow": "Game Day Headquarters",
+      "heading": "Golden Hour.<br />Cold Beer.<br />Big Screens."
+    },
+    "food": {
+      "eyebrow": "The Kitchen",
+      "heading": "Food Worth Staying For"
+    },
+    "smokehouse": {
+      "eyebrow": "The Smokehouse",
+      "heading": "Smoked Low.<br />Served Right.",
+      "body": "Brisket. Ribs. Pulled pork. All wood-smoked the right way. Served on a tray with pickles, bread, and sauce — the way it was meant to be eaten. No shortcuts, no compromises."
+    },
+    "drinks": {
+      "eyebrow": "The Bar",
+      "heading": "Cold Drinks.<br />Big Selection.",
+      "body": "Signature cocktails, frozen margaritas, local craft beers on draft, and the Rodeo Tower — Park 101's most celebrated creation."
+    },
+    "events": {
+      "eyebrow": "Live Music & Events",
+      "heading": "Live Music.<br />Every Week.",
+      "body": "Country nights. Live bands. Padres watch parties. UFC fight nights. From kickoff to the final buzzer, from the first song to last call — something's always happening at Park 101."
+    },
+    "brunch": {
+      "eyebrow": "Saturdays & Sundays",
+      "heading": "Brunch on the Rooftop",
+      "body": "Open-air rooftop. Smoked brisket chilaquiles. Breakfast burritos loaded with tri-tip. Rodeo Tower mimosas. The best way to spend a Saturday morning in Carlsbad Village."
+    },
+    "families": {
+      "eyebrow": "Everyone's Welcome",
+      "heading": "Bring the Crew.<br />Bring the Dog.<br />Bring the Kids."
+    },
+    "privateEvents": {
+      "eyebrow": "Private Events",
+      "heading": "Your Event.<br />Our Venue.",
+      "body": "Birthday parties, corporate happy hours, game day buyouts, rehearsal dinners — Park 101's spaces are yours to fill. Book a section, the rooftop, the courtyard, or the whole place."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "game-day-parties",
+  "name": "Game Day Parties",
+  "headline": "Reserve the Rooftop for the Big Game",
+  "description": "Book a private section for your crew on game day. LED wall, dedicated screens, table service, and food and drink packages built for the occasion.",
+  "capacity": "Up to 80 guests",
+  "features": [
+    "Dedicated Screen Access",
+    "Table Service",
+    "Food & Drink Packages",
+    "Game Day Atmosphere"
+  ],
+  "faqs": [
+    {
+      "q": "How many guests can a game day party hold?",
+      "a": "Up to 80 guests, with dedicated screen access for your section."
+    },
+    {
+      "q": "Do I have to book the whole venue for a game day party?",
+      "a": "No — you can reserve a section, the rooftop, or the courtyard depending on your group size."
+    },
+    {
+      "q": "Is table service included?",
+      "a": "Yes — table service and food and drink packages are built into game day party bookings."
+    }
+  ],
+  "image": "/images/venue/park-101-outdoor-rooftop-bar-string-lights-carlsbad.jpg",
+  "imageAlt": "Game Day Parties venue space at Park 101 Carlsbad"
+}

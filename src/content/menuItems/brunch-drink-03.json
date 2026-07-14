@@ -1,0 +1,9 @@
+{
+  "menu": "brunch",
+  "section": "drink",
+  "name": "Brunch Cocktail Lineup",
+  "description": "",
+  "image": "/src/assets/drinks/park-101-cocktail-lineup-carlsbad.jpg",
+  "imageAlt": "Brunch cocktail lineup at Park 101 Carlsbad",
+  "order": 3
+}

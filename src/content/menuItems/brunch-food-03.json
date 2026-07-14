@@ -1,0 +1,9 @@
+{
+  "menu": "brunch",
+  "section": "food",
+  "name": "Bacon, Egg & Cheese",
+  "description": "",
+  "image": "/src/assets/brunch/park-101-brunch-bacon-egg-cheese-carlsbad.jpg",
+  "imageAlt": "Bacon, egg and cheese breakfast sandwich at Park 101 Carlsbad",
+  "order": 3
+}

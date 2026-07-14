@@ -1,0 +1,27 @@
+{
+  "seo": {
+    "title": "The Menu | PRK 101 Carlsbad",
+    "description": "BBQ-forward plates built for the rooftop and game day at Park 101 in Carlsbad Village — smoked meats, loaded fries, tacos, and more.",
+    "ogImage": "/images/food/park-101-prk-food-spread-carlsbad.jpg"
+  },
+  "hero": {
+    "eyebrow": "Food & BBQ",
+    "heading": "The Menu",
+    "body": "Wood-smoked BBQ, loaded fries, and shareable plates built for the rooftop and game day."
+  },
+  "intro": {
+    "eyebrow": "The Kitchen",
+    "heading": "Wood-Smoked.<br />Built to Share.",
+    "body": "Park 101's kitchen runs on wood-smoked BBQ and shareable plates — tri-tip, brisket, and smoked meats built for the rooftop, the courtyard, and game day. Order a few, pass them around, and order more."
+  },
+  "sections": {
+    "food": {
+      "eyebrow": "On The Menu",
+      "heading": "Fan Favorites"
+    },
+    "drink": {
+      "eyebrow": "The Bar",
+      "heading": "Cocktails"
+    }
+  }
+}

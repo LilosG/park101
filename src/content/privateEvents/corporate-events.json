@@ -1,0 +1,29 @@
+{
+  "slug": "corporate-events",
+  "name": "Corporate Events",
+  "headline": "Team Events That Actually Deliver",
+  "description": "Company happy hours, team outings, client entertaining, and corporate buyouts. Full AV capability, flexible spaces, and catering that impresses.",
+  "capacity": "Up to 200 guests",
+  "features": [
+    "AV Capability",
+    "Flexible Layouts",
+    "Catering Packages",
+    "Private Buyout Option"
+  ],
+  "faqs": [
+    {
+      "q": "Does Park 101 have AV for presentations?",
+      "a": "Yes — full AV capability is available for presentations, client entertaining, and team events."
+    },
+    {
+      "q": "Can we book a full corporate buyout?",
+      "a": "Yes. Corporate events can scale up to a full private buyout for up to 200 guests."
+    },
+    {
+      "q": "Is catering included?",
+      "a": "Catering packages are built around your event as part of the corporate events program."
+    }
+  ],
+  "image": "/images/venue/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg",
+  "imageAlt": "Corporate Events venue space at Park 101 Carlsbad"
+}
