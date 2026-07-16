@@ -4,7 +4,7 @@ seoTitle: "Best World Cup Bar in Carlsbad, CA"
 description: "Looking for the best place to watch the 2026 World Cup in Carlsbad? Here's what to look for in a watch bar — and why Park 101 keeps getting named the spot."
 publishDate: 2026-07-11
 author: "Park 101"
-image: "/images/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg"
+image: "/images/blog/image/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg"
 imageAlt: "Crowd watching a match on the big screen at Park 101 in Carlsbad Village"
 category: "game-day"
 tags: ["World Cup", "watch party", "Carlsbad Village", "game day"]

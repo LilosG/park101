@@ -4,7 +4,7 @@ seoTitle: "Family-Friendly Restaurants in Carlsbad"
 description: "Traveling with kids or your dog in Carlsbad Village? Here's what makes a restaurant genuinely family-friendly, and why Park 101 fits the bill."
 publishDate: 2026-07-10
 author: "Park 101"
-image: "/images/venue/park-101-families-kids-game-day-carlsbad.jpg"
+image: "/images/blog/image/park-101-families-kids-game-day-carlsbad.jpg"
 imageAlt: "Families and kids in Padres jerseys enjoying game day together at Park 101 Carlsbad"
 category: "community"
 tags: ["family friendly", "Carlsbad Village", "dog friendly", "things to do"]

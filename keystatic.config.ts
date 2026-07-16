@@ -19,6 +19,7 @@ type EditorKind =
 
 type SchemaContext = {
   editor: EditorKind;
+  imageNamespace: string;
   path?: string[];
 };
 
@@ -226,11 +227,16 @@ function fieldForValue(
 
   if (isImageField(key, value)) {
     const sourceAsset = String(value).startsWith("/src/assets/");
+    const imageNamespace = [
+      context.imageNamespace,
+      ...(context.path ?? []),
+      key,
+    ].join("/");
     return fields.image({
       label,
       description,
-      directory: sourceAsset ? "src/assets" : "public/images",
-      publicPath: sourceAsset ? "/src/assets" : "/images",
+      directory: sourceAsset ? "src/assets" : `public/images/${imageNamespace}`,
+      publicPath: sourceAsset ? "/src/assets" : `/images/${imageNamespace}/`,
       validation: { isRequired: true },
     });
   }
@@ -308,12 +314,13 @@ const jsonSingleton = (
   path: string,
   sample: Record<string, unknown>,
   editor: EditorKind,
+  imageNamespace: string,
 ) =>
   singleton({
     label,
     path,
     format: { data: "json" },
-    schema: schemaForObject(sample, { editor }),
+    schema: schemaForObject(sample, { editor, imageNamespace }),
   });
 
 const jsonCollection = (
@@ -322,6 +329,7 @@ const jsonCollection = (
   sample: Record<string, unknown>,
   editor: EditorKind,
   columns: string[],
+  imageNamespace: string,
 ) => {
   const { slug: _slug, ...schemaData } = sample;
   return collection({
@@ -338,7 +346,7 @@ const jsonCollection = (
             "Controls the item identifier. Do not change after publishing unless instructed.",
         },
       }),
-      ...schemaForObject(schemaData, { editor }),
+      ...schemaForObject(schemaData, { editor, imageNamespace }),
     },
   });
 };
@@ -415,49 +423,63 @@ export default config({
       "src/content/siteSettings/site-settings",
       siteSettingsData,
       "settings",
+      "siteSettings",
     ),
     navigation: jsonSingleton(
       "Navigation",
       "src/content/navigation/navigation",
       navigationData,
       "navigation",
+      "navigation",
     ),
-    home: jsonSingleton("Home", "src/content/home/home", homeData, "page"),
+    home: jsonSingleton(
+      "Home",
+      "src/content/home/home",
+      homeData,
+      "page",
+      "home",
+    ),
     menuPage: jsonSingleton(
       "Menu Page",
       "src/content/menuPage/menuPage",
       menuPageData,
       "page",
+      "menuPage",
     ),
     brunchPage: jsonSingleton(
       "Brunch Page",
       "src/content/brunchPage/brunchPage",
       brunchPageData,
       "page",
+      "brunchPage",
     ),
     eventsPage: jsonSingleton(
       "Events Page",
       "src/content/eventsPage/eventsPage",
       eventsPageData,
       "page",
+      "eventsPage",
     ),
     venuePage: jsonSingleton(
       "Venue Page",
       "src/content/venuePage/venuePage",
       venuePageData,
       "page",
+      "venuePage",
     ),
     contactPage: jsonSingleton(
       "Contact",
       "src/content/contactPage/contactPage",
       contactPageData,
       "page",
+      "contactPage",
     ),
     privateEventsIndex: jsonSingleton(
       "Private Events Index",
       "src/content/privateEventsIndex/privateEventsIndex",
       privateEventsIndexData,
       "page",
+      "privateEventsIndex",
     ),
   },
   collections: {
@@ -627,6 +649,7 @@ export default config({
       eventTypeData,
       "event",
       ["name", "recurring"],
+      "eventTypes",
     ),
     upcomingEvents: collection({
       label: "Upcoming Events",
@@ -649,7 +672,7 @@ export default config({
               ([key]) => key !== "category",
             ),
           ),
-          { editor: "event" },
+          { editor: "event", imageNamespace: "upcomingEvents" },
         ),
       },
     }),
@@ -659,6 +682,7 @@ export default config({
       privateEventData,
       "privateEvent",
       ["name", "capacity"],
+      "privateEvents",
     ),
     blog: collection({
       label: "Blog Posts",
@@ -709,8 +733,8 @@ export default config({
           label: "Main Post Image",
           description:
             "Large image shown near the top of the article. Use a clear landscape image.",
-          directory: "public/images",
-          publicPath: "/images",
+          directory: "public/images/blog/image",
+          publicPath: "/images/blog/image/",
         }),
         imageAlt: fields.text({
           label: "Image Description for Accessibility",

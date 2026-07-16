@@ -5,8 +5,8 @@
   "description": "Multi-level rooftop bar and restaurant in Carlsbad Village. BBQ, craft beer, cocktails, big screens, game day headquarters, family and pet friendly, weekly events, brunch, and private event spaces.",
   "shortDescription": "Carlsbad's rooftop sports bar, BBQ, and game day headquarters — one block from the beach in Carlsbad Village.",
   "url": "https://park101carlsbad.com",
-  "logo": "/images/logo/park101-logo.webp",
-  "logoLight": "/images/logo/park101-logo-light.webp",
+  "logo": "/images/siteSettings/logo/park101-logo.webp",
+  "logoLight": "/images/siteSettings/logoLight/park101-logo-light.webp",
   "contact": {
     "phone": "(858) 408-6948",
     "phoneDial": "+18584086948",
@@ -219,7 +219,7 @@
       "park 101 carlsbad",
       "prk 101"
     ],
-    "ogImage": "/images/venue/park101-carlsbad-rooftop-og.webp"
+    "ogImage": "/images/siteSettings/seo/ogImage/park-101-outdoor-waterfront-rooftop-bar-carlsbad.jpg"
   },
   "schema": {
     "type": [
