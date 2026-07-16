@@ -19,6 +19,12 @@ const pageDescription = page.seo.description;
 const blockText = (value: string) => `\n${value}\n`;
 const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
 const inlineText = (value: string) => ` ${value} `;
+const rooftopSection = page.sections.rooftop;
+const courtyardSection = page.sections.courtyard;
+const sportsSection = page.sections.sports;
+const indoorSection = page.sections.indoor;
+const familiesSection = page.sections.families;
+const finalSection = page.sections.final;
 ---
 
 <Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
@@ -41,7 +47,9 @@ const inlineText = (value: string) => ` ${value} `;
       <div class="max-w-3xl mx-auto text-center">
         <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{inlineText(page.hero.eyebrow)}</span>
         <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6"><Fragment set:html={blockHtml(page.hero.heading)} /></h1>
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body!)}</p>
+        {page.hero.body && (
+          <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body)}</p>
+        )}
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={siteProfile.ordering.reservationsUrl}
@@ -71,6 +79,7 @@ const inlineText = (value: string) => ` ${value} `;
   ]} />
 
   <!-- ── THE ROOFTOP ──────────────────────────────────────── -->
+  {rooftopSection && (
   <section class="relative bg-brand-dark">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="relative lg:col-span-7 min-h-[400px] lg:min-h-full overflow-hidden">
@@ -84,8 +93,8 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.rooftop.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{inlineText(page.sections.rooftop.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(rooftopSection.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{inlineText(rooftopSection.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
             {venue.rooftop.description}
@@ -99,14 +108,16 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── THE COURTYARD ────────────────────────────────────── -->
+  {courtyardSection && (
   <section class="relative bg-brand-cream">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.courtyard.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{inlineText(page.sections.courtyard.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(courtyardSection.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{inlineText(courtyardSection.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.courtyard.description}
@@ -129,8 +140,10 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── GAME DAY & BIG SCREENS ────────────────────────────── -->
+  {sportsSection && (
   <section class="relative bg-brand-dark">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="relative lg:col-span-7 min-h-[400px] lg:min-h-full overflow-hidden">
@@ -144,8 +157,8 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.sports.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{inlineText(page.sections.sports.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(sportsSection.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{inlineText(sportsSection.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
             {venue.sports.description}
@@ -159,14 +172,16 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── INDOOR BAR & DINING ROOM ──────────────────────────── -->
+  {indoorSection && (
   <section class="relative bg-brand-cream">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.indoor.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{inlineText(page.sections.indoor.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(indoorSection.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{inlineText(indoorSection.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.indoorBar.description}
@@ -195,8 +210,10 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── FAMILY, KIDS & DOGS ───────────────────────────────── -->
+  {familiesSection && (
   <section class="relative bg-brand-tan">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
@@ -210,8 +227,8 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-tan">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(page.sections.families.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(page.sections.families.heading)} /></h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(familiesSection.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(familiesSection.heading)} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.familiesPets.description}
@@ -225,13 +242,17 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── FINAL CTA ─────────────────────────────────────────── -->
+  {finalSection && (
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12 text-center">
     <div class="max-w-2xl mx-auto">
-      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.sections.final.eyebrow)}</span>
-      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{blockText(page.sections.final.heading)}</h2>
-      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.final.body!)}</p>
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(finalSection.eyebrow)}</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{blockText(finalSection.heading)}</h2>
+      {finalSection.body && (
+        <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{blockText(finalSection.body)}</p>
+      )}
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href={siteProfile.ordering.reservationsUrl}
@@ -250,5 +271,6 @@ const inlineText = (value: string) => ` ${value} `;
       </div>
     </div>
   </section>
+  )}
 
 </Layout>

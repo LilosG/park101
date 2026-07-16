@@ -9,6 +9,7 @@ const page = (await getCollection('contactPage'))[0].data;
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
 const blockText = (value: string) => `\n${value}\n`;
+const visitSection = page.sections.visit;
 
 const mapQuery = encodeURIComponent(siteProfile.contact.address.full);
 
@@ -44,7 +45,9 @@ const hasEmail = Boolean(siteProfile.contact.email);
       <div class="max-w-2xl mx-auto text-center">
         <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.hero.eyebrow)}</span>
         <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body!)}</p>
+        {page.hero.body && (
+          <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body)}</p>
+        )}
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={siteProfile.ordering.reservationsUrl}
@@ -66,12 +69,13 @@ const hasEmail = Boolean(siteProfile.contact.email);
   </section>
 
   <!-- ── INFO + MAP ───────────────────────────────────────── -->
+  {visitSection && (
   <section class="relative bg-brand-cream">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[550px]">
       <div class="flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0 w-full">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.visit.eyebrow)}</span>
-          <h2 class="font-display font-bold text-3xl text-brand-dark uppercase leading-display tracking-tight mb-4">{blockText(page.sections.visit.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(visitSection.eyebrow)}</span>
+          <h2 class="font-display font-bold text-3xl text-brand-dark uppercase leading-display tracking-tight mb-4">{blockText(visitSection.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-10"></div>
 
           <div class="space-y-10">
@@ -155,5 +159,6 @@ const hasEmail = Boolean(siteProfile.contact.email);
       </div>
     </div>
   </section>
+  )}
 
 </Layout>

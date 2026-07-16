@@ -28,6 +28,8 @@ const cocktailItems = allMenuItems
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
 const blockText = (value: string) => `\n${value}\n`;
+const foodSection = page.sections.food;
+const drinkSection = page.sections.drink;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -59,7 +61,9 @@ const breadcrumbSchema = {
       <div class="max-w-2xl mx-auto text-center">
         <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.hero.eyebrow)}</span>
         <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed max-w-lg mx-auto">{blockText(page.hero.body!)}</p>
+        {page.hero.body && (
+          <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed max-w-lg mx-auto">{blockText(page.hero.body)}</p>
+        )}
       </div>
     </div>
   </section>
@@ -73,23 +77,26 @@ const breadcrumbSchema = {
   ]} />
 
   <!-- ── INTRO ────────────────────────────────────────────── -->
-  <SplitIntro
-    image={foodSpreadIntroImg}
-    imageAlt="A spread of wood-smoked BBQ dishes at Park 101 Carlsbad"
-    eyebrow={page.intro!.eyebrow}
-    heading={page.intro!.heading}
-    body={page.intro!.body!}
-    ctaLabel="Order Online"
-    ctaHref={siteProfile.ordering.toastUrl}
-    ctaExternal={true}
-  />
+  {page.intro && (
+    <SplitIntro
+      image={foodSpreadIntroImg}
+      imageAlt="A spread of wood-smoked BBQ dishes at Park 101 Carlsbad"
+      eyebrow={page.intro.eyebrow}
+      heading={page.intro.heading}
+      body={page.intro.body}
+      ctaLabel="Order Online"
+      ctaHref={siteProfile.ordering.toastUrl}
+      ctaExternal={true}
+    />
+  )}
 
   <!-- ── MENU GRID ────────────────────────────────────────── -->
+  {foodSection && (
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.food.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.food.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(foodSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(foodSection.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -111,13 +118,15 @@ const breadcrumbSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── COCKTAILS ────────────────────────────────────────── -->
+  {drinkSection && (
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.drink.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.drink.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(drinkSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(drinkSection.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -128,6 +137,7 @@ const breadcrumbSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </Layout>

@@ -6,7 +6,7 @@ interface Props {
   imageAlt: string;
   eyebrow: string;
   heading: string;
-  body: string;
+  body?: string;
   ctaLabel: string;
   ctaHref: string;
   ctaExternal?: boolean;
@@ -35,9 +35,11 @@ const { image, imageAlt, eyebrow, heading, body, ctaLabel, ctaHref, ctaExternal 
           <Fragment set:html={heading} />
         </h2>
         <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-        <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
-          {body}
-        </p>
+        {body && (
+          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
+            {body}
+          </p>
+        )}
         <a
           href={ctaHref}
           target={ctaExternal ? '_blank' : undefined}

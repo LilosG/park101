@@ -5,7 +5,7 @@ interface Props {
   src: ImageMetadata;
   alt: string;
   name: string;
-  description: string;
+  description?: string;
 }
 
 const { src, alt, name, description } = Astro.props;
@@ -25,8 +25,10 @@ const { src, alt, name, description } = Astro.props;
     <h3 class="font-display font-bold text-sm uppercase tracking-wide text-brand-dark mb-1">
       {name}
     </h3>
-    <p class="font-body text-xs text-brand-dark/60 leading-relaxed">
-      {description}
-    </p>
+    {description && (
+      <p class="font-body text-xs text-brand-dark/60 leading-relaxed">
+        {description}
+      </p>
+    )}
   </div>
 </div>

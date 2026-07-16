@@ -25,6 +25,9 @@ const pageDescription = page.seo.description;
 const blockText = (value: string) => `\n${value}\n`;
 const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
 const inlineText = (value: string) => ` ${value} `;
+const eventTypesSection = page.sections.eventTypes;
+const upcomingSection = page.sections.upcoming;
+const inquirySection = page.sections.inquiry;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -56,7 +59,9 @@ const breadcrumbSchema = {
       <div class="max-w-3xl mx-auto text-center">
         <span class="inline-block font-body text-xs font-bold tracking-eyebrow uppercase text-brand-orange mb-4">{inlineText(page.hero.eyebrow)}</span>
         <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6"><Fragment set:html={blockHtml(page.hero.heading)} /></h1>
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto"><Fragment set:html={blockText(page.hero.body!)} /></p>
+        {page.hero.body && (
+          <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto"><Fragment set:html={blockText(page.hero.body)} /></p>
+        )}
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={siteProfile.ordering.reservationsUrl}
@@ -78,11 +83,12 @@ const breadcrumbSchema = {
   </section>
 
   <!-- ── WHAT'S ALWAYS ON ─────────────────────────────────── -->
+  {eventTypesSection && (
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.eventTypes.eyebrow)}</span>
-        <h2 class="font-display font-bold text-section text-brand-steel uppercase leading-display tracking-tight"><Fragment set:html={blockText(page.sections.eventTypes.heading)} /></h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(eventTypesSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-section text-brand-steel uppercase leading-display tracking-tight"><Fragment set:html={blockText(eventTypesSection.heading)} /></h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {eventTypes.map(({ data: type }) => {
@@ -113,12 +119,14 @@ const breadcrumbSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── UPCOMING EVENTS ──────────────────────────────────── -->
+  {upcomingSection && (
   <section class="bg-brand-dark px-6 sm:px-8 lg:px-12 py-20">
     <div class="max-w-4xl mx-auto text-center">
-      <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.upcoming.eyebrow)}</span>
-      <h2 class="font-display font-bold text-section text-brand-white uppercase leading-display tracking-tight mb-8">{blockText(page.sections.upcoming.heading)}</h2>
+      <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(upcomingSection.eyebrow)}</span>
+      <h2 class="font-display font-bold text-section text-brand-white uppercase leading-display tracking-tight mb-8">{blockText(upcomingSection.heading)}</h2>
       {upcomingEvents.length === 0 ? (
         <p class="font-body text-brand-white/60 text-base max-w-lg mx-auto">
           Specific dates for upcoming games, fight nights, and live music are added here as they're scheduled.
@@ -143,13 +151,16 @@ const breadcrumbSchema = {
       )}
     </div>
   </section>
+  )}
 
   <!-- ── CTA / INQUIRY FORM ───────────────────────────────── -->
-  <EventInquiryForm
-    eyebrow={page.sections.inquiry.eyebrow}
-    heading={page.sections.inquiry.heading}
-    subtext={page.sections.inquiry.body}
-  />
+  {inquirySection && (
+    <EventInquiryForm
+      eyebrow={inquirySection.eyebrow}
+      heading={inquirySection.heading}
+      subtext={inquirySection.body}
+    />
+  )}
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </Layout>

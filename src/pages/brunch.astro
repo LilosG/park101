@@ -54,6 +54,11 @@ const faqs = [
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
 const blockText = (value: string) => `\n${value}\n`;
+const foodSection = page.sections.food;
+const drinkSection = page.sections.drink;
+const privateEventsSection = page.sections.privateEvents;
+const faqSection = page.sections.faq;
+const finalSection = page.sections.final;
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -86,7 +91,9 @@ const faqSchema = {
     <div class="max-w-3xl mx-auto text-center">
       <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={blockText(page.hero.eyebrow)} /></span>
       <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
-      <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body!)}</p>
+      {page.hero.body && (
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body)}</p>
+      )}
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href={siteProfile.ordering.reservationsUrl}
@@ -116,23 +123,26 @@ const faqSchema = {
   ]} />
 
   <!-- ── NOT JUST BRUNCH ──────────────────────────────────── -->
-  <SplitIntro
-    image={brunchBurrito02}
-    imageAlt="Brisket breakfast burrito with fries at Park 101 Carlsbad brunch"
-    eyebrow={page.intro!.eyebrow}
-    heading={page.intro!.heading}
-    body={page.intro!.body!}
-    ctaLabel="Reserve a Table"
-    ctaHref={siteProfile.ordering.reservationsUrl}
-    ctaExternal={true}
-  />
+  {page.intro && (
+    <SplitIntro
+      image={brunchBurrito02}
+      imageAlt="Brisket breakfast burrito with fries at Park 101 Carlsbad brunch"
+      eyebrow={page.intro.eyebrow}
+      heading={page.intro.heading}
+      body={page.intro.body}
+      ctaLabel="Reserve a Table"
+      ctaHref={siteProfile.ordering.reservationsUrl}
+      ctaExternal={true}
+    />
+  )}
 
   <!-- ── FOOD GRID ─────────────────────────────────────────── -->
+  {foodSection && (
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(page.sections.food.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.food.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(foodSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(foodSection.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -163,13 +173,15 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── BRUNCH COCKTAILS ─────────────────────────────────── -->
+  {drinkSection && (
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-5xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-12">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.drink.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.drink.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(drinkSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(drinkSection.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -191,16 +203,20 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── PRIVATE BRUNCH CROSS-LINK ─────────────────────────── -->
+  {privateEventsSection && (
   <section class="relative bg-brand-cream">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[500px]">
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-20 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.privateEvents.eyebrow)}</span>
-          <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(page.sections.privateEvents.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(privateEventsSection.eyebrow)}</span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(privateEventsSection.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-body font-light text-brand-dark/75 text-base leading-relaxed mb-8">{blockText(page.sections.privateEvents.body!)}</p>
+          {privateEventsSection.body && (
+            <p class="font-body font-light text-brand-dark/75 text-base leading-relaxed mb-8">{blockText(privateEventsSection.body)}</p>
+          )}
           <a
             href="/private-events"
             class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
@@ -220,13 +236,15 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── FAQ ───────────────────────────────────────────────── -->
+  {faqSection && (
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.faq.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.faq.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(faqSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(faqSection.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -240,13 +258,17 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── FINAL CTA ─────────────────────────────────────────── -->
+  {finalSection && (
   <section class="relative bg-brand-tan py-20 px-6 sm:px-8 lg:px-12 text-center">
     <div class="max-w-2xl mx-auto">
-      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-dark/70 mb-4">{blockText(page.sections.final.eyebrow)}</span>
-      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(page.sections.final.heading)}</h2>
-      <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.final.body!)}</p>
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-dark/70 mb-4">{blockText(finalSection.eyebrow)}</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(finalSection.heading)}</h2>
+      {finalSection.body && (
+        <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{blockText(finalSection.body)}</p>
+      )}
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href={siteProfile.ordering.reservationsUrl}
@@ -264,8 +286,8 @@ const faqSchema = {
         </a>
       </div>
     </div>
-    </div>
   </section>
+  )}
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 

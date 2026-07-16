@@ -11,15 +11,19 @@ const eventOrder = ['birthday-parties', 'corporate-events', 'venue-buyout', 'gam
 const events = (await getCollection('privateEvents'))
   .map(({ data }) => data)
   .sort((a, b) => eventOrder.indexOf(a.slug) - eventOrder.indexOf(b.slug));
-const faqs = page.faqs!;
-const howItWorks = page.howItWorks!;
+const faqs = page.faqs ?? [];
+const howItWorks = page.howItWorks ?? [];
 const privateEventsHubImage = page.seo.ogImage;
 
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
 const blockText = (value: string) => `\n${value}\n`;
+const typesSection = page.sections.types;
+const processSection = page.sections.process;
+const faqSection = page.sections.faq;
+const finalSection = page.sections.final;
 
-const faqSchema = {
+const faqSchema = faqs.length > 0 ? {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: faqs.map((f) => ({
@@ -27,7 +31,7 @@ const faqSchema = {
     name: f.q,
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
-};
+} : null;
 ---
 
 <Layout title={pageTitle} description={pageDescription} ogImage={privateEventsHubImage} transparentNav={true}>
@@ -49,7 +53,9 @@ const faqSchema = {
     <div class="max-w-3xl mx-auto text-center">
       <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.hero.eyebrow)}</span>
       <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
-      <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto"><Fragment set:html={blockText(page.hero.body!)} /></p>
+      {page.hero.body && (
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto"><Fragment set:html={blockText(page.hero.body)} /></p>
+      )}
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="#inquiry"
@@ -77,6 +83,7 @@ const faqSchema = {
   ]} />
 
   <!-- ── WHY PARK 101 ─────────────────────────────────────── -->
+  {page.intro && (
   <section class="relative bg-brand-cream">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
@@ -89,10 +96,12 @@ const faqSchema = {
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.intro!.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(page.intro!.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.intro.eyebrow)}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(page.intro.heading)}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8"><Fragment set:html={blockText(page.intro!.body!)} /></p>
+          {page.intro.body && (
+            <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8"><Fragment set:html={blockText(page.intro.body)} /></p>
+          )}
           <a
             href="/venue"
             class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
@@ -103,13 +112,15 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── BROWSE BY EVENT TYPE ─────────────────────────────── -->
+  {typesSection && (
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(page.sections.types.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.types.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(typesSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(typesSection.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -120,13 +131,15 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── HOW IT WORKS ──────────────────────────────────────── -->
+  {processSection && howItWorks.length > 0 && (
   <section class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-5xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.process.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">{blockText(page.sections.process.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(processSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">{blockText(processSection.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -141,16 +154,18 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── INQUIRY FORM ─────────────────────────────────────── -->
   <EventInquiryForm />
 
   <!-- ── FAQ ───────────────────────────────────────────────── -->
+  {faqSection && faqs.length > 0 && (
   <section id="faq" class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(page.sections.faq.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(page.sections.faq.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(faqSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(faqSection.heading)}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -164,13 +179,17 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
   <!-- ── FINAL CTA ─────────────────────────────────────────── -->
+  {finalSection && (
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12 text-center">
     <div class="max-w-2xl mx-auto">
-      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={blockText(page.sections.final.eyebrow)} /></span>
-      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{blockText(page.sections.final.heading)}</h2>
-      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{blockText(page.sections.final.body!)}</p>
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={blockText(finalSection.eyebrow)} /></span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{blockText(finalSection.heading)}</h2>
+      {finalSection.body && (
+        <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{blockText(finalSection.body)}</p>
+      )}
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="#inquiry"
@@ -187,7 +206,8 @@ const faqSchema = {
       </div>
     </div>
   </section>
+  )}
 
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
 </Layout>

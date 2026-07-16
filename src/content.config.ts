@@ -119,7 +119,7 @@ const menuItems = defineCollection({
     menu: z.enum(['dinner', 'brunch']),
     section: z.enum(['food', 'drink']),
     name: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     image: z.string(),
     imageAlt: z.string(),
     order: z.number().int().nonnegative(),
