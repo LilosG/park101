@@ -12,18 +12,15 @@ import foodSpreadIntroImg from '../assets/food/park-101-food-spread-intro-carlsb
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const page = (await getCollection('menuPage'))[0].data;
 const assetImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
-const allMenuItems = (await getCollection('menuItems')).sort((a, b) => a.data.order - b.data.order);
-const toCardItem = ({ data }: (typeof allMenuItems)[number]) => ({
+const dinnerFoodItems = (await getCollection('dinnerFoodItems')).sort((a, b) => a.data.order - b.data.order);
+const dinnerDrinkItems = (await getCollection('dinnerDrinkItems')).sort((a, b) => a.data.order - b.data.order);
+const toCardItem = ({ data }: (typeof dinnerFoodItems)[number] | (typeof dinnerDrinkItems)[number]) => ({
   ...data,
   src: assetImages[data.image].default,
   alt: data.imageAlt,
 });
-const menuItems = allMenuItems
-  .filter(({ data }) => data.menu === 'dinner' && data.section === 'food')
-  .map(toCardItem);
-const cocktailItems = allMenuItems
-  .filter(({ data }) => data.menu === 'dinner' && data.section === 'drink')
-  .map(toCardItem);
+const menuItems = dinnerFoodItems.map(toCardItem);
+const cocktailItems = dinnerDrinkItems.map(toCardItem);
 
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;

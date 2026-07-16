@@ -1,9 +1,7 @@
 {
-  "menu": "dinner",
-  "section": "food",
   "name": "Surf & Turf Fries",
   "description": "House-made cheese sauce, smoked meat, ancho shrimp, bacon, poblano sauce.",
-  "image": "/src/assets/food/park-101-surf-n-turf-fries-hero-carlsbad.jpg",
+  "image": "/src/assets/dinnerFoodItems/park-101-surf-n-turf-fries-hero-carlsbad.jpg",
   "imageAlt": "Surf and turf loaded fries with smoked meat and shrimp at Park 101 Carlsbad",
   "order": 4
 }

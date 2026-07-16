@@ -1,9 +1,7 @@
 {
-  "menu": "brunch",
-  "section": "food",
   "name": "Breakfast Burrito",
   "description": "",
-  "image": "/src/assets/brunch/park-101-brunch-brisket-burrito-01-carlsbad.jpg",
+  "image": "/src/assets/brunchFoodItems/park-101-brunch-brisket-burrito-01-carlsbad.jpg",
   "imageAlt": "Breakfast burrito at Park 101 Carlsbad brunch",
   "order": 2
 }

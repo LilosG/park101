@@ -1,9 +1,7 @@
 {
-  "menu": "dinner",
-  "section": "food",
   "name": "Tri-Tip x Arugula Salad",
   "description": "Smoked tri-tip, arugula, cotija, pickled onion, chimichurri, avocado.",
-  "image": "/src/assets/food/park-101-tri-tip-x-arugula-hero-carlsbad.jpg",
+  "image": "/src/assets/dinnerFoodItems/park-101-tri-tip-x-arugula-hero-carlsbad.jpg",
   "imageAlt": "Tri-Tip x Arugula salad with pickled onion and cotija at Park 101 Carlsbad",
   "order": 1
 }

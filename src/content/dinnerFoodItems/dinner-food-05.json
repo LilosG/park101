@@ -1,9 +1,7 @@
 {
-  "menu": "dinner",
-  "section": "food",
   "name": "Smoked Tri-Tip Philly",
   "description": "Smoked tri-tip, sauteed peppers and onions, melted cheddar, toasted hoagie.",
-  "image": "/src/assets/food/park-101-smoked-tri-tip-philly-hero-carlsbad.jpg",
+  "image": "/src/assets/dinnerFoodItems/park-101-smoked-tri-tip-philly-hero-carlsbad.jpg",
   "imageAlt": "Smoked tri-tip Philly cheesesteak sandwich at Park 101 Carlsbad",
   "order": 5
 }

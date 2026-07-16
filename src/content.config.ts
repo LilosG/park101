@@ -113,17 +113,32 @@ const privateEventsIndex = defineCollection({
   schema: pageSchema,
 });
 
-const menuItems = defineCollection({
-  loader: glob({ pattern: '**/*.json', base: './src/content/menuItems' }),
-  schema: z.object({
-    menu: z.enum(['dinner', 'brunch']),
-    section: z.enum(['food', 'drink']),
-    name: z.string(),
-    description: z.string().optional(),
-    image: z.string(),
-    imageAlt: z.string(),
-    order: z.number().int().nonnegative(),
-  }),
+const menuItemSchema = z.object({
+  name: z.string(),
+  description: z.string().optional(),
+  image: z.string(),
+  imageAlt: z.string(),
+  order: z.number().int().nonnegative(),
+});
+
+const brunchFoodItems = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/brunchFoodItems' }),
+  schema: menuItemSchema,
+});
+
+const brunchDrinkItems = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/brunchDrinkItems' }),
+  schema: menuItemSchema,
+});
+
+const dinnerFoodItems = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/dinnerFoodItems' }),
+  schema: menuItemSchema,
+});
+
+const dinnerDrinkItems = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/dinnerDrinkItems' }),
+  schema: menuItemSchema,
 });
 
 const eventTypes = defineCollection({
@@ -177,7 +192,10 @@ export const collections = {
   venuePage,
   contactPage,
   privateEventsIndex,
-  menuItems,
+  brunchFoodItems,
+  brunchDrinkItems,
+  dinnerFoodItems,
+  dinnerDrinkItems,
   eventTypes,
   upcomingEvents,
   privateEvents,

@@ -398,7 +398,12 @@ export default config({
         "venuePage",
         "privateEventsIndex",
       ],
-      Menu: ["menuItems"],
+      Menu: [
+        "brunchFoodItems",
+        "brunchDrinkItems",
+        "dinnerFoodItems",
+        "dinnerDrinkItems",
+      ],
       Events: ["eventTypes", "upcomingEvents", "privateEvents"],
       Blog: ["blog"],
       "Site Settings": ["siteSettings", "navigation"],
@@ -456,12 +461,12 @@ export default config({
     ),
   },
   collections: {
-    menuItems: collection({
-      label: "Menu Items",
-      path: "src/content/menuItems/*",
+    brunchFoodItems: collection({
+      label: "Brunch — Food Items",
+      path: "src/content/brunchFoodItems/*",
       slugField: "name",
       format: { data: "json" },
-      columns: ["name", "menu", "section", "order"],
+      columns: ["name", "order"],
       schema: {
         name: fields.slug({
           name: {
@@ -469,24 +474,6 @@ export default config({
             description: "Name displayed for this menu item.",
             validation: { isRequired: true },
           },
-        }),
-        menu: fields.select({
-          label: "Menu",
-          description: "Choose which menu displays this item.",
-          options: [
-            { label: "Dinner", value: "dinner" },
-            { label: "Brunch", value: "brunch" },
-          ],
-          defaultValue: "dinner",
-        }),
-        section: fields.select({
-          label: "Menu Section",
-          description: "Choose whether this item appears under food or drinks.",
-          options: [
-            { label: "Food", value: "food" },
-            { label: "Drink", value: "drink" },
-          ],
-          defaultValue: "food",
         }),
         description: fields.text({
           label: "Item Description",
@@ -496,8 +483,128 @@ export default config({
         image: fields.image({
           label: "Menu Item Image",
           description: "Photo displayed with this menu item.",
-          directory: "src/assets",
-          publicPath: "/src/assets",
+          directory: "src/assets/brunchFoodItems",
+          publicPath: "/src/assets/brunchFoodItems/",
+          validation: { isRequired: true },
+        }),
+        imageAlt: fields.text({
+          label: "Image Description for Accessibility",
+          description:
+            "Describe what is visible in the image for screen readers and search engines.",
+          validation: { isRequired: true },
+        }),
+        order: fields.number({
+          label: "Display Order",
+          description:
+            "Controls the display order. Lower numbers appear first.",
+          validation: { isRequired: true, min: 0 },
+        }),
+      },
+    }),
+    brunchDrinkItems: collection({
+      label: "Brunch — Drink Items",
+      path: "src/content/brunchDrinkItems/*",
+      slugField: "name",
+      format: { data: "json" },
+      columns: ["name", "order"],
+      schema: {
+        name: fields.slug({
+          name: {
+            label: "Menu Item Name",
+            description: "Name displayed for this menu item.",
+            validation: { isRequired: true },
+          },
+        }),
+        description: fields.text({
+          label: "Item Description",
+          description: "Short description displayed with this menu item.",
+          multiline: true,
+        }),
+        image: fields.image({
+          label: "Menu Item Image",
+          description: "Photo displayed with this menu item.",
+          directory: "src/assets/brunchDrinkItems",
+          publicPath: "/src/assets/brunchDrinkItems/",
+          validation: { isRequired: true },
+        }),
+        imageAlt: fields.text({
+          label: "Image Description for Accessibility",
+          description:
+            "Describe what is visible in the image for screen readers and search engines.",
+          validation: { isRequired: true },
+        }),
+        order: fields.number({
+          label: "Display Order",
+          description:
+            "Controls the display order. Lower numbers appear first.",
+          validation: { isRequired: true, min: 0 },
+        }),
+      },
+    }),
+    dinnerFoodItems: collection({
+      label: "Dinner — Food Items",
+      path: "src/content/dinnerFoodItems/*",
+      slugField: "name",
+      format: { data: "json" },
+      columns: ["name", "order"],
+      schema: {
+        name: fields.slug({
+          name: {
+            label: "Menu Item Name",
+            description: "Name displayed for this menu item.",
+            validation: { isRequired: true },
+          },
+        }),
+        description: fields.text({
+          label: "Item Description",
+          description: "Short description displayed with this menu item.",
+          multiline: true,
+        }),
+        image: fields.image({
+          label: "Menu Item Image",
+          description: "Photo displayed with this menu item.",
+          directory: "src/assets/dinnerFoodItems",
+          publicPath: "/src/assets/dinnerFoodItems/",
+          validation: { isRequired: true },
+        }),
+        imageAlt: fields.text({
+          label: "Image Description for Accessibility",
+          description:
+            "Describe what is visible in the image for screen readers and search engines.",
+          validation: { isRequired: true },
+        }),
+        order: fields.number({
+          label: "Display Order",
+          description:
+            "Controls the display order. Lower numbers appear first.",
+          validation: { isRequired: true, min: 0 },
+        }),
+      },
+    }),
+    dinnerDrinkItems: collection({
+      label: "Dinner — Drink Items",
+      path: "src/content/dinnerDrinkItems/*",
+      slugField: "name",
+      format: { data: "json" },
+      columns: ["name", "order"],
+      schema: {
+        name: fields.slug({
+          name: {
+            label: "Menu Item Name",
+            description: "Name displayed for this menu item.",
+            validation: { isRequired: true },
+          },
+        }),
+        description: fields.text({
+          label: "Item Description",
+          description: "Short description displayed with this menu item.",
+          multiline: true,
+        }),
+        image: fields.image({
+          label: "Menu Item Image",
+          description: "Photo displayed with this menu item.",
+          directory: "src/assets/dinnerDrinkItems",
+          publicPath: "/src/assets/dinnerDrinkItems/",
           validation: { isRequired: true },
         }),
         imageAlt: fields.text({

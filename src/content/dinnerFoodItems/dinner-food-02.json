@@ -1,9 +1,7 @@
 {
-  "menu": "dinner",
-  "section": "food",
   "name": "BBQ Chicken Salad",
   "description": "Fried BBQ chicken, romaine, cherry tomato, black beans, avocado ranch, crispy tortilla strips.",
-  "image": "/src/assets/food/park-101-bbq-chicken-salad-hero-carlsbad.jpg",
+  "image": "/src/assets/dinnerFoodItems/park-101-bbq-chicken-salad-hero-carlsbad.jpg",
   "imageAlt": "BBQ chicken salad with crispy tortilla strips at Park 101 Carlsbad",
   "order": 2
 }

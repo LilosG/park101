@@ -1,9 +1,7 @@
 {
-  "menu": "dinner",
-  "section": "food",
   "name": "Shrimp Tacos",
   "description": "Ancho shrimp, coleslaw, pico de gallo, taco sauce, lime.",
-  "image": "/src/assets/food/park-101-shrimp-tacos-hero-carlsbad.jpg",
+  "image": "/src/assets/dinnerFoodItems/park-101-shrimp-tacos-hero-carlsbad.jpg",
   "imageAlt": "Shrimp tacos with chipotle sauce and lime at Park 101 Carlsbad",
   "order": 7
 }

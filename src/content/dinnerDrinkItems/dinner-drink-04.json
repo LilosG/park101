@@ -1,9 +1,7 @@
 {
-  "menu": "dinner",
-  "section": "drink",
   "name": "Gun Powder & Lead",
   "description": "A tall, refreshing build finished with fresh mint.",
-  "image": "/src/assets/drinks/park-101-gun-powder-lead-cocktail-carlsbad.jpg",
+  "image": "/src/assets/dinnerDrinkItems/park-101-gun-powder-lead-cocktail-carlsbad.jpg",
   "imageAlt": "Gun Powder & Lead cocktail with fresh mint at Park 101 Carlsbad",
   "order": 4
 }

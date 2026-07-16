@@ -11,18 +11,15 @@ import rooftopDiningImg from '../assets/venue/park-101-rooftop-dining-carlsbad-v
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const page = (await getCollection('brunchPage'))[0].data;
 const assetImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
-const allMenuItems = (await getCollection('menuItems')).sort((a, b) => a.data.order - b.data.order);
-const toGridItem = ({ data }: (typeof allMenuItems)[number]) => ({
+const brunchFoodItems = (await getCollection('brunchFoodItems')).sort((a, b) => a.data.order - b.data.order);
+const brunchDrinkItems = (await getCollection('brunchDrinkItems')).sort((a, b) => a.data.order - b.data.order);
+const toGridItem = ({ data }: (typeof brunchFoodItems)[number] | (typeof brunchDrinkItems)[number]) => ({
   ...data,
   src: assetImages[data.image].default,
   alt: data.imageAlt,
 });
-const foodItems = allMenuItems
-  .filter(({ data }) => data.menu === 'brunch' && data.section === 'food')
-  .map(toGridItem);
-const drinkItems = allMenuItems
-  .filter(({ data }) => data.menu === 'brunch' && data.section === 'drink')
-  .map(toGridItem);
+const foodItems = brunchFoodItems.map(toGridItem);
+const drinkItems = brunchDrinkItems.map(toGridItem);
 
 const faqs = [
   {
