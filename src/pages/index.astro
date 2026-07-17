@@ -491,6 +491,12 @@ const drinkItems = [
             Open Daily from {siteProfile.hours.monday.open}
           </p>
         </div>
+        <div>
+          <span class="block font-display font-bold text-brand-orange text-[10px] tracking-widest uppercase mb-1">{siteProfile.happyHours.label}</span>
+          <p class="font-body text-sm text-brand-cream/80">
+            {siteProfile.happyHours.days}, {siteProfile.happyHours.hours}
+          </p>
+        </div>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto flex-shrink-0">
         <a

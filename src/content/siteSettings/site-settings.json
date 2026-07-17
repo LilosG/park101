@@ -85,6 +85,12 @@
       "hours": "11:00 AM – 12:00 AM"
     }
   ],
+  "happyHours": {
+    "label": "Happy Hour",
+    "days": "Monday – Friday",
+    "hours": "3:00 PM – 6:00 PM",
+    "note": "Not available Saturday & Sunday"
+  },
   "social": {
     "instagram": "https://www.instagram.com/park101_/",
     "facebook": "https://www.facebook.com/prk101cbad/",
