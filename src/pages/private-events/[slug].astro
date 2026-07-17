@@ -26,9 +26,20 @@ const otherEvents = (await getCollection('privateEvents'))
 const pageTitle = `${event.name} Venue in Carlsbad | PRK 101`;
 const descriptionSuffix = ` ${event.capacity} in Carlsbad Village.`;
 const maxDescLength = 160 - descriptionSuffix.length;
-const trimmedDescription = event.description.length > maxDescLength
-  ? `${event.description.slice(0, maxDescLength - 1).trimEnd()}…`
-  : event.description;
+
+// Prefer a dedicated, author-written meta description sized for search results.
+// If one isn't provided, fall back to the on-page description trimmed at a
+// word boundary (never mid-word) so a future long-form edit can't produce a
+// broken meta description silently.
+const baseDescription = event.metaDescription ?? event.description;
+const trimmedDescription = baseDescription.length > maxDescLength
+  ? (() => {
+      const cut = baseDescription.slice(0, maxDescLength);
+      const lastSpace = cut.lastIndexOf(' ');
+      const safeCut = lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
+      return `${safeCut.trimEnd()}…`;
+    })()
+  : baseDescription;
 const pageDescription = `${trimmedDescription}${descriptionSuffix}`;
 
 const breadcrumbSchema = {

@@ -173,6 +173,7 @@ const privateEvents = defineCollection({
     name: z.string(),
     headline: z.string(),
     description: z.string(),
+    metaDescription: z.string().max(130).optional(),
     capacity: z.string(),
     features: z.array(z.string()),
     faqs: z.array(z.object({ q: z.string(), a: z.string() })),
