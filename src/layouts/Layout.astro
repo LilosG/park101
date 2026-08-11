@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import LocalSEO from '../components/core/LocalSEO.astro';
 import Analytics from '../components/core/Analytics.astro';
+import ConsentBanner from '../components/core/ConsentBanner.astro';
 import SiteNav from '../components/ui/SiteNav.astro';
 import SiteFooter from '../components/ui/SiteFooter.astro';
 
@@ -49,5 +50,6 @@ const {
       <slot />
     </main>
     <SiteFooter />
+    <ConsentBanner siteName="Park 101" />
   </body>
 </html>
