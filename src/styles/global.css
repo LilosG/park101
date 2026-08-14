@@ -1,6 +1,17 @@
-/* ─── Google Fonts Import ─────────────────────────────────── */
-/* MUST precede @import "tailwindcss" — CSS spec requirement  */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+/* ─── Self-Hosted Fonts ────────────────────────────────────── */
+/* Barlow Condensed — no variable package; load only weights in use */
+@import '@fontsource/barlow-condensed/400.css';
+@import '@fontsource/barlow-condensed/500.css';
+@import '@fontsource/barlow-condensed/600.css';
+@import '@fontsource/barlow-condensed/700.css';
+@import '@fontsource/barlow-condensed/700-italic.css';
+@import '@fontsource/barlow-condensed/800.css';
+@import '@fontsource/barlow-condensed/900.css';
+/* Cormorant Garamond — variable package */
+@import '@fontsource-variable/cormorant-garamond/wght.css';
+@import '@fontsource-variable/cormorant-garamond/wght-italic.css';
+/* Inter — variable package */
+@import '@fontsource-variable/inter/wght.css';
 
 @import "tailwindcss";
 
@@ -24,8 +35,8 @@
 
   /* ─── Typography — Font Families ───────────────────────── */
   --font-display:   'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --font-body:      'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-body:      'Inter Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-editorial: 'Cormorant Garamond Variable', Georgia, serif;
   --font-mono:      'JetBrains Mono', monospace;
 
   /* ─── Fluid Typography Scale ────────────────────────────── */

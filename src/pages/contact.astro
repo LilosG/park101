@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import MapEmbed from '../components/ui/MapEmbed.astro';
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import storefrontImage from '../assets/venue/park-101-modern-brick-storefront-neon-signage-carlsbad.jpg';
@@ -147,15 +148,11 @@ const hasEmail = Boolean(siteProfile.contact.email);
       </div>
 
       <div class="relative min-h-[400px] lg:min-h-full overflow-hidden p-4 lg:p-6 bg-brand-dark">
-        <div class="relative w-full h-full min-h-[380px] overflow-hidden border border-brand-orange/30">
-          <iframe
-            src={`https://maps.google.com/maps?q=${mapQuery}&output=embed`}
-            class="absolute inset-0 w-full h-full border-0"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Park 101 location map"
-          ></iframe>
-        </div>
+        <MapEmbed
+          src={`https://maps.google.com/maps?q=${mapQuery}&output=embed`}
+          title="Park 101 location map"
+          class="relative w-full h-full min-h-[380px]"
+        />
       </div>
     </div>
   </section>

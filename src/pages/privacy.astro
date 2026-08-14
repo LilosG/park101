@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+---
+
+<Layout
+  title="Privacy Policy | Park 101"
+  description="Park 101's privacy policy, notice at collection, and your privacy choices."
+>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+
+    <h1 class="font-display font-bold uppercase tracking-display text-brand-steel text-4xl sm:text-5xl mb-4">
+      Privacy Policy
+    </h1>
+    <p class="text-sm text-brand-dark/50 mb-12">Park 101 — Carlsbad, CA</p>
+
+    <!-- ── Notice at Collection ─────────────────────────────── -->
+    <h2 class="font-display font-bold uppercase tracking-wide text-brand-steel text-2xl sm:text-3xl mt-12 mb-5">
+      Notice at Collection
+    </h2>
+
+    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
+      What we collect
+    </h3>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      When you visit this website, Google Analytics collects internet and network activity
+      information on our behalf, including: pages you viewed, the website that referred you
+      here, an approximate location derived from your IP address, and your device and browser
+      type. It also collects online identifiers such as cookie IDs assigned by Google Analytics.
+      We do not collect your name, email address, or any information you do not voluntarily
+      submit through a contact or reservation form.
+    </p>
+
+    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
+      Why we collect it
+    </h3>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      We use this data solely to measure site traffic and understand how visitors use our
+      website, so we can improve it. We use it for no other purpose.
+    </p>
+
+    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
+      Who receives it
+    </h3>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      The data is sent to Google, acting as our service provider under Google's data processing
+      terms. Google processes the data on our behalf to generate aggregate analytics reports.
+      We do not sell your personal information. We do not share your personal information for
+      cross-context behavioral advertising.
+    </p>
+
+    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
+      What we do not do
+    </h3>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      Google Signals and ads personalization are disabled on this property. We have configured
+      Google Analytics to deny all ad-related storage, ad user data sharing, and ad
+      personalization signals. The analytics data collected here is not used for advertising.
+    </p>
+
+    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
+      Retention
+    </h3>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      Event data is retained for 14 months in Google Analytics, after which it is automatically
+      deleted.
+    </p>
+
+    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
+      Your choices
+    </h3>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      You can opt out of Google Analytics tracking at any time using the control below.
+      If your browser sends a <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener noreferrer" class="text-brand-orange underline underline-offset-2">Global Privacy Control</a> signal,
+      we honor it automatically and do not load analytics.
+    </p>
+
+    <!-- ── Your Privacy Choices ─────────────────────────────── -->
+    <h2 id="choices" class="font-display font-bold uppercase tracking-wide text-brand-steel text-2xl sm:text-3xl mt-16 mb-5">
+      Your Privacy Choices
+    </h2>
+    <p class="text-brand-dark leading-relaxed mb-6">
+      Use the control below to opt out of or back into Google Analytics measurement on this site.
+      Your preference is stored locally in your browser and does not expire.
+    </p>
+
+    <div id="privacy-choices-panel" class="border border-brand-cream-dark rounded-md p-6 bg-brand-white">
+      <p id="privacy-status" class="text-sm text-brand-dark/70 mb-4">Checking your current preference&hellip;</p>
+      <button
+        id="privacy-toggle-btn"
+        type="button"
+        class="inline-block py-2.5 px-6 text-sm font-display font-bold uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
+      >
+        Loading&hellip;
+      </button>
+    </div>
+
+    <!-- ── California Residents ─────────────────────────────── -->
+    <h2 class="font-display font-bold uppercase tracking-wide text-brand-steel text-2xl sm:text-3xl mt-16 mb-5">
+      California Residents
+    </h2>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      If you are a California resident, you have the right to:
+    </p>
+    <ul class="list-disc pl-6 mb-4 flex flex-col gap-2">
+      <li class="text-brand-dark leading-relaxed">
+        <strong>Know</strong> what personal information we collect about you, how we use it, and who we share it with.
+      </li>
+      <li class="text-brand-dark leading-relaxed">
+        <strong>Delete</strong> personal information we have collected from you, subject to certain exceptions.
+      </li>
+      <li class="text-brand-dark leading-relaxed">
+        <strong>Correct</strong> inaccurate personal information we hold about you.
+      </li>
+      <li class="text-brand-dark leading-relaxed">
+        <strong>Opt out</strong> of the sale or sharing of your personal information. We do not sell or share personal information for cross-context behavioral advertising.
+      </li>
+    </ul>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      To exercise these rights, or to ask questions about our data practices, contact us at:
+    </p>
+    <address class="not-italic text-brand-dark leading-relaxed mb-4">
+      Park 101<br />
+      {siteProfile.contact.address.street}<br />
+      {siteProfile.contact.address.city}, {siteProfile.contact.address.state} {siteProfile.contact.address.zip}<br />
+      <a href={`tel:${siteProfile.contact.phoneDial}`} class="text-brand-orange underline underline-offset-2">
+        {siteProfile.contact.phone}
+      </a>
+    </address>
+    <p class="text-brand-dark leading-relaxed mb-4">
+      We will not discriminate against you for exercising any of these rights. We aim to
+      respond to verifiable requests within 45 days.
+    </p>
+
+    <p class="text-xs text-brand-dark/40 mt-16">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+  </section>
+</Layout>
+
+<script is:inline>
+  (function () {
+    var STORAGE_KEY = 'lilos-privacy-v1';
+
+    function isOptedOut() {
+      if (window.lilosPrivacy && typeof window.lilosPrivacy.isOptedOut === 'function') {
+        return window.lilosPrivacy.isOptedOut();
+      }
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return false;
+        var parsed = JSON.parse(raw);
+        return !!(parsed && parsed.optOut);
+      } catch (e) { return false; }
+    }
+
+    function updateUI() {
+      var status = document.getElementById('privacy-status');
+      var btn = document.getElementById('privacy-toggle-btn');
+      if (!status || !btn) return;
+
+      if (navigator.globalPrivacyControl === true) {
+        status.textContent = 'Your browser sends a Global Privacy Control signal. Google Analytics is not loaded on this site for your browser.';
+        btn.style.display = 'none';
+        return;
+      }
+
+      if (isOptedOut()) {
+        status.textContent = 'You are currently opted out. Google Analytics is not loaded for your browser.';
+        btn.textContent = 'Opt back in';
+        btn.onclick = function () {
+          if (window.lilosPrivacy && typeof window.lilosPrivacy.optIn === 'function') {
+            window.lilosPrivacy.optIn();
+          } else {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ optOut: false, ts: Date.now() })); } catch (e) {}
+          }
+          updateUI();
+        };
+      } else {
+        status.textContent = 'You are currently opted in. Google Analytics is active for your browser on this site.';
+        btn.textContent = 'Opt out';
+        btn.onclick = function () {
+          if (window.lilosPrivacy && typeof window.lilosPrivacy.optOut === 'function') {
+            window.lilosPrivacy.optOut();
+          } else {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ optOut: true, ts: Date.now() })); } catch (e) {}
+          }
+          updateUI();
+        };
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateUI);
+    } else {
+      updateUI();
+    }
+  })();
+</script>
