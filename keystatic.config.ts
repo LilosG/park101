@@ -360,8 +360,7 @@ const markdownContent = {
 };
 
 export default config({
-  storage: { kind: "cloud" },
-  cloud: { project: "gph-websites/park101" },
+  storage: { kind: "github", repo: { owner: "LilosG", name: "park101" } },
   ui: {
     brand: {
       name: "Park 101 Website CMS",
