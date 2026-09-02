@@ -227,16 +227,11 @@ function fieldForValue(
 
   if (isImageField(key, value)) {
     const sourceAsset = String(value).startsWith("/src/assets/");
-    const imageNamespace = [
-      context.imageNamespace,
-      ...(context.path ?? []),
-      key,
-    ].join("/");
     return fields.image({
       label,
       description,
-      directory: sourceAsset ? "src/assets" : `public/images/${imageNamespace}`,
-      publicPath: sourceAsset ? "/src/assets" : `/images/${imageNamespace}/`,
+      directory: sourceAsset ? "src/assets" : `public/images/${context.imageNamespace}`,
+      publicPath: sourceAsset ? "/src/assets" : `/images/${context.imageNamespace}/`,
       validation: { isRequired: true },
     });
   }
@@ -360,7 +355,8 @@ const markdownContent = {
 };
 
 export default config({
-  storage: { kind: "github", repo: { owner: "LilosG", name: "park101" } },
+  storage: { kind: "cloud" },
+  cloud: { project: "gph-websites/park101" },
   ui: {
     brand: {
       name: "Park 101 Website CMS",
