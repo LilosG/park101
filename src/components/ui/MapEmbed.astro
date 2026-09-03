@@ -3,101 +3,33 @@ interface Props {
   src: string;
   title: string;
   class?: string;
-  placeholderClass?: string;
 }
 
-const { src, title, class: containerClass = '', placeholderClass = '' } = Astro.props;
+const { src, title, class: containerClass = '' } = Astro.props;
 ---
 
 <div class:list={['map-embed-wrapper', containerClass]}>
-  <div class:list={['map-embed-placeholder', placeholderClass]}>
-    <div class="map-embed-content">
-      <p class="map-embed-notice">
-        Loading this map connects to Google.
-      </p>
-      <button type="button" class="map-embed-btn" data-map-src={src} data-map-title={title}>
-        Load map
-      </button>
-    </div>
-  </div>
+  <iframe
+    src={src}
+    title={title}
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
 </div>
 
 <style>
   .map-embed-wrapper {
     position: relative;
+    overflow: hidden;
   }
 
-  .map-embed-placeholder {
+  .map-embed-wrapper iframe {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-brand-dark, #1B140F);
-    border: 1px solid color-mix(in srgb, var(--color-brand-orange, #C4622D) 30%, transparent);
-  }
-
-  .map-embed-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .map-embed-notice {
-    font-size: 0.75rem;
-    color: color-mix(in srgb, var(--color-brand-white, #FDFAF7) 40%, transparent);
-    margin: 0;
-  }
-
-  .map-embed-btn {
-    font-family: var(--font-display, 'Barlow Condensed', sans-serif);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.5rem 1.25rem;
-    background: transparent;
-    color: var(--color-brand-white, #FDFAF7);
-    border: 1px solid color-mix(in srgb, var(--color-brand-white, #FDFAF7) 30%, transparent);
-    border-radius: 0.125rem;
-    cursor: pointer;
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-
-  .map-embed-btn:hover {
-    border-color: var(--color-brand-orange, #C4622D);
-    color: var(--color-brand-orange, #C4622D);
-  }
-
-  .map-embed-btn:focus-visible {
-    outline: 2px solid var(--color-brand-orange, #C4622D);
-    outline-offset: 3px;
+    border: 0;
+    display: block;
   }
 </style>
-
-<script is:inline>
-  document.querySelectorAll('.map-embed-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var src = btn.getAttribute('data-map-src');
-      var title = btn.getAttribute('data-map-title');
-      var wrapper = btn.closest('.map-embed-wrapper');
-      if (!wrapper || !src) return;
-
-      var iframe = document.createElement('iframe');
-      iframe.src = src;
-      iframe.title = title || 'Map';
-      iframe.loading = 'lazy';
-      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
-
-      var placeholder = wrapper.querySelector('.map-embed-placeholder');
-      if (placeholder) {
-        wrapper.removeChild(placeholder);
-      }
-      wrapper.appendChild(iframe);
-    });
-  });
-</script>
