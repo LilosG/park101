@@ -20,11 +20,11 @@ Carlsbad Village sits on one of San Diego County's most photographed stretches o
 
 ## Park 101: The Rooftop Benchmark
 
-Park 101 sits at 3040 Carlsbad Boulevard, a converted historic building with a rooftop deck that dominates the Carlsbad Village skyline. The ocean view isn't a side benefit here—it's the primary asset. You walk up three levels and step onto an open-air rooftop with fire pits, high-top seating, and sightlines straight to the Pacific. No obstructions. No pillars blocking the sunset.
+[Park 101's rooftop, courtyard and indoor bar](/venue) sit at 3040 Carlsbad Boulevard, creating a multi-level venue in the heart of Carlsbad Village. The rooftop deck is the main draw for guests looking for an elevated open-air setting, with fire pits, high-top seating, and views across the village toward the coast.
 
-The craft cocktail program leans into California coastal classics: Palomas with fresh grapefruit, Pisco sours, and house-made margaritas that don't rely on cheap mix. The beer list favors San Diego County breweries—Ballast Point, Societe, Stone—which keeps the local credibility intact. Food runs to shareable appetizers and elevated pub fare: crispy cauliflower, short rib tacos, loaded fries. Nothing pretentious, but nothing phoned in either.
+The craft cocktail program leans into California coastal classics: Palomas with fresh grapefruit, Pisco sours, and house-made margaritas that don't rely on cheap mix. The beer list favors San Diego County breweries—Ballast Point, Societe, Stone—which keeps the local credibility intact. Food runs to shareable appetizers and elevated pub fare: crispy cauliflower, short rib tacos, loaded fries. Browse the [current Park 101 food and drink menu](/menu) before you visit for the latest lineup.
 
-Game-day atmosphere is where Park 101 separates itself. Multiple screens across all three levels, fire pits for cooler evenings, and an open layout that doesn't feel cramped even when a World Cup match or playoff game draws 200+ people. The rooftop deck functions as both a casual happy-hour spot and a serious viewing venue.
+Game-day atmosphere is where Park 101 separates itself. Multiple screens across all three levels, fire pits for cooler evenings, and an open layout that doesn't feel cramped even when a World Cup match or playoff game draws a crowd. Check the [events and game-day lineup](/events) for current sports viewing and programming before heading over.
 
 Parking: Street parking on Carlsbad Boulevard and nearby side streets, or the paid lot at Beech Avenue (two blocks south). Walk time from Beech Avenue beach access: 10 minutes.
 
@@ -88,6 +88,10 @@ If ocean views and game-day atmosphere are your priorities, the [best rooftop ba
 
 For a [best family friendly restaurants carlsbad village](/blog/best-family-friendly-restaurants-carlsbad-village/) experience that doubles as a game-day venue, Park 101 again leads—kids are welcome during daylight hours, the space is open and safe, and the food menu accommodates all ages without compromise.
 
+## Planning a Larger Group
+
+If the rooftop or game-day setting is part of a birthday, company outing, rehearsal dinner, or larger celebration, review Park 101's [private and semi-private event options](/private-events) before relying on a standard table reservation. Event-specific options include [birthday parties](/private-events/birthday-parties), [corporate events](/private-events/corporate-events), and [game-day parties](/private-events/game-day-parties).
+
 ## Final Take
 
-Carlsbad's ocean view bars serve different purposes. Campfire is for intimate coastal evenings. Puesto is for social energy and great Mexican food. Oceanside Pier Tavern is for authentic pier-side nostalgia. Park 101 is for rooftop views, craft cocktails, and the kind of game-day energy that fills a space with genuine crowd momentum. Pick based on what you're actually after, not just the view alone. If you want the full rooftop experience with ocean views, fire pits, and a venue that works equally well for a first date or a playoff watch party, [Contact Us](/contact/) to reserve your spot at Park 101.
+Carlsbad's ocean view bars serve different purposes. Campfire is for intimate coastal evenings. Puesto is for social energy and great Mexican food. Oceanside Pier Tavern is for authentic pier-side nostalgia. Park 101 is for rooftop views, craft cocktails, and the kind of game-day energy that fills a space with genuine crowd momentum. Pick based on what you're actually after, not just the view alone. If you want the full rooftop experience with ocean views, fire pits, and a venue that works equally well for a first date or a playoff watch party, [Contact Us](/contact/) to plan your visit.

@@ -28,9 +28,9 @@ Here's a breakdown of the best happy hour spots in Carlsbad, with specifics on t
 
 ## Park 101: Rooftop Ocean Views and Strong Drink Pricing
 
-Park 101, at 3040 Carlsbad Boulevard, runs happy hour daily from 3 PM to 6 PM with pricing that competes across the village. Draft beer runs $5, well cocktails $6, and house wine $7. The appetizer menu—wings, nachos, sliders, loaded fries—hits 50% off during those hours.
+Park 101, at 3040 Carlsbad Boulevard, runs happy hour daily from 3 PM to 6 PM with pricing that competes across the village. Draft beer runs $5, well cocktails $6, and house wine $7. The appetizer menu—wings, nachos, sliders, loaded fries—hits 50% off during those hours. See the [current food and drink menu](/menu) for the latest lineup before you visit.
 
-What separates Park 101 is the rooftop deck. You're not squeezed into a dim corner or fighting for bar space. The rooftop stays open during happy hour, and on clear days you get unobstructed ocean views. The space has fire pits, comfortable seating, and enough room to actually move without bumping elbows. On weekdays, the crowd thins out by 5 PM, so you can claim a table and settle in.
+What separates Park 101 is the [rooftop deck and multi-level venue layout](/venue). You're not squeezed into a dim corner or fighting for bar space. The rooftop stays open during happy hour, and on clear days you get unobstructed ocean views. The space has fire pits, comfortable seating, and enough room to actually move without bumping elbows. On weekdays, the crowd thins out by 5 PM, so you can claim a table and settle in.
 
 The rooftop also means you're not stuck inside watching a single TV. Multiple screens are positioned around the deck, so if there's a game on, you'll catch it without the claustrophobic sports-bar energy. This setup appeals to groups who want to socialize but don't mind background sports coverage.
 
@@ -78,7 +78,7 @@ If you're looking for the [best rooftop bars carlsbad](/blog/best-rooftop-bars-c
 
 For [best family friendly restaurants carlsbad village](/blog/best-family-friendly-restaurants-carlsbad-village/), Park 101 also works during early happy hour (3 PM to 4 PM) when the crowd is lighter and kids can still be present. Campfire is another family option with its quieter vibe.
 
-If you're catching a game, Park 101's rooftop screens and The Tap House's wall of TVs both work, though The Tap House has the more immersive sports-bar experience. For major events like the Super Bowl or playoffs, Park 101's rooftop becomes premium seating—you're watching the game with an ocean backdrop.
+If you're catching a game, Park 101's rooftop screens and The Tap House's wall of TVs both work, though The Tap House has the more immersive sports-bar experience. For major events like the Super Bowl or playoffs, check Park 101's [current events and game-day programming](/events) before you go.
 
 ## Timing and Logistics: When to Go
 
@@ -108,4 +108,4 @@ Carlsbad Village has solid happy hour options across multiple price points and a
 
 But if you want the complete package—competitive pricing, good food, and an experience that feels special—Park 101 is the best happy hour spot in Carlsbad. The rooftop deck with ocean views, fire pits, and multiple screens gives you flexibility. You can socialize, watch a game, eat well, and spend less than you'd expect.
 
-Head to Park 101 between 3 PM and 5 PM on a weekday for the best combination of availability, pricing, and rooftop atmosphere. Grab a $5 draft, order half-off nachos, and enjoy the coast. If you have questions about reservations, group seating, or specific happy hour dates, [Contact Us](/contact/) and we'll get you set up.
+Head to Park 101 between 3 PM and 5 PM on a weekday for the best combination of availability, pricing, and rooftop atmosphere. Grab a $5 draft, order half-off nachos, and enjoy the coast. For larger group celebrations, review the [private and semi-private event options](/private-events); for normal visit questions, reservations, or current happy-hour details, [Contact Us](/contact/) and we'll get you set up.
