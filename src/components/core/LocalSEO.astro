@@ -1,5 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
+import { getGoogleMapsPlace } from '../../lib/googleMaps';
 
 interface Props {
   title: string;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const googleMaps = await getGoogleMapsPlace(siteProfile);
 
 const {
   title,
@@ -100,7 +102,7 @@ const baseSchema = {
   },
   "servesCuisine": siteProfile.schema.servesCuisine,
   "priceRange": siteProfile.schema.priceRange,
-  "hasMap": siteProfile.contact.googleMapsUrl,
+  "hasMap": googleMaps.placeUrl,
   "openingHoursSpecification": openingHoursSpecification,
   "sameAs": [
     siteProfile.social.instagram,

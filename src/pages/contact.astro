@@ -3,16 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import MapEmbed from '../components/ui/MapEmbed.astro';
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import { getGoogleMapsPlace } from '../lib/googleMaps';
 import storefrontImage from '../assets/venue/park-101-modern-brick-storefront-neon-signage-carlsbad.jpg';
 
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const page = (await getCollection('contactPage'))[0].data;
+const googleMaps = await getGoogleMapsPlace(siteProfile);
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
 const blockText = (value: string) => `\n${value}\n`;
 const visitSection = page.sections.visit;
-
-const mapQuery = encodeURIComponent(siteProfile.contact.address.full);
 
 // hours are stored as { monday: {open, close}, ... } — format properly,
 // don't interpolate the nested object directly
@@ -85,7 +85,7 @@ const hasEmail = Boolean(siteProfile.contact.email);
                 Address
               </span>
               <a
-                href={`https://maps.google.com/?q=${mapQuery}`}
+                href={googleMaps.placeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="font-display font-bold text-2xl text-brand-dark hover:text-brand-orange transition-colors duration-200"
@@ -135,22 +135,32 @@ const hasEmail = Boolean(siteProfile.contact.email);
               </ul>
             </div>
 
-            <a
-              href={siteProfile.ordering.reservationsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
-            >
-              Reserve a Table
-            </a>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href={siteProfile.ordering.reservationsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
+              >
+                Reserve a Table
+              </a>
+              <a
+                href={googleMaps.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block px-8 py-4 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200"
+              >
+                Get Directions
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="relative min-h-[400px] lg:min-h-full overflow-hidden p-4 lg:p-6 bg-brand-dark">
         <MapEmbed
-          src={`https://maps.google.com/maps?q=${mapQuery}&output=embed`}
-          title="Park 101 location map"
+          src={googleMaps.embedUrl}
+          title="Park 101 on Google Maps"
           class="relative w-full h-full min-h-[380px]"
         />
       </div>

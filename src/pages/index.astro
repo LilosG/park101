@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import MapEmbed from '../components/ui/MapEmbed.astro';
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import { getGoogleMapsPlace } from '../lib/googleMaps';
 
 import stLouisRibs from '../assets/food/park-101-st-louis-ribs-carlsbad.jpg';
 import smokedBrisket from '../assets/food/park-101-bbq-brisket-platter-sides-carlsbad.jpg';
@@ -27,6 +29,7 @@ import brunchChilaquiles from '../assets/brunch/park-101-brunch-chilaquiles-tri-
 
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const page = (await getCollection('home'))[0].data;
+const googleMaps = await getGoogleMapsPlace(siteProfile);
 const blockText = (value: string) => `\n${value}\n`;
 const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
 const inlineText = (value: string) => ` ${value} `;
@@ -262,7 +265,7 @@ const drinkItems = [
           href="/menu"
           class="inline-block px-8 py-4 bg-brand-dark hover:bg-brand-dark/80 text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
         >
-          View Full Menu
+          View Menu
         </a>
       </div>
     </div>
@@ -294,7 +297,7 @@ const drinkItems = [
             href="/menu"
             class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
           >
-            Full Smokehouse Menu
+            View Menu
           </a>
         </div>
       </div>
@@ -377,7 +380,7 @@ const drinkItems = [
             href="/brunch"
             class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
           >
-            See the Brunch Menu
+            Brunch Details
           </a>
         </div>
       </div>
@@ -461,6 +464,15 @@ const drinkItems = [
   </section>
   )}
 
+  <!-- ── GOOGLE MAP ───────────────────────────────────────── -->
+  <section class="bg-brand-dark px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+    <MapEmbed
+      src={googleMaps.embedUrl}
+      title="Park 101 on Google Maps"
+      class="relative max-w-7xl mx-auto h-[420px]"
+    />
+  </section>
+
   <!-- ── BOTTOM INFO BAR ───────────────────────────────────── -->
   <section class="bg-brand-dark border-t border-brand-white/10 py-10 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
@@ -468,7 +480,7 @@ const drinkItems = [
         <div>
           <span class="block font-display font-bold text-brand-orange text-[10px] tracking-widest uppercase mb-1">Address</span>
           <a
-            href={siteProfile.contact.googleMapsUrl}
+            href={googleMaps.placeUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="font-body text-sm text-brand-cream/80 hover:text-brand-orange transition-colors duration-150"

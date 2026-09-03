@@ -1,8 +1,10 @@
 ---
 import { getEntry } from 'astro:content';
 import { GPH_NETWORK } from '../../data/gphNetwork';
+import { getGoogleMapsPlace } from '../../lib/googleMaps';
 
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const googleMaps = await getGoogleMapsPlace(siteProfile);
 const navigation = (await getEntry('navigation', 'navigation'))!.data;
 const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
 const [menuLink, brunchLink, eventsLink, venueLink, privateEventsLink, blogLink, contactLink] = navigation.footerLinks;
@@ -85,7 +87,7 @@ const blockText = (value: string) => `\n${value}\n`;
 
         <!-- Address -->
         <a
-          href={siteProfile.contact.googleMapsUrl}
+          href={googleMaps.placeUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="group block mb-6"
