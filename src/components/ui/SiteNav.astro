@@ -72,9 +72,9 @@ const blockText = (value: string) => `\n${value}\n`;
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <span class="hamburger-bar block w-6 h-0.5 bg-current transition-all duration-300"></span>
-        <span class="hamburger-bar block w-6 h-0.5 bg-current transition-all duration-300"></span>
-        <span class="hamburger-bar block w-6 h-0.5 bg-current transition-all duration-300"></span>
+        <span class="hamburger-bar block w-6 h-0.5 bg-current"></span>
+        <span class="hamburger-bar block w-6 h-0.5 bg-current"></span>
+        <span class="hamburger-bar block w-6 h-0.5 bg-current"></span>
       </button>
 
     </div>
@@ -185,22 +185,18 @@ const blockText = (value: string) => `\n${value}\n`;
     border-color: rgba(253, 250, 247, 0.4) !important;
   }
 
+  /* Hide the fixed header while the mobile drawer is open so only
+     the drawer's logo and close control are rendered. */
+  #site-nav.mobile-drawer-open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   /* Mobile drawer open state */
   #mobile-menu.menu-open {
     opacity: 1;
     visibility: visible;
-  }
-
-  /* Hamburger → X animation */
-  .menu-open-bars .hamburger-bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .menu-open-bars .hamburger-bar:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  .menu-open-bars .hamburger-bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
   }
 </style>
 
@@ -231,7 +227,7 @@ const blockText = (value: string) => `\n${value}\n`;
     mobileMenu?.classList.add('menu-open');
     mobileMenu?.setAttribute('aria-hidden', 'false');
     mobileMenuBtn.setAttribute('aria-expanded', 'true');
-    mobileMenuBtn.classList.add('menu-open-bars');
+    header?.classList.add('mobile-drawer-open');
     document.body.style.overflow = 'hidden';
   });
 
@@ -240,7 +236,7 @@ const blockText = (value: string) => `\n${value}\n`;
     mobileMenu?.classList.remove('menu-open');
     mobileMenu?.setAttribute('aria-hidden', 'true');
     mobileMenuBtn?.setAttribute('aria-expanded', 'false');
-    mobileMenuBtn?.classList.remove('menu-open-bars');
+    header?.classList.remove('mobile-drawer-open');
     document.body.style.overflow = '';
   };
 
