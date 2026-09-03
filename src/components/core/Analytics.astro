@@ -4,34 +4,22 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 {GA_ID && (
   <script is:inline define:vars={{ GA_ID }}>
     (function () {
-      var NEW_KEY = 'lilos-privacy-v1';
-      var OLD_KEY = 'lilos-consent-v1';
+      var STORAGE_KEY = 'lilos-privacy-v1';
 
       function readOptOut() {
         try {
-          var raw = localStorage.getItem(NEW_KEY);
-          if (raw) {
-            var parsed = JSON.parse(raw);
-            if (parsed && typeof parsed.optOut === 'boolean') return parsed.optOut;
-          }
-          // Migration: check old consent record
-          var oldRaw = localStorage.getItem(OLD_KEY);
-          if (oldRaw) {
-            var old = JSON.parse(oldRaw);
-            if (old && old.analytics === false) {
-              // Previously rejected — migrate as opt-out
-              var ts = (typeof old.ts === 'number') ? old.ts : Date.now();
-              localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: true, ts: ts }));
-              return true;
-            }
-          }
-        } catch (e) {}
-        return false; // default opted in
+          var raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return false;
+          var parsed = JSON.parse(raw);
+          return !!(parsed && parsed.optOut === true);
+        } catch (e) {
+          return false;
+        }
       }
 
       function writeOptOut(value) {
         try {
-          localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: value, ts: Date.now() }));
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({ optOut: value, ts: Date.now() }));
         } catch (e) {}
       }
 
@@ -83,8 +71,8 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
             } catch (err) {}
           }
 
-          if (typeof gtag === 'function') {
-            gtag('event', eventName, {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, {
               link_url: link.href,
               page_path: window.location.pathname,
             });
@@ -92,15 +80,9 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
         }, { passive: true });
       }
 
-      // Expose window.lilosPrivacy API
       window.lilosPrivacy = {
         isOptedOut: function () {
-          try {
-            var raw = localStorage.getItem(NEW_KEY);
-            if (!raw) return false;
-            var parsed = JSON.parse(raw);
-            return !!(parsed && parsed.optOut);
-          } catch (e) { return false; }
+          return readOptOut();
         },
         optOut: function () {
           writeOptOut(true);
@@ -113,14 +95,11 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
         }
       };
 
-      // Load GA4 unless opted out or GPC
-      if (navigator.globalPrivacyControl === true) {
-        // GPC: honor automatically, do not load, do not store a record
-        return;
-      }
+      // Honor GPC automatically. Otherwise GA4 loads by default unless the
+      // visitor explicitly opted out under the current privacy controls.
+      if (navigator.globalPrivacyControl === true) return;
 
       if (readOptOut()) {
-        // Previously opted out — disable GA and don't load
         window['ga-disable-' + GA_ID] = true;
         return;
       }
