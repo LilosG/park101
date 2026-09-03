@@ -12,13 +12,23 @@ const page = (await getCollection('eventsPage'))[0].data;
 const eventTypeOrder = ['nfl-sundays', 'mlb-games', 'ufc-fight-nights', 'fantasy-draft-events', 'live-music', 'themed-nights'];
 const eventTypes = (await getCollection('eventTypes'))
   .sort((a, b) => eventTypeOrder.indexOf(a.data.slug) - eventTypeOrder.indexOf(b.data.slug));
-const upcomingEventOrder = [
-  'world-cup-quarterfinals-norway-england',
-  'world-cup-quarterfinals-argentina-switzerland',
-];
-const upcomingEvents = (await getCollection('upcomingEvents'))
-  .sort((a, b) => upcomingEventOrder.indexOf(a.id) - upcomingEventOrder.indexOf(b.id));
 const assetImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
+
+const monthIndex: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+function eventDayTimestamp(event: any) {
+  const match = event.data.date.match(/([A-Z][a-z]{2})\s+(\d{1,2})$/);
+  if (!match || monthIndex[match[1]] === undefined) return Number.POSITIVE_INFINITY;
+  return Date.UTC(event.data.year, monthIndex[match[1]], Number(match[2]), 23, 59, 59);
+}
+
+const now = Date.now();
+const upcomingEvents = (await getCollection('upcomingEvents'))
+  .filter((event) => eventDayTimestamp(event) >= now)
+  .sort((a, b) => eventDayTimestamp(a) - eventDayTimestamp(b));
 
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
@@ -41,7 +51,6 @@ const breadcrumbSchema = {
 
 <Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
-  <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
     <div class="absolute inset-0">
       <Image
@@ -82,7 +91,6 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <!-- ── WHAT'S ALWAYS ON ─────────────────────────────────── -->
   {eventTypesSection && (
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20">
     <div class="max-w-7xl mx-auto">
@@ -121,7 +129,6 @@ const breadcrumbSchema = {
   </section>
   )}
 
-  <!-- ── UPCOMING EVENTS ──────────────────────────────────── -->
   {upcomingSection && (
   <section class="bg-brand-dark px-6 sm:px-8 lg:px-12 py-20">
     <div class="max-w-4xl mx-auto text-center">
@@ -129,10 +136,9 @@ const breadcrumbSchema = {
       <h2 class="font-display font-bold text-section text-brand-white uppercase leading-display tracking-tight mb-8">{blockText(upcomingSection.heading)}</h2>
       {upcomingEvents.length === 0 ? (
         <p class="font-body text-brand-white/60 text-base max-w-lg mx-auto">
-          Specific dates for upcoming games, fight nights, and live music are added here as they're scheduled.
-          Follow along on
-          {' '}<a href={siteProfile.social.instagram} target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:text-brand-orange-light underline">Instagram</a>
-          {' '}for the latest.
+          New game day, live music, and special-event dates are added as they're announced. Follow
+          {' '}<a href={siteProfile.social.instagram} target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:text-brand-orange-light underline">Park 101 on Instagram</a>
+          {' '}for the latest updates.
         </p>
       ) : (
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
@@ -153,7 +159,6 @@ const breadcrumbSchema = {
   </section>
   )}
 
-  <!-- ── CTA / INQUIRY FORM ───────────────────────────────── -->
   {inquirySection && (
     <EventInquiryForm
       eyebrow={inquirySection.eyebrow}

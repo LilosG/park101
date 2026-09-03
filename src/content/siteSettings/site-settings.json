@@ -2,8 +2,8 @@
   "name": "Park 101",
   "brandName": "PRK 101",
   "tagline": "Where Coast Meets Country",
-  "description": "Multi-level rooftop bar and restaurant in Carlsbad Village. BBQ, craft beer, cocktails, big screens, game day headquarters, family and pet friendly, weekly events, brunch, and private event spaces.",
-  "shortDescription": "Carlsbad's rooftop sports bar, BBQ, and game day headquarters — one block from the beach in Carlsbad Village.",
+  "description": "Park 101 is a multi-level rooftop restaurant and sports bar in Carlsbad Village with an open-air courtyard, indoor bar, 20+ screens, food, cocktails, daily brunch, live events, and private event spaces one block from the beach.",
+  "shortDescription": "Carlsbad Village's rooftop restaurant, sports bar and game day destination — one block from the beach.",
   "url": "https://park101carlsbad.com",
   "logo": "/images/siteSettings/logo/park101-logo.webp",
   "logoLight": "/images/siteSettings/logoLight/park101-logo-light.webp",
@@ -26,64 +26,22 @@
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Park%20101%2C%203040%20Carlsbad%20Boulevard%2C%20Carlsbad%2C%20CA%2092008"
   },
   "hours": {
-    "monday": {
-      "open": "11:00 AM",
-      "close": "9:00 PM"
-    },
-    "tuesday": {
-      "open": "11:00 AM",
-      "close": "9:00 PM"
-    },
-    "wednesday": {
-      "open": "11:00 AM",
-      "close": "9:00 PM"
-    },
-    "thursday": {
-      "open": "11:00 AM",
-      "close": "9:00 PM"
-    },
-    "friday": {
-      "open": "11:00 AM",
-      "close": "12:00 AM"
-    },
-    "saturday": {
-      "open": "11:00 AM",
-      "close": "12:00 AM"
-    },
-    "sunday": {
-      "open": "11:00 AM",
-      "close": "9:00 PM"
-    }
+    "monday": { "open": "11:00 AM", "close": "9:00 PM" },
+    "tuesday": { "open": "11:00 AM", "close": "9:00 PM" },
+    "wednesday": { "open": "11:00 AM", "close": "9:00 PM" },
+    "thursday": { "open": "11:00 AM", "close": "9:00 PM" },
+    "friday": { "open": "11:00 AM", "close": "12:00 AM" },
+    "saturday": { "open": "11:00 AM", "close": "12:00 AM" },
+    "sunday": { "open": "11:00 AM", "close": "9:00 PM" }
   },
   "hoursDisplay": [
-    {
-      "days": "Sunday",
-      "hours": "11:00 AM – 9:00 PM"
-    },
-    {
-      "days": "Monday",
-      "hours": "11:00 AM – 9:00 PM"
-    },
-    {
-      "days": "Tuesday",
-      "hours": "11:00 AM – 9:00 PM"
-    },
-    {
-      "days": "Wednesday",
-      "hours": "11:00 AM – 9:00 PM"
-    },
-    {
-      "days": "Thursday",
-      "hours": "11:00 AM – 9:00 PM"
-    },
-    {
-      "days": "Friday",
-      "hours": "11:00 AM – 12:00 AM"
-    },
-    {
-      "days": "Saturday",
-      "hours": "11:00 AM – 12:00 AM"
-    }
+    { "days": "Sunday", "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Monday", "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Tuesday", "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Wednesday", "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Thursday", "hours": "11:00 AM – 9:00 PM" },
+    { "days": "Friday", "hours": "11:00 AM – 12:00 AM" },
+    { "days": "Saturday", "hours": "11:00 AM – 12:00 AM" }
   ],
   "happyHours": {
     "label": "Happy Hour",
@@ -103,22 +61,10 @@
     "inquiryFormUrl": "https://www.toasttab.com/invoice/lead?rx=b853a506-313a-4be5-99d2-ffaf0c250021&ot=76b4caca-fb98-4747-b6ce-d97735957821&form=1"
   },
   "stats": [
-    {
-      "label": "Levels",
-      "value": "2"
-    },
-    {
-      "label": "Location",
-      "value": "Carlsbad Village"
-    },
-    {
-      "label": "Screens",
-      "value": "20+"
-    },
-    {
-      "label": "Vibe",
-      "value": "Coast Meets Country"
-    }
+    { "label": "Levels", "value": "2" },
+    { "label": "Location", "value": "Carlsbad Village" },
+    { "label": "Screens", "value": "20+" },
+    { "label": "Vibe", "value": "Coast Meets Country" }
   ],
   "features": [
     "Rooftop Deck",
@@ -131,112 +77,67 @@
     "Live Music",
     "Weekly Specials",
     "Brunch",
-    "BBQ & Smoked Meats",
+    "Burgers, Tacos & Shareable Plates",
     "Craft Beer",
     "Signature Cocktails",
     "Game Day Headquarters"
   ],
-  "cuisine": [
-    "American",
-    "BBQ",
-    "Bar Food",
-    "Comfort Food"
-  ],
+  "cuisine": ["American", "BBQ", "Bar Food", "Comfort Food"],
   "priceRange": "$$",
   "venue": {
     "rooftop": {
       "headline": "The Rooftop",
       "description": "Open-air rooftop deck with sweeping views of Carlsbad Village and the Pacific. Fire pits, communal tables, and California skies year-round.",
-      "features": [
-        "Open-Air Deck",
-        "Fire Pits",
-        "Ocean Views",
-        "Communal Tables",
-        "Year-Round"
-      ]
+      "features": ["Open-Air Deck", "Fire Pits", "Ocean Views", "Communal Tables", "Year-Round"]
     },
     "courtyard": {
       "headline": "The Courtyard",
       "description": "The heart of Park 101 — an open-air central courtyard with the massive LED wall, fire pit seating, multiple bars, and string lights overhead. This is where game day, happy hour, and everything in between happens.",
-      "features": [
-        "Open-Air Courtyard",
-        "Fire Pit Seating",
-        "Multiple Bars",
-        "String Lights",
-        "Central LED Wall"
-      ]
+      "features": ["Open-Air Courtyard", "Fire Pit Seating", "Multiple Bars", "String Lights", "Central LED Wall"]
     },
     "sports": {
       "headline": "Game Day Headquarters",
-      "description": "North County's game day destination. Massive LED TV wall in the open-air courtyard, 20+ screens throughout, and a crowd that shows up for every kickoff, first pitch, and fight night.",
-      "features": [
-        "LED TV Wall",
-        "20+ Screens",
-        "NFL Sundays",
-        "MLB Games",
-        "UFC Fight Nights",
-        "Fantasy Draft Events"
-      ]
+      "description": "Carlsbad Village's game day destination with a massive LED TV wall in the open-air courtyard, 20+ screens throughout, and a crowd that shows up for every kickoff, first pitch, and fight night.",
+      "features": ["LED TV Wall", "20+ Screens", "NFL Sundays", "MLB Games", "UFC Fight Nights", "Fantasy Draft Events"]
     },
     "indoorBar": {
       "headline": "The Indoor Bar & Dining Room",
       "description": "Climate-controlled indoor seating with a full bar, big screens, and communal tables — the spot for when you want the Park 101 energy without the weather.",
-      "features": [
-        "Full Indoor Bar",
-        "Climate-Controlled",
-        "Communal Tables",
-        "Big Screens"
-      ]
+      "features": ["Full Indoor Bar", "Climate-Controlled", "Communal Tables", "Big Screens"]
     },
     "familiesPets": {
       "headline": "Everyone's Welcome",
       "description": "Families and four-legged friends are always welcome at Park 101. Dog-friendly patio, a relaxed atmosphere, and a menu built for groups of all ages.",
-      "features": [
-        "Dog-Friendly Patio",
-        "Family Friendly",
-        "Kid-Friendly Menu",
-        "Relaxed Atmosphere"
-      ]
+      "features": ["Dog-Friendly Patio", "Family Friendly", "Kid-Friendly Menu", "Relaxed Atmosphere"]
     },
     "liveEvents": {
       "headline": "Live Music & Events",
       "description": "Weekly live music, themed nights, seasonal events, and community gatherings. Park 101 is where North County comes together.",
-      "features": [
-        "Live Music",
-        "Themed Nights",
-        "Seasonal Events",
-        "Community Gatherings"
-      ]
+      "features": ["Live Music", "Themed Nights", "Seasonal Events", "Community Gatherings"]
     }
   },
   "seo": {
-    "defaultTitle": "Park 101 | Rooftop Bar & Restaurant in Carlsbad Village",
-    "titleTemplate": "%s | Park 101 Carlsbad",
-    "defaultDescription": "Multi-level rooftop bar and restaurant in Carlsbad Village, CA. BBQ, craft beer, cocktails, 20+ screens, game day headquarters — one block from the beach.",
+    "defaultTitle": "Park 101 | Rooftop Restaurant & Sports Bar in Carlsbad, CA",
+    "titleTemplate": "%s | Park 101",
+    "defaultDescription": "Park 101 is a rooftop restaurant and sports bar in Carlsbad Village with 20+ screens, an open-air courtyard, food, cocktails, brunch and events.",
     "keywords": [
-      "rooftop bar carlsbad",
+      "rooftop restaurant carlsbad",
       "sports bar carlsbad",
+      "rooftop bar carlsbad",
+      "carlsbad village restaurant",
       "game day bar carlsbad",
-      "carlsbad village bar",
-      "bbq restaurant carlsbad",
-      "rooftop restaurant carlsbad ca",
-      "bar near carlsbad beach",
-      "private events carlsbad",
+      "brunch carlsbad",
+      "live music carlsbad",
+      "private event venue carlsbad",
+      "family friendly restaurant carlsbad",
       "park 101 carlsbad",
       "prk 101"
     ],
     "ogImage": "/images/siteSettings/seo/ogImage/park-101-outdoor-waterfront-rooftop-bar-carlsbad.jpg"
   },
   "schema": {
-    "type": [
-      "BarOrPub",
-      "Restaurant"
-    ],
-    "servesCuisine": [
-      "American",
-      "BBQ",
-      "Bar Food"
-    ],
+    "type": ["BarOrPub", "Restaurant"],
+    "servesCuisine": ["American", "BBQ", "Bar Food"],
     "priceRange": "$$",
     "currenciesAccepted": "USD",
     "paymentAccepted": "Cash, Credit Card",

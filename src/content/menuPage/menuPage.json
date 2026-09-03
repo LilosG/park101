@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "The Menu | PRK 101 Carlsbad",
-    "description": "BBQ-forward plates built for the rooftop and game day at Park 101 in Carlsbad Village — smoked meats, loaded fries, tacos, and more.",
+    "title": "Food & Drink Menu in Carlsbad, CA | Park 101",
+    "description": "Explore Park 101's food and drink menu in Carlsbad Village, including burgers, wings, tacos, loaded fries, shareable plates and signature cocktails.",
     "ogImage": "/images/menuPage/seo/ogImage.jpg"
   },
   "hero": {
@@ -17,11 +17,11 @@
   "sections": {
     "food": {
       "eyebrow": "On The Menu",
-      "heading": "Fan Favorites"
+      "heading": "Burgers, Tacos, Wings & Favorites"
     },
     "drink": {
       "eyebrow": "The Bar",
-      "heading": "Cocktails"
+      "heading": "Cocktails & Drinks"
     }
   }
 }

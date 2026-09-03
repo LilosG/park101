@@ -1,14 +1,14 @@
 {
   "seo": {
-    "title": "Carlsbad Village's Rooftop Bar, BBQ & Game Day Headquarters",
-    "description": "PRK 101 is a modern American, bi-level restaurant in Carlsbad Village. Known as North County’s game day headquarters, we bring together California coastal energy, country spirit, and big screen sports in a high-energy rooftop setting.\nSignature California tri tip anchors a menu of elevated American comfort food and shareable plates built for groups, alongside craft beer and signature cocktails. Whether you’re here for NFL Sundays, Padre games, UFC fight nights, fantasy drafts, or sunset drinks on the rooftop, PRK 101 delivers the ultimate sports and social dining experience.\nBy day, the rooftop captures laid-back coastal vibes. By night, the interior transforms into North County’s stadium atmosphere during major sporting events.\nThis is where community gathers to watch, celebrate, and return every week.\n\nWhere Coast Meets Country.",
+    "title": "Rooftop Restaurant & Sports Bar in Carlsbad, CA | Park 101",
+    "description": "Park 101 is a rooftop restaurant and sports bar in Carlsbad Village with 20+ screens, an open-air courtyard, cocktails, food, brunch and events.",
     "ogImage": "/images/home/seo/ogImage.jpg"
   },
   "hero": {
     "eyebrow": "Carlsbad Village &middot; One Block From The Beach",
     "heading": "PRK 101",
-    "subheading": "Rooftop Restaurant & Bar in Carlsbad Village",
-    "body": "Carlsbad Village's Rooftop Bar, BBQ & Game Day Headquarters\n"
+    "subheading": "Rooftop Restaurant & Sports Bar in Carlsbad Village",
+    "body": "Carlsbad Village's rooftop restaurant, sports bar and game day destination.\n"
   },
   "sections": {
     "venue": {
@@ -17,36 +17,36 @@
       "body": "Three distinct spaces under one open sky. The central courtyard with the massive LED wall. The elevated rooftop deck with views of Carlsbad Village. The indoor bar with wall-to-wall screens and long communal tables. One block from the beach."
     },
     "sports": {
-      "eyebrow": "Game Day Headquarters",
-      "heading": "Golden Hour.<br />Cold Beer.<br />Big Screens."
+      "eyebrow": "Carlsbad Sports Bar",
+      "heading": "Game Day.<br />Cold Drinks.<br />Big Screens."
     },
     "food": {
       "eyebrow": "The Kitchen",
-      "heading": "Food Worth Staying For"
+      "heading": "Burgers, Tacos & Shareable Favorites"
     },
     "drinks": {
       "eyebrow": "The Bar",
-      "heading": "Cold Drinks.<br />Big Selection.",
+      "heading": "Cocktails.<br />Margaritas.<br />Craft Beer.",
       "body": "Signature cocktails, frozen margaritas, local craft beers on draft, and the Rodeo Tower — Park 101's most celebrated creation."
     },
     "events": {
       "eyebrow": "Live Music & Events",
-      "heading": "Live Music.<br />Every Week.",
+      "heading": "Live Music.<br />Game Day.<br />Every Week.",
       "body": "Country nights. Live bands. Padres watch parties. UFC fight nights. From kickoff to the final buzzer, from the first song to last call — something's always happening at Park 101."
     },
     "brunch": {
-      "eyebrow": "Saturdays & Sundays",
-      "heading": "Brunch on the Rooftop",
-      "body": "Open-air rooftop. Smoked brisket chilaquiles. Breakfast burritos loaded with tri-tip. Rodeo Tower mimosas. The best way to spend a Saturday morning in Carlsbad Village."
+      "eyebrow": "Daily Till 2 PM",
+      "heading": "Rooftop Brunch in Carlsbad",
+      "body": "Open-air rooftop seating, breakfast favorites, brunch cocktails and the Rodeo Tower. Brunch is served daily until 2 PM in Carlsbad Village."
     },
     "families": {
       "eyebrow": "Everyone's Welcome",
       "heading": "Bring the Crew.<br />Bring the Dog.<br />Bring the Kids."
     },
     "privateEvents": {
-      "eyebrow": "Private Events",
+      "eyebrow": "Private Events in Carlsbad",
       "heading": "Your Event.<br />Our Venue.",
-      "body": "Birthday parties, corporate happy hours, game day buyouts, rehearsal dinners — Park 101's spaces are yours to fill. Book a section, the rooftop, the courtyard, or the whole place."
+      "body": "Birthday parties, corporate happy hours, game day buyouts, rehearsal dinners — Park 101's rooftop, courtyard and indoor spaces can host everything from smaller groups to full venue buyouts."
     }
   }
 }

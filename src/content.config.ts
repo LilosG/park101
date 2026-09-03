@@ -160,6 +160,7 @@ const upcomingEvents = defineCollection({
     sideA: z.string(),
     sideB: z.string(),
     date: z.string(),
+    year: z.number().int(),
     time: z.string(),
     image: z.string(),
     imageAlt: z.string(),

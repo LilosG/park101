@@ -1,13 +1,13 @@
 {
   "seo": {
-    "title": "The Venue | Rooftop, Courtyard & Indoor Bar | PRK 101",
-    "description": "Park 101's multi-level venue in Carlsbad Village — rooftop deck, open-air courtyard with LED wall, indoor bar, and dog-friendly spaces.",
+    "title": "Rooftop Bar & Venue in Carlsbad Village | Park 101",
+    "description": "Explore Park 101's rooftop deck, open-air courtyard, indoor bar and 20+ screens in Carlsbad Village, one block from the beach.",
     "ogImage": "/images/venuePage/seo/ogImage.jpg"
   },
   "hero": {
     "eyebrow": "Carlsbad Village",
-    "heading": "Rooftop. Courtyard.<br />Indoor Bar.",
-    "body": "Three distinct spaces under one open sky. The central courtyard with the massive LED wall, the elevated rooftop deck, and the indoor bar with wall-to-wall screens — one block from the beach."
+    "heading": "Rooftop Bar & Venue<br />in Carlsbad",
+    "body": "Explore Park 101's rooftop deck, open-air courtyard with a massive LED wall, and indoor bar with wall-to-wall screens — one block from the beach in Carlsbad Village."
   },
   "sections": {
     "rooftop": {
@@ -20,7 +20,7 @@
     },
     "sports": {
       "eyebrow": "Every Kickoff, Every Fight",
-      "heading": "Game Day Headquarters"
+      "heading": "Carlsbad Game Day Headquarters"
     },
     "indoor": {
       "eyebrow": "Indoors",
@@ -28,11 +28,11 @@
     },
     "families": {
       "eyebrow": "Everyone's Welcome",
-      "heading": "Bring the Crew.<br />Bring the Dog."
+      "heading": "Family & Dog-Friendly Spaces"
     },
     "final": {
       "eyebrow": "Come See It",
-      "heading": "Park 101 Awaits.",
+      "heading": "Visit Park 101 in Carlsbad Village",
       "body": "One block from the beach in Carlsbad Village. Open daily."
     }
   }

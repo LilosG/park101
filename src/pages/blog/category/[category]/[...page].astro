@@ -13,6 +13,8 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
       .filter((post: any) => post.data.category === categorySlug)
       .sort((a: any, b: any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
+    if (filtered.length === 0) return [];
+
     return paginate(filtered, {
       params: { category: categorySlug },
       pageSize: 9,
@@ -26,13 +28,13 @@ const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const categoryMeta = getCategoryMeta(category as string);
 
 const pageTitle = page.currentPage === 1
-  ? `${categoryMeta.label} | Park 101 Blog`
-  : `${categoryMeta.label} | Page ${page.currentPage} | Park 101 Blog`;
-const pageDescription = categoryMeta.description || `${categoryMeta.label} posts from Park 101 in Carlsbad Village.`;
+  ? `${categoryMeta.label} Guides in Carlsbad, CA | Park 101`
+  : `${categoryMeta.label} Guides in Carlsbad, CA | Page ${page.currentPage} | Park 101`;
+const pageDescription = categoryMeta.description || `${categoryMeta.label} guides from Park 101 in Carlsbad Village.`;
 
 const canonical = page.currentPage === 1
-  ? `${siteProfile.url}/blog/category/${categoryMeta.slug}/`
-  : `${siteProfile.url}/blog/category/${categoryMeta.slug}/${page.currentPage}/`;
+  ? `${siteProfile.url}/blog/category/${categoryMeta.slug}`
+  : `${siteProfile.url}/blog/category/${categoryMeta.slug}/${page.currentPage}`;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -47,7 +49,6 @@ const breadcrumbSchema = {
 
 <Layout title={pageTitle} description={pageDescription} canonical={canonical} ogImage={categoryMeta.image} transparentNav={true}>
 
-  <!-- ── BREADCRUMB ───────────────────────────────────────── -->
   <nav aria-label="Breadcrumb" class="bg-brand-dark pt-28 pb-4 px-6 sm:px-8 lg:px-12">
     <ol class="max-w-7xl mx-auto flex items-center gap-2 font-body text-xs text-brand-white/60">
       <li><a href="/" class="hover:text-brand-orange transition-colors duration-150">Home</a></li>
@@ -58,11 +59,10 @@ const breadcrumbSchema = {
     </ol>
   </nav>
 
-  <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative bg-brand-dark pb-16 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto text-center">
       <h1 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-4">
-        {categoryMeta.label}
+        {categoryMeta.label} Guides in Carlsbad
       </h1>
       <p class="font-body text-base sm:text-lg text-brand-white/70 max-w-2xl mx-auto">
         {categoryMeta.description}
@@ -70,20 +70,13 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <!-- ── POST GRID ────────────────────────────────────────── -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16">
     <div class="max-w-7xl mx-auto">
-      {page.data.length === 0 ? (
-        <p class="font-body text-brand-dark/60 text-center py-20">
-          No {categoryMeta.label.toLowerCase()} posts yet — check back soon.
-        </p>
-      ) : (
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {page.data.map((post: any) => (
-            <BlogPostCard post={post} />
-          ))}
-        </div>
-      )}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {page.data.map((post: any) => (
+          <BlogPostCard post={post} />
+        ))}
+      </div>
 
       <BlogPagination currentPage={page.currentPage} lastPage={page.lastPage} baseUrl={`/blog/category/${categoryMeta.slug}`} />
     </div>

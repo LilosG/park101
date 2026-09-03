@@ -7,7 +7,6 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
-  schemaType?: string;
   noindex?: boolean;
 }
 
@@ -19,21 +18,24 @@ const {
   description,
   canonical,
   ogImage = siteProfile.seo.ogImage,
-  schemaType,
   noindex = false,
 } = Astro.props;
 
-const siteUrl = siteProfile.url;
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
+const siteUrl = siteProfile.url.replace(/\/$/, '');
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, `${siteUrl}/`).href;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const businessImageUrl = siteProfile.seo.ogImage.startsWith('http')
+  ? siteProfile.seo.ogImage
+  : `${siteUrl}${siteProfile.seo.ogImage}`;
+const logoUrl = siteProfile.logo.startsWith('http') ? siteProfile.logo : `${siteUrl}${siteProfile.logo}`;
+const businessId = `${siteUrl}/#restaurant`;
+const websiteId = `${siteUrl}/#website`;
+const isHomePage = Astro.url.pathname === '/';
 
 const fullTitle = (title.includes('Park 101') || title.includes('PRK 101'))
   ? title
-  : `${title} | Park 101 Carlsbad`;
+  : `${title} | Park 101`;
 
-// Convert "11:00 AM" / "9:00 PM" / "12:00 AM" (midnight) into schema.org's
-// 24-hour HH:MM format. Midnight-as-closing-time is represented as "24:00"
-// per schema.org convention for OpeningHoursSpecification.
 function to24Hour(time: string, isClose = false): string {
   const match = time.trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
   if (!match) return time;
@@ -47,13 +49,15 @@ function to24Hour(time: string, isClose = false): string {
 
 const dayOrder = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'] as const;
 const dayLabel: Record<(typeof dayOrder)[number], string> = {
-  monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday', thursday: 'Thursday',
-  friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday',
+  monday: 'Monday',
+  tuesday: 'Tuesday',
+  wednesday: 'Wednesday',
+  thursday: 'Thursday',
+  friday: 'Friday',
+  saturday: 'Saturday',
+  sunday: 'Sunday',
 };
 
-// Group consecutive days that share identical hours into a single spec,
-// same as GBP does, so the schema stays compact and easy to eyeball against
-// the GBP listing during future audits.
 const openingHoursSpecification: Array<{
   '@type': string;
   dayOfWeek: string[];
@@ -78,46 +82,67 @@ for (const day of dayOrder) {
   }
 }
 
-// Base Organization/Restaurant schema
-const baseSchema = {
-  "@context": "https://schema.org",
-  "@type": ["BarOrPub", "Restaurant"],
-  "name": siteProfile.name,
-  "alternateName": siteProfile.brandName,
-  "description": siteProfile.description,
-  "url": siteUrl,
-  "telephone": siteProfile.contact.phoneDial,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": siteProfile.contact.address.street,
-    "addressLocality": siteProfile.contact.address.city,
-    "addressRegion": siteProfile.contact.address.state,
-    "postalCode": siteProfile.contact.address.zip,
-    "addressCountry": "US"
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['Restaurant', 'BarOrPub'],
+  '@id': businessId,
+  name: siteProfile.name,
+  alternateName: siteProfile.brandName,
+  description: siteProfile.description,
+  url: siteUrl,
+  image: businessImageUrl,
+  logo: logoUrl,
+  telephone: siteProfile.contact.phoneDial,
+  priceRange: siteProfile.schema.priceRange,
+  servesCuisine: siteProfile.schema.servesCuisine,
+  currenciesAccepted: siteProfile.schema.currenciesAccepted,
+  paymentAccepted: siteProfile.schema.paymentAccepted,
+  acceptsReservations: siteProfile.ordering.reservationsUrl,
+  hasMenu: `${siteUrl}/menu`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteProfile.contact.address.street,
+    addressLocality: siteProfile.contact.address.city,
+    addressRegion: siteProfile.contact.address.state,
+    postalCode: siteProfile.contact.address.zip,
+    addressCountry: 'US',
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": siteProfile.contact.coordinates.lat,
-    "longitude": siteProfile.contact.coordinates.lng
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: siteProfile.contact.coordinates.lat,
+    longitude: siteProfile.contact.coordinates.lng,
   },
-  "servesCuisine": siteProfile.schema.servesCuisine,
-  "priceRange": siteProfile.schema.priceRange,
-  "hasMap": googleMaps.placeUrl,
-  "openingHoursSpecification": openingHoursSpecification,
-  "sameAs": [
-    siteProfile.social.instagram,
-    siteProfile.social.facebook
-  ].filter(Boolean)
+  hasMap: googleMaps.placeUrl,
+  openingHoursSpecification,
+  amenityFeature: siteProfile.schema.amenityFeature.map((name: string) => ({
+    '@type': 'LocationFeatureSpecification',
+    name,
+    value: true,
+  })),
+  sameAs: [siteProfile.social.instagram, siteProfile.social.facebook].filter(Boolean),
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': websiteId,
+  url: `${siteUrl}/`,
+  name: siteProfile.name,
+  alternateName: siteProfile.brandName,
+  publisher: { '@id': businessId },
 };
 ---
 
-<!-- Primary Meta -->
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
-<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+<meta
+  name="robots"
+  content={noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+/>
 <link rel="canonical" href={canonicalUrl} />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={fullTitle} />
@@ -126,11 +151,10 @@ const baseSchema = {
 <meta property="og:site_name" content={siteProfile.name} />
 <meta property="og:locale" content="en_US" />
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
 
-<!-- Local Business Schema -->
-<script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+{isHomePage && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}

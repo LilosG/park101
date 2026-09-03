@@ -23,14 +23,36 @@ const otherEvents = (await getCollection('privateEvents'))
   .filter((e) => e.slug !== event.slug)
   .slice(0, 3);
 
-const pageTitle = `${event.name} Venue in Carlsbad | PRK 101`;
+const searchMeta: Record<string, { title: string; h1: string }> = {
+  'birthday-parties': {
+    title: 'Birthday Party Venue in Carlsbad, CA | Park 101',
+    h1: 'Birthday Party Venue in Carlsbad',
+  },
+  'corporate-events': {
+    title: 'Corporate Event Venue in Carlsbad, CA | Park 101',
+    h1: 'Corporate Event Venue in Carlsbad',
+  },
+  'game-day-parties': {
+    title: 'Game Day Party Venue in Carlsbad, CA | Park 101',
+    h1: 'Game Day Party Venue in Carlsbad',
+  },
+  'rehearsal-dinners': {
+    title: 'Rehearsal Dinner Venue in Carlsbad, CA | Park 101',
+    h1: 'Rehearsal Dinner Venue in Carlsbad',
+  },
+  'venue-buyout': {
+    title: 'Full Venue Buyout in Carlsbad, CA | Park 101',
+    h1: 'Full Venue Buyout in Carlsbad',
+  },
+};
+
+const pageSearchMeta = searchMeta[event.slug] ?? {
+  title: `${event.name} in Carlsbad, CA | Park 101`,
+  h1: `${event.name} in Carlsbad`,
+};
+const pageTitle = pageSearchMeta.title;
 const descriptionSuffix = ` ${event.capacity} in Carlsbad Village.`;
 const maxDescLength = 160 - descriptionSuffix.length;
-
-// Prefer a dedicated, author-written meta description sized for search results.
-// If one isn't provided, fall back to the on-page description trimmed at a
-// word boundary (never mid-word) so a future long-form edit can't produce a
-// broken meta description silently.
 const baseDescription = event.metaDescription ?? event.description;
 const trimmedDescription = baseDescription.length > maxDescLength
   ? (() => {
@@ -42,13 +64,14 @@ const trimmedDescription = baseDescription.length > maxDescLength
   : baseDescription;
 const pageDescription = `${trimmedDescription}${descriptionSuffix}`;
 
+const canonical = `${siteProfile.url}/private-events/${event.slug}`;
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: siteProfile.url },
     { '@type': 'ListItem', position: 2, name: 'Private Events', item: `${siteProfile.url}/private-events` },
-    { '@type': 'ListItem', position: 3, name: event.name, item: `${siteProfile.url}/private-events/${event.slug}` },
+    { '@type': 'ListItem', position: 3, name: event.name, item: canonical },
   ],
 };
 
@@ -63,9 +86,8 @@ const faqSchema = event.faqs ? {
 } : null;
 ---
 
-<Layout title={pageTitle} description={pageDescription} ogImage={image}>
+<Layout title={pageTitle} description={pageDescription} canonical={canonical} ogImage={image}>
 
-  <!-- ── BREADCRUMB ───────────────────────────────────────── -->
   <nav aria-label="Breadcrumb" class="bg-brand-cream pt-28 pb-4 px-6 sm:px-8 lg:px-12">
     <ol class="max-w-7xl mx-auto flex items-center gap-2 font-body text-xs text-brand-dark/60">
       <li><a href="/" class="hover:text-brand-orange transition-colors duration-150">Home</a></li>
@@ -76,7 +98,6 @@ const faqSchema = event.faqs ? {
     </ol>
   </nav>
 
-  <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative bg-brand-dark overflow-hidden">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[550px]">
       <div class="relative lg:col-span-7 min-h-[350px] lg:min-h-full overflow-hidden">
@@ -91,10 +112,10 @@ const faqSchema = event.faqs ? {
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-20 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
           <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">
-            Private Events
+            Private Events · Carlsbad Village
           </span>
           <h1 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-4">
-            {event.name}
+            {pageSearchMeta.h1}
           </h1>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-6">
             {event.headline}
@@ -121,11 +142,10 @@ const faqSchema = event.faqs ? {
     </div>
   </section>
 
-  <!-- ── DESCRIPTION ──────────────────────────────────────── -->
   <section class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase tracking-tight mb-6">
-        {event.headline}
+        {event.name} at Park 101 in Carlsbad
       </h2>
       <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed">
         {event.description} Located one block from the beach in Carlsbad Village, Park 101 gives your event the rooftop, the courtyard, or the whole place — your call.
@@ -133,7 +153,6 @@ const faqSchema = event.faqs ? {
     </div>
   </section>
 
-  <!-- ── WHAT'S INCLUDED ──────────────────────────────────── -->
   <section class="relative bg-brand-tan py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
@@ -141,7 +160,7 @@ const faqSchema = event.faqs ? {
           What's Included
         </span>
         <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase tracking-tight">
-          Everything Handled
+          What's Included With {event.name}
         </h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -155,7 +174,6 @@ const faqSchema = event.faqs ? {
     </div>
   </section>
 
-  <!-- ── EVENT-SPECIFIC FAQ ───────────────────────────────── -->
   {event.faqs && (
     <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
       <div class="max-w-3xl mx-auto">
@@ -183,13 +201,11 @@ const faqSchema = event.faqs ? {
     </section>
   )}
 
-  <!-- ── INQUIRY FORM ─────────────────────────────────────── -->
   <EventInquiryForm
     heading={`Book Your ${event.name}`}
     subtext={`Send us your date and headcount for ${event.capacity.toLowerCase()} — our events team responds within 24 hours with availability and a custom plan.`}
   />
 
-  <!-- ── OTHER WAYS TO CELEBRATE ──────────────────────────── -->
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
@@ -197,7 +213,7 @@ const faqSchema = event.faqs ? {
           Other Ways to Celebrate
         </span>
         <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          More Event Types
+          More Private Event Options in Carlsbad
         </h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
@@ -208,7 +224,7 @@ const faqSchema = event.faqs ? {
       </div>
       <div class="text-center mt-10">
         <a href="/private-events" class="font-body text-sm text-brand-cream/60 hover:text-brand-orange transition-colors duration-150">
-          ← All Event Types
+          ← All Private Event Options
         </a>
       </div>
     </div>

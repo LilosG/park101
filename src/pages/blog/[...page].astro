@@ -15,16 +15,19 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
 
 const { page } = Astro.props as any;
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+const allPosts = await getCollection('blog', ({ data }: any) => !data.draft);
+const usedCategories = new Set(allPosts.map((post: any) => post.data.category));
+const categoryList = Object.values(blogCategories).filter((category) => usedCategories.has(category.slug));
 
 const pageTitle = page.currentPage === 1
-  ? 'Blog | Park 101 Carlsbad'
-  : `Blog | Page ${page.currentPage} | Park 101 Carlsbad`;
+  ? 'Carlsbad Food, Events & Game Day Guides | Park 101'
+  : `Carlsbad Food, Events & Game Day Guides | Page ${page.currentPage} | Park 101`;
 const pageDescription =
-  'Game day guides, food and drink features, and what\'s happening at Park 101 in Carlsbad Village — North County\'s rooftop sports bar and BBQ destination.';
+  'Local guides to rooftop dining, game day, family-friendly restaurants, events and things to do at Park 101 in Carlsbad Village.';
 
 const canonical = page.currentPage === 1
-  ? `${siteProfile.url}/blog/`
-  : `${siteProfile.url}/blog/${page.currentPage}/`;
+  ? `${siteProfile.url}/blog`
+  : `${siteProfile.url}/blog/${page.currentPage}`;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -34,48 +37,45 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteProfile.url}/blog` },
   ],
 };
-
-const categoryList = Object.values(blogCategories);
 ---
 
 <Layout title={pageTitle} description={pageDescription} canonical={canonical} ogImage={siteProfile.seo.ogImage} transparentNav={true}>
 
-  <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative bg-brand-dark pt-40 pb-16 px-6 sm:px-8 lg:px-12 overflow-hidden">
     <div class="max-w-7xl mx-auto text-center">
       <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-4">
-        Park 101 Blog
+        Park 101 Carlsbad Blog
       </span>
       <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-brand-white uppercase leading-display tracking-tight mb-4">
-        Game Day, Food &amp; What's Happening
+        Carlsbad Food, Events &amp; Game Day Guides
       </h1>
       <p class="font-body text-base sm:text-lg text-brand-white/70 max-w-2xl mx-auto">
-        Guides to game day, the food and drink program, and life at Park 101 in Carlsbad Village.
+        Local guides to rooftop dining, sports viewing, family-friendly outings, events and life in Carlsbad Village.
       </p>
     </div>
   </section>
 
-  <!-- ── CATEGORY FILTER ──────────────────────────────────── -->
-  <section class="bg-brand-cream border-b border-brand-dark/10 px-6 sm:px-8 lg:px-12 py-6">
-    <div class="max-w-7xl mx-auto flex flex-wrap gap-3">
-      <a
-        href="/blog"
-        class="font-body text-xs font-bold uppercase tracking-label px-4 py-2 rounded-full bg-brand-orange text-brand-white"
-      >
-        All Posts
-      </a>
-      {categoryList.map((cat) => (
+  {categoryList.length > 0 && (
+    <nav aria-label="Blog categories" class="bg-brand-cream border-b border-brand-dark/10 px-6 sm:px-8 lg:px-12 py-6">
+      <div class="max-w-7xl mx-auto flex flex-wrap gap-3">
         <a
-          href={`/blog/category/${cat.slug}`}
-          class="font-body text-xs font-bold uppercase tracking-label px-4 py-2 rounded-full border border-brand-dark/20 hover:border-brand-orange hover:text-brand-orange transition-colors duration-150"
+          href="/blog"
+          class="font-body text-xs font-bold uppercase tracking-label px-4 py-2 rounded-full bg-brand-orange text-brand-white"
         >
-          {cat.label}
+          All Posts
         </a>
-      ))}
-    </div>
-  </section>
+        {categoryList.map((cat) => (
+          <a
+            href={`/blog/category/${cat.slug}`}
+            class="font-body text-xs font-bold uppercase tracking-label px-4 py-2 rounded-full border border-brand-dark/20 hover:border-brand-orange hover:text-brand-orange transition-colors duration-150"
+          >
+            {cat.label}
+          </a>
+        ))}
+      </div>
+    </nav>
+  )}
 
-  <!-- ── POST GRID ────────────────────────────────────────── -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16">
     <div class="max-w-7xl mx-auto">
       {page.data.length === 0 ? (
