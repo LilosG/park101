@@ -20,6 +20,7 @@ const blog = defineCollection({
       'venue',
       'community',
       'private-events',
+      'guide',
     ]),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
