@@ -5,13 +5,12 @@ import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import { getGoogleMapsPlace } from '../lib/googleMaps';
 
-import stLouisRibs from '../assets/food/park-101-st-louis-ribs-carlsbad.jpg';
-import smokedBrisket from '../assets/food/park-101-bbq-brisket-platter-sides-carlsbad.jpg';
-import shrimpTacosImg from '../assets/food/park-101-shrimp-tacos-carlsbad.jpg';
-import theWesternBurger from '../assets/food/park-101-the-western-carlsbad.jpg';
-import smokedTriTipPhillyImg from '../assets/food/park-101-smoked-tri-tip-philly-carlsbad.jpg';
-import triTipTacosImg from '../assets/food/park-101-tri-tip-tacos-carlsbad.jpg';
-import loadedBbqMac from '../assets/food/park-101-loaded-bbq-mac-06-carlsbad.jpg';
+import tacosAndShareables from '../assets/food/park-101-tacos-and-shareables-carlsbad.jpg';
+import smokedTriTipPhilly from '../assets/food/park-101-smoked-tri-tip-philly-carlsbad.jpg';
+import maineLobsterRoll from '../assets/food/park-101-maine-lobster-roll-carlsbad.jpg';
+import rodeoNachos from '../assets/food/park-101-rodeo-nachos-carlsbad.jpg';
+import theChick from '../assets/food/park-101-the-chick-carlsbad.jpg';
+import triTipArugulaSlad from '../assets/food/park-101-tri-tip-arugula-salad-carlsbad.jpg';
 
 import dragonFire from '../assets/drinks/park-101-dragon-fire-cocktail-carlsbad.jpg';
 import rodeoTowersPark from '../assets/drinks/park-101-rodeo-towers-park-carlsbad.jpg';
@@ -46,34 +45,34 @@ const privateEventsSection = page.sections.privateEvents;
 
 const foodItems = [
   {
-    src: stLouisRibs,
-    alt: 'St. Louis ribs with BBQ sauce and pickles at Park 101 Carlsbad',
-    name: 'St. Louis Ribs',
+    src: tacosAndShareables,
+    alt: 'Tacos and shareable plates at Park 101 Carlsbad',
+    name: 'Tacos & Shareables',
   },
   {
-    src: smokedBrisket,
-    alt: 'Sliced smoked brisket platter with sauce at Park 101 Carlsbad',
-    name: 'Smoked Brisket',
-  },
-  {
-    src: shrimpTacosImg,
-    alt: 'Shrimp tacos with chipotle sauce and lime at Park 101 Carlsbad',
-    name: 'Shrimp Tacos',
-  },
-  {
-    src: theWesternBurger,
-    alt: 'Loaded bacon cheeseburger with fries at Park 101 Carlsbad',
-    name: 'The Western Burger',
-  },
-  {
-    src: smokedTriTipPhillyImg,
+    src: smokedTriTipPhilly,
     alt: 'Smoked tri-tip Philly cheesesteak sandwich at Park 101 Carlsbad',
     name: 'Smoked Tri-Tip Philly',
   },
   {
-    src: triTipTacosImg,
-    alt: 'Tri-tip tacos with chimichurri and cotija at Park 101 Carlsbad',
-    name: 'Tri-Tip Tacos',
+    src: maineLobsterRoll,
+    alt: 'Maine lobster roll at Park 101 Carlsbad',
+    name: 'Maine Lobster Roll',
+  },
+  {
+    src: rodeoNachos,
+    alt: 'Rodeo nachos loaded with toppings at Park 101 Carlsbad',
+    name: 'Rodeo Nachos',
+  },
+  {
+    src: theChick,
+    alt: 'The Chick sandwich at Park 101 Carlsbad',
+    name: 'The Chick',
+  },
+  {
+    src: triTipArugulaSlad,
+    alt: 'Tri-tip arugula salad at Park 101 Carlsbad',
+    name: 'Tri-Tip Arugula Salad',
   },
 ];
 
