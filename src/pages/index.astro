@@ -35,6 +35,7 @@ const inlineText = (value: string) => ` ${value} `;
 const homeEyebrowHtml = (value: string) => ` ${value}\n`;
 const venueSection = page.sections.venue;
 const sportsSection = page.sections.sports;
+const sportsBannerSection = page.sections.sportsBanner;
 const foodSection = page.sections.food;
 const smokehouseSection = page.sections.smokehouse;
 const drinksSection = page.sections.drinks;
@@ -214,10 +215,10 @@ const drinkItems = [
             ))}
           </div>
           <a
-            href="/events"
+            href="/sports"
             class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
           >
-            View the Lineup
+            See the Schedule
           </a>
         </div>
       </div>
@@ -431,6 +432,37 @@ const drinkItems = [
             Plan Your Visit
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+  )}
+
+  <!-- ── BUFFALO BILLS BANNER ─────────────────────────────── -->
+  {sportsBannerSection && (
+  <section class="relative min-h-[520px] flex items-center justify-start px-6 py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/sports/DSC09106.webp"
+        alt="Packed crowd watching Buffalo Bills game on the outdoor LED screen at Park 101 Carlsbad"
+        class="w-full h-full object-cover object-[50%_15%]"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/85 via-brand-dark/50 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl w-full mx-auto">
+      <div class="max-w-xl">
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{inlineText(sportsBannerSection.eyebrow)}</span>
+        <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={blockHtml(sportsBannerSection.heading)} /></h2>
+        {sportsBannerSection.body && (
+          <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-md"><Fragment set:html={blockText(sportsBannerSection.body)} /></p>
+        )}
+        <a
+          href="/sports"
+          class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
+        >
+          See the Schedule
+        </a>
       </div>
     </div>
   </section>

@@ -13,6 +13,10 @@
       "href": "/events"
     },
     {
+      "label": "Sports",
+      "href": "/sports"
+    },
+    {
       "label": "The Venue",
       "href": "/venue"
     },
@@ -41,6 +45,10 @@
     {
       "label": "Events",
       "href": "/events"
+    },
+    {
+      "label": "Sports",
+      "href": "/sports"
     },
     {
       "label": "The Venue",
