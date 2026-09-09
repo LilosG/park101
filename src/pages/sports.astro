@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+
+const reservationsUrl = siteProfile.ordering.reservationsUrl;
+
+const billsSchedule = [
+  { week: 1,  date: 'Sep 13', opponent: 'vs Miami Dolphins',        time: '10:00 AM PT', home: true  },
+  { week: 2,  date: 'Sep 20', opponent: '@ Tennessee Titans',        time: '10:00 AM PT', home: false },
+  { week: 3,  date: 'Sep 27', opponent: 'vs New England Patriots',   time: '10:00 AM PT', home: true  },
+  { week: 4,  date: 'Oct 4',  opponent: '@ Kansas City Chiefs',      time: '5:20 PM PT',  home: false },
+  { week: 5,  date: 'Oct 12', opponent: 'vs New York Jets',          time: '5:15 PM PT',  home: true  },
+  { week: 6,  date: 'Oct 19', opponent: '@ Los Angeles Rams',        time: '1:05 PM PT',  home: false },
+  { week: 7,  date: 'Oct 26', opponent: 'vs Cincinnati Bengals',     time: '10:00 AM PT', home: true  },
+  { week: 8,  date: 'Nov 2',  opponent: '@ Baltimore Ravens',        time: '1:25 PM PT',  home: false },
+  { week: 9,  date: 'Nov 9',  opponent: 'BYE WEEK',                  time: '—',           home: null  },
+  { week: 10, date: 'Nov 16', opponent: 'vs Indianapolis Colts',     time: '10:00 AM PT', home: true  },
+  { week: 11, date: 'Nov 23', opponent: '@ New York Jets',           time: '10:00 AM PT', home: false },
+  { week: 12, date: 'Nov 27', opponent: '@ Dallas Cowboys',          time: '1:30 PM PT',  home: false },
+  { week: 13, date: 'Dec 7',  opponent: 'vs Houston Texans',         time: '10:00 AM PT', home: true  },
+  { week: 14, date: 'Dec 14', opponent: '@ Miami Dolphins',          time: '10:00 AM PT', home: false },
+  { week: 15, date: 'Dec 21', opponent: 'vs Philadelphia Eagles',    time: '1:25 PM PT',  home: true  },
+  { week: 16, date: 'Dec 28', opponent: '@ New England Patriots',    time: '10:00 AM PT', home: false },
+  { week: 17, date: 'Jan 4',  opponent: 'vs Pittsburgh Steelers',    time: '10:00 AM PT', home: true  },
+];
+
+const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
+---
+
+<Layout
+  title="Watch Buffalo Bills & College Football in Carlsbad | Park 101"
+  description="Park 101 is Carlsbad's home for Buffalo Bills watch parties and college football Saturdays. Outdoor LED wall, 20+ screens, full menu, and cold drinks at 3040 Carlsbad Blvd."
+  ogImage="/images/home/seo/ogImage.jpg"
+>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="relative min-h-[90vh] w-full bg-brand-dark flex flex-col justify-end overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/sports/DSC07523-HDR.webp"
+        alt="Park 101 outdoor courtyard with fire pit seating, palm tree, and LED screen during a game day event in Carlsbad"
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-brand-dark/40 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-brand-dark/20"></div>
+    </div>
+
+    <div class="h-24 shrink-0"></div>
+
+    <div class="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pb-16 lg:pb-24">
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">Carlsbad Village &middot; Game Day Headquarters</span>
+      <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight max-w-3xl mb-4">Watch Party<br />Headquarters</h1>
+      <p class="font-display font-bold text-panel text-brand-orange uppercase tracking-tight leading-snug max-w-xl mb-8">Buffalo Bills · NFL · College Football</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="#schedule"
+          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
+        >
+          See the Schedule
+        </a>
+        <a
+          href={reservationsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
+        >
+          Reserve a Table
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INTRO SPLIT ────────────────────────────────────────── -->
+  <section class="relative bg-brand-dark">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
+      <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
+        <div class="max-w-md mx-auto lg:mx-0">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">Buffalo Bills &amp; College Football</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">Carlsbad's Home<br />for Game Day</h2>
+          <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
+          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-5">
+            Park 101's outdoor courtyard is built for game day. The massive LED wall faces the fire pit seating. The bar stays open. The kitchen runs all day. Bills games and college football Saturdays happen here every week of the season.
+          </p>
+          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
+            Walk-ins always welcome. For Bills kickoffs and big college matchups, a reservation is worth it.
+          </p>
+          <a
+            href={reservationsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
+          >
+            Reserve a Table
+          </a>
+        </div>
+      </div>
+      <div class="relative lg:col-span-7 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/sports/DSC09187.webp"
+          alt="Fans watching a football game on the outdoor LED screen at Park 101 Carlsbad with string lights overhead"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FULL-BLEED FEATURE ─────────────────────────────────── -->
+  <section class="relative min-h-[500px] flex items-center justify-center text-center px-6 py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/sports/DSC09432.webp"
+        alt="Packed outdoor crowd at Park 101 Carlsbad watching a game on the LED wall under string lights at night"
+        class="w-full h-full object-cover object-[50%_40%]"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-brand-dark/65"></div>
+    </div>
+    <div class="relative z-10 max-w-2xl w-full mx-auto">
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">Park 101 · Carlsbad Village</span>
+      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6">Every Game.<br />Every Season.</h2>
+      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
+        All 17 Bills regular season games. College football Saturdays all fall. NFL Sunday windows from the first kickoff to Sunday Night Football.
+      </p>
+      <a
+        href="#schedule"
+        class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
+      >
+        View the Schedule
+      </a>
+    </div>
+  </section>
+
+  <!-- ── BUFFALO BILLS SCHEDULE ─────────────────────────────── -->
+  <section id="schedule" class="relative bg-brand-cream">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
+      <div class="relative lg:col-span-5 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/sports/DSC09106.webp"
+          alt="Buffalo Bills fans in Allen and Cook III jerseys watching the game at Park 101 Carlsbad"
+          class="absolute inset-0 w-full h-full object-cover object-[50%_30%]"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="lg:col-span-7 flex flex-col justify-center px-6 sm:px-10 lg:px-14 py-16 lg:py-24 bg-brand-cream">
+        <div class="max-w-xl mx-auto lg:mx-0">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">NFL · Buffalo Bills</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-3">2026 Schedule</h2>
+          <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
+          <p class="font-body font-light text-brand-dark/70 text-sm leading-relaxed mb-6">All times Pacific. Walk-ins welcome — reserve for big games.</p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b-2 border-brand-dark/20">
+                  <th class="font-display font-bold text-xs uppercase tracking-wider text-brand-dark/50 text-left pb-2 pr-4">Wk</th>
+                  <th class="font-display font-bold text-xs uppercase tracking-wider text-brand-dark/50 text-left pb-2 pr-4">Date</th>
+                  <th class="font-display font-bold text-xs uppercase tracking-wider text-brand-dark/50 text-left pb-2 pr-4">Matchup</th>
+                  <th class="font-display font-bold text-xs uppercase tracking-wider text-brand-dark/50 text-right pb-2">Kickoff (PT)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-brand-dark/10">
+                {billsSchedule.map((game) => (
+                  <tr class={game.home === null ? 'opacity-40' : ''}>
+                    <td class="py-2 pr-4 font-display font-bold text-xs text-brand-dark/40">{game.week}</td>
+                    <td class="py-2 pr-4 font-body text-brand-dark/70 whitespace-nowrap">{game.date}</td>
+                    <td class="py-2 pr-4 font-body text-brand-dark font-medium">{game.opponent}</td>
+                    <td class="py-2 text-right font-display font-bold text-xs text-brand-orange whitespace-nowrap">{game.time}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p class="font-body text-xs text-brand-dark/40 mt-4 mb-8">Schedule subject to NFL flex scheduling. Verify at NFL.com.</p>
+
+          <a
+            href={reservationsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-6 py-3.5 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
+          >
+            Reserve for Game Day
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COLLEGE FOOTBALL ───────────────────────────────────── -->
+  <section class="relative bg-brand-dark">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
+      <div class="lg:col-span-6 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
+        <div class="max-w-md mx-auto lg:mx-0">
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">College Football</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">Every Saturday.<br />Every Conference.</h2>
+          <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
+          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-5">
+            College football Saturdays run all day at Park 101. Noon kickoffs through the late-night window — SEC, Big Ten, Big 12, ACC, and Pac-12 matchups all showing on the outdoor LED wall and indoor screens.
+          </p>
+          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
+            Top 25 battles. Conference title implications. Rivalry week. Whatever your team, there's a screen for it. The kitchen stays open and the bar stays cold from the first kickoff to the final whistle.
+          </p>
+          <div class="flex flex-wrap gap-x-6 gap-y-3 mb-8 pb-8 border-b border-brand-white/10">
+            {['SEC', 'Big Ten', 'Big 12', 'ACC', 'Pac-12'].map((conf) => (
+              <span class="font-display font-bold text-xs uppercase tracking-feature text-brand-white">{conf}</span>
+            ))}
+          </div>
+          <a
+            href={reservationsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
+          >
+            Reserve for Saturday
+          </a>
+        </div>
+      </div>
+      <div class="relative lg:col-span-6 order-1 lg:order-2 min-h-[400px] lg:min-h-full overflow-hidden">
+        <img
+          src="/images/sports/DSC09208.webp"
+          alt="Fans watching an NFL game on the outdoor LED screen at Park 101 Carlsbad with game day food service"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ───────────────────────────────────────────── -->
+  <section class="relative min-h-[480px] flex items-center justify-center text-center px-6 py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/sports/DSC07505-HDR.webp"
+        alt="Park 101 outdoor bar with LED screen and string lights in Carlsbad Village"
+        class="w-full h-full object-cover object-center"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-brand-dark/70"></div>
+    </div>
+    <div class="relative z-10 max-w-2xl w-full mx-auto">
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">Park 101 · 3040 Carlsbad Blvd</span>
+      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6">Book Your<br />Game Day Table</h2>
+      <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
+        Walk-ins are always welcome. Reservations recommended for Bills kickoffs and big college football Saturdays.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={reservationsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
+        >
+          Reserve Now
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
+        >
+          Hours &amp; Location
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

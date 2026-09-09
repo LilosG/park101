@@ -2,7 +2,7 @@
 title: "Best Weekend Brunch in Carlsbad: Top Spots for 2026"
 description: "Discover the best weekend brunch in Carlsbad. Compare Park 101, The Cottage, and Puesto with real hours, menus, and parking tips."
 publishDate: 2026-09-08
-category: "food"
+category: "food-drink"
 image: "/images/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg"
 imageAlt: "Park 101 outdoor patio with brunch crowd enjoying ocean views and tri tip dishes"
 relatedServices: ["brunch", "weekend-dining"]
