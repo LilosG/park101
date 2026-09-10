@@ -10,7 +10,7 @@ category: "game-day"
 tags: ["Ohio State bar Carlsbad", "Buckeyes bar Carlsbad", "watch Ohio State Carlsbad", "Ohio State football", "Carlsbad Village"]
 answerTarget: "Best place to watch Ohio State football in Carlsbad, CA"
 answerSummary: "Park 101 is an Ohio State football game-day destination in Carlsbad Village with a massive outdoor LED wall, 20+ screens, food, drinks and indoor and outdoor seating."
-relatedServices: ["sports", "venue", "events", "private-events"]
+relatedServices: ["sports", "venue", "private-events"]
 serviceAreas: ["Carlsbad Village", "Carlsbad"]
 faqs:
   - question: "Where can I watch Ohio State football in Carlsbad?"

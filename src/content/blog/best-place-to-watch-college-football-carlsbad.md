@@ -10,7 +10,7 @@ category: "game-day"
 tags: ["college football Carlsbad", "college football bar Carlsbad", "sports bar Carlsbad", "Saturday football", "Carlsbad Village"]
 answerTarget: "Best place to watch college football in Carlsbad, CA"
 answerSummary: "Park 101 is a Carlsbad Village sports bar with a massive outdoor LED wall, 20+ screens, indoor and outdoor seating, food, drinks and Saturday football viewing for major college matchups."
-relatedServices: ["sports", "venue", "events", "private-events"]
+relatedServices: ["sports", "venue", "private-events"]
 serviceAreas: ["Carlsbad Village", "Carlsbad"]
 faqs:
   - question: "Where can I watch college football in Carlsbad?"
