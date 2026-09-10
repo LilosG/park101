@@ -1,0 +1,8 @@
+---
+import { getEntry } from 'astro:content';
+import StatBar from './StatBar.astro';
+
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+---
+
+<StatBar items={siteProfile.stats} />
