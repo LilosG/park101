@@ -11,7 +11,7 @@ category: "game-day"
 tags: ["NFL bar Carlsbad", "watch NFL Carlsbad", "sports bar Carlsbad", "NFL Sunday", "Carlsbad Village"]
 answerTarget: "Best place to watch NFL games in Carlsbad, CA"
 answerSummary: "Park 101 is a game-day destination in Carlsbad Village with a massive outdoor LED wall, 20+ screens across multiple spaces, food, drinks, reservations and indoor and outdoor seating one block from the beach."
-relatedServices: ["sports", "venue", "events", "private-events"]
+relatedServices: ["sports", "venue", "private-events"]
 serviceAreas: ["Carlsbad Village", "Carlsbad"]
 faqs:
   - question: "Where can I watch NFL games in Carlsbad?"
