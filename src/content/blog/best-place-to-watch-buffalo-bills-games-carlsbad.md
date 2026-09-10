@@ -10,7 +10,7 @@ category: "game-day"
 tags: ["Buffalo Bills bar Carlsbad", "Bills bar Carlsbad", "watch Buffalo Bills Carlsbad", "Buffalo Bills fans", "Carlsbad Village"]
 answerTarget: "Best place to watch Buffalo Bills games in Carlsbad, CA"
 answerSummary: "Park 101 is a Buffalo Bills game-day destination in Carlsbad Village with a massive outdoor LED wall, 20+ screens, food, drinks and indoor and outdoor seating."
-relatedServices: ["sports", "venue", "events", "private-events"]
+relatedServices: ["sports", "venue", "private-events"]
 serviceAreas: ["Carlsbad Village", "Carlsbad"]
 faqs:
   - question: "Where can I watch Buffalo Bills games in Carlsbad?"
