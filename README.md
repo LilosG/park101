@@ -19,6 +19,22 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
+## Promotion feed architecture
+
+`PromotionModal.astro` receives a venue slug and reads only the sanitized public
+promotion feed. The public API is authoritative: a `null` promotion is not
+re-evaluated against dates or statuses in this repository. This site must not
+query the promotion database or Supabase directly.
+
+The feed origin and endpoint construction live in `src/config/promotion.ts` so
+the manager domain can change without modifying component logic.
+
+The API currently returns the final server-resolved CTA destination in the
+legacy-named `customCtaUrl` field, including for predefined CTA types. Consumers
+must use that value directly and must not map `ctaType` to restaurant-specific
+URLs. A future API contract should expose the same value as `ctaUrl` and
+deprecate `customCtaUrl` to make this responsibility explicit.
+
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
