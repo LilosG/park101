@@ -5,7 +5,7 @@ description: "Looking for a family-friendly restaurant in Carlsbad Village? See 
 publishDate: 2026-07-10
 updatedDate: 2026-09-03
 author: "Park 101"
-image: "/images/blog/image/park-101-families-kids-game-day-carlsbad.jpg"
+image: "/src/assets/venue/park-101-families-kids-game-day-carlsbad.jpg"
 imageAlt: "Families and kids in Padres jerseys enjoying game day together at Park 101 Carlsbad"
 category: "community"
 tags: ["family friendly restaurant", "Carlsbad Village", "dog friendly", "things to do"]

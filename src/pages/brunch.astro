@@ -4,18 +4,18 @@ import { getCollection, getEntry } from 'astro:content';
 import StatBar from '../components/core/StatBar.astro';
 import SplitIntro from '../components/core/SplitIntro.astro';
 import { Image } from 'astro:assets';
+import { resolveContentImage } from '../lib/images';
 import brunchChilaquilesImg from '../assets/brunch/park-101-brunch-chilaquiles-tri-tip-carlsbad.jpg';
 import brunchBurrito02 from '../assets/brunch/park-101-brunch-brisket-burrito-02-carlsbad.jpg';
 import rooftopDiningImg from '../assets/venue/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg';
 
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const page = (await getCollection('brunchPage'))[0].data;
-const assetImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
 const brunchFoodItems = (await getCollection('brunchFoodItems')).sort((a, b) => a.data.order - b.data.order);
 const brunchDrinkItems = (await getCollection('brunchDrinkItems')).sort((a, b) => a.data.order - b.data.order);
 const toGridItem = ({ data }: (typeof brunchFoodItems)[number] | (typeof brunchDrinkItems)[number]) => ({
   ...data,
-  src: assetImages[data.image].default,
+  src: resolveContentImage(data.image),
   alt: data.imageAlt,
 });
 const foodItems = brunchFoodItems.map(toGridItem);
@@ -79,7 +79,9 @@ const faqSchema = {
         class="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
-        width={1920}
+        decoding="async"
+        widths={[640, 828, 1080, 1200, 1600, 1920]}
+        sizes="100vw"
       />
       <div class="absolute inset-0 bg-brand-dark/70"></div>
     </div>
@@ -153,7 +155,9 @@ const faqSchema = {
               alt={item.alt}
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               loading="lazy"
-              width={800}
+              decoding="async"
+              widths={[400, 640, 800]}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
               <span class="font-display font-bold text-base uppercase tracking-wider text-brand-white">{item.name}</span>
@@ -194,7 +198,9 @@ const faqSchema = {
               alt={item.alt}
               class="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
-              width={800}
+              decoding="async"
+              widths={[400, 640, 800]}
+              sizes="(min-width: 640px) 33vw, 100vw"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/85 via-transparent to-transparent flex items-end p-4">
               <span class="font-display font-bold text-sm uppercase tracking-wide text-brand-white">{item.name}</span>
@@ -232,7 +238,9 @@ const faqSchema = {
           alt="Rooftop dining at Park 101 Carlsbad, ideal for private brunch events"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
-          width={1400}
+          decoding="async"
+          widths={[640, 828, 1080, 1400]}
+          sizes="(min-width: 1024px) 50vw, 100vw"
         />
       </div>
     </div>

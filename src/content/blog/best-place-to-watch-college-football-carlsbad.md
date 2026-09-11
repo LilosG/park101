@@ -4,7 +4,7 @@ seoTitle: "Best Place to Watch College Football in Carlsbad | Park 101"
 description: "Looking for the best place to watch college football in Carlsbad? Park 101 offers a massive outdoor LED wall, 20+ screens, food, drinks and Saturday game-day seating in Carlsbad Village."
 publishDate: 2026-09-10
 author: "Park 101"
-image: "/images/blog/image/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg"
+image: "/src/assets/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg"
 imageAlt: "College football fans watching games on large outdoor screens at Park 101 in Carlsbad Village"
 category: "game-day"
 tags: ["college football Carlsbad", "college football bar Carlsbad", "sports bar Carlsbad", "Saturday football", "Carlsbad Village"]

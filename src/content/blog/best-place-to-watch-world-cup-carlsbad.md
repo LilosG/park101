@@ -5,7 +5,7 @@ description: "Looking for a soccer bar in Carlsbad? Park 101 has a massive LED w
 publishDate: 2026-07-11
 updatedDate: 2026-09-03
 author: "Park 101"
-image: "/images/blog/image/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg"
+image: "/src/assets/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg"
 imageAlt: "Crowd watching a soccer match on the big screen at Park 101 in Carlsbad Village"
 category: "game-day"
 tags: ["soccer bar", "World Cup", "watch party", "Carlsbad Village", "game day"]

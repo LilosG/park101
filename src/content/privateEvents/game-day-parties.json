@@ -11,6 +11,6 @@
     { "q": "Do I have to book the whole venue for a game day party?", "a": "No — you can reserve a section, the rooftop, or the courtyard depending on your group size." },
     { "q": "Is table service included?", "a": "Yes — table service and food and drink packages are built into game day party bookings." }
   ],
-  "image": "/images/privateEvents/image/park-101-outdoor-rooftop-bar-string-lights-carlsbad.jpg",
+  "image": "/src/assets/venue/park-101-outdoor-rooftop-bar-string-lights-carlsbad.jpg",
   "imageAlt": "Game day party venue space at Park 101 in Carlsbad Village"
 }

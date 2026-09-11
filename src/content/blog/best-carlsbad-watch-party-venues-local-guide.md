@@ -3,7 +3,7 @@ title: "Best Carlsbad Watch Party Venues for Sports Fans in 2026"
 description: "Top spots to watch live sports in Carlsbad. Park 101 leads with rooftop views, Jumbotron screens, and unbeatable game-day energy."
 publishDate: 2026-09-03
 category: "venue"
-image: "/images/blog/image/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
+image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
 imageAlt: "Park 101 rooftop deck with bar seating overlooking Carlsbad Village"
 faqs:
   - question: "What makes Park 101 the best watch party venue in Carlsbad?"

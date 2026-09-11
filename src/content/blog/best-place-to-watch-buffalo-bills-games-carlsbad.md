@@ -4,7 +4,7 @@ seoTitle: "Buffalo Bills Bar in Carlsbad | Watch Bills Games at Park 101"
 description: "Looking for a Buffalo Bills bar in Carlsbad? Park 101 offers a massive outdoor LED wall, 20+ screens, food, drinks and Bills game-day seating in Carlsbad Village."
 publishDate: 2026-09-10
 author: "Park 101"
-image: "/images/sports/DSC09103.webp"
+image: "/src/assets/sports/DSC09103.webp"
 imageAlt: "Buffalo Bills fans watching football on the outdoor LED screen at Park 101 in Carlsbad Village"
 category: "game-day"
 tags: ["Buffalo Bills bar Carlsbad", "Bills bar Carlsbad", "watch Buffalo Bills Carlsbad", "Buffalo Bills fans", "Carlsbad Village"]

@@ -3,6 +3,8 @@ import { getCollection, getEntry, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { getCategoryMeta } from '../../data/blog-categories';
 import BlogPostCard from '../../components/blog/BlogPostCard.astro';
+import { resolveBlogImage } from '../../data/blog-images';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }: any) => !data.draft);
@@ -17,6 +19,7 @@ const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const { Content } = await render(post);
 const allPosts = await getCollection('blog', ({ data }: any) => !data.draft);
 const category = getCategoryMeta(post.data.category);
+const { image, imageAlt } = resolveBlogImage(post);
 
 const relatedPosts = allPosts
   .filter((p: any) => p.id !== post.id && p.data.category === post.data.category)
@@ -34,8 +37,8 @@ const formattedUpdated = post.data.updatedDate
 
 const pageTitle = post.data.seoTitle ?? post.data.title;
 const canonical = `${siteProfile.url}/blog/${post.id}`;
-const ogImageUrl = post.data.image
-  ? (post.data.image.startsWith('http') ? post.data.image : `${siteProfile.url}${post.data.image}`)
+const ogImageUrl = image
+  ? `${siteProfile.url}${image.src}`
   : undefined;
 const businessId = `${siteProfile.url}/#restaurant`;
 
@@ -136,14 +139,17 @@ const relatedPages = (post.data.relatedServices ?? [])
     </div>
   </header>
 
-  {post.data.image && (
+  {image && (
     <div class="relative aspect-[16/9] max-w-5xl mx-auto -mt-6 mb-4 px-6 sm:px-8 lg:px-0">
-      <img
-        src={post.data.image}
-        alt={post.data.imageAlt ?? post.data.title}
+      <Image
+        src={image}
+        alt={imageAlt}
         class="w-full h-full object-cover rounded-lg"
         loading="eager"
         fetchpriority="high"
+        decoding="async"
+        widths={[640, 828, 1080, 1200]}
+        sizes="(min-width: 1024px) 1024px, 100vw"
       />
     </div>
   )}

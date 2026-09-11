@@ -1,6 +1,7 @@
 ---
 import { getCategoryMeta } from '../../data/blog-categories';
 import { resolveBlogImage } from '../../data/blog-images';
+import { Image } from 'astro:assets';
 
 interface Props {
   post: {
@@ -32,11 +33,14 @@ const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
 >
   <div class="relative aspect-[4/3] overflow-hidden bg-brand-steel">
     {image && (
-      <img
+      <Image
         src={image}
         alt={imageAlt}
         class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
         loading="lazy"
+        decoding="async"
+        widths={[400, 640, 800]}
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
       />
     )}
     <span class="absolute top-3 left-3 bg-brand-orange text-brand-white font-body text-xs font-bold uppercase tracking-label px-3 py-1 rounded-full">

@@ -3,7 +3,7 @@ title: "Best Rooftop Bars in Carlsbad With Ocean Views: Park 101 vs. Local Compe
 description: "Compare Carlsbad's top rooftop bars with ocean views. Park 101 offers direct coastline sightlines, craft cocktails, and sunset happy hour specials."
 publishDate: 2026-09-03
 category: "venue"
-image: "/images/blog/image/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
+image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
 imageAlt: "Park 101 rooftop deck with ocean views and bar seating at sunset in Carlsbad"
 faqs:
   - question: "Does Park 101 have a dedicated rooftop bar?"

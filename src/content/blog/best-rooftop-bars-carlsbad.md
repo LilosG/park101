@@ -5,7 +5,7 @@ description: "Looking for a rooftop bar in Carlsbad? Explore Park 101's open-air
 publishDate: 2026-07-10
 updatedDate: 2026-09-03
 author: "Park 101"
-image: "/images/blog/image/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
+image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
 imageAlt: "Rooftop deck bar seating at Park 101 in Carlsbad Village"
 category: "venue"
 tags: ["rooftop bar", "Carlsbad Village", "things to do", "date night"]

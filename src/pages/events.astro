@@ -4,6 +4,7 @@ import { getCollection, getEntry } from 'astro:content';
 import EventInquiryForm from '../components/core/EventInquiryForm.astro';
 import EventMatchupCard from '../components/events/EventMatchupCard.astro';
 import { Image } from 'astro:assets';
+import { resolveContentImage } from '../lib/images';
 
 import padresGameDayEvents from '../assets/venue/park-101-padres-game-day-packed-venue-carlsbad.jpg';
 
@@ -12,7 +13,6 @@ const page = (await getCollection('eventsPage'))[0].data;
 const eventTypeOrder = ['nfl-sundays', 'mlb-games', 'ufc-fight-nights', 'fantasy-draft-events', 'live-music', 'themed-nights'];
 const eventTypes = (await getCollection('eventTypes'))
   .sort((a, b) => eventTypeOrder.indexOf(a.data.slug) - eventTypeOrder.indexOf(b.data.slug));
-const assetImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
 
 const monthIndex: Record<string, number> = {
   Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
@@ -59,7 +59,9 @@ const breadcrumbSchema = {
         class="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
-        width={1920}
+        decoding="async"
+        widths={[640, 828, 1080, 1200, 1600, 1920]}
+        sizes="100vw"
       />
       <div class="absolute inset-0 bg-brand-dark/65"></div>
     </div>
@@ -100,7 +102,7 @@ const breadcrumbSchema = {
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {eventTypes.map(({ data: type }) => {
-          const image = assetImages[type.image]?.default;
+          const image = resolveContentImage(type.image);
           return (
             <div class="group relative aspect-[4/3] rounded-lg overflow-hidden">
               {image && (
@@ -109,7 +111,9 @@ const breadcrumbSchema = {
                   alt={type.imageAlt}
                   class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                   loading="lazy"
-                  width={800}
+                  decoding="async"
+                  widths={[400, 640, 800]}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 />
               )}
               <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent"></div>
@@ -149,7 +153,7 @@ const breadcrumbSchema = {
               sideB={event.sideB}
               date={event.date}
               time={event.time}
-              image={event.image}
+              image={resolveContentImage(event.image)}
               imageAlt={event.imageAlt}
             />
           ))}

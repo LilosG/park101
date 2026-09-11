@@ -3,7 +3,7 @@ title: "UFC Watch Party in Carlsbad: Complete Planning Guide for Fight Night at 
 description: "Plan your UFC watch party in Carlsbad with step-by-step logistics, rooftop reservations, group platters, and late-night cocktails at Park 101."
 publishDate: 2026-09-03
 category: "events"
-image: "/images/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg"
+image: "/src/assets/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg"
 imageAlt: "Crowd gathered on Park 101's outdoor patio during a live sports event celebration"
 relatedServices: ["UFC Watch Parties", "Group Reservations"]
 serviceAreas: ["Carlsbad", "Carlsbad Village"]
