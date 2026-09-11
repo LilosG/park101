@@ -3,7 +3,7 @@ title: "Best Ocean View Bars in Carlsbad: Rooftop Decks & Beachfront Spots"
 description: "Discover Carlsbad's best ocean view bars. Compare rooftop decks, craft cocktails, and waterfront vibes from Park 101 to beachside venues."
 publishDate: 2026-09-03
 category: "venue"
-image: "/images/blog/image/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
+image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
 imageAlt: "Park 101 rooftop deck with ocean views and bar seating in Carlsbad"
 faqs:
   - question: "What's the best ocean view bar in Carlsbad for sunset?"

@@ -3,7 +3,7 @@ title: "Best Happy Hour in Carlsbad: Ocean Views, Strong Pours & Game-Day Specia
 description: "Compare Carlsbad's top happy hour spots. Park 101 offers rooftop ocean views, $2 off drafts, and half-price appetizers daily 4–6pm."
 publishDate: 2026-09-03
 category: "venue"
-image: "/images/blog/image/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
+image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
 imageAlt: "Park 101 rooftop deck with bar seating overlooking Carlsbad coastline at sunset"
 faqs:
   - question: "What time does happy hour start in Carlsbad?"

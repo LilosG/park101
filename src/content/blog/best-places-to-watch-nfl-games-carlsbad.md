@@ -5,7 +5,7 @@ description: "Looking for the best place to watch NFL games in Carlsbad? Park 10
 publishDate: 2026-07-10
 updatedDate: 2026-09-10
 author: "Park 101"
-image: "/images/blog/image/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg"
+image: "/src/assets/venue/park-101-outdoor-sports-bar-viewing-area-carlsbad.jpg"
 imageAlt: "Outdoor sports bar viewing area with multiple football screens at Park 101 in Carlsbad Village"
 category: "game-day"
 tags: ["NFL bar Carlsbad", "watch NFL Carlsbad", "sports bar Carlsbad", "NFL Sunday", "Carlsbad Village"]

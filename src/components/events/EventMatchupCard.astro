@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   category: string;
   sideA: string;
   sideB: string;
   date: string;
   time: string;
-  image: string;
+  image: ImageMetadata;
   imageAlt: string;
 }
 
@@ -29,11 +31,14 @@ const { category, sideA, sideB, date, time, image, imageAlt } = Astro.props;
       <span class="block font-display font-bold text-lg text-brand-white uppercase mt-0.5">{time}</span>
     </div>
     <div class="relative flex-1 min-h-[90px]">
-      <img
+      <Image
         src={image}
         alt={imageAlt}
         class="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
+        decoding="async"
+        widths={[400, 640, 800]}
+        sizes="(min-width: 640px) 20vw, 35vw"
       />
     </div>
   </div>

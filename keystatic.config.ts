@@ -204,6 +204,11 @@ function isImageField(key: string, value: unknown) {
   );
 }
 
+function usesPublicImageStorage(key: string, context: SchemaContext) {
+  const path = [...(context.path ?? []), key];
+  return key.toLowerCase().includes("logo") || key === "ogImage" || path[0] === "seo";
+}
+
 function schemaForObject(
   value: Record<string, unknown>,
   context: SchemaContext,
@@ -226,12 +231,12 @@ function fieldForValue(
   const childContext = { ...context, path: [...(context.path ?? []), key] };
 
   if (isImageField(key, value)) {
-    const sourceAsset = String(value).startsWith("/src/assets/");
+    const publicAsset = usesPublicImageStorage(key, context);
     return fields.image({
       label,
       description,
-      directory: sourceAsset ? "src/assets" : `public/images/${context.imageNamespace}`,
-      publicPath: sourceAsset ? "/src/assets" : `/images/${context.imageNamespace}/`,
+      directory: publicAsset ? `public/images/${context.imageNamespace}` : "src/assets",
+      publicPath: publicAsset ? `/images/${context.imageNamespace}/` : "/src/assets/",
       validation: { isRequired: true },
     });
   }
@@ -728,8 +733,8 @@ export default config({
           label: "Main Post Image",
           description:
             "Large image shown near the top of the article. Use a clear landscape image.",
-          directory: "public/images/blog/image",
-          publicPath: "/images/blog/image/",
+          directory: "src/assets",
+          publicPath: "/src/assets/",
         }),
         imageAlt: fields.text({
           label: "Image Description for Accessibility",

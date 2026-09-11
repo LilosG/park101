@@ -3,7 +3,7 @@ title: "Best Craft Beer for Game Day in Carlsbad: PRK 101 vs. Local Breweries"
 description: "Compare Park 101's rotating drafts and rooftop sports setup with Carlsbad breweries. Find the best craft beer game day spot with happy hour and views."
 publishDate: 2026-09-03
 category: "guide"
-image: "/images/blog/image/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
+image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
 imageAlt: "Park 101 rooftop deck with bar seating overlooking Carlsbad Village"
 faqs:
   - question: "What's the best craft beer bar for watching games in Carlsbad?"

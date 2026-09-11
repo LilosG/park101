@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   event: {
     slug: string;
     name: string;
     description: string;
   };
-  image: string;
+  image: ImageMetadata;
 }
 
 const { event, image } = Astro.props;
@@ -16,11 +18,14 @@ const { event, image } = Astro.props;
   class="group block bg-brand-dark-light overflow-hidden"
 >
   <div class="relative aspect-[4/3] overflow-hidden">
-    <img
+    <Image
       src={image}
       alt={`${event.name} at Park 101 Carlsbad`}
       class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
       loading="lazy"
+      decoding="async"
+      widths={[400, 640, 800]}
+      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
     />
   </div>
   <div class="p-6">

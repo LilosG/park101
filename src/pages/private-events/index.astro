@@ -4,6 +4,10 @@ import { getCollection, getEntry } from 'astro:content';
 import EventInquiryForm from '../../components/core/EventInquiryForm.astro';
 import StatBar from '../../components/core/StatBar.astro';
 import PrivateEventCard from '../../components/private-events/PrivateEventCard.astro';
+import { Image } from 'astro:assets';
+import { resolveContentImage } from '../../lib/images';
+import privateEventsHero from '../../assets/venue/park-101-rooftop-evening-group-carlsbad.jpg';
+import firePitPatio from '../../assets/venue/park-101-outdoor-fire-pit-patio-venue-carlsbad.jpg';
 
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const page = (await getCollection('privateEventsIndex'))[0].data;
@@ -39,12 +43,15 @@ const faqSchema = faqs.length > 0 ? {
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-[650px] bg-brand-dark flex flex-col overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src={privateEventsHubImage}
+      <Image
+        src={privateEventsHero}
         alt="Evening private event gathering on the rooftop at Park 101 Carlsbad"
         class="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
+        decoding="async"
+        widths={[640, 828, 1080, 1200, 1600, 1920]}
+        sizes="100vw"
       />
       <div class="absolute inset-0 bg-brand-dark/65"></div>
     </div>
@@ -87,11 +94,14 @@ const faqSchema = faqs.length > 0 ? {
   <section class="relative bg-brand-cream">
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
-        <img
-          src="/images/venue/park-101-outdoor-fire-pit-patio-venue-carlsbad.jpg"
+        <Image
+          src={firePitPatio}
           alt="Full multi-level venue at Park 101 Carlsbad with courtyard, fire pit, and rooftop"
           class="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
+          decoding="async"
+          widths={[640, 828, 1080, 1400]}
+          sizes="(min-width: 1024px) 50vw, 100vw"
         />
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
@@ -126,7 +136,7 @@ const faqSchema = faqs.length > 0 ? {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {events.map((event) => (
-          <PrivateEventCard event={event} image={event.image} />
+          <PrivateEventCard event={event} image={resolveContentImage(event.image)} />
         ))}
       </div>
     </div>

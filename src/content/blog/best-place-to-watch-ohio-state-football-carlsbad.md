@@ -4,7 +4,7 @@ seoTitle: "Ohio State Bar in Carlsbad | Watch Buckeyes Football at Park 101"
 description: "Looking for an Ohio State bar in Carlsbad? Park 101 offers a massive outdoor LED wall, 20+ screens, food, drinks and Buckeyes game-day seating in Carlsbad Village."
 publishDate: 2026-09-10
 author: "Park 101"
-image: "/images/sports/DSC09209.webp"
+image: "/src/assets/sports/DSC09209.webp"
 imageAlt: "College football watch party crowd at Park 101 in Carlsbad Village"
 category: "game-day"
 tags: ["Ohio State bar Carlsbad", "Buckeyes bar Carlsbad", "watch Ohio State Carlsbad", "Ohio State football", "Carlsbad Village"]

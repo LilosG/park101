@@ -3,7 +3,7 @@ title: "Plan the Perfect Rooftop Date Night in Carlsbad at PRK 101"
 description: "Step-by-step guide to planning a romantic rooftop date night in Carlsbad with fire pits, cocktails, and ocean views at PRK 101."
 publishDate: 2026-09-08
 category: "guide"
-image: "/images/blog/image/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
+image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
 imageAlt: "Rooftop deck seating at PRK 101 with ocean views and ambient lighting in Carlsbad"
 faqs:
   - question: "What time should I arrive for a rooftop date night at PRK 101?"

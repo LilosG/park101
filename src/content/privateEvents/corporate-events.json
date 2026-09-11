@@ -11,6 +11,6 @@
     { "q": "Can we book a full corporate buyout?", "a": "Yes. Corporate events can scale up to a full private buyout for up to 200 guests." },
     { "q": "Is catering included?", "a": "Catering packages are built around your event as part of the corporate events program." }
   ],
-  "image": "/images/privateEvents/image/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg",
+  "image": "/src/assets/venue/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg",
   "imageAlt": "Corporate event venue space at Park 101 in Carlsbad Village"
 }
