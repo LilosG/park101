@@ -17,7 +17,13 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [sitemap(), keystatic(), react()],
+  integrations: [
+    sitemap({
+      filter: (page) => new URL(page).pathname !== '/order'
+    }),
+    keystatic(),
+    react()
+  ],
 
   adapter: vercel()
 });

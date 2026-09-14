@@ -40,6 +40,12 @@ export const blogCategories: Record<string, BlogCategoryMeta> = {
     description: 'Rooftop, courtyard and indoor bar guides for Park 101 in Carlsbad Village, one block from the beach.',
     image: '/images/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg',
   },
+  guide: {
+    slug: 'guide',
+    label: 'Guides',
+    description: 'Practical food, drink and game-day guides for Park 101 and Carlsbad Village.',
+    image: '/images/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg',
+  },
   community: {
     slug: 'community',
     label: 'Community',
