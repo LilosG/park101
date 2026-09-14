@@ -34,7 +34,7 @@ Sunset happy hour runs 4–6 PM daily with rotating drink specials: typically $2
 
 **Logistics:** Parking is street-level on Carlsbad Boulevard or in the adjacent lot behind the building. The rooftop is accessible via interior elevator. No reservations for walk-in happy hour, but groups of eight or more should call ahead. The bar stays open until 11 PM weeknights, midnight Friday–Saturday.
 
-Park 101 also runs a robust food program with burgers, wings, and seafood appetizers. During NFL season, the rooftop becomes a destination for [best places to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad/), with multiple screens angled toward seating clusters.
+Park 101 also runs a robust food program with burgers, wings, and seafood appetizers. During NFL season, the rooftop becomes a destination for [best places to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad), with multiple screens angled toward seating clusters.
 
 ## The Lofts: Elevated Village Location, Limited Rooftop Access
 
@@ -75,7 +75,7 @@ Park 101's positioning on Carlsbad Boulevard gives it an unmatched advantage: yo
 
 The fire pits extend the rooftop season into fall and winter, and the multi-level layout prevents the space from feeling cramped even when it's full. During sunset, the rooftop becomes a natural gathering point—the light is better, the temperature is comfortable, and the view justifies the trip.
 
-If you're planning a celebration or group outing, Park 101 offers [Full Venue Buyout](/private-events/venue-buyout/) options for the entire rooftop or specific sections. The catering menu includes sliders, wings, ceviche, and shareable plates. Audio-visual service allows you to run custom playlists or display photos and videos during the event.
+If you're planning a celebration or group outing, Park 101 offers [Full Venue Buyout](/private-events/venue-buyout) options for the entire rooftop or specific sections. The catering menu includes sliders, wings, ceviche, and shareable plates. Audio-visual service allows you to run custom playlists or display photos and videos during the event.
 
 ## When to Visit Each Venue
 
@@ -87,14 +87,14 @@ If you're planning a celebration or group outing, Park 101 offers [Full Venue Bu
 
 ## Carlsbad's Rooftop Bar Scene: Broader Context
 
-Carlsbad Village has evolved into a destination for elevated dining and drinking experiences. Beyond rooftop venues, the area includes [best family friendly restaurants carlsbad village](/blog/best-family-friendly-restaurants-carlsbad-village/) that offer upstairs seating and water views. The village also hosts seasonal events—farmers markets, street fairs, and summer concert series—that draw crowds to the Boulevard.
+Carlsbad Village has evolved into a destination for elevated dining and drinking experiences. Beyond rooftop venues, the area includes [best family friendly restaurants carlsbad village](/blog/best-family-friendly-restaurants-carlsbad-village) that offer upstairs seating and water views. The village also hosts seasonal events—farmers markets, street fairs, and summer concert series—that draw crowds to the Boulevard.
 
-For major sporting events like the World Cup or NFL playoffs, rooftop bars become standing-room-only by kickoff. Park 101's infrastructure—multiple screens, dedicated bar staff, and fire pits for comfort—makes it the most reliable choice for watching international tournaments. Learn more about [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad/) to plan ahead for summer tournaments.
+For major sporting events like the World Cup or NFL playoffs, rooftop bars become standing-room-only by kickoff. Park 101's infrastructure—multiple screens, dedicated bar staff, and fire pits for comfort—makes it the most reliable choice for watching international tournaments. Learn more about [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad) to plan ahead for summer tournaments.
 
 ## Final Verdict
 
-If you're looking for the [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad/) with genuine ocean views and a full cocktail program, Park 101 is the clear winner. The location is unbeatable, the happy hour pricing is fair, and the rooftop deck delivers the experience you're paying for—direct sightlines to the Pacific, fire pits for comfort, and bartenders who know their craft.
+If you're looking for the [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad) with genuine ocean views and a full cocktail program, Park 101 is the clear winner. The location is unbeatable, the happy hour pricing is fair, and the rooftop deck delivers the experience you're paying for—direct sightlines to the Pacific, fire pits for comfort, and bartenders who know their craft.
 
 The Lofts and Puesto each have merits for specific occasions, but neither matches Park 101's combination of oceanfront positioning, sports bar functionality, and dedicated cocktail service. For sunset, game day, or a celebration, Park 101 is where you should spend your evening.
 
-Ready to experience Park 101's rooftop for yourself? [Contact Us](/contact/) to reserve a table, ask about happy hour specials, or inquire about private event options.
+Ready to experience Park 101's rooftop for yourself? [Contact Us](/contact) to reserve a table, ask about happy hour specials, or inquire about private event options.

@@ -69,13 +69,13 @@ For visitors coming from outside Carlsbad, the location also makes it easy to pa
 
 Park 101 has a strong Buffalo Bills game-day presence, so Bills fans looking for a place to watch in North County can find a dedicated football atmosphere without leaving Carlsbad.
 
-If the Bills are your team, read the dedicated guide to [watching Buffalo Bills games in Carlsbad](/blog/best-place-to-watch-buffalo-bills-games-carlsbad/) and check the [sports schedule](/sports#schedule) for the current Bills lineup.
+If the Bills are your team, read the dedicated guide to [watching Buffalo Bills games in Carlsbad](/blog/best-place-to-watch-buffalo-bills-games-carlsbad) and check the [sports schedule](/sports#schedule) for the current Bills lineup.
 
 ## College Football at Park 101
 
 NFL Sundays are only part of the football schedule. Park 101 also shows college football on Saturdays, including Ohio State Buckeyes games and major national matchups.
 
-For Saturday planning, see the guide to the [best place to watch college football in Carlsbad](/blog/best-place-to-watch-college-football-carlsbad/) or the dedicated [Ohio State football guide](/blog/best-place-to-watch-ohio-state-football-carlsbad/).
+For Saturday planning, see the guide to the [best place to watch college football in Carlsbad](/blog/best-place-to-watch-college-football-carlsbad) or the dedicated [Ohio State football guide](/blog/best-place-to-watch-ohio-state-football-carlsbad).
 
 ## Can You Reserve a Table for an NFL Game?
 

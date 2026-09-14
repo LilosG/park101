@@ -61,18 +61,18 @@ The appeal is authenticity and community. You'll recognize faces if you become a
 
 When choosing a watch party venue in Carlsbad, consider three factors: screen quality and sightlines, crowd energy, and food and drink quality. Park 101 excels in all three. The rooftop deck and Jumbotron mean you'll never miss a play, the crowd is energetic without being uncomfortable, and the food menu is solid enough to keep you satisfied through a full game or double-header.
 
-For fans interested in exploring more options, check out the [best places to watch NFL games in Carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad/), which covers additional venues and seasonal considerations. If you're planning a World Cup watch party, the [best place to watch World Cup in Carlsbad](/blog/best-place-to-watch-world-cup-carlsbad/) guide highlights venues that cater to international soccer fans.
+For fans interested in exploring more options, check out the [best places to watch NFL games in Carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad), which covers additional venues and seasonal considerations. If you're planning a World Cup watch party, the [best place to watch World Cup in Carlsbad](/blog/best-place-to-watch-world-cup-carlsbad) guide highlights venues that cater to international soccer fans.
 
 Puesto and Vigilucci's work if you want a quieter, more upscale experience. Carlsbad Tavern is ideal if you prefer a neighborhood spot with regulars and authentic tavern energy. The Flower Hill Promenade chains are fine for casual, budget-conscious viewing. But if you're serious about the watch party experience—great screens, unobstructed views, social atmosphere, and solid food—Park 101 is where you go.
 
 ## Why Rooftop Venues Matter for Watch Parties
 
-The rooftop advantage isn't just about fresh air. When you're watching a game outdoors on a multi-level deck, the venue becomes an extension of the game itself. Fans can move around, grab different angles, chat with other groups, and feel part of something bigger than a single room. That's why the [best rooftop bars in Carlsbad](/blog/best-rooftop-bars-carlsbad/) consistently outrank indoor-only sports bars for watch parties.
+The rooftop advantage isn't just about fresh air. When you're watching a game outdoors on a multi-level deck, the venue becomes an extension of the game itself. Fans can move around, grab different angles, chat with other groups, and feel part of something bigger than a single room. That's why the [best rooftop bars in Carlsbad](/blog/best-rooftop-bars-carlsbad) consistently outrank indoor-only sports bars for watch parties.
 
-Park 101's rooftop deck, fire pits, and Jumbotron create a festival atmosphere during major games. The fire pits are especially valuable during evening games in fall and winter when the temperature drops but you still want to be outside. The venue also works for [best family friendly restaurants in Carlsbad Village](/blog/best-family-friendly-restaurants-carlsbad-village/), so you can bring kids to daytime games without worrying about an adults-only atmosphere.
+Park 101's rooftop deck, fire pits, and Jumbotron create a festival atmosphere during major games. The fire pits are especially valuable during evening games in fall and winter when the temperature drops but you still want to be outside. The venue also works for [best family friendly restaurants in Carlsbad Village](/blog/best-family-friendly-restaurants-carlsbad-village), so you can bring kids to daytime games without worrying about an adults-only atmosphere.
 
 ## Final Takeaway
 
 Park 101 is the clear winner for watch parties in Carlsbad. The combination of rooftop location, large Jumbotron, fire pits, full bar, solid food menu, and consistent game-day energy makes it the go-to spot for anyone serious about watching live sports. Whether you're catching an NFL game, college football, NBA matchup, or any other live event, Park 101 delivers the experience that defines a true watch party.
 
-Ready to plan your next watch party? [Contact Us](/contact/) to reserve a group at Park 101 or ask about availability for your favorite upcoming game.
+Ready to plan your next watch party? [Contact Us](/contact) to reserve a group at Park 101 or ask about availability for your favorite upcoming game.

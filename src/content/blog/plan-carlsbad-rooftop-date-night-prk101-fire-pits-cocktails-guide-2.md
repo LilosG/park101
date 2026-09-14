@@ -51,7 +51,7 @@ The rooftop can get breezy, especially in late afternoon. Fire pits radiate warm
 
 ## Step 4: Study the Menu and Cocktail Program
 
-PRK 101's menu is built for sharing and grazing—perfect for a date night where you want to linger. Before you arrive, check out [The Menu | PRK 101 Carlsbad](/menu/) online to get a sense of what's available. This prevents decision paralysis when your server arrives.
+PRK 101's menu is built for sharing and grazing—perfect for a date night where you want to linger. Before you arrive, check out [The Menu | PRK 101 Carlsbad](/menu) online to get a sense of what's available. This prevents decision paralysis when your server arrives.
 
 Appetizers like crispy Brussels sprouts, loaded nachos, and charcuterie boards work well for date nights because they encourage sharing and conversation. Entrees range from burgers and sandwiches to salads and seafood. The portions are generous; order one or two entrees to split, then add a few appetizers.
 
@@ -79,11 +79,11 @@ Fire pits are seasonal; check availability when you book. If they're not active 
 
 ## Step 7: Consider PRK 101 as a Venue for Bigger Moments
 
-If this date night goes well and you're thinking ahead, PRK 101 offers [Private Event Venue in Carlsbad Village | PRK 101](/private-events/) options. The rooftop can be reserved for private events, and the team has experience hosting [Rehearsal Dinners](/private-events/rehearsal-dinners/) and celebrations. If you're planning an engagement party, anniversary dinner for a group, or a milestone celebration, the rooftop's multi-level layout and ocean views make it a standout choice in Carlsbad.
+If this date night goes well and you're thinking ahead, PRK 101 offers [Private Event Venue in Carlsbad Village | PRK 101](/private-events) options. The rooftop can be reserved for private events, and the team has experience hosting [Rehearsal Dinners](/private-events/rehearsal-dinners) and celebrations. If you're planning an engagement party, anniversary dinner for a group, or a milestone celebration, the rooftop's multi-level layout and ocean views make it a standout choice in Carlsbad.
 
 ## Step 8: Understand PRK 101's Position in Carlsbad's Rooftop Scene
 
-Carlsbad Village has limited rooftop options compared to downtown San Diego or Pacific Beach. PRK 101 is the primary rooftop sports bar and restaurant on the boulevard. If you're comparing options, check out [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad/) for context on what else is available nearby. PRK 101 stands out because it combines rooftop seating, fire pits, a full cocktail program, and food that isn't just bar snacks—it's a complete dining experience.
+Carlsbad Village has limited rooftop options compared to downtown San Diego or Pacific Beach. PRK 101 is the primary rooftop sports bar and restaurant on the boulevard. If you're comparing options, check out [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad) for context on what else is available nearby. PRK 101 stands out because it combines rooftop seating, fire pits, a full cocktail program, and food that isn't just bar snacks—it's a complete dining experience.
 
 Other venues in the village offer ocean views, but PRK 101's rooftop is the only one with this combination of elements. The fire pits are unique to PRK 101 in Carlsbad Village. The multi-level design means you can start on the rooftop and move to the courtyard or indoor bar if the weather shifts.
 
@@ -95,8 +95,8 @@ Wind is more common than rain. The rooftop can get breezy in the late afternoon 
 
 ## Step 10: Make the Reservation and Show Up
 
-[The Venue | Rooftop, Courtyard & Indoor Bar | PRK 101](/venue/) is ready for your date night. Call or book online. Arrive 15 minutes early. Dress smart casual. Order cocktails first. Share food. Enjoy the fire pits and ocean views. Stay for two hours minimum.
+[The Venue | Rooftop, Courtyard & Indoor Bar | PRK 101](/venue) is ready for your date night. Call or book online. Arrive 15 minutes early. Dress smart casual. Order cocktails first. Share food. Enjoy the fire pits and ocean views. Stay for two hours minimum.
 
 The details matter—parking, timing, menu prep, pacing—but the core experience is simple: two people, a rooftop, a fire pit, cocktails, and the Pacific Ocean. PRK 101 delivers that without pretense or inflated prices. It's the kind of date night that locals return to because it works.
 
-Ready to book your rooftop date night? [Contact Us](/contact/) to make your reservation today.
+Ready to book your rooftop date night? [Contact Us](/contact) to make your reservation today.

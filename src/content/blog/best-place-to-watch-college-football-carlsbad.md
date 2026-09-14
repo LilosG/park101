@@ -62,7 +62,7 @@ That makes it a useful option for mixed groups where everyone may be following a
 
 Ohio State is a featured part of the football schedule at Park 101. Buckeyes fans looking for a place to watch in Carlsbad can follow Ohio State games alongside the broader Saturday slate.
 
-For the team-specific guide, see [where to watch Ohio State football in Carlsbad](/blog/best-place-to-watch-ohio-state-football-carlsbad/) and check the [Ohio State schedule section](/sports#ohio-state-schedule) before game day.
+For the team-specific guide, see [where to watch Ohio State football in Carlsbad](/blog/best-place-to-watch-ohio-state-football-carlsbad) and check the [Ohio State schedule section](/sports#ohio-state-schedule) before game day.
 
 ## Food and Drinks for Saturday Football
 

@@ -37,11 +37,11 @@ Weather in Carlsbad runs mild year-round, but ocean breezes pick up in the eveni
 
 Walk-ins work, but don't count on it. Call Park 101 directly or check their website for reservation availability. Tell them you're looking for rooftop seating with a view. If they have it, book it. If they're full on your preferred night, ask about the courtyard or indoor bar—both are solid backups, and the staff can move you upstairs if a table opens.
 
-For something more intentional, explore the [Private Event Venue in Carlsbad Village | PRK 101](/private-events/) options. Even if you're not planning a wedding, Park 101 can configure semi-private rooftop spaces for special occasions. A [Rehearsal Dinners](/private-events/rehearsal-dinners/) setup can work beautifully for an anniversary or milestone date. The venue team will walk you through options, pricing, and what's possible on your chosen night.
+For something more intentional, explore the [Private Event Venue in Carlsbad Village | PRK 101](/private-events) options. Even if you're not planning a wedding, Park 101 can configure semi-private rooftop spaces for special occasions. A [Rehearsal Dinners](/private-events/rehearsal-dinners) setup can work beautifully for an anniversary or milestone date. The venue team will walk you through options, pricing, and what's possible on your chosen night.
 
 ## Step 3: Study the Menu Before You Arrive
 
-Don't show up hungry and overwhelmed. [The Menu | PRK 101 Carlsbad](/menu/) leans into shareable plates, elevated pub food, and cocktails that reflect the rooftop setting. Scan it online beforehand. If you're splitting appetizers and mains, know what you want. That way, when the server arrives, you're ready to order, and you spend your time talking instead of debating fish tacos versus sliders.
+Don't show up hungry and overwhelmed. [The Menu | PRK 101 Carlsbad](/menu) leans into shareable plates, elevated pub food, and cocktails that reflect the rooftop setting. Scan it online beforehand. If you're splitting appetizers and mains, know what you want. That way, when the server arrives, you're ready to order, and you spend your time talking instead of debating fish tacos versus sliders.
 
 The cocktail list rotates seasonally, but the bar always has craft options that pair with ocean air and fire pit warmth. Ask the bartender for a recommendation tied to your taste—whether that's spirit-forward, citrus-based, or something with smoke or spice. The staff knows the rooftop crowd and what works for date night energy.
 
@@ -55,11 +55,11 @@ The fire pits are working elements, not decorative. They're lit on cooler evenin
 
 Order a cocktail first. Sip it while you watch the light change. The sunset over the Pacific from a rooftop in Carlsbad Village is the free entertainment. You don't need to force conversation over it. Then order food once you've had that moment. Appetizers first, mains second—it keeps the night paced and gives you something to do between conversation beats.
 
-If you're looking for [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad/), Park 101 ranks because it doesn't try too hard. The rooftop is the draw, not the scene. The cocktails are good, the food is honest, and the view is real. That combination is rare in Carlsbad.
+If you're looking for [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad), Park 101 ranks because it doesn't try too hard. The rooftop is the draw, not the scene. The cocktails are good, the food is honest, and the view is real. That combination is rare in Carlsbad.
 
 ## Step 6: Leverage The Venue's Flexibility
 
-[The Venue | Rooftop, Courtyard & Indoor Bar | PRK 101](/venue/) has multiple zones. If the rooftop gets too windy or crowded, you can move. If you want to transition from the rooftop for dessert or a nightcap, the bar inside is steps away. The courtyard offers a middle ground—open air but more sheltered. Knowing these options means you're not locked into one spot if conditions shift.
+[The Venue | Rooftop, Courtyard & Indoor Bar | PRK 101](/venue) has multiple zones. If the rooftop gets too windy or crowded, you can move. If you want to transition from the rooftop for dessert or a nightcap, the bar inside is steps away. The courtyard offers a middle ground—open air but more sheltered. Knowing these options means you're not locked into one spot if conditions shift.
 
 ## Step 7: Plan Your Exit and Next Move
 
@@ -71,4 +71,4 @@ A rooftop date night in Carlsbad works because of simplicity: good company, a vi
 
 The best dates aren't the ones with the most moving parts. They're the ones where you forget to check your phone because the moment is enough. A Carlsbad rooftop at sunset, with fire pits and cocktails, creates that moment naturally.
 
-Ready to lock in your date night? [Contact Us](/contact/) to make a reservation or discuss private rooftop options for your special evening.
+Ready to lock in your date night? [Contact Us](/contact) to make a reservation or discuss private rooftop options for your special evening.

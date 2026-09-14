@@ -76,7 +76,7 @@ The tri tip hash is the difference. It's not on every brunch menu in Southern Ca
 
 Park 101 also ranks highest for families. The rooftop deck has shade, the kids' menu is substantial, and the staff doesn't rush you off the table. That's rare in a sports bar setting.
 
-Discover what makes Park 101 one of the [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad/) and why families choose it as one of the [best family friendly restaurants carlsbad village](/blog/best-family-friendly-restaurants-carlsbad-village/). If you're planning a weekend brunch that doubles as a gathering spot, Park 101 delivers.
+Discover what makes Park 101 one of the [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad) and why families choose it as one of the [best family friendly restaurants carlsbad village](/blog/best-family-friendly-restaurants-carlsbad-village). If you're planning a weekend brunch that doubles as a gathering spot, Park 101 delivers.
 
 ## Logistics: Parking, Hours, and Reservations
 
@@ -104,8 +104,8 @@ Arrive between 10 AM and 11 AM to avoid the earliest rush but still secure good 
 
 If you're staying nearby, Carlsbad Village is walkable. Beach access is steps away at Carlsbad Village Drive and Carlsbad Boulevard. After brunch, walk to Carlsbad State Beach or browse the shops on Carlsbad Village Drive.
 
-For more dining context, check out the [best place to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad/) and [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad/) to understand how Carlsbad's dining scene supports both casual meals and event viewing.
+For more dining context, check out the [best place to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad) and [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad) to understand how Carlsbad's dining scene supports both casual meals and event viewing.
 
 Weekend brunch in Carlsbad isn't about choosing the fanciest spot—it's about matching the occasion to the venue. Park 101's rooftop tri tip experience, The Cottage's breakfast consistency, Puesto's flavor, and Campfire's upscale casual approach each serve different needs. Pick based on your group, your appetite, and what kind of morning you want.
 
-Ready to book your next brunch? Start with Park 101's [Brunch in Carlsbad Village | PRK 101](/brunch/) or [Contact Us](/contact/) to make a reservation.
+Ready to book your next brunch? Start with Park 101's [Brunch in Carlsbad Village | PRK 101](/brunch) or [Contact Us](/contact) to make a reservation.

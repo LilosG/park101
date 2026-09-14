@@ -22,7 +22,14 @@ const {
 } = Astro.props;
 
 const siteUrl = siteProfile.url.replace(/\/$/, '');
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, `${siteUrl}/`).href;
+
+function normalizeCanonicalUrl(value: string): string {
+  const { pathname } = new URL(value, `${siteUrl}/`);
+  const normalizedPathname = pathname === '/' ? '/' : pathname.replace(/\/+$/, '');
+  return new URL(normalizedPathname, `${siteUrl}/`).href;
+}
+
+const canonicalUrl = normalizeCanonicalUrl(canonical ?? Astro.url.pathname);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 const businessImageUrl = siteProfile.seo.ogImage.startsWith('http')
   ? siteProfile.seo.ogImage

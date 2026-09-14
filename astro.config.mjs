@@ -11,6 +11,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://park101carlsbad.com',
+  trailingSlash: 'never',
 
   vite: {
     plugins: [tailwindcss()]

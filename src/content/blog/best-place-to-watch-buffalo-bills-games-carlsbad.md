@@ -78,9 +78,9 @@ See the [contact page](/contact) for current hours and directions.
 
 Bills football is a major part of Park 101's game-day programming, but the venue also works for fans following the broader NFL slate.
 
-If you are comparing options for Sunday football, read the guide to the [best place to watch NFL games in Carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad/).
+If you are comparing options for Sunday football, read the guide to the [best place to watch NFL games in Carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad).
 
-College football fans can also see the guide to [watching college football in Carlsbad](/blog/best-place-to-watch-college-football-carlsbad/) and the dedicated [Ohio State Buckeyes guide](/blog/best-place-to-watch-ohio-state-football-carlsbad/).
+College football fans can also see the guide to [watching college football in Carlsbad](/blog/best-place-to-watch-college-football-carlsbad) and the dedicated [Ohio State Buckeyes guide](/blog/best-place-to-watch-ohio-state-football-carlsbad).
 
 ## Best Buffalo Bills Bar in Carlsbad: The Bottom Line
 

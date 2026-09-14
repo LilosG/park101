@@ -66,7 +66,7 @@ Ohio State is one of the most recognizable programs in the Big Ten, but Buckeyes
 
 That makes the venue useful not only for Ohio State fans, but also for mixed groups with different teams and conference interests.
 
-For a broader Saturday guide, see the [best place to watch college football in Carlsbad](/blog/best-place-to-watch-college-football-carlsbad/).
+For a broader Saturday guide, see the [best place to watch college football in Carlsbad](/blog/best-place-to-watch-college-football-carlsbad).
 
 ## Can You Reserve a Table for an Ohio State Game?
 
@@ -84,7 +84,7 @@ If you are visiting from outside Carlsbad, check the [contact page](/contact) fo
 
 Park 101's football programming continues beyond Saturday. The venue also shows NFL games, including a dedicated Buffalo Bills game-day presence.
 
-For Sunday planning, see the guide to the [best place to watch NFL games in Carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad/) or the dedicated [Buffalo Bills bar in Carlsbad guide](/blog/best-place-to-watch-buffalo-bills-games-carlsbad/).
+For Sunday planning, see the guide to the [best place to watch NFL games in Carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad) or the dedicated [Buffalo Bills bar in Carlsbad guide](/blog/best-place-to-watch-buffalo-bills-games-carlsbad).
 
 ## Best Place to Watch Ohio State Football in Carlsbad: The Bottom Line
 

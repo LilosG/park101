@@ -78,9 +78,9 @@ Confirm the payment method in advance. If your group wants to prepay a deposit o
 
 ## Connect with Other Watch Party Options in Carlsbad
 
-Park 101 is the rooftop standout for UFC events, but if you're scouting alternatives or planning multiple fight nights across the season, check out the [best places to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad/) guide—many of those venues also stream UFC and host solid watch parties. For international fight cards or events that fall outside typical UFC timing, the [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad/) article covers venues with consistent late-night and early-morning broadcast schedules.
+Park 101 is the rooftop standout for UFC events, but if you're scouting alternatives or planning multiple fight nights across the season, check out the [best places to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad) guide—many of those venues also stream UFC and host solid watch parties. For international fight cards or events that fall outside typical UFC timing, the [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad) article covers venues with consistent late-night and early-morning broadcast schedules.
 
-If you're a regular fight fan looking to lock in standing reservations or explore Park 101's full event calendar, browse the [Events & Game Day | PRK 101 Carlsbad](/events/) page to see upcoming fight cards and other sports programming.
+If you're a regular fight fan looking to lock in standing reservations or explore Park 101's full event calendar, browse the [Events & Game Day | PRK 101 Carlsbad](/events) page to see upcoming fight cards and other sports programming.
 
 ## Final Checklist: UFC Watch Party at Park 101
 
@@ -93,4 +93,4 @@ If you're a regular fight fan looking to lock in standing reservations or explor
 
 Park 101's rooftop setup, full bar, and kitchen capacity make it the logical choice for UFC watch parties in Carlsbad. The fire pits keep your group comfortable through late rounds, the screens deliver clear views, and the energy matches the intensity of fight night. Plan ahead, order smart, and you'll have a watch party that feels less like a bar visit and more like a private event with a premium view.
 
-Ready to lock in your UFC watch party? [Contact Us](/contact/) to reserve your rooftop space and confirm your platter order today.
+Ready to lock in your UFC watch party? [Contact Us](/contact) to reserve your rooftop space and confirm your platter order today.

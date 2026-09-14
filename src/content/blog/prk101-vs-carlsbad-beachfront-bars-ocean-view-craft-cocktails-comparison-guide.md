@@ -57,7 +57,7 @@ The rooftop elevation matters more than you'd think. At ground level or one stor
 
 The fire pits are a practical detail too. Carlsbad's coastal air cools fast once the sun drops. Most bars have you moving inside or wrapping up. Park 101's fire pits extend the rooftop experience into the evening without requiring a jacket or retreat.
 
-If you're serious about ocean views paired with actual food and drink quality, Park 101 is the only venue in Carlsbad that combines all three at scale. The [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad/) article breaks down the full rooftop scene, but for ocean views specifically, the elevation and unobstructed sightline are what separate Park 101 from the field.
+If you're serious about ocean views paired with actual food and drink quality, Park 101 is the only venue in Carlsbad that combines all three at scale. The [best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad) article breaks down the full rooftop scene, but for ocean views specifically, the elevation and unobstructed sightline are what separate Park 101 from the field.
 
 ## Logistics: When to Go & What to Expect
 
@@ -71,7 +71,7 @@ If you're serious about ocean views paired with actual food and drink quality, P
 
 ## Food & Drink Quality Across the Scene
 
-Park 101 invests in the kitchen. You get fresh seafood, thoughtful appetizers, and cocktails made with actual technique. The [best family friendly restaurants carlsbad village](/blog/best-family-friendly-restaurants-carlsbad-village/) roundup includes Park 101 for exactly this reason—it's not just a bar, it's a full dining experience.
+Park 101 invests in the kitchen. You get fresh seafood, thoughtful appetizers, and cocktails made with actual technique. The [best family friendly restaurants carlsbad village](/blog/best-family-friendly-restaurants-carlsbad-village) roundup includes Park 101 for exactly this reason—it's not just a bar, it's a full dining experience.
 
 The Compass and Ponto Brewery keep it lighter. Drinks are solid, food is functional. Carlsbad Village Tavern splits the difference—real food, but simpler execution.
 
@@ -81,7 +81,7 @@ If you're staying for dinner with the ocean view, Park 101 is your only option a
 
 When the NFL season kicks off or the World Cup is on, ocean view bars become viewing destinations. Park 101 handles this better than anywhere else in Carlsbad. Multiple screens, sound system, and enough space that you don't feel cramped. The Compass has one TV. Carlsbad Village Tavern has several but smaller screens. Ponto Brewery isn't a game-day bar.
 
-For details on where to watch specific events, check out the [best places to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad/) and [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad/) guides.
+For details on where to watch specific events, check out the [best places to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad) and [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad) guides.
 
 ## The Bottom Line
 
@@ -89,4 +89,4 @@ Carlsbad has multiple ocean view bars, but they serve different purposes. If you
 
 The ocean view bars in Carlsbad range from $6 cocktails at Ponto Brewery to $14–$16 craft cocktails at Park 101. Food runs from $8 appetizers to $28 entrees. Parking is free at Park 101's lot and street-level everywhere else.
 
-Ready to experience Carlsbad's best ocean views with a cocktail in hand? [Contact Us](/contact/) to reserve a table or get more information about hosting your next gathering at Park 101.
+Ready to experience Carlsbad's best ocean views with a cocktail in hand? [Contact Us](/contact) to reserve a table or get more information about hosting your next gathering at Park 101.

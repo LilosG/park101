@@ -26,7 +26,7 @@ The rotating selection matters. Instead of the same six IPAs, you'll find season
 
 The rooftop deck itself is the draw. You're not packed into a dark corner—you're outside with sightlines to the street, the ocean two blocks away, and enough space to move between levels without fighting crowds. Fire pits warm the space on cooler evenings, and the bar staff knows how to handle volume without losing pour quality.
 
-Food pairs directly to beer. The kitchen smokes tri-tip daily, and the sandwich menu leans into rich, fatty cuts that cut through hoppy beers. A smoked tri-tip sandwich with an IPA is a reliable pairing. Wings, loaded nachos, and burgers round out the game day menu. [The Menu | PRK 101 Carlsbad](/menu/) shows current offerings and happy hour specials.
+Food pairs directly to beer. The kitchen smokes tri-tip daily, and the sandwich menu leans into rich, fatty cuts that cut through hoppy beers. A smoked tri-tip sandwich with an IPA is a reliable pairing. Wings, loaded nachos, and burgers round out the game day menu. [The Menu | PRK 101 Carlsbad](/menu) shows current offerings and happy hour specials.
 
 For multi-game viewing, Park 101 is the only venue in the Village with screens on all three levels. If you need to catch the Chargers, the Padres, and a playoff game simultaneously, this is where you do it.
 
@@ -68,7 +68,7 @@ If you're planning a Sunday NFL game, arrive at Park 101 by 12:30 p.m. for full 
 
 The rooftop deck at Park 101 is the only multi-level outdoor space in Carlsbad Village designed for crowds. Altitude, Tipsy Crow, and Carlsbad Village Brewing all have single-room layouts that fill up fast. On playoff days or Chargers games, you might not get a seat at smaller venues.
 
-[Best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad/) covers the full landscape, but for game day specifically, Park 101's three levels and fire pits beat the competition.
+[Best rooftop bars carlsbad](/blog/best-rooftop-bars-carlsbad) covers the full landscape, but for game day specifically, Park 101's three levels and fire pits beat the competition.
 
 ## Tri-Tip Pairing and Food Strategy
 
@@ -76,11 +76,11 @@ Smoked tri-tip is the game day protein in San Diego. Park 101 smokes it in-house
 
 Altitude and Tipsy Crow rely on food trucks or partner restaurants, so tri-tip options are inconsistent. If tri-tip pairing is part of your game day plan, Park 101 delivers it reliably.
 
-[The Menu | PRK 101 Carlsbad](/menu/) shows current specials and seasonal pairings.
+[The Menu | PRK 101 Carlsbad](/menu) shows current specials and seasonal pairings.
 
 ## Events and Scheduled Game Days
 
-Park 101 hosts watch parties for major sporting events—NFL playoffs, March Madness, World Series. [Events & Game Day | PRK 101 Carlsbad](/events/) lists upcoming watch parties, reserved seating options, and any special pricing tied to specific games.
+Park 101 hosts watch parties for major sporting events—NFL playoffs, March Madness, World Series. [Events & Game Day | PRK 101 Carlsbad](/events) lists upcoming watch parties, reserved seating options, and any special pricing tied to specific games.
 
 Altitude and Tipsy Crow don't formally promote game day events, so you're relying on walk-in crowds and whatever's on the screens that day.
 
@@ -96,4 +96,4 @@ For craft beer and game day in Carlsbad, [Park 101 | Rooftop Bar & Restaurant in
 
 Choose based on what matters most: game coverage, beer selection, food pairing, or crowd vibe. Most game days, the rooftop at Park 101 wins on logistics alone.
 
-Ready to plan your next game day? [Contact Us](/contact/) to reserve a table or ask about group seating for upcoming events.
+Ready to plan your next game day? [Contact Us](/contact) to reserve a table or ask about group seating for upcoming events.
