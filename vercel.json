@@ -15,6 +15,7 @@
     { "source": "/visit", "destination": "/contact", "statusCode": 301 },
     { "source": "/contact-us", "destination": "/contact", "statusCode": 301 },
     { "source": "/welcome", "destination": "/", "statusCode": 301 },
+    { "source": "/weekly-specials", "destination": "/menu", "statusCode": 301 },
     { "source": "/beverages", "destination": "/menu", "statusCode": 301 },
     { "source": "/beer-wine-menu", "destination": "/menu", "statusCode": 301 },
     { "source": "/cocktail-menu", "destination": "/menu", "statusCode": 301 },
