@@ -1,17 +1,17 @@
 {
   "seo": {
-    "title": "Food & Drink Menu in Carlsbad, CA | Park 101",
-    "description": "Explore Park 101's food and drink menu in Carlsbad, CA, including burgers, wings, tacos, loaded fries, shareable plates and signature cocktails.",
+    "title": "Burgers, Tacos & Wings Menu in Carlsbad, CA | Park 101",
+    "description": "Browse Park 101's Carlsbad, CA menu of burgers, wings, tacos, loaded fries and cocktails, with happy hour 3–6 PM Mon–Fri. View the menu or order online.",
     "ogImage": "/images/menuPage/seo/ogImage.jpg"
   },
   "hero": {
     "eyebrow": "FOOD • DRINKS • GOOD TIMES",
-    "heading": "The Menu",
+    "heading": "Park 101 Menu: Burgers, Tacos & Cocktails in Carlsbad, CA",
     "body": "Burgers, wings, tacos, loaded fries, and shareable favorites built for the rooftop, the courtyard, and game day."
   },
   "intro": {
     "eyebrow": "The Kitchen",
-    "heading": "Made to Share. Built for Park 101.",
+    "heading": "Shareable Plates & Laid-Back Favorites",
     "body": "Park 101’s kitchen is all about laid-back favorites made for sharing — from burgers and wings to tacos, sandwiches, and shareable plates. Grab a few for the table, find a spot in the courtyard or upstairs, and stay awhile."
   },
   "stats": [
@@ -35,15 +35,15 @@
   "sections": {
     "food": {
       "eyebrow": "On The Menu",
-      "heading": "Burgers, Tacos, Wings & Favorites"
+      "heading": "Burgers, Tacos & Wings"
     },
     "drink": {
       "eyebrow": "The Bar",
-      "heading": "Cocktails & Drinks"
+      "heading": "Rooftop Cocktails & Frozen Drinks"
     },
     "fullMenu": {
       "eyebrow": "Order Online",
-      "heading": "See the Full Menu",
+      "heading": "Order the Full Menu Online",
       "body": "Burgers, wings, tacos, loaded fries, and shareable favorites, ready to order online."
     },
     "faq": {
@@ -57,11 +57,11 @@
       "a": "Burgers, wings, tacos, loaded fries, and shareable favorites built for the rooftop, the courtyard, and game day."
     },
     {
-      "q": "When is happy hour?",
+      "q": "When is happy hour at Park 101 in Carlsbad?",
       "a": "[happyHour]"
     },
     {
-      "q": "Can I order online?",
+      "q": "Can I order Park 101 food online?",
       "a": "Yes. Use the button on this page to see the full menu and order online."
     },
     {
@@ -69,7 +69,7 @@
       "a": "Yes. Brunch is served daily starting at 11:00 AM on the rooftop, until 2:00 PM."
     },
     {
-      "q": "Is Park 101 dog-friendly?",
+      "q": "Is Park 101 dog-friendly in Carlsbad?",
       "a": "Yes — the patio is dog-friendly, and the menu is built for groups of all ages."
     }
   ]

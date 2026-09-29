@@ -1,7 +1,7 @@
 ---
-title: "Best Weekend Brunch in Carlsbad: Top Spots for 2026"
+title: "Best Weekend Brunch in Carlsbad, CA: Top Spots for 2026"
 seoTitle: "Best Weekend Brunch in Carlsbad, CA | Park 101"
-description: "Discover the best weekend brunch in Carlsbad. Compare Park 101, The Cottage, and Puesto with real hours, menus, and parking tips."
+description: "Find the best weekend brunch in Carlsbad. Compare Park 101, The Cottage and Puesto by hours, menus and parking, then reserve your brunch table."
 publishDate: 2026-09-08
 category: "food-drink"
 image: "/src/assets/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg"
@@ -13,9 +13,9 @@ faqs:
     answer: "Most Carlsbad brunch spots open between 9 AM and 10 AM on Saturdays and Sundays. Park 101 serves brunch daily from 11 AM to 2 PM. The Cottage opens at 8 AM, and Puesto opens at 9 AM. Arrive early or call ahead during peak season."
   - question: "Do I need a reservation for weekend brunch in Carlsbad?"
     answer: "Reservations are highly recommended, especially during summer months and holiday weekends. Park 101, The Cottage, and Puesto all accept reservations online or by phone. Walk-ins may face 30-60 minute waits on busy Sundays."
-  - question: "Is there parking available for brunch in Carlsbad Village?"
+  - question: "Is there parking available for brunch?"
     answer: "Carlsbad Village has street parking and paid lots near the beach. Park 101 is located at 3040 Carlsbad Boulevard with nearby lot parking. The Cottage and Puesto have street parking on Carlsbad Village Drive. Arrive early on weekends or use the paid lot on Beech Avenue."
-  - question: "Are Carlsbad brunch spots family-friendly?"
+  - question: "Are brunch spots family-friendly?"
     answer: "Yes. Park 101, The Cottage, and Puesto all welcome families and offer kids' menus or portions. Park 101 has a rooftop deck with ocean views, making it ideal for families. High chairs and booster seats are available. Call ahead to confirm availability during busy weekend service."
 draft: false
 tags: []

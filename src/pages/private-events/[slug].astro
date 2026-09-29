@@ -30,29 +30,29 @@ const otherEvents = (await getCollection('privateEvents'))
 const searchMeta: Record<string, { title: string; h1: string }> = {
   'birthday-parties': {
     title: 'Birthday Party Venue in Carlsbad, CA | Park 101',
-    h1: 'Birthday Party Venue in Carlsbad',
+    h1: 'Birthday Party Venue in Carlsbad, CA',
   },
   'corporate-events': {
     title: 'Corporate Event Venue in Carlsbad, CA | Park 101',
-    h1: 'Corporate Event Venue in Carlsbad',
+    h1: 'Corporate Event Venue in Carlsbad, CA',
   },
   'game-day-parties': {
     title: 'Game Day Party Venue in Carlsbad, CA | Park 101',
-    h1: 'Game Day Party Venue in Carlsbad',
+    h1: 'Game Day Party Venue in Carlsbad, CA',
   },
   'rehearsal-dinners': {
     title: 'Rehearsal Dinner Venue in Carlsbad, CA | Park 101',
-    h1: 'Rehearsal Dinner Venue in Carlsbad',
+    h1: 'Rehearsal Dinner Venue in Carlsbad, CA',
   },
   'venue-buyout': {
     title: 'Full Venue Buyout in Carlsbad, CA | Park 101',
-    h1: 'Full Venue Buyout in Carlsbad',
+    h1: 'Full Venue Buyout in Carlsbad, CA',
   },
 };
 
 const pageSearchMeta = searchMeta[event.slug] ?? {
   title: `${event.name} in Carlsbad, CA | Park 101`,
-  h1: `${event.name} in Carlsbad`,
+  h1: `${event.name} in Carlsbad, CA`,
 };
 const pageTitle = pageSearchMeta.title;
 const descriptionSuffix = ` ${event.capacity} in Carlsbad, CA.`;
@@ -193,7 +193,7 @@ const breadcrumbSchema = {
   )}
 
   <EventInquiryForm
-    heading={`Book Your ${event.name}`}
+    heading={`Request a Date for ${event.name}`}
     subtext={`Send us your date and headcount for ${event.capacity.toLowerCase()} — our events team responds within 24 hours with availability and a custom plan.`}
   />
 
@@ -204,7 +204,7 @@ const breadcrumbSchema = {
           Other Ways to Celebrate
         </span>
         <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">
-          More Private Event Options in Carlsbad
+          More Private Event Options
         </h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>

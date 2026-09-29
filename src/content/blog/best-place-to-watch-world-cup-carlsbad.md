@@ -1,7 +1,7 @@
 ---
 title: "Where to Watch World Cup & Soccer Matches in Carlsbad, CA"
 seoTitle: "Where to Watch Soccer in Carlsbad, CA"
-description: "Looking for a soccer bar in Carlsbad? Park 101 has a massive LED wall, 20+ screens, rooftop seating and a game day atmosphere in Carlsbad Village."
+description: "Looking for a soccer bar in Carlsbad? Park 101 has a massive LED wall, 20+ screens and rooftop seating in Carlsbad Village. Reserve your group today."
 publishDate: 2026-07-11
 updatedDate: 2026-09-03
 author: "Park 101"
@@ -27,7 +27,7 @@ If you're looking for a place to watch a major soccer match in Carlsbad, the set
 * **Food and drinks built for a long stay.** Soccer matches can turn into a multi-hour outing, especially for tournament and knockout play.
 * **Space for groups.** Friends, families and supporter groups need more than a few bar stools.
 
-## Soccer Watch Parties at Park 101 in Carlsbad
+## Match Day at Park 101 in Carlsbad
 
 Park 101's game day setup centers on a massive LED wall in the open-air courtyard, with **20+ screens** across the rooftop, courtyard and indoor bar. That gives groups multiple viewing options without losing the match when they move around the venue.
 
@@ -41,10 +41,10 @@ The [Park 101 venue](/venue) gives soccer fans three distinct environments in on
 
 A watch party works better when the table can keep ordering. Park 101's [food and drink menu](/menu) includes burgers, wings, tacos, loaded fries, shareable favorites, cocktails and craft beer — the kind of lineup that works for a group settling in from kickoff through the final whistle.
 
-## Planning a Private Soccer Watch Party
+## Planning a Private Watch Party
 
 If you're organizing a supporter group, company outing or larger match-day gathering, Park 101 also books [private and semi-private game day spaces](/private-events/game-day-parties) with dedicated screen access and food and drink packages.
 
-## Watch Soccer in Carlsbad Village
+## Getting to Park 101 for Match Day
 
 Park 101 is located at 3040 Carlsbad Boulevard in Carlsbad Village, one block from the beach. Check the [current events lineup](/events) for upcoming sports viewing, explore the [venue](/venue), or [get directions](/contact) before the next match.

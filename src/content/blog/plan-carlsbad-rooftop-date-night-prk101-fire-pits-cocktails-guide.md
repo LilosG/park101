@@ -1,6 +1,7 @@
 ---
-title: "Plan the Perfect Carlsbad Rooftop Date Night at Park 101"
-description: "Step-by-step guide to planning a romantic rooftop date night at Park 101 with fire pits, cocktails, and ocean views in Carlsbad Village."
+title: "Plan a Rooftop Date Night at Park 101 in Carlsbad, CA"
+seoTitle: "Rooftop Date Night in Carlsbad, CA | Park 101"
+description: "Plan a romantic rooftop date night at Park 101 with fire pits, cocktails and ocean views in Carlsbad Village, step by step. Reserve a rooftop table."
 publishDate: 2026-09-08
 category: "venue"
 image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"

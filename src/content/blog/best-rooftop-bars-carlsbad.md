@@ -1,7 +1,7 @@
 ---
 title: "Best Rooftop Bars in Carlsbad, CA"
 seoTitle: "Rooftop Bar in Carlsbad, CA | Park 101"
-description: "Looking for a rooftop bar in Carlsbad? Explore Park 101's open-air rooftop deck, fire pits and cocktails, one block from the beach."
+description: "Looking for a rooftop bar in Carlsbad? See Park 101's open-air rooftop deck, fire pits and cocktails, one block from the beach. Reserve a table."
 publishDate: 2026-07-10
 updatedDate: 2026-09-03
 author: "Park 101"
@@ -39,7 +39,7 @@ The [Park 101 venue](/venue) also includes an open-air courtyard anchored by a m
 
 The [food and drink menu](/menu) includes signature cocktails, frozen margaritas and craft beer alongside burgers, wings, tacos, loaded fries and shareable favorites. The Rodeo Tower is one of Park 101's signature group drink options.
 
-## Daily Rooftop Brunch in Carlsbad
+## Daily Rooftop Brunch
 
 The rooftop isn't only a nighttime spot. [Brunch is served daily until 2 PM](/brunch), pairing open-air rooftop seating with breakfast favorites and brunch cocktails in the heart of Carlsbad Village.
 

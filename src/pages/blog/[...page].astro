@@ -20,10 +20,11 @@ const usedCategories = new Set(allPosts.map((post: any) => post.data.category));
 const categoryList = Object.values(blogCategories).filter((category) => usedCategories.has(category.slug));
 
 const pageTitle = page.currentPage === 1
-  ? 'Carlsbad Food, Events & Game Day Guides | Park 101'
-  : `Carlsbad Food, Events & Game Day Guides – Page ${page.currentPage} | Park 101`;
-const pageDescription =
-  'Local guides to rooftop dining, game day, family-friendly restaurants, events and things to do at Park 101 in Carlsbad, CA.';
+  ? 'Food, Events & Game Day Guides in Carlsbad, CA | Park 101'
+  : `Food & Game Day Guides in Carlsbad, CA, Page ${page.currentPage} | Park 101`;
+const pageDescription = page.currentPage === 1
+  ? 'Read local Carlsbad, CA guides to rooftop dining, game day viewing, family-friendly restaurants and events at Park 101. Plan your next visit.'
+  : `Page ${page.currentPage} of Carlsbad, CA guides to rooftop dining, game day viewing, brunch and events at Park 101. Browse more guides and plan your next visit.`;
 
 const canonical = page.currentPage === 1
   ? `${siteProfile.url}/blog`
@@ -47,7 +48,7 @@ const breadcrumbSchema = {
         Park 101 Carlsbad Blog
       </span>
       <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-brand-white uppercase leading-display tracking-tight mb-4">
-        Carlsbad Food, Events &amp; Game Day Guides
+        Food, Events &amp; Game Day Guides in Carlsbad, CA
       </h1>
       <p class="font-body text-base sm:text-lg text-brand-white/70 max-w-2xl mx-auto">
         Local guides to rooftop dining, sports viewing, family-friendly outings, events and life in Carlsbad Village.
@@ -78,6 +79,7 @@ const breadcrumbSchema = {
 
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16">
     <div class="max-w-7xl mx-auto">
+      <h2 class="sr-only">Latest Park 101 Guides</h2>
       {page.data.length === 0 ? (
         <p class="font-body text-brand-dark/60 text-center py-20">
           New posts are on the way — check back soon.
@@ -85,7 +87,7 @@ const breadcrumbSchema = {
       ) : (
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {page.data.map((post: any) => (
-            <BlogPostCard post={post} headingLevel={2} />
+            <BlogPostCard post={post} headingLevel={3} />
           ))}
         </div>
       )}

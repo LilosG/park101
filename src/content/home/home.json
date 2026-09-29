@@ -1,28 +1,28 @@
 {
   "seo": {
-    "title": "Rooftop Restaurant & Sports Bar in Carlsbad, CA | Park 101",
-    "description": "Park 101 is a rooftop restaurant and sports bar in Carlsbad, CA with 20+ screens, an open-air courtyard, cocktails, food, brunch and events.",
+    "title": "Family-Friendly Sports Bar in Carlsbad, CA | Park 101",
+    "description": "Family-friendly sports bar and restaurant in Carlsbad, CA with 20+ TVs, an outdoor LED wall, two levels and a rooftop patio. Reserve or order online.",
     "ogImage": "/images/home/seo/ogImage.jpg"
   },
   "hero": {
     "eyebrow": "Carlsbad Village &middot; One Block From The Beach",
-    "heading": "Park 101: Rooftop Restaurant & Sports Bar in Carlsbad, CA",
-    "subheading": "Where Coast Meets Country",
-    "body": "Carlsbad Village's rooftop restaurant, sports bar and game day destination.\n"
+    "heading": "Park 101",
+    "subheading": "Two-Level Restaurant & Sports Bar in Carlsbad, CA",
+    "body": "Two levels of indoor and outdoor seating, 20+ TVs and an outdoor LED wall for game day. Family- and dog-friendly, one block from the beach.\n"
   },
   "sections": {
     "venue": {
       "eyebrow": "Carlsbad Village",
-      "heading": "Rooftop.<br />Courtyard.<br />Indoor Bar.",
+      "heading": "Rooftop Bar, Courtyard & Indoor Bar",
       "body": "Three distinct spaces under one open sky. The central courtyard with the massive LED wall. The elevated rooftop deck with views of Carlsbad Village. The indoor bar with wall-to-wall screens and long communal tables. One block from the beach."
     },
     "sports": {
       "eyebrow": "Carlsbad Sports Bar",
-      "heading": "Game Day.<br />Cold Drinks.<br />Big Screens."
+      "heading": "Sports Bar Game Day, Cold Drinks & 20+ Screens"
     },
     "sportsBanner": {
       "eyebrow": "NFL · Buffalo Bills",
-      "heading": "Home of the<br />Buffalo Bills",
+      "heading": "Home of the Buffalo Bills",
       "body": "Every game. Every season. Park 101 is Carlsbad's official home for Bills fans — outdoor LED wall, full menu, and cold drinks from kickoff to the final whistle."
     },
     "food": {
@@ -31,12 +31,12 @@
     },
     "drinks": {
       "eyebrow": "The Bar",
-      "heading": "Cocktails.<br />Margaritas.<br />Craft Beer.",
+      "heading": "Rooftop Cocktails, Margaritas & Craft Beer",
       "body": "Signature cocktails, frozen margaritas, local craft beers on draft, and the Rodeo Tower — Park 101's most celebrated creation."
     },
     "events": {
       "eyebrow": "Live Music & Events",
-      "heading": "Live Music.<br />Game Day.<br />Every Week.",
+      "heading": "Live Music & Weekly Events",
       "body": "Country nights. Live bands. Padres watch parties. UFC fight nights. From kickoff to the final buzzer, from the first song to last call — something's always happening at Park 101."
     },
     "brunch": {
@@ -46,11 +46,11 @@
     },
     "families": {
       "eyebrow": "Everyone's Welcome",
-      "heading": "Bring the Crew.<br />Bring the Dog.<br />Bring the Kids."
+      "heading": "Family & Dog-Friendly Patio"
     },
     "privateEvents": {
       "eyebrow": "Private Events in Carlsbad",
-      "heading": "Your Event.<br />Our Venue.",
+      "heading": "Private Event Space for Birthdays & Corporate Events",
       "body": "Birthday parties, corporate happy hours, game day buyouts, rehearsal dinners — Park 101's rooftop, courtyard and indoor spaces can host everything from smaller groups to full venue buyouts."
     }
   }

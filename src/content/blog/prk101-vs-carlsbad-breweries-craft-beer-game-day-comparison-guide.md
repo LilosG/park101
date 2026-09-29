@@ -1,7 +1,7 @@
 ---
-title: "Best Craft Beer for Game Day in Carlsbad: Park 101 vs. Local Breweries"
+title: "Best Craft Beer for Game Day in Carlsbad, CA: Park 101 vs. Local Breweries"
 seoTitle: "Best Craft Beer for Game Day in Carlsbad, CA | Park 101"
-description: "Compare Park 101's rotating drafts and rooftop sports setup with Carlsbad breweries. Find the best craft beer game day spot with happy hour and views."
+description: "Compare Park 101's rotating drafts and rooftop sports setup with Carlsbad breweries. Find a craft beer game day spot with happy hour and views. Reserve."
 publishDate: 2026-09-03
 category: "guide"
 image: "/src/assets/drinks/park-101-outdoor-golf-tournament-viewing-drinks-carlsbad.jpg"

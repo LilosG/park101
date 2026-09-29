@@ -2,8 +2,8 @@
   "name": "Park 101",
   "brandName": "PRK 101",
   "tagline": "Where Coast Meets Country",
-  "description": "Park 101 is a multi-level rooftop restaurant and sports bar in Carlsbad Village with an open-air courtyard, indoor bar, 20+ screens, food, cocktails, daily brunch, live events, and private event spaces one block from the beach.",
-  "shortDescription": "Carlsbad Village's rooftop restaurant, sports bar and game day destination — one block from the beach.",
+  "description": "Park 101 is a family-friendly, two-level sports bar and restaurant in Carlsbad Village with an open-air courtyard, rooftop patio, indoor bar, 20+ screens, an outdoor LED wall for game day, food, cocktails, daily brunch, live events, and private event spaces one block from the beach.",
+  "shortDescription": "Carlsbad Village's two-level sports bar and restaurant with a rooftop patio, 20+ screens and an outdoor LED wall — one block from the beach.",
   "url": "https://park101carlsbad.com",
   "timeZone": "America/Los_Angeles",
   "logo": "/images/siteSettings/logo/park101-logo.webp",
@@ -116,9 +116,9 @@
     }
   },
   "seo": {
-    "defaultTitle": "Park 101 | Rooftop Restaurant & Sports Bar in Carlsbad, CA",
+    "defaultTitle": "Park 101 | Two-Level Sports Bar & Restaurant in Carlsbad, CA",
     "titleTemplate": "%s | Park 101",
-    "defaultDescription": "Park 101 is a rooftop restaurant and sports bar in Carlsbad, CA with 20+ screens, an open-air courtyard, food, cocktails, brunch and events.",
+    "defaultDescription": "Park 101 is a family-friendly, two-level sports bar and restaurant in Carlsbad, CA with 20+ screens, an outdoor LED wall, a rooftop patio, brunch and events.",
     "keywords": [
       "rooftop restaurant carlsbad",
       "sports bar carlsbad",
