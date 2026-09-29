@@ -3,7 +3,7 @@ import PageHero from '../components/core/PageHero.astro';
 import Layout from '../layouts/Layout.astro';
 import TrustBar from '../components/ui/TrustBar.astro';
 import TeamScheduleSection from '../components/ui/TeamScheduleSection.astro';
-import { getEntry } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import { Image, Picture } from 'astro:assets';
 
 import sportsHero from '../assets/sports/DSC09106.webp';
@@ -17,42 +17,19 @@ import outdoorBarScreen from '../assets/sports/DSC07505-HDR.webp';
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const reservationsUrl = siteProfile.ordering.reservationsUrl;
 
-const billsSchedule = [
-  { week: 1,  date: 'Sep 13', opponent: '@ Houston Texans',          time: '10:00 AM PT', home: false },
-  { week: 2,  date: 'Sep 17', opponent: 'vs Detroit Lions',          time: '5:15 PM PT',  home: true  },
-  { week: 3,  date: 'Sep 27', opponent: 'vs Los Angeles Chargers',   time: '10:00 AM PT', home: true  },
-  { week: 4,  date: 'Oct 4',  opponent: 'vs New England Patriots',   time: '10:00 AM PT', home: true  },
-  { week: 5,  date: 'Oct 12', opponent: '@ Los Angeles Rams',        time: '5:15 PM PT',  home: false },
-  { week: 6,  date: 'Oct 18', opponent: '@ Las Vegas Raiders',       time: '1:25 PM PT', home: false },
-  { week: 7,  date: 'Oct 25', opponent: 'BYE WEEK',                  time: '—',           home: null  },
-  { week: 8,  date: 'Nov 1',  opponent: 'vs Baltimore Ravens',       time: '10:00 AM PT', home: true  },
-  { week: 9,  date: 'Nov 9',  opponent: '@ Minnesota Vikings',       time: '5:15 PM PT',  home: false },
-  { week: 10, date: 'Nov 15', opponent: '@ New York Jets',           time: '10:00 AM PT', home: false },
-  { week: 11, date: 'Nov 22', opponent: 'vs Miami Dolphins',         time: '10:00 AM PT', home: true  },
-  { week: 12, date: 'Nov 26', opponent: 'vs Kansas City Chiefs',     time: '5:20 PM PT',  home: true  },
-  { week: 13, date: 'Dec 6',  opponent: '@ New England Patriots',    time: '1:25 PM PT', home: false },
-  { week: 14, date: 'Dec 13', opponent: '@ Green Bay Packers',       time: '5:20 PM PT',  home: false },
-  { week: 15, date: 'Dec 19', opponent: 'vs Chicago Bears',          time: '5:20 PM PT',  home: true  },
-  { week: 16, date: 'Dec 25', opponent: '@ Denver Broncos',          time: '1:30 PM PT', home: false },
-  { week: 17, date: 'Jan 3',  opponent: '@ Miami Dolphins',          time: '10:00 AM PT', home: false },
-  { week: 18, date: 'TBD',    opponent: 'vs New York Jets',          time: 'TBD',         home: true  },
-];
-
-const buckeyesSchedule = [
-  { week: 1,  date: 'Sep 5',  opponent: 'vs Ball State',             time: '9:30 AM PT',  home: true  },
-  { week: 2,  date: 'Sep 12', opponent: '@ Texas',                   time: '4:30 PM PT',  home: false },
-  { week: 3,  date: 'Sep 19', opponent: 'vs Kent State',             time: '9:00 AM PT',  home: true  },
-  { week: 4,  date: 'Sep 26', opponent: 'vs Illinois',               time: 'TBA',         home: true  },
-  { week: 5,  date: 'Oct 3',  opponent: '@ Iowa',                    time: 'TBA',         home: false },
-  { week: 6,  date: 'Oct 10', opponent: 'vs Maryland',               time: 'TBA',         home: true  },
-  { week: 7,  date: 'Oct 17', opponent: '@ Indiana',                 time: 'TBA',         home: false },
-  { week: 8,  date: 'Oct 24', opponent: 'OFF',                       time: '—',           home: null  },
-  { week: 9,  date: 'Oct 31', opponent: '@ USC',                     time: 'TBA',         home: false },
-  { week: 10, date: 'Nov 7',  opponent: 'vs Oregon',                 time: 'TBA',         home: true  },
-  { week: 11, date: 'Nov 14', opponent: 'vs Northwestern',           time: 'TBA',         home: true  },
-  { week: 12, date: 'Nov 21', opponent: '@ Nebraska',                time: 'TBA',         home: false },
-  { week: 13, date: 'Nov 28', opponent: 'vs Michigan',               time: '9:00 AM PT',  home: true  },
-];
+const games = (await getCollection('sportsGames'))
+  .map((entry) => entry.data)
+  .sort((a, b) => a.week - b.week)
+  .map(({ team, week, date, opponent, time, status }) => ({
+    team,
+    week,
+    date,
+    opponent,
+    time,
+    home: status === 'off' ? null : status === 'home',
+  }));
+const billsSchedule = games.filter((game) => game.team === 'bills');
+const buckeyesSchedule = games.filter((game) => game.team === 'buckeyes');
 ---
 
 <Layout

@@ -24,6 +24,8 @@ export const navigationSchema = z.strictObject({
       footerHours: item('Footer Hours'),
       footerOrder: item('Footer Order'),
       footerReserve: item('Footer Reserve'),
+      instagramAria: item('Instagram Link Aria'),
+      facebookAria: item('Facebook Link Aria'),
       network: item('Network'),
       websiteCredit: item('Website Credit'),
     })

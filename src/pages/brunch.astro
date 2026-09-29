@@ -24,32 +24,7 @@ const toGridItem = ({ data }: (typeof brunchFoodItems)[number] | (typeof brunchD
 const foodItems = brunchFoodItems.map(toGridItem);
 const drinkItems = brunchDrinkItems.map(toGridItem);
 
-const faqs = [
-  {
-    q: 'What time does brunch start at Park 101?',
-    a: 'Brunch is served daily starting at 11:00 AM on the rooftop, until 2:00 PM.',
-  },
-  {
-    q: 'Do I need a reservation for brunch?',
-    a: 'Reservations are recommended for brunch, especially for larger groups, since the rooftop fills up quickly.',
-  },
-  {
-    q: "What's on the brunch menu?",
-    a: 'A BBQ-driven brunch program — smoked tri-tip chilaquiles, brisket and classic breakfast burritos, a chicken and waffle sandwich, and bacon, egg and cheese plates.',
-  },
-  {
-    q: 'Are brunch cocktails available?',
-    a: 'Yes — the Rodeo Tower, the Coschie Boot, and the full cocktail program are all available starting at open.',
-  },
-  {
-    q: 'Can I book a private brunch event?',
-    a: 'Yes. Park 101 hosts private brunch gatherings, birthday brunches, and group events on the rooftop and throughout the venue.',
-  },
-  {
-    q: 'Is Park 101 dog-friendly for brunch?',
-    a: "Yes — the patio is dog-friendly, and brunch is built for groups of all ages.",
-  },
-];
+const faqs = page.faqs;
 
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
@@ -71,7 +46,7 @@ const finalSection = page.sections.final;
     heading={page.hero.heading}
     body={page.hero.body}
     primary={{ label: 'Reserve for Brunch', href: siteProfile.ordering.reservationsUrl, external: true }}
-    secondary={{ label: 'View Full Menu', href: siteProfile.ordering.toastUrl, external: true }}
+    secondary={{ label: siteProfile.ordering.menuCtaLabel, href: siteProfile.ordering.toastUrl, external: true }}
   />
 
   <!-- ── STAT BAR ─────────────────────────────────────────── -->
@@ -132,7 +107,7 @@ const finalSection = page.sections.final;
           rel="noopener noreferrer"
           class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
         >
-          View Full Menu
+          {siteProfile.ordering.menuCtaLabel}
         </a>
       </div>
     </div>
@@ -245,7 +220,7 @@ const finalSection = page.sections.final;
           rel="noopener noreferrer"
           class="px-8 py-4 border border-brand-dark hover:bg-brand-dark hover:text-brand-white text-brand-dark font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
         >
-          View Full Menu
+          {siteProfile.ordering.menuCtaLabel}
         </a>
       </div>
     </div>
