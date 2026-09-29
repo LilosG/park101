@@ -12,7 +12,6 @@ import maineLobsterRoll from '../assets/food/park-101-maine-lobster-roll-carlsba
 import rodeoNachos from '../assets/food/park-101-rodeo-nachos-carlsbad.jpg';
 import theChick from '../assets/dinnerFoodItems/park-101-the-chick-hero-carlsbad.jpg';
 import triTipArugulaSlad from '../assets/food/park-101-tri-tip-arugula-salad-carlsbad.jpg';
-import loadedBbqMac from '../assets/food/park-101-loaded-bbq-mac-06-carlsbad.jpg';
 
 import dragonFire from '../assets/drinks/park-101-dragon-fire-cocktail-carlsbad.jpg';
 import rodeoTowersPark from '../assets/drinks/park-101-rodeo-towers-park-carlsbad.jpg';
@@ -40,7 +39,6 @@ const venueSection = page.sections.venue;
 const sportsSection = page.sections.sports;
 const sportsBannerSection = page.sections.sportsBanner;
 const foodSection = page.sections.food;
-const smokehouseSection = page.sections.smokehouse;
 const drinksSection = page.sections.drinks;
 const eventsSection = page.sections.events;
 const brunchSection = page.sections.brunch;
@@ -317,41 +315,6 @@ const drinkItems = [
         >
           View Menu
         </a>
-      </div>
-    </div>
-  </section>
-  )}
-
-  <!-- ── BBQ FEATURE ──────────────────────────────────────── -->
-  {smokehouseSection && (
-  <section class="relative bg-brand-dark">
-    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[650px]">
-      <div class="relative lg:col-span-6 min-h-[400px] lg:min-h-full overflow-hidden">
-        <Image
-          src={loadedBbqMac}
-          alt="Three BBQ platters of pulled pork, St. Louis ribs, and sliced brisket from the Park 101 smokehouse"
-          class="absolute inset-0 w-full h-full object-cover object-center"
-          loading="lazy"
-          decoding="async"
-          widths={[640, 828, 1080, 1400]}
-          sizes="(min-width: 1024px) 50vw, 100vw"
-        />
-      </div>
-      <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
-        <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(smokehouseSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(smokehouseSection.heading)} /></h2>
-          <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
-          {smokehouseSection.body && (
-            <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">{blockText(smokehouseSection.body)}</p>
-          )}
-          <a
-            href="/menu"
-            class="inline-block px-6 py-3.5 border border-brand-white hover:bg-brand-white hover:text-brand-dark text-brand-white font-display font-bold uppercase tracking-button-outline text-xs transition-all duration-200"
-          >
-            View Menu
-          </a>
-        </div>
       </div>
     </div>
   </section>
