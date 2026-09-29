@@ -9,10 +9,49 @@
     "heading": "Hours, Directions & Reservations",
     "body": "Find Park 101 at 3040 Carlsbad Boulevard, one block from the beach in Carlsbad Village."
   },
+  "intro": {
+    "eyebrow": "Welcome",
+    "heading": "Rooftop Restaurant & Sports Bar in Carlsbad, CA"
+  },
   "sections": {
     "visit": {
       "eyebrow": "Visit Us",
       "heading": "Park 101 in Carlsbad Village"
+    },
+    "fullMenu": {
+      "eyebrow": "Order Online",
+      "heading": "See the Full Menu",
+      "body": "Burgers, wings, tacos, loaded fries, and shareable favorites, ready to order online."
+    },
+    "faq": {
+      "eyebrow": "Need to Know",
+      "heading": "Visiting Park 101 FAQ"
     }
-  }
+  },
+  "faqs": [
+    {
+      "q": "Where is Park 101?",
+      "a": "Park 101 is at [address], in [neighborhood], one block from the beach."
+    },
+    {
+      "q": "What are Park 101's hours?",
+      "a": "[hours]"
+    },
+    {
+      "q": "Is there parking near Park 101?",
+      "a": "Street parking and public lots are available nearby."
+    },
+    {
+      "q": "How do I make a reservation?",
+      "a": "Use the Reserve a Table button on this page, or call [phone]."
+    },
+    {
+      "q": "Is there a happy hour?",
+      "a": "[happyHour]"
+    },
+    {
+      "q": "Is Park 101 dog-friendly?",
+      "a": "Yes — the patio is dog-friendly, and families are always welcome."
+    }
+  ]
 }
