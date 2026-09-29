@@ -40,6 +40,37 @@
     "drink": {
       "eyebrow": "The Bar",
       "heading": "Cocktails & Drinks"
+    },
+    "fullMenu": {
+      "eyebrow": "Order Online",
+      "heading": "See the Full Menu",
+      "body": "Burgers, wings, tacos, loaded fries, and shareable favorites, ready to order online."
+    },
+    "faq": {
+      "eyebrow": "Need to Know",
+      "heading": "Park 101 Menu FAQ"
     }
-  }
+  },
+  "faqs": [
+    {
+      "q": "What's on the Park 101 menu?",
+      "a": "Burgers, wings, tacos, loaded fries, and shareable favorites built for the rooftop, the courtyard, and game day."
+    },
+    {
+      "q": "When is happy hour?",
+      "a": "[happyHour]"
+    },
+    {
+      "q": "Can I order online?",
+      "a": "Yes. Use the button on this page to see the full menu and order online."
+    },
+    {
+      "q": "Is brunch served at Park 101?",
+      "a": "Yes. Brunch is served daily starting at 11:00 AM on the rooftop, until 2:00 PM."
+    },
+    {
+      "q": "Is Park 101 dog-friendly?",
+      "a": "Yes — the patio is dog-friendly, and the menu is built for groups of all ages."
+    }
+  ]
 }

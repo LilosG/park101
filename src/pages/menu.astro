@@ -5,6 +5,10 @@ import { getCollection, getEntry } from 'astro:content';
 import MenuItemCard from '../components/menu/MenuItemCard.astro';
 import StatBar from '../components/core/StatBar.astro';
 import SplitIntro from '../components/core/SplitIntro.astro';
+import FullMenuBand from '../components/core/FullMenuBand.astro';
+import FaqSection from '../components/core/FaqSection.astro';
+import FaqSchema from '../components/core/FaqSchema.astro';
+import { fillFacts } from '../lib/site-facts';
 import { Image } from 'astro:assets';
 import { resolveContentImage } from '../lib/images';
 
@@ -27,6 +31,9 @@ const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
 const foodSection = page.sections.food;
 const drinkSection = page.sections.drink;
+const fullMenuSection = page.sections.fullMenu;
+const faqSection = page.sections.faq;
+const faqs = page.faqs.map(({ q, a }) => ({ q, a: fillFacts(a, siteProfile) }));
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -118,6 +125,19 @@ const breadcrumbSchema = {
     </div>
   </section>
   )}
+
+  <!-- ── FULL MENU BAND ───────────────────────────────────── -->
+  <FullMenuBand
+    eyebrow={fullMenuSection.eyebrow}
+    heading={fullMenuSection.heading}
+    body={fullMenuSection.body}
+    ctaLabel={siteProfile.ordering.menuCtaLabel}
+    ctaHref={siteProfile.ordering.toastUrl}
+  />
+
+  <!-- ── FAQ ───────────────────────────────────────────────── -->
+  <FaqSection eyebrow={faqSection.eyebrow} heading={faqSection.heading} items={faqs} />
+  <FaqSchema items={faqs} />
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </Layout>

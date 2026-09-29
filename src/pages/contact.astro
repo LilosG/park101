@@ -2,9 +2,15 @@
 import PageHero from '../components/core/PageHero.astro';
 import Layout from '../layouts/Layout.astro';
 import MapEmbed from '../components/ui/MapEmbed.astro';
+import SplitIntro from '../components/core/SplitIntro.astro';
+import FullMenuBand from '../components/core/FullMenuBand.astro';
+import FaqSection from '../components/core/FaqSection.astro';
+import FaqSchema from '../components/core/FaqSchema.astro';
+import { fillFacts } from '../lib/site-facts';
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import { getGoogleMapsPlace } from '../lib/googleMaps';
+import introImage from '../assets/venue/park-101-rooftop-dining-carlsbad-village-carlsbad.jpg';
 import storefrontImage from '../assets/venue/park-101-modern-brick-storefront-neon-signage-carlsbad.jpg';
 
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
@@ -13,6 +19,9 @@ const googleMaps = await getGoogleMapsPlace(siteProfile);
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
 const visitSection = page.sections.visit;
+const fullMenuSection = page.sections.fullMenu;
+const faqSection = page.sections.faq;
+const faqs = page.faqs.map(({ q, a }) => ({ q, a: fillFacts(a, siteProfile) }));
 
 // hours are stored as { monday: {open, close}, ... } — format properly,
 // don't interpolate the nested object directly
@@ -37,6 +46,18 @@ const hasEmail = Boolean(siteProfile.contact.email);
     body={page.hero.body}
     primary={{ label: 'Reserve a Table', href: siteProfile.ordering.reservationsUrl, external: true }}
     secondary={{ label: 'Call Us', href: `tel:${siteProfile.contact.phoneDial}` }}
+  />
+
+  <!-- ── INTRO ────────────────────────────────────────────── -->
+  <SplitIntro
+    image={introImage}
+    imageAlt="Rooftop dining at Park 101 in Carlsbad Village"
+    eyebrow={page.intro.eyebrow}
+    heading={page.intro.heading}
+    body={siteProfile.description}
+    ctaLabel="Reserve a Table"
+    ctaHref={siteProfile.ordering.reservationsUrl}
+    ctaExternal={true}
   />
 
   <!-- ── INFO + MAP ───────────────────────────────────────── -->
@@ -70,7 +91,7 @@ const hasEmail = Boolean(siteProfile.contact.email);
                 Phone
               </span>
               <a
-                href={`tel:${siteProfile.contact.phone}`}
+                href={`tel:${siteProfile.contact.phoneDial}`}
                 class="font-display font-bold text-2xl text-brand-dark hover:text-brand-orange transition-colors duration-200"
               >
                 {siteProfile.contact.phone}
@@ -137,5 +158,18 @@ const hasEmail = Boolean(siteProfile.contact.email);
     </div>
   </section>
   )}
+
+  <!-- ── FULL MENU BAND ───────────────────────────────────── -->
+  <FullMenuBand
+    eyebrow={fullMenuSection.eyebrow}
+    heading={fullMenuSection.heading}
+    body={fullMenuSection.body}
+    ctaLabel={siteProfile.ordering.menuCtaLabel}
+    ctaHref={siteProfile.ordering.toastUrl}
+  />
+
+  <!-- ── FAQ ───────────────────────────────────────────────── -->
+  <FaqSection eyebrow={faqSection.eyebrow} heading={faqSection.heading} items={faqs} />
+  <FaqSchema items={faqs} />
 
 </Layout>

@@ -10,6 +10,23 @@ import {
   step,
   text,
 } from './common';
+import { hasOnlyKnownTokens, factTokens } from '../lib/site-facts';
+
+/** A FAQ whose answer may use site-fact tokens such as [phone] or [hours]. */
+const factFaq = faq.extend({
+  a: text
+    .refine(hasOnlyKnownTokens, `Unknown token. Allowed tokens: ${factTokens.join(' ')}`)
+    .meta(
+      label(
+        'Answer',
+        `Answer displayed with this question. To include a fact kept in Site Settings, type one of: ${factTokens.join(' ')}.`,
+      ),
+    ),
+});
+const factFaqs = z
+  .array(factFaq)
+  .min(1)
+  .meta(label('Frequently Asked Questions', 'Add, edit, remove, or reorder the questions shown on this page.'));
 
 /**
  * Pages whose Open Graph image already sits where Keystatic writes it
@@ -50,7 +67,8 @@ export const menuPageSchema = z.strictObject({
     .array(z.strictObject({ value: text.meta(label('Displayed Value')), label: text.meta(label('Label')) }))
     .length(4)
     .meta(label('Highlights Bar', 'The four short highlights shown under the page header.')),
-  sections: sections({ food: section(), drink: section() }),
+  sections: sections({ food: section(), drink: section(), fullMenu: sectionWithBody(), faq: section() }),
+  faqs: factFaqs,
 });
 
 export const brunchPageSchema = z.strictObject({
@@ -92,7 +110,9 @@ export const venuePageSchema = z.strictObject({
 export const contactPageSchema = z.strictObject({
   seo: uploadedSeo('contactPage'),
   hero,
-  sections: sections({ visit: section() }),
+  intro: section('Introduction Section'),
+  sections: sections({ visit: section(), fullMenu: sectionWithBody(), faq: section() }),
+  faqs: factFaqs,
 });
 
 export const privateEventsIndexSchema = z.strictObject({
