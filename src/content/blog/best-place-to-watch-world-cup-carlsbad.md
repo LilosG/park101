@@ -21,11 +21,11 @@ If you're looking for a place to watch a major soccer match in Carlsbad, the set
 
 ## What Makes a Good Soccer Watch Bar
 
-- **A screen big enough for the whole crowd.** For major matches, a large-format screen changes the experience.
-- **Screen coverage throughout the venue.** You shouldn't have to fight for one specific seat to follow the action.
-- **Indoor and outdoor options.** Carlsbad weather makes open-air viewing a major advantage, while an indoor bar gives groups flexibility.
-- **Food and drinks built for a long stay.** Soccer matches can turn into a multi-hour outing, especially for tournament and knockout play.
-- **Space for groups.** Friends, families and supporter groups need more than a few bar stools.
+* **A screen big enough for the whole crowd.** For major matches, a large-format screen changes the experience.
+* **Screen coverage throughout the venue.** You shouldn't have to fight for one specific seat to follow the action.
+* **Indoor and outdoor options.** Carlsbad weather makes open-air viewing a major advantage, while an indoor bar gives groups flexibility.
+* **Food and drinks built for a long stay.** Soccer matches can turn into a multi-hour outing, especially for tournament and knockout play.
+* **Space for groups.** Friends, families and supporter groups need more than a few bar stools.
 
 ## Soccer Watch Parties at Park 101 in Carlsbad
 
