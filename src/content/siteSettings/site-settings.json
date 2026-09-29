@@ -10,7 +10,6 @@
   "contact": {
     "phone": "(858) 408-6948",
     "phoneDial": "+18584086948",
-    "email": "",
     "address": {
       "street": "3040 Carlsbad Boulevard",
       "city": "Carlsbad",
@@ -51,9 +50,7 @@
   },
   "social": {
     "instagram": "https://www.instagram.com/park101_/",
-    "facebook": "https://www.facebook.com/prk101cbad/",
-    "yelp": "",
-    "tiktok": ""
+    "facebook": "https://www.facebook.com/prk101cbad/"
   },
   "ordering": {
     "toastUrl": "https://order.toasttab.com/online/park-101-3040-carlsbad-blvd",
