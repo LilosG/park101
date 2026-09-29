@@ -10,7 +10,6 @@ const currentPath = Astro.url.pathname;
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const navigation = (await getEntry('navigation', 'navigation'))!.data;
 const navLinks = navigation.mainLinks;
-const blockText = (value: string) => `\n${value}\n`;
 ---
 
 <header
@@ -19,7 +18,7 @@ const blockText = (value: string) => `\n${value}\n`;
   data-transparent={transparent ? 'true' : 'false'}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-(--site-header-height)">
 
       <!-- Logo -->
       <a href={navigation.links.home} class="flex items-center flex-shrink-0" aria-label={navigation.labels.homeAria}>
@@ -55,13 +54,13 @@ const blockText = (value: string) => `\n${value}\n`;
           target="_blank"
           rel="noopener noreferrer"
           class="px-4 py-2 text-xs font-display font-bold uppercase tracking-wider border border-current nav-cta-outline transition-all duration-200 hover:bg-brand-orange hover:border-brand-orange hover:text-brand-white rounded-sm whitespace-nowrap"
-        >{blockText(navigation.labels.desktopOrder)}</a>
+        >{navigation.labels.desktopOrder}</a>
         <a
           href={siteProfile.ordering.reservationsUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="px-4 py-2 text-xs font-display font-bold uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm whitespace-nowrap"
-        >{blockText(navigation.labels.desktopReserve)}</a>
+        >{navigation.labels.desktopReserve}</a>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -128,13 +127,13 @@ const blockText = (value: string) => `\n${value}\n`;
       target="_blank"
       rel="noopener noreferrer"
       class="w-full py-4 text-center text-base sm:text-lg font-display font-bold uppercase tracking-wider border border-brand-white text-brand-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-200 rounded-sm"
-    >{blockText(navigation.labels.mobileOrder)}</a>
+    >{navigation.labels.mobileOrder}</a>
     <a
       href={siteProfile.ordering.reservationsUrl}
       target="_blank"
       rel="noopener noreferrer"
       class="w-full py-4 text-center text-base sm:text-lg font-display font-bold uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
-    >{blockText(navigation.labels.mobileReserve)}</a>
+    >{navigation.labels.mobileReserve}</a>
   </div>
 </div>
 

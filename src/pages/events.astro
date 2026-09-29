@@ -1,4 +1,5 @@
 ---
+import PageHero from '../components/core/PageHero.astro';
 import Layout from '../layouts/Layout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import EventInquiryForm from '../components/core/EventInquiryForm.astro';
@@ -32,9 +33,6 @@ const upcomingEvents = (await getCollection('upcomingEvents'))
 
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
-const blockText = (value: string) => `\n${value}\n`;
-const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
-const inlineText = (value: string) => ` ${value} `;
 const eventTypesSection = page.sections.eventTypes;
 const upcomingSection = page.sections.upcoming;
 const inquirySection = page.sections.inquiry;
@@ -51,54 +49,22 @@ const breadcrumbSchema = {
 
 <Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
-  <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
-    <div class="absolute inset-0">
-      <Image
-        src={padresGameDayEvents}
-        alt="Packed crowd at Park 101 Carlsbad during a game day event"
-        class="absolute inset-0 w-full h-full object-cover object-center"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        widths={[640, 828, 1080, 1200, 1600, 1920]}
-        sizes="100vw"
-      />
-      <div class="absolute inset-0 bg-brand-dark/65"></div>
-    </div>
-    <div class="h-20 shrink-0"></div>
-    <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
-      <div class="max-w-3xl mx-auto text-center">
-        <span class="inline-block font-body text-xs font-bold tracking-eyebrow uppercase text-brand-orange mb-4">{inlineText(page.hero.eyebrow)}</span>
-        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6"><Fragment set:html={blockHtml(page.hero.heading)} /></h1>
-        {page.hero.body && (
-          <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto"><Fragment set:html={blockText(page.hero.body)} /></p>
-        )}
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={siteProfile.ordering.reservationsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
-          >
-            Reserve a Table
-          </a>
-          <a
-            href="/private-events/game-day-parties"
-            class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
-          >
-            Book a Watch Party
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    image={padresGameDayEvents}
+    imageAlt="Packed crowd at Park 101 Carlsbad during a game day event"
+    eyebrow={page.hero.eyebrow}
+    heading={page.hero.heading}
+    body={page.hero.body}
+    primary={{ label: 'Reserve a Table', href: siteProfile.ordering.reservationsUrl, external: true }}
+    secondary={{ label: 'Book a Watch Party', href: '/private-events/game-day-parties' }}
+  />
 
   {eventTypesSection && (
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(eventTypesSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-section text-brand-steel uppercase leading-display tracking-tight"><Fragment set:html={blockText(eventTypesSection.heading)} /></h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{eventTypesSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-section text-brand-steel uppercase leading-display tracking-tight"><Fragment set:html={eventTypesSection.heading} /></h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {eventTypes.map(({ data: type }) => {
@@ -136,8 +102,8 @@ const breadcrumbSchema = {
   {upcomingSection && (
   <section class="bg-brand-dark px-6 sm:px-8 lg:px-12 py-20">
     <div class="max-w-4xl mx-auto text-center">
-      <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(upcomingSection.eyebrow)}</span>
-      <h2 class="font-display font-bold text-section text-brand-white uppercase leading-display tracking-tight mb-8">{blockText(upcomingSection.heading)}</h2>
+      <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{upcomingSection.eyebrow}</span>
+      <h2 class="font-display font-bold text-section text-brand-white uppercase leading-display tracking-tight mb-8">{upcomingSection.heading}</h2>
       {upcomingEvents.length === 0 ? (
         <p class="font-body text-brand-white/60 text-base max-w-lg mx-auto">
           New game day, live music, and special-event dates are added as they're announced. Follow

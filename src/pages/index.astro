@@ -31,10 +31,6 @@ import brunchChilaquiles from '../assets/brunch/park-101-brunch-chilaquiles-tri-
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const page = (await getCollection('home'))[0].data;
 const googleMaps = await getGoogleMapsPlace(siteProfile);
-const blockText = (value: string) => `\n${value}\n`;
-const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
-const inlineText = (value: string) => ` ${value} `;
-const homeEyebrowHtml = (value: string) => ` ${value}\n`;
 const venueSection = page.sections.venue;
 const sportsSection = page.sections.sports;
 const sportsBannerSection = page.sections.sportsBanner;
@@ -105,8 +101,6 @@ const drinkItems = [
   transparentNav={true}
 >
 
-  <PromotionModal siteSlug="park101" />
-
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="relative min-h-screen w-full bg-brand-dark flex flex-col justify-between overflow-hidden">
     <div class="absolute inset-0 z-0">
@@ -127,16 +121,16 @@ const drinkItems = [
       <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/35 via-transparent to-brand-dark/5"></div>
     </div>
 
-    <div class="h-20 shrink-0"></div>
+    <div class="h-(--site-header-height) shrink-0"></div>
 
     <div class="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pb-8">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={homeEyebrowHtml(page.hero.eyebrow)} /></span>
-      <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight max-w-4xl mb-3">{blockText(page.hero.heading)}</h1>
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={page.hero.eyebrow} /></span>
+      <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight max-w-4xl mb-3">{page.hero.heading}</h1>
       {page.hero.subheading && (
-        <p class="font-display font-bold text-panel text-brand-orange uppercase tracking-tight leading-snug max-w-2xl mb-6">{blockText(page.hero.subheading)}</p>
+        <p class="font-display font-bold text-panel text-brand-orange uppercase tracking-tight leading-snug max-w-2xl mb-6">{page.hero.subheading}</p>
       )}
       {page.hero.body && (
-        <p class="font-body font-light text-brand-cream/75 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed">{inlineText(page.hero.body)}</p>
+        <p class="font-body font-light text-brand-cream/75 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed">{page.hero.body}</p>
       )}
       <div class="flex flex-col sm:flex-row gap-4">
         <a
@@ -188,11 +182,11 @@ const drinkItems = [
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(venueSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(venueSection.heading)} /></h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{venueSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={venueSection.heading} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           {venueSection.body && (
-            <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{blockText(venueSection.body)}</p>
+            <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{venueSection.body}</p>
           )}
           <a
             href="/venue"
@@ -223,10 +217,10 @@ const drinkItems = [
     </div>
     <div class="relative z-10 max-w-7xl w-full mx-auto">
       <div class="max-w-xl">
-        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{inlineText(sportsBannerSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={blockHtml(sportsBannerSection.heading)} /></h2>
+        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{sportsBannerSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={sportsBannerSection.heading} /></h2>
         {sportsBannerSection.body && (
-          <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-md"><Fragment set:html={blockText(sportsBannerSection.body)} /></p>
+          <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-md"><Fragment set:html={sportsBannerSection.body} /></p>
         )}
         <a
           href="/sports"
@@ -245,8 +239,8 @@ const drinkItems = [
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(sportsSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(sportsSection.heading)} /></h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{sportsSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6"><Fragment set:html={sportsSection.heading} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
             {siteProfile.venue.sports.description}
@@ -284,8 +278,8 @@ const drinkItems = [
   <section class="relative bg-brand-cream py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(foodSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">{blockText(foodSection.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{foodSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase tracking-tight">{foodSection.heading}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -325,11 +319,11 @@ const drinkItems = [
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-xl mb-12">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(drinksSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-display"><Fragment set:html={blockHtml(drinksSection.heading)} /></h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{drinksSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight leading-display"><Fragment set:html={drinksSection.heading} /></h2>
         <div class="w-12 h-[2px] bg-brand-orange mt-5 mb-5"></div>
         {drinksSection.body && (
-          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg max-w-lg leading-relaxed"><Fragment set:html={blockText(drinksSection.body)} /></p>
+          <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg max-w-lg leading-relaxed"><Fragment set:html={drinksSection.body} /></p>
         )}
       </div>
 
@@ -368,10 +362,10 @@ const drinkItems = [
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
     <div class="relative z-10 max-w-2xl w-full mx-auto">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{inlineText(eventsSection.eyebrow)}</span>
-      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={blockHtml(eventsSection.heading)} /></h2>
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{eventsSection.eyebrow}</span>
+      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={eventsSection.heading} /></h2>
       {eventsSection.body && (
-        <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto"><Fragment set:html={blockText(eventsSection.body)} /></p>
+        <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto"><Fragment set:html={eventsSection.body} /></p>
       )}
       <a
         href="/events"
@@ -389,11 +383,11 @@ const drinkItems = [
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[700px]">
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(brunchSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(brunchSection.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{brunchSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{brunchSection.heading}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           {brunchSection.body && (
-            <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{blockText(brunchSection.body)}</p>
+            <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{brunchSection.body}</p>
           )}
           <a
             href="/brunch"
@@ -435,8 +429,8 @@ const drinkItems = [
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-tan">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(familiesSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(familiesSection.heading)} /></h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{familiesSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={familiesSection.heading} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {siteProfile.venue.familiesPets.description}
@@ -474,10 +468,10 @@ const drinkItems = [
       <div class="absolute inset-0 bg-brand-dark/60"></div>
     </div>
     <div class="relative z-10 max-w-2xl w-full mx-auto">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(privateEventsSection.eyebrow)}</span>
-      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={blockHtml(privateEventsSection.heading)} /></h2>
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{privateEventsSection.eyebrow}</span>
+      <h2 class="font-display font-bold text-5xl sm:text-6xl text-brand-white uppercase tracking-tight leading-ultra mb-6"><Fragment set:html={privateEventsSection.heading} /></h2>
       {privateEventsSection.body && (
-        <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto"><Fragment set:html={blockText(privateEventsSection.body)} /></p>
+        <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto"><Fragment set:html={privateEventsSection.body} /></p>
       )}
       <a
         href="/private-events"
@@ -497,5 +491,8 @@ const drinkItems = [
       class="relative max-w-7xl mx-auto h-[420px]"
     />
   </section>
+
+  <!-- Dialog: closed until a promotion opens it, so it sits after the content and the page outline starts at the H1. -->
+  <PromotionModal siteSlug="park101" />
 
 </Layout>

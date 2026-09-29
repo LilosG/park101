@@ -1,7 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import Layout from '../../../../layouts/Layout.astro';
-import { blogCategories, getCategoryMeta } from '../../../../data/blog-categories';
+import { blogCategories, categoryGuideName, getCategoryMeta } from '../../../../data/blog-categories';
 import BlogPostCard from '../../../../components/blog/BlogPostCard.astro';
 import BlogPagination from '../../../../components/blog/BlogPagination.astro';
 
@@ -27,10 +27,11 @@ const { page } = Astro.props as any;
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const categoryMeta = getCategoryMeta(category as string);
 
+const guideName = categoryGuideName(categoryMeta.label);
 const pageTitle = page.currentPage === 1
-  ? `${categoryMeta.label} Guides in Carlsbad, CA | Park 101`
-  : `${categoryMeta.label} Guides in Carlsbad, CA | Page ${page.currentPage} | Park 101`;
-const pageDescription = categoryMeta.description || `${categoryMeta.label} guides from Park 101 in Carlsbad Village.`;
+  ? `${guideName} in Carlsbad, CA | Park 101`
+  : `${guideName} in Carlsbad, CA – Page ${page.currentPage} | Park 101`;
+const pageDescription = categoryMeta.description || `${guideName} from Park 101 in Carlsbad Village.`;
 
 const canonical = page.currentPage === 1
   ? `${siteProfile.url}/blog/category/${categoryMeta.slug}`
@@ -62,7 +63,7 @@ const breadcrumbSchema = {
   <section class="relative bg-brand-dark pb-16 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto text-center">
       <h1 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-4">
-        {categoryMeta.label} Guides in Carlsbad
+        {guideName} in Carlsbad
       </h1>
       <p class="font-body text-base sm:text-lg text-brand-white/70 max-w-2xl mx-auto">
         {categoryMeta.description}
@@ -74,7 +75,7 @@ const breadcrumbSchema = {
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {page.data.map((post: any) => (
-          <BlogPostCard post={post} />
+          <BlogPostCard post={post} headingLevel={2} />
         ))}
       </div>
 

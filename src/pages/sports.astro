@@ -1,4 +1,5 @@
 ---
+import PageHero from '../components/core/PageHero.astro';
 import Layout from '../layouts/Layout.astro';
 import TrustBar from '../components/ui/TrustBar.astro';
 import TeamScheduleSection from '../components/ui/TeamScheduleSection.astro';
@@ -55,39 +56,21 @@ const buckeyesSchedule = [
 ---
 
 <Layout
-  title="Watch Buffalo Bills & Ohio State Football in Carlsbad | Park 101"
-  description="Park 101 is Carlsbad's game day headquarters for Buffalo Bills and Ohio State Buckeyes football, with a massive outdoor LED wall, 20+ screens, food, drinks and reservations."
+  title="Watch Party Headquarters in Carlsbad, CA | Park 101"
+  description="Park 101 is Carlsbad's game day headquarters for Bills and Buckeyes football, with an outdoor LED wall, 20+ screens, food, drinks and reservations."
   ogImage="/images/home/seo/ogImage.jpg"
 >
   <!-- HERO -->
-  <section class="relative min-h-[90vh] w-full bg-brand-dark flex flex-col justify-end overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <Picture
-        src={sportsHero}
-        alt="Buffalo Bills fans watching football at Park 101 in Carlsbad Village"
-        class="w-full h-full object-cover object-[50%_15%]"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        formats={['avif', 'webp']}
-        fallbackFormat="webp"
-        widths={[640, 828, 1080, 1200, 1600, 1920]}
-        sizes="100vw"
-      />
-      <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-brand-dark/40 to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-brand-dark/20"></div>
-    </div>
-    <div class="h-24 shrink-0"></div>
-    <div class="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pb-16 lg:pb-24">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">Carlsbad Village &middot; Game Day Headquarters</span>
-      <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight max-w-3xl mb-4">Watch Party<br />Headquarters</h1>
-      <p class="font-display font-bold text-panel text-brand-orange uppercase tracking-tight leading-snug max-w-2xl mb-8">Buffalo Bills · Ohio State Buckeyes · NFL &amp; College Football</p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#schedule" class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center">See the Schedule</a>
-        <a href={reservationsUrl} target="_blank" rel="noopener noreferrer" class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center">Reserve a Table</a>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    image={sportsHero}
+    imageAlt="Buffalo Bills fans watching football at Park 101 in Carlsbad Village"
+    imageFocus="50% 15%"
+    eyebrow="Carlsbad Village · Game Day Headquarters"
+    heading="Watch Party<br />Headquarters"
+    subheading="Buffalo Bills · Ohio State Buckeyes · NFL & College Football"
+    primary={{ label: 'See the Schedule', href: '#schedule' }}
+    secondary={{ label: 'Reserve a Table', href: reservationsUrl, external: true }}
+  />
 
   <TrustBar />
 

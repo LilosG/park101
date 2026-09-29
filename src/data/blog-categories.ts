@@ -70,3 +70,8 @@ export function getCategoryMeta(slug: string): BlogCategoryMeta {
     }
   );
 }
+
+/** "Game Day" → "Game Day Guides"; a label that already ends in "Guides" is used as-is. */
+export function categoryGuideName(label: string): string {
+  return /\bGuides$/.test(label) ? label : `${label} Guides`;
+}
