@@ -79,6 +79,8 @@
   --min-h-cinematic: 70vh;
   --min-h-events:    65vh;
   --min-h-panel:     50vh;
+  /* Every non-home page hero. Home keeps its full-screen hero. */
+  --min-h-page-hero: 90vh;
 
   /* ─── Aspect Ratios ─────────────────────────────────────── */
   --aspect-venue:    4 / 3;
@@ -86,6 +88,8 @@
   --aspect-cinema:   21 / 9;
 
   /* ─── Spacing ───────────────────────────────────────────── */
+  /* Height of the fixed site header. The nav, hero spacers and anchor offsets all read this. */
+  --site-header-height: 5rem;
   --spacing-section:    5rem;
   --spacing-section-lg: 7.5rem;
 
@@ -115,6 +119,8 @@
   }
 
   html {
+    /* Keep in-page anchor targets clear of the fixed header. */
+    scroll-padding-top: var(--site-header-height);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -255,5 +261,12 @@
   .prose-blog img {
     border-radius: var(--radius-lg);
     margin: 2rem 0;
+  }
+
+  /* Wide tables scroll inside the article instead of widening the page on phones. */
+  .prose-blog table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
   }
 }

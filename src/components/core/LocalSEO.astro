@@ -39,7 +39,7 @@ const businessId = `${siteUrl}/#restaurant`;
 const websiteId = `${siteUrl}/#website`;
 const isHomePage = Astro.url.pathname === '/';
 
-const fullTitle = (title.includes('Park 101') || title.includes('PRK 101'))
+const fullTitle = title.includes('Park 101')
   ? title
   : `${title} | Park 101`;
 

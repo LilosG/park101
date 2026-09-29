@@ -21,9 +21,9 @@ const categoryList = Object.values(blogCategories).filter((category) => usedCate
 
 const pageTitle = page.currentPage === 1
   ? 'Carlsbad Food, Events & Game Day Guides | Park 101'
-  : `Carlsbad Food, Events & Game Day Guides | Page ${page.currentPage} | Park 101`;
+  : `Carlsbad Food, Events & Game Day Guides – Page ${page.currentPage} | Park 101`;
 const pageDescription =
-  'Local guides to rooftop dining, game day, family-friendly restaurants, events and things to do at Park 101 in Carlsbad Village.';
+  'Local guides to rooftop dining, game day, family-friendly restaurants, events and things to do at Park 101 in Carlsbad, CA.';
 
 const canonical = page.currentPage === 1
   ? `${siteProfile.url}/blog`
@@ -85,7 +85,7 @@ const breadcrumbSchema = {
       ) : (
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {page.data.map((post: any) => (
-            <BlogPostCard post={post} />
+            <BlogPostCard post={post} headingLevel={2} />
           ))}
         </div>
       )}

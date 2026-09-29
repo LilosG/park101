@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+
+interface Cta {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+interface Props {
+  image: ImageMetadata;
+  imageAlt: string;
+  eyebrow: string;
+  /** The page's single H1. May contain `<br />`. */
+  heading: string;
+  body?: string;
+  /** Optional highlighted line under the H1. */
+  subheading?: string;
+  primary?: Cta;
+  secondary?: Cta;
+  /** CSS object-position for the photo, e.g. `50% 15%`. */
+  imageFocus?: string;
+  /** Every page hero uses one height; add a variant here only when a page type needs another. */
+  variant?: 'page';
+}
+
+const {
+  image,
+  imageAlt,
+  eyebrow,
+  heading,
+  body,
+  subheading,
+  primary,
+  secondary,
+  imageFocus,
+  variant = 'page',
+} = Astro.props;
+
+const heights = { page: 'min-h-(--min-h-page-hero)' } as const;
+const external = (cta: Cta) => (cta.external ? { target: '_blank', rel: 'noopener noreferrer' } : {});
+---
+
+<section class={`relative ${heights[variant]} bg-brand-dark flex flex-col overflow-hidden`}>
+  <div class="absolute inset-0">
+    <Image
+      src={image}
+      alt={imageAlt}
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style={imageFocus ? `object-position: ${imageFocus}` : undefined}
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      widths={[640, 828, 1080, 1200, 1600, 1920]}
+      sizes="100vw"
+    />
+    <div class="absolute inset-0 bg-brand-dark/65"></div>
+  </div>
+  <div class="h-(--site-header-height) shrink-0"></div>
+  <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{eyebrow}</span>
+      <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6"><Fragment set:html={heading} /></h1>
+      {subheading && (
+        <p class="font-display font-bold text-panel text-brand-orange uppercase tracking-tight leading-snug max-w-2xl mx-auto mb-6">{subheading}</p>
+      )}
+      {body && (
+        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{body}</p>
+      )}
+      {(primary || secondary) && (
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          {primary && (
+            <a
+              href={primary.href}
+              {...external(primary)}
+              class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
+            >{primary.label}</a>
+          )}
+          {secondary && (
+            <a
+              href={secondary.href}
+              {...external(secondary)}
+              class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
+            >{secondary.label}</a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

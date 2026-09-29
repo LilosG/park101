@@ -1,4 +1,5 @@
 ---
+import PageHero from '../components/core/PageHero.astro';
 import Layout from '../layouts/Layout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import StatBar from '../components/core/StatBar.astro';
@@ -16,9 +17,6 @@ const venue = siteProfile.venue;
 
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
-const blockText = (value: string) => `\n${value}\n`;
-const blockHtml = (value: string) => `\n${value.replaceAll('<br />', '<br>')}\n`;
-const inlineText = (value: string) => ` ${value} `;
 const rooftopSection = page.sections.rooftop;
 const courtyardSection = page.sections.courtyard;
 const sportsSection = page.sections.sports;
@@ -30,47 +28,15 @@ const finalSection = page.sections.final;
 <Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="relative min-h-[650px] bg-brand-dark flex flex-col overflow-hidden">
-    <div class="absolute inset-0">
-      <Image
-        src={waterfrontRooftop}
-        alt="Rooftop deck at Park 101 Carlsbad with Carlsbad Village skyline"
-        class="absolute inset-0 w-full h-full object-cover object-center"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        widths={[640, 828, 1080, 1200, 1600, 1920]}
-        sizes="100vw"
-      />
-      <div class="absolute inset-0 bg-brand-dark/65"></div>
-    </div>
-    <div class="h-20 shrink-0"></div>
-    <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
-      <div class="max-w-3xl mx-auto text-center">
-        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{inlineText(page.hero.eyebrow)}</span>
-        <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6"><Fragment set:html={blockHtml(page.hero.heading)} /></h1>
-        {page.hero.body && (
-          <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body)}</p>
-        )}
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={siteProfile.ordering.reservationsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
-          >
-            Reserve a Table
-          </a>
-          <a
-            href="/private-events"
-            class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
-          >
-            Private Events
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    image={waterfrontRooftop}
+    imageAlt="Rooftop deck at Park 101 Carlsbad with Carlsbad Village skyline"
+    eyebrow={page.hero.eyebrow}
+    heading={page.hero.heading}
+    body={page.hero.body}
+    primary={{ label: 'Reserve a Table', href: siteProfile.ordering.reservationsUrl, external: true }}
+    secondary={{ label: 'Private Events', href: '/private-events' }}
+  />
 
   <!-- ── STAT BAR ─────────────────────────────────────────── -->
   <StatBar stats={[
@@ -97,8 +63,8 @@ const finalSection = page.sections.final;
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(rooftopSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{inlineText(rooftopSection.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{rooftopSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{rooftopSection.heading}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
             {venue.rooftop.description}
@@ -120,8 +86,8 @@ const finalSection = page.sections.final;
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(courtyardSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{inlineText(courtyardSection.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{courtyardSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{courtyardSection.heading}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.courtyard.description}
@@ -165,8 +131,8 @@ const finalSection = page.sections.final;
       </div>
       <div class="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-dark">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(sportsSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{inlineText(sportsSection.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{sportsSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{sportsSection.heading}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-cream/70 text-base sm:text-lg leading-relaxed mb-8">
             {venue.sports.description}
@@ -188,8 +154,8 @@ const finalSection = page.sections.final;
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[600px]">
       <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(indoorSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{inlineText(indoorSection.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{indoorSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{indoorSection.heading}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.indoorBar.description}
@@ -239,8 +205,8 @@ const finalSection = page.sections.final;
       </div>
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 bg-brand-tan">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{inlineText(familiesSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={blockHtml(familiesSection.heading)} /></h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{familiesSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6"><Fragment set:html={familiesSection.heading} /></h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">
             {venue.familiesPets.description}
@@ -260,10 +226,10 @@ const finalSection = page.sections.final;
   {finalSection && (
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12 text-center">
     <div class="max-w-2xl mx-auto">
-      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(finalSection.eyebrow)}</span>
-      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{blockText(finalSection.heading)}</h2>
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{finalSection.eyebrow}</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase leading-display tracking-tight mb-6">{finalSection.heading}</h2>
       {finalSection.body && (
-        <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{blockText(finalSection.body)}</p>
+        <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{finalSection.body}</p>
       )}
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a

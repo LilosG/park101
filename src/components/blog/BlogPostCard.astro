@@ -15,9 +15,12 @@ interface Props {
       category: string;
     };
   };
+  /** Level of the card title; pass 2 where the card list sits directly under the page H1. */
+  headingLevel?: 2 | 3;
 }
 
-const { post } = Astro.props;
+const { post, headingLevel = 3 } = Astro.props;
+const Heading = `h${headingLevel}` as 'h2' | 'h3';
 const category = getCategoryMeta(post.data.category);
 const { image, imageAlt } = resolveBlogImage(post);
 const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
@@ -51,9 +54,9 @@ const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
     <time datetime={post.data.publishDate.toISOString()} class="font-body text-xs text-brand-dark/50 uppercase tracking-label mb-2">
       {formattedDate}
     </time>
-    <h3 class="font-display font-bold text-xl text-brand-steel leading-tight mb-2 group-hover:text-brand-orange transition-colors duration-150">
+    <Heading class="font-display font-bold text-xl text-brand-steel leading-tight mb-2 group-hover:text-brand-orange transition-colors duration-150">
       {post.data.title}
-    </h3>
+    </Heading>
     <p class="font-body text-sm text-brand-dark/70 leading-relaxed line-clamp-3">
       {post.data.description}
     </p>

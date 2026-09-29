@@ -1,4 +1,5 @@
 ---
+import PageHero from '../components/core/PageHero.astro';
 import Layout from '../layouts/Layout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import StatBar from '../components/core/StatBar.astro';
@@ -50,7 +51,6 @@ const faqs = [
 
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
-const blockText = (value: string) => `\n${value}\n`;
 const foodSection = page.sections.food;
 const drinkSection = page.sections.drink;
 const privateEventsSection = page.sections.privateEvents;
@@ -71,49 +71,15 @@ const faqSchema = {
 <Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="relative min-h-[650px] bg-brand-dark flex flex-col overflow-hidden">
-    <div class="absolute inset-0">
-      <Image
-        src={brunchChilaquilesImg}
-        alt="Smoked tri-tip chilaquiles brunch plate at Park 101 Carlsbad"
-        class="absolute inset-0 w-full h-full object-cover object-center"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        widths={[640, 828, 1080, 1200, 1600, 1920]}
-        sizes="100vw"
-      />
-      <div class="absolute inset-0 bg-brand-dark/70"></div>
-    </div>
-    <div class="h-20 shrink-0"></div>
-    <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
-    <div class="max-w-3xl mx-auto text-center">
-      <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4"><Fragment set:html={blockText(page.hero.eyebrow)} /></span>
-      <h1 class="font-display font-bold text-section-xl text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
-      {page.hero.body && (
-        <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed mb-8 max-w-xl mx-auto">{blockText(page.hero.body)}</p>
-      )}
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href={siteProfile.ordering.reservationsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200 text-center"
-        >
-          Reserve for Brunch
-        </a>
-        <a
-          href={siteProfile.ordering.toastUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-8 py-4 border border-brand-white/60 hover:border-brand-white hover:bg-brand-white/10 text-brand-white font-display font-bold uppercase tracking-button-outline text-sm transition-all duration-200 text-center"
-        >
-          View Full Menu
-        </a>
-      </div>
-    </div>
-    </div>
-  </section>
+  <PageHero
+    image={brunchChilaquilesImg}
+    imageAlt="Smoked tri-tip chilaquiles brunch plate at Park 101 Carlsbad"
+    eyebrow={page.hero.eyebrow}
+    heading={page.hero.heading}
+    body={page.hero.body}
+    primary={{ label: 'Reserve for Brunch', href: siteProfile.ordering.reservationsUrl, external: true }}
+    secondary={{ label: 'View Full Menu', href: siteProfile.ordering.toastUrl, external: true }}
+  />
 
   <!-- ── STAT BAR ─────────────────────────────────────────── -->
   <StatBar stats={[
@@ -142,8 +108,8 @@ const faqSchema = {
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{blockText(foodSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(foodSection.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-eyebrow-wide uppercase text-brand-orange mb-3">{foodSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{foodSection.heading}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -185,8 +151,8 @@ const faqSchema = {
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-5xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-12">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(drinkSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(drinkSection.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{drinkSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{drinkSection.heading}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -218,11 +184,11 @@ const faqSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[500px]">
       <div class="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-20 bg-brand-cream">
         <div class="max-w-md mx-auto lg:mx-0">
-          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(privateEventsSection.eyebrow)}</span>
-          <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(privateEventsSection.heading)}</h2>
+          <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{privateEventsSection.eyebrow}</span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-dark uppercase leading-display tracking-tight mb-6">{privateEventsSection.heading}</h2>
           <div class="w-12 h-[2px] bg-brand-orange mb-6"></div>
           {privateEventsSection.body && (
-            <p class="font-body font-light text-brand-dark/75 text-base leading-relaxed mb-8">{blockText(privateEventsSection.body)}</p>
+            <p class="font-body font-light text-brand-dark/75 text-base leading-relaxed mb-8">{privateEventsSection.body}</p>
           )}
           <a
             href="/private-events"
@@ -252,8 +218,8 @@ const faqSchema = {
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(faqSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(faqSection.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{faqSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{faqSection.heading}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -273,10 +239,10 @@ const faqSchema = {
   {finalSection && (
   <section class="relative bg-brand-tan py-20 px-6 sm:px-8 lg:px-12 text-center">
     <div class="max-w-2xl mx-auto">
-      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-dark/70 mb-4">{blockText(finalSection.eyebrow)}</span>
-      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{blockText(finalSection.heading)}</h2>
+      <span class="block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-dark/70 mb-4">{finalSection.eyebrow}</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-dark uppercase leading-display tracking-tight mb-6">{finalSection.heading}</h2>
       {finalSection.body && (
-        <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{blockText(finalSection.body)}</p>
+        <p class="font-body font-light text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-8">{finalSection.body}</p>
       )}
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a

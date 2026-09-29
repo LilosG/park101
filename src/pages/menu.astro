@@ -1,4 +1,5 @@
 ---
+import PageHero from '../components/core/PageHero.astro';
 import Layout from '../layouts/Layout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import MenuItemCard from '../components/menu/MenuItemCard.astro';
@@ -24,7 +25,6 @@ const cocktailItems = dinnerDrinkItems.map(toCardItem);
 
 const pageTitle = page.seo.title;
 const pageDescription = page.seo.description;
-const blockText = (value: string) => `\n${value}\n`;
 const foodSection = page.sections.food;
 const drinkSection = page.sections.drink;
 
@@ -41,31 +41,13 @@ const breadcrumbSchema = {
 <Layout title={pageTitle} description={pageDescription} ogImage={page.seo.ogImage} transparentNav={true}>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="relative min-h-[550px] bg-brand-dark flex flex-col overflow-hidden">
-    <div class="absolute inset-0">
-      <Image
-        src={foodSpreadImg}
-        alt="A spread of BBQ dishes at Park 101 Carlsbad"
-        class="absolute inset-0 w-full h-full object-cover object-center"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        widths={[640, 828, 1080, 1200, 1600, 1920]}
-        sizes="100vw"
-      />
-      <div class="absolute inset-0 bg-brand-dark/60"></div>
-    </div>
-    <div class="h-20 shrink-0"></div>
-    <div class="relative z-10 flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 pb-16">
-      <div class="max-w-2xl mx-auto text-center">
-        <span class="inline-block font-body text-xs font-bold tracking-eyebrow-lg uppercase text-brand-orange mb-4">{blockText(page.hero.eyebrow)}</span>
-        <h1 class="font-display font-bold text-hero text-brand-white uppercase leading-ultra tracking-tight mb-6">{blockText(page.hero.heading)}</h1>
-        {page.hero.body && (
-          <p class="font-body font-light text-brand-cream/80 text-lg leading-relaxed max-w-lg mx-auto">{blockText(page.hero.body)}</p>
-        )}
-      </div>
-    </div>
-  </section>
+  <PageHero
+    image={foodSpreadImg}
+    imageAlt="A spread of BBQ dishes at Park 101 Carlsbad"
+    eyebrow={page.hero.eyebrow}
+    heading={page.hero.heading}
+    body={page.hero.body}
+  />
 
   <!-- ── STAT BAR ─────────────────────────────────────────── -->
   <StatBar stats={[
@@ -94,8 +76,8 @@ const breadcrumbSchema = {
   <section class="relative bg-brand-steel py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(foodSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(foodSection.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{foodSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{foodSection.heading}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
       </div>
 
@@ -124,8 +106,8 @@ const breadcrumbSchema = {
   <section class="relative bg-brand-dark py-20 px-6 sm:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{blockText(drinkSection.eyebrow)}</span>
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{blockText(drinkSection.heading)}</h2>
+        <span class="block font-body text-xs font-bold tracking-label uppercase text-brand-orange mb-3">{drinkSection.eyebrow}</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-brand-white uppercase tracking-tight">{drinkSection.heading}</h2>
         <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
         <p class="font-body font-light text-brand-cream/70 text-sm sm:text-base mt-6">
           <span class="font-display font-bold uppercase tracking-wide text-brand-orange">{siteProfile.happyHours.label}:</span>

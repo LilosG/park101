@@ -53,8 +53,8 @@ const pageSearchMeta = searchMeta[event.slug] ?? {
   h1: `${event.name} in Carlsbad`,
 };
 const pageTitle = pageSearchMeta.title;
-const descriptionSuffix = ` ${event.capacity} in Carlsbad Village.`;
-const maxDescLength = 160 - descriptionSuffix.length;
+const descriptionSuffix = ` ${event.capacity} in Carlsbad, CA.`;
+const maxDescLength = 155 - descriptionSuffix.length;
 const baseDescription = event.metaDescription ?? event.description;
 const trimmedDescription = baseDescription.length > maxDescLength
   ? (() => {

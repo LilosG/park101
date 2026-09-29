@@ -7,8 +7,6 @@ const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 const googleMaps = await getGoogleMapsPlace(siteProfile);
 const navigation = (await getEntry('navigation', 'navigation'))!.data;
 const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
-const [menuLink, brunchLink, eventsLink, venueLink, privateEventsLink, blogLink, contactLink] = navigation.footerLinks;
-const blockText = (value: string) => `\n${value}\n`;
 ---
 
 <footer class="bg-brand-dark text-brand-white">
@@ -67,23 +65,19 @@ const blockText = (value: string) => `\n${value}\n`;
 
       <!-- Col 2: Nav Links -->
       <div>
-        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">{blockText(navigation.labels.footerExplore)}</h3>
+        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">{navigation.labels.footerExplore}</h3>
         <nav aria-label={navigation.labels.footerNavigationAria}>
           <ul class="flex flex-col gap-3">
-            <li><a href={menuLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{menuLink.label}</a></li>
-            <li><a href={brunchLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{brunchLink.label}</a></li>
-            <li><a href={eventsLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{eventsLink.label}</a></li>
-            <li><a href={venueLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{venueLink.label}</a></li>
-            <li><a href={privateEventsLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{privateEventsLink.label}</a></li>
-            <li><a href={blogLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{blogLink.label}</a></li>
-            <li><a href={contactLink.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{contactLink.label}</a></li>
+            {navigation.footerLinks.map((link) => (
+              <li><a href={link.href} class="text-sm text-brand-white/70 hover:text-brand-orange transition-colors duration-150 font-display font-semibold uppercase tracking-wide">{link.label}</a></li>
+            ))}
           </ul>
         </nav>
       </div>
 
       <!-- Col 3: Hours + Address -->
       <div>
-        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">{blockText(navigation.labels.footerVisit)}</h3>
+        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-brand-orange mb-6">{navigation.labels.footerVisit}</h3>
 
         <!-- Address -->
         <a
@@ -135,13 +129,13 @@ const blockText = (value: string) => `\n${value}\n`;
             target="_blank"
             rel="noopener noreferrer"
             class="flex-1 py-2.5 text-center text-xs font-display font-bold uppercase tracking-wider border border-brand-white/30 text-brand-white/70 hover:border-brand-orange hover:text-brand-orange transition-all duration-200 rounded-sm"
-          >{blockText(navigation.labels.footerOrder)}</a>
+          >{navigation.labels.footerOrder}</a>
           <a
             href={siteProfile.ordering.reservationsUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="flex-1 py-2.5 text-center text-xs font-display font-bold uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm"
-          >{blockText(navigation.labels.footerReserve)}</a>
+          >{navigation.labels.footerReserve}</a>
         </div>
       </div>
 
@@ -153,7 +147,7 @@ const blockText = (value: string) => `\n${value}\n`;
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
         <a href={navigation.links.network} target="_blank" rel="noopener noreferrer"
-          class="text-[10px] font-display font-bold uppercase tracking-widest text-brand-white/30 hover:text-brand-orange transition-colors whitespace-nowrap">{blockText(navigation.labels.network)}</a>
+          class="text-[10px] font-display font-bold uppercase tracking-widest text-brand-white/30 hover:text-brand-orange transition-colors whitespace-nowrap">{navigation.labels.network}</a>
         <div class="flex flex-wrap gap-x-6 gap-y-2">
           {portfolio.map((v) => (
             <a href={v.url} target="_blank" rel="noopener noreferrer"
@@ -181,7 +175,7 @@ const blockText = (value: string) => `\n${value}\n`;
           Your Privacy Choices
         </a>
         <a href={navigation.links.websiteCredit} target="_blank" rel="noopener noreferrer"
-          class="text-brand-white/50 hover:text-brand-orange text-[13px] transition-colors">{blockText(navigation.labels.websiteCredit)}</a>
+          class="text-brand-white/50 hover:text-brand-orange text-[13px] transition-colors">{navigation.labels.websiteCredit}</a>
       </div>
     </div>
   </div>
