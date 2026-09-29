@@ -31,7 +31,7 @@ export const blogCategories: Record<string, BlogCategoryMeta> = {
   'weekly-specials': {
     slug: 'weekly-specials',
     label: 'Weekly Specials',
-    description: "Recurring specials and weekly programming at Park 101's rooftop bar and restaurant in Carlsbad, CA. Read the guides and plan your week around happy hour.",
+    description: "Recurring specials and weekly programming at Park 101's sports bar and restaurant in Carlsbad, CA. Read the guides and plan your week around happy hour.",
     image: '/images/drinks/park-101-frozen-drinks-carlsbad.jpg',
   },
   venue: {
