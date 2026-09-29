@@ -21,11 +21,11 @@ If you're specifically looking for a rooftop bar in Carlsbad, the setting matter
 
 ## What Makes a Rooftop Bar Worth Visiting
 
-* **A genuine elevated, open-air deck** rather than a ground-level patio.
-* **A setting worth being upstairs for** with views over Carlsbad Village and the coastal area.
-* **Comfortable seating for groups** so the rooftop works for more than a quick drink.
-* **Fire pits and evening atmosphere** when the coastal air cools down.
-* **Indoor and courtyard options** when your group wants a different setting without changing venues.
+- **A genuine elevated, open-air deck** rather than a ground-level patio.
+- **A setting worth being upstairs for** with views over Carlsbad Village and the coastal area.
+- **Comfortable seating for groups** so the rooftop works for more than a quick drink.
+- **Fire pits and evening atmosphere** when the coastal air cools down.
+- **Indoor and courtyard options** when your group wants a different setting without changing venues.
 
 ## Park 101's Rooftop Bar in Carlsbad Village
 

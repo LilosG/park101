@@ -59,16 +59,16 @@ Puesto excels as a dinner destination but lacks the sports bar infrastructure an
 
 ## Direct Comparison: Ocean Views, Cocktails, and Practicality
 
-| Feature                  | Park 101                          | The Lofts               | Puesto                   |
-| ------------------------ | --------------------------------- | ----------------------- | ------------------------ |
-| **Direct Ocean View**    | Yes, unobstructed                 | Partial, mezzanine only | Partial, rooftop only    |
-| **Rooftop Cocktail Bar** | Full-service, dedicated program   | Mezzanine bar only      | Yes, but dining-focused  |
-| **Happy Hour Hours**     | 3–6 PM Mon–Fri                    | 4–6 PM Mon–Fri          | 3–5 PM Mon–Thu           |
-| **Happy Hour Pricing**   | $2–3 off cocktails                | $4 well drinks          | $3 off margaritas        |
-| **Sports Bar Setup**     | Multiple screens, game-day crowds | Ambient lounge, no TVs  | No TVs, dining-only      |
-| **Parking**              | Street + public lots              | Street only, limited    | Valet + limited street   |
-| **Capacity**             | 150+ on rooftop deck              | 60–80 mezzanine         | 80–100 rooftop + dining  |
-| **Private Events**       | Full Venue Buyout available       | Limited private space   | Dining reservations only |
+| Feature | Park 101 | The Lofts | Puesto |
+|---------|----------|----------|--------|
+| **Direct Ocean View** | Yes, unobstructed | Partial, mezzanine only | Partial, rooftop only |
+| **Rooftop Cocktail Bar** | Full-service, dedicated program | Mezzanine bar only | Yes, but dining-focused |
+| **Happy Hour Hours** | 3–6 PM Mon–Fri | 4–6 PM Mon–Fri | 3–5 PM Mon–Thu |
+| **Happy Hour Pricing** | $2–3 off cocktails | $4 well drinks | $3 off margaritas |
+| **Sports Bar Setup** | Multiple screens, game-day crowds | Ambient lounge, no TVs | No TVs, dining-only |
+| **Parking** | Street + public lots | Street only, limited | Valet + limited street |
+| **Capacity** | 150+ on rooftop deck | 60–80 mezzanine | 80–100 rooftop + dining |
+| **Private Events** | Full Venue Buyout available | Limited private space | Dining reservations only |
 
 ## Why Park 101 Wins for Rooftop Oceanfront Viewing
 

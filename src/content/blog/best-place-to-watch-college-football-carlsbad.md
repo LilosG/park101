@@ -42,12 +42,12 @@ The layout also gives groups options. Fans who want the communal watch-party atm
 
 When choosing where to watch Saturday football in Carlsbad, look for a few core features:
 
-* **Enough screens for simultaneous games** so one matchup does not dominate every television.
-* **A large main screen** for rivalry games, ranked matchups and nationally televised games.
-* **Comfortable seating for longer stays** because college football Saturdays can last from morning through late evening.
-* **Food and drinks available throughout the day** so you do not have to leave between games.
-* **Indoor and outdoor options** that fit Carlsbad's coastal setting.
-* **Reservations for major games** when demand is likely to be higher.
+- **Enough screens for simultaneous games** so one matchup does not dominate every television.
+- **A large main screen** for rivalry games, ranked matchups and nationally televised games.
+- **Comfortable seating for longer stays** because college football Saturdays can last from morning through late evening.
+- **Food and drinks available throughout the day** so you do not have to leave between games.
+- **Indoor and outdoor options** that fit Carlsbad's coastal setting.
+- **Reservations for major games** when demand is likely to be higher.
 
 Park 101 combines all of those in one Carlsbad Village location.
 

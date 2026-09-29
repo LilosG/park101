@@ -40,10 +40,10 @@ Park 101's outdoor LED wall creates the main shared viewing experience, while ad
 
 Park 101 has multiple spaces for football viewing:
 
-* **Outdoor courtyard:** the main watch-party area centered around the large LED wall.
-* **Rooftop:** an open-air option for fans who want a more relaxed setting.
-* **Indoor bar:** a traditional sports-bar environment with screens throughout.
-* **20+ total screens:** useful during busy college football Saturdays when several games overlap.
+- **Outdoor courtyard:** the main watch-party area centered around the large LED wall.
+- **Rooftop:** an open-air option for fans who want a more relaxed setting.
+- **Indoor bar:** a traditional sports-bar environment with screens throughout.
+- **20+ total screens:** useful during busy college football Saturdays when several games overlap.
 
 See the [venue page](/venue) for more information about the different spaces.
 

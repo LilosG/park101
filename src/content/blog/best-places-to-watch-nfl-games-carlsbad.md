@@ -43,12 +43,12 @@ That multi-space setup is one of the main reasons Park 101 works as an **NFL bar
 
 When deciding where to watch football in Carlsbad, a few practical details matter:
 
-* **Multiple screens:** useful when several NFL games are happening at the same time.
-* **A large-format main screen:** better for nationally televised games, rivalry games and playoffs.
-* **Indoor and outdoor seating:** especially useful in Carlsbad, where open-air game days are part of the appeal.
-* **Food and drinks for a full game:** a football watch party can easily last three hours or more.
-* **Group-friendly seating:** important for fantasy leagues, visiting fans and larger Sunday groups.
-* **Reservations for high-demand games:** useful when a popular matchup is expected to draw a crowd.
+- **Multiple screens:** useful when several NFL games are happening at the same time.
+- **A large-format main screen:** better for nationally televised games, rivalry games and playoffs.
+- **Indoor and outdoor seating:** especially useful in Carlsbad, where open-air game days are part of the appeal.
+- **Food and drinks for a full game:** a football watch party can easily last three hours or more.
+- **Group-friendly seating:** important for fantasy leagues, visiting fans and larger Sunday groups.
+- **Reservations for high-demand games:** useful when a popular matchup is expected to draw a crowd.
 
 Park 101 checks those boxes while keeping the experience centered in Carlsbad Village rather than requiring a drive inland.
 

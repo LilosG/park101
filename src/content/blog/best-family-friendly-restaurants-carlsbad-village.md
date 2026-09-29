@@ -21,11 +21,11 @@ Carlsbad Village has no shortage of restaurants, but "family-friendly" means som
 
 ## What Makes a Restaurant Family-Friendly
 
-* **Room to move.** Open, multi-level spaces give families more breathing room than a tight dining room.
-* **A relaxed atmosphere.** Families should be able to settle in without feeling like every little bit of noise is a problem.
-* **Food that works for different tastes.** Burgers, tacos, wings, sandwiches, loaded fries and shareable plates make ordering for a mixed group easier.
-* **Dog-friendly outdoor space.** In a beach community like Carlsbad, that can be the difference between bringing the whole crew and leaving someone behind.
-* **Something for the adults too.** A full bar, cocktails, craft beer and a setting worth staying in matter when a family meal turns into an afternoon out.
+- **Room to move.** Open, multi-level spaces give families more breathing room than a tight dining room.
+- **A relaxed atmosphere.** Families should be able to settle in without feeling like every little bit of noise is a problem.
+- **Food that works for different tastes.** Burgers, tacos, wings, sandwiches, loaded fries and shareable plates make ordering for a mixed group easier.
+- **Dog-friendly outdoor space.** In a beach community like Carlsbad, that can be the difference between bringing the whole crew and leaving someone behind.
+- **Something for the adults too.** A full bar, cocktails, craft beer and a setting worth staying in matter when a family meal turns into an afternoon out.
 
 ## Why Park 101 Works for Families in Carlsbad Village
 

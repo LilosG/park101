@@ -58,10 +58,9 @@ The fire pit zones work best for groups of 12–18. Larger parties can rotate se
 Main event time (roughly 8:00 PM–10:30 PM for a typical card) brings maximum crowd density. The rooftop fills. Bathrooms see lines. Bar service slows slightly. This is normal and expected.
 
 To avoid frustration:
-
-* Order drinks and food *before* 7:45 PM if possible. Bartenders and kitchen staff are fastest in the pre-main-event window.
-* Use the restroom before the main event starts. Post-round breaks are when everyone else has the same idea.
-* If your group is large, designate one person to handle drink refills during the main event. This keeps your crew seated and focused on the action.
+- Order drinks and food *before* 7:45 PM if possible. Bartenders and kitchen staff are fastest in the pre-main-event window.
+- Use the restroom before the main event starts. Post-round breaks are when everyone else has the same idea.
+- If your group is large, designate one person to handle drink refills during the main event. This keeps your crew seated and focused on the action.
 
 Park 101 runs audio through the rooftop speakers, so you'll hear the commentators, the crowd noise, and the bell. The sound quality is solid—you won't miss fight callouts or the drama of a submission setup.
 
@@ -74,10 +73,9 @@ Post-fight hangs are common. After the main event ends, some groups stay for 30 
 ## Coordinate Payment and Group Tabs
 
 For groups of 15+, Park 101 typically runs a single tab or splits it by section. Discuss payment structure when you book:
-
-* **Single tab**: One person pays for everything. Simplest, but requires trust.
-* **Split by section**: The rooftop area runs one tab; bar seating runs another.
-* **Separate checks**: Each person or couple pays individually. Slower at close-out, but fair.
+- **Single tab**: One person pays for everything. Simplest, but requires trust.
+- **Split by section**: The rooftop area runs one tab; bar seating runs another.
+- **Separate checks**: Each person or couple pays individually. Slower at close-out, but fair.
 
 Confirm the payment method in advance. If your group wants to prepay a deposit or set a budget cap, Park 101 can accommodate that conversation during your reservation call.
 
@@ -89,12 +87,12 @@ If you're a regular fight fan looking to lock in standing reservations or explor
 
 ## Final Checklist: UFC Watch Party at Park 101
 
-* **2–3 weeks out**: Reserve rooftop space for 15+ people; confirm fire pit access if desired.
-* **1 week out**: Finalize headcount and platter order; confirm arrival time and payment structure.
-* **48 hours out**: Reconfirm final count and any dietary restrictions or last-minute drink requests.
-* **Day of**: Arrive 6:15 PM for main card events; order food and drinks before 7:45 PM.
-* **During the event**: Use fire pits for comfort, rotate bathroom breaks, designate a drink runner if the group is large.
-* **After the event**: Confirm closing time and settle payment before the venue winds down.
+- **2–3 weeks out**: Reserve rooftop space for 15+ people; confirm fire pit access if desired.
+- **1 week out**: Finalize headcount and platter order; confirm arrival time and payment structure.
+- **48 hours out**: Reconfirm final count and any dietary restrictions or last-minute drink requests.
+- **Day of**: Arrive 6:15 PM for main card events; order food and drinks before 7:45 PM.
+- **During the event**: Use fire pits for comfort, rotate bathroom breaks, designate a drink runner if the group is large.
+- **After the event**: Confirm closing time and settle payment before the venue winds down.
 
 Park 101's rooftop setup, full bar, and kitchen capacity make it the logical choice for UFC watch parties in Carlsbad. The fire pits keep your group comfortable through late rounds, the screens deliver clear views, and the energy matches the intensity of fight night. Plan ahead, order smart, and you'll have a watch party that feels less like a bar visit and more like a private event with a premium view.
 

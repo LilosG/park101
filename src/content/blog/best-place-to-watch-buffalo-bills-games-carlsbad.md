@@ -42,10 +42,10 @@ For Bills fans searching specifically for a **Bills bar in Carlsbad**, that comb
 
 Park 101 gives fans several ways to watch:
 
-* **Open-air courtyard:** the main shared viewing area with the large LED wall.
-* **Rooftop seating:** an outdoor option with the same Carlsbad Village energy.
-* **Indoor bar:** traditional sports-bar seating with screens nearby.
-* **20+ screens throughout the venue:** useful for keeping up with other NFL games before or after Buffalo's kickoff.
+- **Open-air courtyard:** the main shared viewing area with the large LED wall.
+- **Rooftop seating:** an outdoor option with the same Carlsbad Village energy.
+- **Indoor bar:** traditional sports-bar seating with screens nearby.
+- **20+ screens throughout the venue:** useful for keeping up with other NFL games before or after Buffalo's kickoff.
 
 You can explore the spaces on the [Park 101 venue page](/venue).
 
