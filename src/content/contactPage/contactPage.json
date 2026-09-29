@@ -1,12 +1,12 @@
 {
   "seo": {
     "title": "Hours, Directions & Reservations in Carlsbad, CA | Park 101",
-    "description": "Find Park 101 hours, directions, reservations and contact details at 3040 Carlsbad Boulevard in Carlsbad, CA, one block from the beach.",
+    "description": "Find Park 101 hours, directions, parking and reservations at 3040 Carlsbad Boulevard in Carlsbad, CA, one block from the beach. Call or reserve a table.",
     "ogImage": "/images/contactPage/seo/ogImage.jpg"
   },
   "hero": {
     "eyebrow": "Visit Park 101",
-    "heading": "Hours, Directions & Reservations",
+    "heading": "Park 101 Hours, Directions & Reservations in Carlsbad, CA",
     "body": "Find Park 101 at 3040 Carlsbad Boulevard, one block from the beach in Carlsbad Village."
   },
   "intro": {
@@ -16,11 +16,11 @@
   "sections": {
     "visit": {
       "eyebrow": "Visit Us",
-      "heading": "Park 101 in Carlsbad Village"
+      "heading": "Address, Hours & Happy Hour"
     },
     "fullMenu": {
       "eyebrow": "Order Online",
-      "heading": "See the Full Menu",
+      "heading": "Order From the Full Menu",
       "body": "Burgers, wings, tacos, loaded fries, and shareable favorites, ready to order online."
     },
     "faq": {
@@ -30,7 +30,7 @@
   },
   "faqs": [
     {
-      "q": "Where is Park 101?",
+      "q": "Where is Park 101 in Carlsbad?",
       "a": "Park 101 is at [address], in [neighborhood], one block from the beach."
     },
     {
@@ -38,7 +38,7 @@
       "a": "[hours]"
     },
     {
-      "q": "Is there parking near Park 101?",
+      "q": "Is there parking near Park 101 in Carlsbad?",
       "a": "Street parking and public lots are available nearby."
     },
     {

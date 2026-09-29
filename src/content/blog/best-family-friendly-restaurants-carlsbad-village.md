@@ -1,7 +1,7 @@
 ---
-title: "Best Family-Friendly Restaurants in Carlsbad Village"
+title: "Best Family-Friendly Restaurants in Carlsbad, CA"
 seoTitle: "Family-Friendly Restaurants in Carlsbad, CA"
-description: "Looking for a family-friendly restaurant in Carlsbad Village? See why Park 101 works for kids, dogs and groups one block from the beach."
+description: "Looking for a family-friendly restaurant in Carlsbad Village? See why Park 101 suits kids, dogs and groups one block from the beach. Reserve a table."
 publishDate: 2026-07-10
 updatedDate: 2026-09-03
 author: "Park 101"
@@ -35,7 +35,7 @@ Park 101 was designed around multiple distinct spaces — a rooftop deck, an ope
 
 The [Park 101 menu](/menu) is built around approachable, shareable favorites: burgers, wings, tacos, sandwiches, loaded fries and plates that can be passed around the table. That makes it easier for a group with different tastes to order together without turning dinner into a negotiation.
 
-### Daily Rooftop Brunch in Carlsbad
+### Daily Rooftop Brunch for Families
 
 If you're planning a daytime visit, [rooftop brunch](/brunch) is served daily until 2 PM. The open-air setting, breakfast favorites and brunch cocktails make it an easy option for families meeting up in Carlsbad Village before or after a day near the beach.
 
@@ -43,6 +43,6 @@ If you're planning a daytime visit, [rooftop brunch](/brunch) is served daily un
 
 For birthdays or gatherings bigger than a normal table reservation, Park 101 also offers [private and semi-private event spaces](/private-events/birthday-parties) across the rooftop, courtyard and indoor areas.
 
-## Plan Your Visit
+## Plan Your Family Visit
 
 Park 101 is located at 3040 Carlsbad Boulevard, one block from the beach in Carlsbad Village. See the [full venue breakdown](/venue), browse the [food and drink menu](/menu), or [get directions and hours](/contact) before you visit.

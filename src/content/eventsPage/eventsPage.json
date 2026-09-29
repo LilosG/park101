@@ -1,18 +1,18 @@
 {
   "seo": {
-    "title": "Events, Live Music & Game Day in Carlsbad, CA | Park 101",
-    "description": "Find live music, NFL Sundays, Padres games, UFC fight nights and weekly events at Park 101, a rooftop sports bar in Carlsbad, CA.",
+    "title": "Live Music & Game Day Events in Carlsbad, CA | Park 101",
+    "description": "See live music, NFL Sundays, Padres games, UFC fight nights and weekly events at Park 101, a rooftop sports bar in Carlsbad, CA. Reserve your spot.",
     "ogImage": "/images/eventsPage/seo/ogImage/park-101-padres-game-day-packed-venue-carlsbad.jpg"
   },
   "hero": {
     "eyebrow": "Carlsbad Village",
-    "heading": "Events & Game Day<br />in Carlsbad",
+    "heading": "Park 101 Events & Game Day in Carlsbad, CA",
     "body": "NFL Sundays, Padres games, fight nights, and live music — Park 101's LED wall and 20+ screens make it a Carlsbad Village destination for game day and weekly events."
   },
   "sections": {
     "eventTypes": {
       "eyebrow": "Every Week",
-      "heading": "Sports, Live Music & Weekly Events"
+      "heading": "Live Music, NFL Sundays & Weekly Events"
     },
     "upcoming": {
       "eyebrow": "Coming Up",
@@ -20,7 +20,7 @@
     },
     "inquiry": {
       "eyebrow": "Planning a Watch Party?",
-      "heading": "Book a Game Day Space",
+      "heading": "Book a Space for Your Watch Party",
       "body": "Fantasy drafts, big fights, and group watch parties — send us your date and headcount and our events team responds within 24 hours."
     }
   }

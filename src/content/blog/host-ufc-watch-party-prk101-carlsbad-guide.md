@@ -1,7 +1,7 @@
 ---
-title: "UFC Watch Party in Carlsbad: Complete Planning Guide for Fight Night at Park 101"
+title: "UFC Watch Party in Carlsbad, CA: Fight Night Planning Guide at Park 101"
 seoTitle: "UFC Watch Party in Carlsbad, CA | Park 101"
-description: "Plan your UFC watch party in Carlsbad with step-by-step logistics, rooftop reservations, group platters, and late-night cocktails at Park 101."
+description: "Plan your UFC watch party in Carlsbad with step-by-step logistics, rooftop reservations, group platters and late-night cocktails at Park 101. Reserve now."
 publishDate: 2026-09-03
 category: "events"
 image: "/src/assets/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg"
@@ -87,7 +87,7 @@ Park 101 is the rooftop standout for UFC events, but if you're scouting alternat
 
 If you're a regular fight fan looking to lock in standing reservations or explore Park 101's full event calendar, browse the [Events & Game Day in Carlsbad](/events) page to see upcoming fight cards and other sports programming.
 
-## Final Checklist: UFC Watch Party at Park 101
+## Final Fight Night Checklist
 
 * **2–3 weeks out**: Reserve rooftop space for 15+ people; confirm fire pit access if desired.
 * **1 week out**: Finalize headcount and platter order; confirm arrival time and payment structure.

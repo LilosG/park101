@@ -1,7 +1,7 @@
 ---
 title: "Best Place to Watch Ohio State Football in Carlsbad, CA"
 seoTitle: "Ohio State Bar in Carlsbad, CA | Park 101"
-description: "Looking for an Ohio State bar in Carlsbad? Park 101 has a massive outdoor LED wall, 20+ screens, food, drinks and Buckeyes game-day seating."
+description: "Looking for an Ohio State bar in Carlsbad? Park 101 has a massive outdoor LED wall, 20+ screens, food and drinks for Buckeyes games. Reserve a table."
 publishDate: 2026-09-10
 author: "Park 101"
 image: "/src/assets/sports/DSC09209.webp"
@@ -75,7 +75,7 @@ Yes. Walk-ins are welcome, but reservations are recommended for major Ohio State
 
 The [sports page](/sports) links to the current reservation option. Larger Buckeyes groups can also review [private event options](/private-events) if a standard table is not enough space.
 
-## Ohio State Fans Visiting Carlsbad
+## Visiting Buckeyes Fans
 
 Park 101's Carlsbad Village location makes it convenient for both locals and visitors. The venue is one block from the beach, so a football Saturday can easily fit into a broader day in the Village.
 
@@ -87,7 +87,7 @@ Park 101's football programming continues beyond Saturday. The venue also shows 
 
 For Sunday planning, see the guide to the [best place to watch NFL games in Carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad) or the dedicated [Buffalo Bills bar in Carlsbad guide](/blog/best-place-to-watch-buffalo-bills-games-carlsbad).
 
-## Best Place to Watch Ohio State Football in Carlsbad: The Bottom Line
+## The Bottom Line for Buckeyes Fans
 
 For Buckeyes fans searching for an Ohio State bar in Carlsbad, Park 101 offers a strong combination of screen coverage, outdoor viewing, food, drinks and a central Carlsbad Village location. The massive LED wall gives major Ohio State games a true watch-party feel, while the 20+ screens and multiple seating areas make it possible to stay connected to the rest of the college football slate.
 

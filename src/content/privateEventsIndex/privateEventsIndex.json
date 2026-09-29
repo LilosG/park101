@@ -1,12 +1,12 @@
 {
   "seo": {
     "title": "Private Event Venue in Carlsbad, CA | Park 101",
-    "description": "Host birthdays, corporate events, rehearsal dinners, game day parties and venue buyouts at Park 101 in Carlsbad, CA for up to 300 guests.",
+    "description": "Host birthdays, corporate events, rehearsal dinners, game day parties and venue buyouts at Park 101 in Carlsbad, CA for up to 300 guests. Request a date.",
     "ogImage": "/images/privateEventsIndex/seo/ogImage/park-101-rooftop-evening-group-carlsbad.jpg"
   },
   "hero": {
     "eyebrow": "Group Bookings",
-    "heading": "Private Event Venue in Carlsbad",
+    "heading": "Private Event Venue in Carlsbad, CA at Park 101",
     "body": "Birthdays, corporate events, game day takeovers, rehearsal dinners and full venue buyouts at Park 101's rooftop, courtyard and indoor spaces in Carlsbad Village."
   },
   "intro": {
@@ -21,11 +21,11 @@
     },
     "process": {
       "eyebrow": "How It Works",
-      "heading": "From First Inquiry to Event Day"
+      "heading": "How Booking a Private Event Works"
     },
     "faq": {
       "eyebrow": "Common Questions",
-      "heading": "Carlsbad Private Events FAQ"
+      "heading": "Private Events FAQ"
     },
     "final": {
       "eyebrow": "Let's Make It Happen",
@@ -36,22 +36,22 @@
   "howItWorks": [
     {
       "step": "01",
-      "title": "Reach Out",
+      "title": "Send Your Date & Headcount",
       "body": "Tell us your date, headcount, and what you're celebrating. We respond within 24 hours."
     },
     {
       "step": "02",
-      "title": "Get a Custom Plan",
+      "title": "Get a Custom Menu & Space Plan",
       "body": "Menu, space, drink packages, and pricing built around your event."
     },
     {
       "step": "03",
-      "title": "Lock It In",
+      "title": "Secure Your Date With a Deposit",
       "body": "Confirm the details and secure your date with a deposit."
     },
     {
       "step": "04",
-      "title": "Show Up",
+      "title": "Enjoy Your Event",
       "body": "We handle the rest. You and your crew just show up and enjoy it."
     }
   ],
@@ -77,7 +77,7 @@
       "a": "We recommend reaching out as early as possible, especially for weekend dates and game day buyouts — but we always do what we can to accommodate shorter timelines."
     },
     {
-      "q": "Is parking available nearby?",
+      "q": "Is parking available near Park 101 in Carlsbad?",
       "a": "Park 101 is one block from the beach in Carlsbad Village. Street parking and public lots are available nearby."
     }
   ]
