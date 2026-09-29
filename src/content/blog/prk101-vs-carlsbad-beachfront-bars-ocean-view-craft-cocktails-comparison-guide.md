@@ -87,6 +87,6 @@ For details on where to watch specific events, check out the [best places to wat
 
 Carlsbad has multiple ocean view bars, but they serve different purposes. If you want the full experience—elevated ocean views, fire pits, quality food, craft cocktails, and game-day capability—Park 101 is the clear choice. If you want to be literally on the sand with a drink, The Compass works. If you want a casual neighborhood spot that happens to be near the ocean, Carlsbad Village Tavern is your move.
 
-The ocean view bars in Carlsbad range from $6 cocktails at Ponto Brewery to $14–$16 craft cocktails at Park 101. Food runs from $8 appetizers to $28 entrees. Parking is free at Park 101's lot and street-level everywhere else.
+The ocean view bars in Carlsbad range from $6 cocktails at Ponto Brewery to $14–$16 craft cocktails at Park 101. Food runs from $8 appetizers to $28 entrees. Parking is street-level everywhere, with street parking and public lots near Park 101.
 
 Ready to experience Carlsbad's best ocean views with a cocktail in hand? [Contact Us](/contact) to reserve a table or get more information about hosting your next gathering at Park 101.

@@ -93,7 +93,7 @@ Altitude and Tipsy Crow don't formally promote game day events, so you're relyin
 
 Street parking and public lots are available near Park 101 at 3040 Carlsbad Boulevard. Altitude, Tipsy Crow, and Carlsbad Village Brewing all rely on street parking or small adjacent lots. On game days, parking fills by 1 p.m. on weekends.
 
-If you're bringing a group or staying for multiple games, Park 101's lot is the practical choice.
+If you're bringing a group or staying for multiple games, parking near Park 101 (street and public lots) is the practical choice.
 
 ## The Bottom Line
 
