@@ -1,7 +1,7 @@
 ---
 title: "Best Place to Watch NFL Games in Carlsbad, CA"
 seoTitle: "Best Place to Watch NFL Games in Carlsbad | Park 101"
-description: "Looking for the best place to watch NFL games in Carlsbad? Park 101 offers a massive outdoor LED wall, 20+ screens, food, drinks and game-day seating in Carlsbad Village."
+description: "Looking for the best place to watch NFL games in Carlsbad? Park 101 has a massive outdoor LED wall, 20+ screens, food and drinks."
 publishDate: 2026-07-10
 updatedDate: 2026-09-10
 author: "Park 101"

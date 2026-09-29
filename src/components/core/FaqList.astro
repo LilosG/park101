@@ -1,0 +1,18 @@
+---
+import type { FaqItem } from '../../lib/faq-schema';
+
+interface Props {
+  items: FaqItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="space-y-6">
+  {items.map((item) => (
+    <div class="border-b border-brand-white/15 pb-6">
+      <h3 class="font-display font-bold text-base uppercase tracking-tight text-brand-white mb-2">{item.q}</h3>
+      <p class="font-body font-light text-brand-cream/70 text-sm leading-relaxed">{item.a}</p>
+    </div>
+  ))}
+</div>

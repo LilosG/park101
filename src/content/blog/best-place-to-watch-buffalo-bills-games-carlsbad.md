@@ -1,7 +1,7 @@
 ---
 title: "Best Place to Watch Buffalo Bills Games in Carlsbad, CA"
-seoTitle: "Buffalo Bills Bar in Carlsbad | Watch Bills Games at Park 101"
-description: "Looking for a Buffalo Bills bar in Carlsbad? Park 101 offers a massive outdoor LED wall, 20+ screens, food, drinks and Bills game-day seating in Carlsbad Village."
+seoTitle: "Buffalo Bills Bar in Carlsbad, CA | Park 101"
+description: "Looking for a Buffalo Bills bar in Carlsbad? Park 101 has a massive outdoor LED wall, 20+ screens, food, drinks and Bills game-day seating."
 publishDate: 2026-09-10
 author: "Park 101"
 image: "/src/assets/sports/DSC09103.webp"

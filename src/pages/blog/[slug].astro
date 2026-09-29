@@ -2,6 +2,8 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { getCategoryMeta } from '../../data/blog-categories';
+import FaqList from '../../components/core/FaqList.astro';
+import FaqSchema from '../../components/core/FaqSchema.astro';
 import BlogPostCard from '../../components/blog/BlogPostCard.astro';
 import { resolveBlogImage } from '../../data/blog-images';
 import { Image } from 'astro:assets';
@@ -101,6 +103,8 @@ const relatedPageMap: Record<string, { href: string; label: string; description:
   },
 };
 
+const faqs = (post.data.faqs ?? []).map(({ question, answer }: { question: string; answer: string }) => ({ q: question, a: answer }));
+
 const relatedPages = (post.data.relatedServices ?? [])
   .map((key: string) => relatedPageMap[key])
   .filter(Boolean);
@@ -185,6 +189,17 @@ const relatedPages = (post.data.relatedServices ?? [])
     )}
   </article>
 
+  {faqs.length > 0 && (
+    <section aria-labelledby="post-faq" class="bg-brand-dark px-6 sm:px-8 lg:px-12 py-16">
+      <div class="max-w-3xl mx-auto">
+        <h2 id="post-faq" class="font-display font-bold text-3xl sm:text-4xl text-brand-white uppercase tracking-tight text-center mb-10">
+          Frequently Asked Questions
+        </h2>
+        <FaqList items={faqs} />
+      </div>
+    </section>
+  )}
+
   {relatedPages.length > 0 && (
     <section aria-labelledby="explore-park-101" class="bg-brand-cream px-6 sm:px-8 lg:px-12 pb-16">
       <div class="max-w-3xl mx-auto border-t border-brand-dark/10 pt-10">
@@ -224,4 +239,5 @@ const relatedPages = (post.data.relatedServices ?? [])
 
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <FaqSchema items={faqs} />
 </Layout>

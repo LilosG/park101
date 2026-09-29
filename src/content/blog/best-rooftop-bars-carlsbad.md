@@ -1,7 +1,7 @@
 ---
 title: "Best Rooftop Bars in Carlsbad, CA"
 seoTitle: "Rooftop Bar in Carlsbad, CA | Park 101"
-description: "Looking for a rooftop bar in Carlsbad? Explore Park 101's open-air rooftop deck, fire pits, cocktails and Carlsbad Village setting one block from the beach."
+description: "Looking for a rooftop bar in Carlsbad? Explore Park 101's open-air rooftop deck, fire pits and cocktails, one block from the beach."
 publishDate: 2026-07-10
 updatedDate: 2026-09-03
 author: "Park 101"
