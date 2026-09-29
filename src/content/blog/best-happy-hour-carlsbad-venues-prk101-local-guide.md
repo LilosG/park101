@@ -21,6 +21,8 @@ relatedServices:
 serviceAreas:
   - "Carlsbad Village"
   - "Carlsbad"
+draft: false
+tags: []
 ---
 
 Happy hour in Carlsbad Village runs the gamut from casual dive bars to upscale oceanfront lounges, but if you want ocean views, strong pours, and actual food value between 4pm and 6pm, the options narrow fast. Park 101 has staked its claim as the rooftop happy hour destination, but how does it stack up against the rest of the Village? Here's the breakdown of Carlsbad's best happy hour spots—where to go, what to order, and why timing matters.

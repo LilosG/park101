@@ -21,6 +21,8 @@ relatedServices:
 serviceAreas:
   - "Carlsbad Village"
   - "Carlsbad"
+draft: false
+tags: []
 ---
 
 A rooftop date night in Carlsbad Village doesn't have to mean fighting crowds at a generic chain bar. Park 101, perched at 3040 Carlsbad Boulevard, combines ocean views, working fire pits, and a menu that goes beyond frozen margaritas—all within walking distance of the village's best shops and the pier. Here's how to plan a date night that actually delivers.

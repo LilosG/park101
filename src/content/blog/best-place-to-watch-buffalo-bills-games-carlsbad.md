@@ -21,6 +21,7 @@ faqs:
     answer: "Yes. Reservations are available and are recommended for high-demand Bills games and larger groups."
   - question: "Where is Park 101 located?"
     answer: "Park 101 is located at 3040 Carlsbad Boulevard in Carlsbad Village, one block from the beach."
+draft: false
 ---
 
 Searching for a **Buffalo Bills bar in Carlsbad** usually means you want more than a television with the game on. Bills fans want a place where the matchup is part of the atmosphere, where there is enough screen coverage to follow every play and where a group can settle in from kickoff through the final whistle.

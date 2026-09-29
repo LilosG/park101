@@ -21,6 +21,8 @@ relatedServices:
 serviceAreas:
   - "carlsbad-village"
   - "carlsbad-coast"
+draft: false
+tags: []
 ---
 
 Carlsbad's coastline draws people for the water, the weather, and the view. If you're looking for a bar that actually captures that ocean vista without sacrificing atmosphere or a solid drink, you've got options—but they're not all created equal. Park 101 leads the pack with a three-level rooftop setup that puts you 40 feet above street level with unobstructed Pacific sightlines. But there are other contenders worth knowing about, especially if you're chasing a specific vibe or location. Here's what Carlsbad's ocean view bar scene actually looks like.

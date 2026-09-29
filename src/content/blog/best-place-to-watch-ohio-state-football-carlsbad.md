@@ -21,6 +21,7 @@ faqs:
     answer: "Yes. Reservations are available and are recommended for major Buckeyes games, rivalry weekends and larger groups."
   - question: "Is Park 101 in Carlsbad Village?"
     answer: "Yes. Park 101 is located at 3040 Carlsbad Boulevard in Carlsbad Village, one block from the beach."
+draft: false
 ---
 
 If you are searching for an **Ohio State bar in Carlsbad** or a place to watch Buckeyes football in North County, Park 101 gives you a game-day setup built for college football Saturdays.

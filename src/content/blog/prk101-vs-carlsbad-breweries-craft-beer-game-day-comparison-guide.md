@@ -14,6 +14,10 @@ faqs:
     answer: "Smoked tri-tip, wings, and loaded nachos are classic pairings. Park 101's menu features house-smoked tri-tip that complements IPAs and stouts. Local breweries often serve lighter fare like tacos and burgers."
   - question: "Can I watch multiple games at once in Carlsbad?"
     answer: "Park 101's three-level rooftop bar has screens throughout the venue, allowing you to catch multiple games simultaneously. Most standalone breweries have one or two screens, making them better for single-game viewing."
+draft: false
+tags: []
+relatedServices: []
+serviceAreas: []
 ---
 
 Game day in Carlsbad doesn't mean settling for flat beer and a single screen wedged in a corner. Whether you're chasing a specific craft beer or need to watch three games at once, the Village has options—but the setup, the views, and the pour quality vary wildly. Here's what you need to know about finding the best craft beer spot for your next game.

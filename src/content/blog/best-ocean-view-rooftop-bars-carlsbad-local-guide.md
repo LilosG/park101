@@ -20,6 +20,8 @@ relatedServices:
 serviceAreas:
   - "Carlsbad Village"
   - "Carlsbad Boulevard"
+draft: false
+tags: []
 ---
 
 Carlsbad Boulevard runs three miles along the Pacific, but finding a rooftop bar that actually delivers unobstructed ocean views, a serious cocktail program, and game-day energy is harder than it sounds. We've tested the contenders—Park 101, The Lofts, and Puesto—to show you where to spend your evening and your money.
