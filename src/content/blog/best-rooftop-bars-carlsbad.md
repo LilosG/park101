@@ -1,7 +1,7 @@
 ---
 title: "Best Rooftop Bars in Carlsbad, CA"
 seoTitle: "Rooftop Bar in Carlsbad, CA | Park 101"
-description: "Looking for a rooftop bar in Carlsbad? Explore Park 101's open-air rooftop deck, fire pits, cocktails and Carlsbad Village setting one block from the beach."
+description: "Looking for a rooftop bar in Carlsbad? Explore Park 101's open-air rooftop deck, fire pits and cocktails, one block from the beach."
 publishDate: 2026-07-10
 updatedDate: 2026-09-03
 author: "Park 101"
@@ -21,11 +21,11 @@ If you're specifically looking for a rooftop bar in Carlsbad, the setting matter
 
 ## What Makes a Rooftop Bar Worth Visiting
 
-- **A genuine elevated, open-air deck** rather than a ground-level patio.
-- **A setting worth being upstairs for** with views over Carlsbad Village and the coastal area.
-- **Comfortable seating for groups** so the rooftop works for more than a quick drink.
-- **Fire pits and evening atmosphere** when the coastal air cools down.
-- **Indoor and courtyard options** when your group wants a different setting without changing venues.
+* **A genuine elevated, open-air deck** rather than a ground-level patio.
+* **A setting worth being upstairs for** with views over Carlsbad Village and the coastal area.
+* **Comfortable seating for groups** so the rooftop works for more than a quick drink.
+* **Fire pits and evening atmosphere** when the coastal air cools down.
+* **Indoor and courtyard options** when your group wants a different setting without changing venues.
 
 ## Park 101's Rooftop Bar in Carlsbad Village
 

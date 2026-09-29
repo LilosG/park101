@@ -1,5 +1,6 @@
 import { z } from 'astro/zod';
 import { blogCategories } from '../data/blog-categories';
+import { relatedPageKeys, relatedPages } from '../data/related-pages';
 import { altText, assetImage, label, text } from './common';
 
 const categoryKeys = Object.keys(blogCategories) as [string, ...string[]];
@@ -58,10 +59,16 @@ export const blogSchema = z.looseObject({
     multiline: true,
   }),
   relatedServices: z
-    .array(text.meta(label('Related Page', 'Page identifier linked to this article.')))
+    .array(
+      z.enum(relatedPageKeys).meta({
+        ...label('Related Page', 'A page to feature below the article.'),
+        optionLabels: Object.fromEntries(Object.entries(relatedPages).map(([key, { label: name }]) => [key, name])),
+      }),
+    )
     .max(3)
+    .refine((keys) => new Set(keys).size === keys.length, 'Choose each related page once')
     .optional()
-    .meta(label('Related Services', 'Optional related page identifiers. Add no more than three.')),
+    .meta(label('Related Pages', 'Optional pages featured below the article. Choose up to three.')),
   serviceAreas: z
     .array(text.meta(label('Service Area')))
     .optional()

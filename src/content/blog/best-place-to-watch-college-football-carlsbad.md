@@ -1,7 +1,7 @@
 ---
 title: "Best Place to Watch College Football in Carlsbad, CA"
 seoTitle: "Best Place to Watch College Football in Carlsbad | Park 101"
-description: "Looking for the best place to watch college football in Carlsbad? Park 101 offers a massive outdoor LED wall, 20+ screens, food, drinks and Saturday game-day seating in Carlsbad Village."
+description: "Looking for the best place to watch college football in Carlsbad? Park 101 has a massive outdoor LED wall, 20+ screens, food and drinks."
 publishDate: 2026-09-10
 author: "Park 101"
 image: "/src/assets/venue/park-101-outdoor-stadium-viewing-crowd-ambiance-carlsbad.jpg"
@@ -42,12 +42,12 @@ The layout also gives groups options. Fans who want the communal watch-party atm
 
 When choosing where to watch Saturday football in Carlsbad, look for a few core features:
 
-- **Enough screens for simultaneous games** so one matchup does not dominate every television.
-- **A large main screen** for rivalry games, ranked matchups and nationally televised games.
-- **Comfortable seating for longer stays** because college football Saturdays can last from morning through late evening.
-- **Food and drinks available throughout the day** so you do not have to leave between games.
-- **Indoor and outdoor options** that fit Carlsbad's coastal setting.
-- **Reservations for major games** when demand is likely to be higher.
+* **Enough screens for simultaneous games** so one matchup does not dominate every television.
+* **A large main screen** for rivalry games, ranked matchups and nationally televised games.
+* **Comfortable seating for longer stays** because college football Saturdays can last from morning through late evening.
+* **Food and drinks available throughout the day** so you do not have to leave between games.
+* **Indoor and outdoor options** that fit Carlsbad's coastal setting.
+* **Reservations for major games** when demand is likely to be higher.
 
 Park 101 combines all of those in one Carlsbad Village location.
 

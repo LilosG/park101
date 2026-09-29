@@ -1,4 +1,6 @@
 ---
+import FaqList from '../../components/core/FaqList.astro';
+import FaqSchema from '../../components/core/FaqSchema.astro';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import EventInquiryForm from '../../components/core/EventInquiryForm.astro';
@@ -77,15 +79,6 @@ const breadcrumbSchema = {
   ],
 };
 
-const faqSchema = event.faqs ? {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: event.faqs.map((f: any) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
-} : null;
 ---
 
 <Layout title={pageTitle} description={pageDescription} canonical={canonical} ogImage={image.src}>
@@ -191,14 +184,7 @@ const faqSchema = event.faqs ? {
           </h2>
           <div class="w-12 h-[2px] bg-brand-orange mx-auto mt-5"></div>
         </div>
-        <div class="space-y-6">
-          {event.faqs.map((item: any) => (
-            <div class="border-b border-brand-white/15 pb-6">
-              <h3 class="font-display font-bold text-base uppercase tracking-tight text-brand-white mb-2">{item.q}</h3>
-              <p class="font-body font-light text-brand-cream/70 text-sm leading-relaxed">{item.a}</p>
-            </div>
-          ))}
-        </div>
+        <FaqList items={event.faqs} />
         <p class="text-center font-body text-sm text-brand-cream/60 mt-10">
           More general questions? See the full <a href="/private-events#faq" class="text-brand-orange hover:text-brand-orange-light underline underline-offset-2">Private Events FAQ</a>.
         </p>
@@ -236,6 +222,6 @@ const faqSchema = event.faqs ? {
   </section>
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  <FaqSchema items={event.faqs ?? []} />
 
 </Layout>

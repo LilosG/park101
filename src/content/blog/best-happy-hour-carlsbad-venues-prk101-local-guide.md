@@ -1,23 +1,21 @@
 ---
 title: "Best Happy Hour in Carlsbad: Ocean Views, Strong Pours & Game-Day Specials"
-description: "Compare Carlsbad's top happy hour spots. Park 101 offers rooftop ocean views, $2 off drafts, and half-price appetizers daily 4–6pm."
+seoTitle: "Best Happy Hour in Carlsbad, CA | Park 101"
+description: "Compare Carlsbad's top happy hour spots. Park 101 offers rooftop ocean views, $2 off drafts, and happy hour 3–6pm Monday–Friday."
 publishDate: 2026-09-03
 category: "venue"
-image: "/src/assets/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
-imageAlt: "Park 101 rooftop deck with bar seating overlooking Carlsbad coastline at sunset"
+image: "/src/assets/brunchDrinkItems/park-101-cocktail-lineup-carlsbad.jpg"
+imageAlt: "Park 101 cocktail lineup for happy hour in Carlsbad"
 faqs:
   - question: "What time does happy hour start in Carlsbad?"
-    answer: "Most Carlsbad Village bars run happy hour between 4pm and 6pm on weekdays. Park 101 operates daily happy hour 4–6pm with $2 off draft beers, well drinks, and half-price appetizers including wings and loaded nachos."
+    answer: "Most Carlsbad Village bars run happy hour between 4pm and 6pm on weekdays. Park 101 runs happy hour 3–6pm Monday–Friday with $2 off draft beers, well drinks, and half-price appetizers including wings and loaded nachos."
   - question: "Where can I watch sports during happy hour in Carlsbad?"
     answer: "Park 101's rooftop deck features multiple HD screens and a fire pit lounge, making it ideal for NFL games and live sports. The venue stays lively during happy hour with full audio on select games and a social crowd."
   - question: "Are there happy hour food deals in Carlsbad Village?"
     answer: "Yes. Park 101 discounts appetizers 50% off during happy hour, including wings, nachos, and sliders. Other Carlsbad spots like Campfire and The Pint offer similar food specials, but Park 101's rooftop location and ocean views set it apart."
   - question: "What's the best happy hour for groups in Carlsbad?"
     answer: "Park 101's rooftop deck accommodates groups of any size with ample seating, fire pits, and a full bar. The ocean view backdrop and game-day atmosphere make it a top choice for happy hour meetups in Carlsbad Village."
-relatedServices:
-  - "happy hour specials"
-  - "rooftop dining"
-  - "game day viewing"
+relatedServices: ["menu", "venue", "sports"]
 serviceAreas:
   - "Carlsbad Village"
   - "Carlsbad"
@@ -29,11 +27,11 @@ Happy hour in Carlsbad Village runs the gamut from casual dive bars to upscale o
 
 ## Park 101: Rooftop Views with Ocean Backdrop
 
-Park 101 sits at 3040 Carlsbad Boulevard with a three-level rooftop deck that commands views of the Carlsbad coastline. During happy hour (4–6pm daily), you're paying $2 off draft beers, well drinks, and house wine. That's not a gimmick discount—a $6 craft IPA drops to $4. A $7 margarita becomes $5. Appetizers run 50% off, which means wings land around $6 and loaded nachos around $8.
+Park 101 sits at 3040 Carlsbad Boulevard with a multi-level rooftop deck that commands views of the Carlsbad coastline. During happy hour (3–6pm Monday–Friday), you're paying $2 off draft beers, well drinks, and house wine. That's not a gimmick discount—a $6 craft IPA drops to $4. A $7 margarita becomes $5. Appetizers run 50% off, which means wings land around $6 and loaded nachos around $8.
 
 The rooftop deck itself is the draw. Fire pits anchor the upper level, string lights frame the bar, and the ocean sits due west. On a clear day, you see all the way to the lagoon. On game days, the HD screens pull a crowd, and the sound system stays live during happy hour, which separates Park 101 from quieter spots downtown.
 
-Parking is street-level on Carlsbad Boulevard or in the adjacent lot—free, no validation needed. The venue pulls regulars from the surrounding neighborhoods and tourists bouncing between the Village and the beach. Expect a mixed crowd of office workers clocking out early, couples pre-gaming dinner, and families with kids on the lower patio (Park 101 maintains a family-friendly vibe until the sun sets).
+Street parking and public lots are available nearby. The venue pulls regulars from the surrounding neighborhoods and tourists bouncing between the Village and the beach. Expect a mixed crowd of office workers clocking out early, couples pre-gaming dinner, and families with kids on the lower patio (Park 101 maintains a family-friendly vibe until the sun sets).
 
 ## Campfire: Casual Bites & Craft Beer Focus
 
@@ -71,12 +69,12 @@ If you're exploring Carlsbad's happy hour scene, consider the context. Weekdays 
 
 Happy hour takes on new energy during live sports. Park 101's rooftop deck fills early on NFL Sundays, and the [best places to watch nfl games carlsbad](/blog/best-places-to-watch-nfl-games-carlsbad) list Park 101 near the top for a reason—the screens are large, the audio is live, and the crowd is engaged without being rowdy. During the [best place to watch world cup carlsbad](/blog/best-place-to-watch-world-cup-carlsbad), Park 101 extends happy hour pricing through the match, and the rooftop becomes a viewing party.
 
-Reservations aren't required for happy hour, but calling ahead (760-720-1414) during game days ensures you get rooftop seating rather than being bumped to the lower levels. Groups of 6+ should notify the host stand when arriving.
+Reservations aren't required for happy hour, but contacting the venue ahead (see [contact details](/contact)) during game days ensures you get rooftop seating rather than being bumped to the lower levels. Groups of 6+ should notify the host stand when arriving.
 
 ## Logistics & Timing
 
-Carlsbad Village happy hour runs 4–6pm on weekdays at most spots. Weekends are typically full-price. Park 101 is the exception—daily happy hour, 4–6pm, no blackout dates. Parking is easiest between 4–5pm; after 5:30pm, you'll circle longer. The rooftop deck stays open until 11pm, so you can extend your visit without leaving.
+Carlsbad Village happy hour runs 4–6pm on weekdays at most spots. Weekends are typically full-price. Park 101 runs happy hour 3–6pm Monday–Friday, with no happy hour on Saturday or Sunday. Parking is easiest between 4–5pm; after 5:30pm, you'll circle longer. The rooftop deck stays open into the evening (see [hours](/contact)), so you can extend your visit without leaving.
 
-If you're coming from the north end of Carlsbad (near Legoland or the Carlsbad outlet mall), Park 101 is a 10-minute drive south on Carlsbad Boulevard. If you're coming from the south (Encinitas direction), it's 15 minutes north. Street parking fills by 5:15pm on weekdays; use the adjacent lot if available.
+If you're coming from the north end of Carlsbad (near Legoland or the Carlsbad outlet mall), Park 101 is a 10-minute drive south on Carlsbad Boulevard. If you're coming from the south (Encinitas direction), it's 15 minutes north. Street parking fills by 5:15pm on weekdays; use a nearby public lot if available.
 
 The best happy hour in Carlsbad isn't just about the cheapest drink—it's about where you want to be while you're having it. Park 101 delivers ocean views, fire pits, game-day screens, and competitive pricing in one rooftop package. If that sounds like your scene, grab a spot before 5pm and let the sun set over the coast. [Contact Us](/contact) to reserve a table for your group or ask about private happy hour events.
