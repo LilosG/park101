@@ -12,6 +12,9 @@ tags: ["family friendly restaurant", "Carlsbad Village", "dog friendly", "things
 answerTarget: "Best family-friendly restaurant in Carlsbad Village"
 answerSummary: "Park 101 in Carlsbad Village is family- and dog-friendly, with a relaxed atmosphere, kid-friendly options, and space across a rooftop deck, open-air courtyard, and indoor bar — one block from the beach."
 relatedServices: ["venue", "menu", "brunch"]
+draft: false
+serviceAreas: []
+faqs: []
 ---
 
 Carlsbad Village has no shortage of restaurants, but "family-friendly" means something different depending on who you ask. For a restaurant to actually work for a family outing — especially one that includes a dog, younger kids, and adults who also want good food and drinks — the space matters as much as the menu.

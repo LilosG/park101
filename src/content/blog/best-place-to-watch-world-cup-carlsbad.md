@@ -12,6 +12,9 @@ tags: ["soccer bar", "World Cup", "watch party", "Carlsbad Village", "game day"]
 answerTarget: "Where to watch soccer and World Cup matches in Carlsbad, CA"
 answerSummary: "Park 101 in Carlsbad Village is built for soccer watch parties with a massive outdoor LED wall, 20+ screens across the rooftop, courtyard and indoor bar, plus food and drinks for groups staying through the full match."
 relatedServices: ["events", "venue", "private-events"]
+draft: false
+serviceAreas: []
+faqs: []
 ---
 
 If you're looking for a place to watch a major soccer match in Carlsbad, the setup matters. A real watch-party venue needs more than one TV over the bar — you want screens you can see from different parts of the venue, enough room for a crowd, food and drinks that work for a full match, and an atmosphere that actually feels like game day.

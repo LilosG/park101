@@ -21,6 +21,7 @@ faqs:
     answer: "Yes. Reservations are available and are recommended for major rivalry games, ranked matchups and larger groups."
   - question: "Is Park 101 an outdoor sports bar?"
     answer: "Park 101 has an open-air courtyard and rooftop in addition to an indoor bar, giving guests multiple ways to watch football."
+draft: false
 ---
 
 If you are looking for the **best place to watch college football in Carlsbad**, Saturday setup matters. College football runs across multiple time windows, several conferences and dozens of simultaneous games, so the right venue needs more than a few televisions behind the bar.

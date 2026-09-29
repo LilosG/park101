@@ -22,6 +22,7 @@ faqs:
     answer: "Yes. Reservations are available and are recommended for high-demand games and larger groups."
   - question: "Is Park 101 near Carlsbad Village?"
     answer: "Yes. Park 101 is located at 3040 Carlsbad Boulevard in Carlsbad Village, one block from the beach."
+draft: false
 ---
 
 If you are searching for the **best place to watch NFL games in Carlsbad**, the difference usually comes down to the viewing setup. A good game-day venue needs enough screens, clear sightlines, food that works for a full game, drinks, space for groups and an atmosphere that still feels comfortable when several games are on at once.

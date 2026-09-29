@@ -16,6 +16,8 @@ faqs:
     answer: "Yes. The rooftop features fire pits and overhead heaters, keeping your group comfortable during evening and late-night fights."
   - question: "Can I order cocktails during a late-night UFC event at Park 101?"
     answer: "Park 101 serves full cocktails and beer throughout fight night. Late-night service runs until close; confirm hours when you book your reservation."
+draft: false
+tags: []
 ---
 
 Hosting a UFC watch party in Carlsbad means choosing a venue that can handle the energy, the crowd, and the logistics. Park 101 sits at 3040 Carlsbad Boulevard in Carlsbad Village—a rooftop sports bar with multi-level decks, fire pits, and a full kitchen ready for group orders. If you're planning a fight night gathering, here's exactly how to execute it from reservation to final round.

@@ -16,6 +16,8 @@ faqs:
     answer: "Carlsbad Village has street parking and paid lots near the beach. Park 101 is located at 3040 Carlsbad Boulevard with nearby lot parking. The Cottage and Puesto have street parking on Carlsbad Village Drive. Arrive early on weekends or use the paid lot on Beech Avenue."
   - question: "Are Carlsbad brunch spots family-friendly?"
     answer: "Yes. Park 101, The Cottage, and Puesto all welcome families and offer kids' menus or portions. Park 101 has a rooftop deck with ocean views, making it ideal for families. High chairs and booster seats are available. Call ahead to confirm availability during busy weekend service."
+draft: false
+tags: []
 ---
 
 Weekend brunch in Carlsbad means one thing: ocean views, fresh ingredients, and a social atmosphere that keeps locals coming back. Whether you're hunting for tri tip hash, fresh seafood, or classic eggs Benedict, Carlsbad Village delivers. We've tested the top contenders and ranked them by menu quality, vibe, logistics, and value.

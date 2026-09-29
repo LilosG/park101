@@ -12,6 +12,9 @@ tags: ["rooftop bar", "Carlsbad Village", "things to do", "date night"]
 answerTarget: "Best rooftop bar in Carlsbad, CA"
 answerSummary: "Park 101 has an open-air rooftop deck in Carlsbad Village with fire pits, communal tables and views over the village, plus a courtyard and indoor bar — one block from the beach."
 relatedServices: ["venue", "brunch", "private-events"]
+draft: false
+serviceAreas: []
+faqs: []
 ---
 
 If you're specifically looking for a rooftop bar in Carlsbad, the setting matters. An elevated open-air deck, comfortable seating, drinks worth staying for, and a location that works before or after other plans in Carlsbad Village all make the difference.
