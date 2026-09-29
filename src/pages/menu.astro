@@ -54,6 +54,8 @@ const breadcrumbSchema = {
     eyebrow={page.hero.eyebrow}
     heading={page.hero.heading}
     body={page.hero.body}
+    primary={{ label: 'Reserve a Table', href: siteProfile.ordering.reservationsUrl, external: true }}
+    secondary={{ label: siteProfile.ordering.menuCtaLabel, href: siteProfile.ordering.toastUrl, external: true }}
   />
 
   <!-- ── STAT BAR ─────────────────────────────────────────── -->
