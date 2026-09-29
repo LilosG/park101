@@ -85,11 +85,11 @@ Discover what makes Park 101 one of the [best rooftop bars carlsbad](/blog/best-
 
 **Park 101:** 3040 Carlsbad Boulevard. Brunch daily 11 AM–2 PM. Street parking and public lots nearby. Reservations available; see [contact details](/contact).
 
-**The Cottage:** 702 Beech Avenue. Opens 8 AM Saturday–Sunday. Street parking on Beech; paid lot on Carlsbad Village Drive. No reservations. Phone: (760) 729-2000.
+**The Cottage:** 702 Beech Avenue. Opens 8 AM Saturday–Sunday. Street parking on Beech; paid lot on Carlsbad Village Drive. No reservations.
 
-**Puesto:** 1026 Carlsbad Village Drive. Opens 9 AM Saturday–Sunday. Metered street parking ($1.50/hour). Reservations for 6+. Phone: (760) 729-1912.
+**Puesto:** 1026 Carlsbad Village Drive. Opens 9 AM Saturday–Sunday. Metered street parking ($1.50/hour). Reservations for 6+.
 
-**Campfire:** 2725 Carlsbad Boulevard. Opens 9 AM Saturday–Sunday. Free parking in shared lot. Reservations accepted. Phone: (760) 434-2444.
+**Campfire:** 2725 Carlsbad Boulevard. Opens 9 AM Saturday–Sunday. Free parking in shared lot. Reservations accepted.
 
 ## Best Brunch by Occasion
 
