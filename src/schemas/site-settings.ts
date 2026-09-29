@@ -130,6 +130,7 @@ export const siteSettingsSchema = z.strictObject({
   ordering: z
     .strictObject({
       toastUrl: externalUrl.meta(label('Online Ordering Link')),
+      menuCtaLabel: text.meta(label('Full Menu Button Label', 'Text of the buttons that open the online menu.')),
       reservationsUrl: externalUrl.meta(label('Reservations Link')),
       inquiryFormUrl: externalUrl.meta(label('Private Event Inquiry Link')),
     })

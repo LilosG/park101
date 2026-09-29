@@ -37,5 +37,31 @@
       "heading": "Reserve Rooftop Brunch",
       "body": "Brunch is served every day until 2 PM. Reserve your table before the rooftop fills up."
     }
-  }
+  },
+  "faqs": [
+    {
+      "q": "What time does brunch start at Park 101?",
+      "a": "Brunch is served daily starting at 11:00 AM on the rooftop, until 2:00 PM."
+    },
+    {
+      "q": "Do I need a reservation for brunch?",
+      "a": "Reservations are recommended for brunch, especially for larger groups, since the rooftop fills up quickly."
+    },
+    {
+      "q": "What's on the brunch menu?",
+      "a": "A BBQ-driven brunch program — smoked tri-tip chilaquiles, brisket and classic breakfast burritos, a chicken and waffle sandwich, and bacon, egg and cheese plates."
+    },
+    {
+      "q": "Are brunch cocktails available?",
+      "a": "Yes — the Rodeo Tower, the Coschie Boot, and the full cocktail program are all available starting at open."
+    },
+    {
+      "q": "Can I book a private brunch event?",
+      "a": "Yes. Park 101 hosts private brunch gatherings, birthday brunches, and group events on the rooftop and throughout the venue."
+    },
+    {
+      "q": "Is Park 101 dog-friendly for brunch?",
+      "a": "Yes — the patio is dog-friendly, and brunch is built for groups of all ages."
+    }
+  ]
 }

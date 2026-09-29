@@ -14,6 +14,7 @@ import {
   venuePageSchema,
 } from './schemas/pages';
 import { siteSettingsSchema } from './schemas/site-settings';
+import { sportsGameSchema } from './schemas/sports';
 
 const json = (base: string) => glob({ pattern: '**/*.json', base: `./src/content/${base}` });
 
@@ -37,5 +38,6 @@ export const collections = {
   dinnerDrinkItems: defineCollection({ loader: json('dinnerDrinkItems'), schema: menuItemSchema }),
   eventTypes: defineCollection({ loader: json('eventTypes'), schema: eventTypeSchema }),
   upcomingEvents: defineCollection({ loader: json('upcomingEvents'), schema: upcomingEventSchema }),
+  sportsGames: defineCollection({ loader: json('sportsGames'), schema: sportsGameSchema }),
   privateEvents: defineCollection({ loader: json('privateEvents'), schema: privateEventSchema }),
 };

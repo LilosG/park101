@@ -23,6 +23,7 @@ import {
   venuePageSchema,
 } from "./src/schemas/pages";
 import { siteSettingsSchema } from "./src/schemas/site-settings";
+import { sportsGameSchema } from "./src/schemas/sports";
 
 const markdownContent = {
   ...fields.mdx({
@@ -95,6 +96,7 @@ export default config({
         "dinnerDrinkItems",
       ],
       Events: ["eventTypes", "upcomingEvents", "privateEvents"],
+      Sports: ["sportsGames"],
       Blog: ["blog"],
       "Site Settings": ["siteSettings", "navigation"],
     },
@@ -171,6 +173,13 @@ export default config({
       schema: privateEventSchema,
       slugField: "slug",
       columns: ["name", "capacity"],
+    }),
+    sportsGames: collectionFromSchema({
+      label: "Sports Schedule Games",
+      path: "src/content/sportsGames/*",
+      schema: sportsGameSchema,
+      slugField: "slug",
+      columns: ["team", "week", "opponent", "date"],
     }),
     blog: collectionFromSchema({
       label: "Blog Posts",

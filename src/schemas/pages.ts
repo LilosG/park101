@@ -46,6 +46,10 @@ export const menuPageSchema = z.strictObject({
   seo: uploadedSeo('menuPage'),
   hero,
   intro: introBlock,
+  stats: z
+    .array(z.strictObject({ value: text.meta(label('Displayed Value')), label: text.meta(label('Label')) }))
+    .length(4)
+    .meta(label('Highlights Bar', 'The four short highlights shown under the page header.')),
   sections: sections({ food: section(), drink: section() }),
 });
 
@@ -60,6 +64,10 @@ export const brunchPageSchema = z.strictObject({
     faq: section(),
     final: sectionWithBody(),
   }),
+  faqs: z
+    .array(faq)
+    .min(1)
+    .meta(label('Frequently Asked Questions', 'Add, edit, remove, or reorder the questions shown on this page.')),
 });
 
 export const eventsPageSchema = z.strictObject({
