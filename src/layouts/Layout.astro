@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { getEntry } from 'astro:content';
 import LocalSEO from '../components/core/LocalSEO.astro';
 import Analytics from '../components/core/Analytics.astro';
 import ConsentBanner from '../components/core/ConsentBanner.astro';
@@ -23,10 +24,11 @@ const {
   noindex = false,
   transparentNav = false,
 } = Astro.props;
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-time-zone={siteProfile.timeZone}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,5 +51,8 @@ const {
     </main>
     <SiteFooter />
     <ConsentBanner siteName="Park 101" />
+    <script>
+      import '../scripts/restaurant-day';
+    </script>
   </body>
 </html>

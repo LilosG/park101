@@ -3,6 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import { getEntry } from 'astro:content';
 
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+// Fixed policy date, taken from git history: src/pages/privacy.astro was added on 2026-09-03 and has not changed since.
+const lastUpdated = '2026-09-03';
+const lastUpdatedLabel = new Date(`${lastUpdated}T00:00:00Z`).toLocaleDateString('en-US', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
 ---
 
 <Layout
@@ -134,7 +141,7 @@ const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
       respond to verifiable requests within 45 days.
     </p>
 
-    <p class="text-xs text-brand-dark/40 mt-16">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+    <p class="text-xs text-brand-dark/40 mt-16">Last updated: <time datetime={lastUpdated}>{lastUpdatedLabel}</time></p>
   </section>
 </Layout>
 
