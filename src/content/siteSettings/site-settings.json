@@ -5,6 +5,7 @@
   "description": "Park 101 is a multi-level rooftop restaurant and sports bar in Carlsbad Village with an open-air courtyard, indoor bar, 20+ screens, food, cocktails, daily brunch, live events, and private event spaces one block from the beach.",
   "shortDescription": "Carlsbad Village's rooftop restaurant, sports bar and game day destination — one block from the beach.",
   "url": "https://park101carlsbad.com",
+  "timeZone": "America/Los_Angeles",
   "logo": "/images/siteSettings/logo/park101-logo.webp",
   "logoLight": "/images/siteSettings/logoLight/park101-logo-light.webp",
   "contact": {

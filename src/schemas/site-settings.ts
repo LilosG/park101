@@ -24,6 +24,24 @@ const venueArea = (title: string) =>
 const list = (title: string, itemTitle: string) =>
   z.array(text.meta(label(itemTitle))).min(1).meta(label(title));
 
+const timeZone = z
+  .string()
+  .refine((value) => {
+    try {
+      new Intl.DateTimeFormat('en-US', { timeZone: value });
+      return true;
+    } catch {
+      return false;
+    }
+  }, 'Use an IANA time zone such as America/Los_Angeles')
+  .meta({
+    ...label(
+      'Restaurant Time Zone',
+      'IANA time zone of the restaurant, e.g. America/Los_Angeles. Decides "today" on the website for every visitor.',
+    ),
+    patternMessage: 'Use an IANA time zone such as America/Los_Angeles.',
+  });
+
 export const siteSettingsSchema = z.strictObject({
   name: text.meta(label('Name')),
   brandName: text.meta(label('Display Brand Name')),
@@ -31,6 +49,7 @@ export const siteSettingsSchema = z.strictObject({
   description: text.meta({ ...label('Description'), multiline: true }),
   shortDescription: text.meta({ ...label('Short Business Description'), multiline: true }),
   url: externalUrl.meta(label('Website Address')),
+  timeZone,
   logo: publicImage('Primary Logo'),
   logoLight: publicImage('Light Logo'),
   contact: z
