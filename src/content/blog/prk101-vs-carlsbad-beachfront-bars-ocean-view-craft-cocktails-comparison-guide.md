@@ -15,10 +15,7 @@ faqs:
     answer: "Park 101 is built for game day with multiple screens across the rooftop and indoor bar areas. The Compass and other beach bars typically have one or two TVs. For serious sports viewing with ocean views, Park 101 is your best option in Carlsbad."
   - question: "What's the parking situation at ocean view bars in Carlsbad Village?"
     answer: "Street parking and public lots are available near Park 101 at 3040 Carlsbad Boulevard. The Compass and other beachfront bars use street parking or small municipal lots. Carlsbad Village parking fills quickly on weekends, so arrive early or use the paid lot near Beech Avenue if visiting during peak hours."
-relatedServices:
-  - "craft-cocktails"
-  - "rooftop-dining"
-  - "game-day-experience"
+relatedServices: ["menu", "venue", "sports"]
 serviceAreas:
   - "carlsbad-village"
   - "carlsbad-coast"

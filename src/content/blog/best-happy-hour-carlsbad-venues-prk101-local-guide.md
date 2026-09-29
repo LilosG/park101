@@ -15,10 +15,7 @@ faqs:
     answer: "Yes. Park 101 discounts appetizers 50% off during happy hour, including wings, nachos, and sliders. Other Carlsbad spots like Campfire and The Pint offer similar food specials, but Park 101's rooftop location and ocean views set it apart."
   - question: "What's the best happy hour for groups in Carlsbad?"
     answer: "Park 101's rooftop deck accommodates groups of any size with ample seating, fire pits, and a full bar. The ocean view backdrop and game-day atmosphere make it a top choice for happy hour meetups in Carlsbad Village."
-relatedServices:
-  - "happy hour specials"
-  - "rooftop dining"
-  - "game day viewing"
+relatedServices: ["menu", "venue", "sports"]
 serviceAreas:
   - "Carlsbad Village"
   - "Carlsbad"

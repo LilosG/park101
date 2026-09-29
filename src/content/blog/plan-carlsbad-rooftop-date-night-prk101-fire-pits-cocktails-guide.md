@@ -14,10 +14,7 @@ faqs:
     answer: "The bar specializes in craft cocktails and seasonal drinks. Ask the bartender for recommendations that complement the ocean breeze and sunset—the staff knows the menu inside out and can suggest pairings based on your preferences."
   - question: "Can we reserve a fire pit area for a private rooftop date?"
     answer: "Yes. Park 101 offers semi-private and private event spaces, including rooftop areas with fire pits. Contact the venue directly to discuss your date night vision and available configurations for an intimate experience."
-relatedServices:
-  - "Rooftop Dining"
-  - "Craft Cocktails"
-  - "Private Events"
+relatedServices: ["venue", "menu", "private-events"]
 serviceAreas:
   - "Carlsbad Village"
   - "Carlsbad"

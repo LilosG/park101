@@ -15,10 +15,7 @@ faqs:
     answer: "Most Carlsbad watch party venues, including Park 101, show NFL games, college football, NBA, NHL, Premier League soccer, and major events like the World Cup and March Madness."
   - question: "Are there family-friendly watch party options in Carlsbad?"
     answer: "Yes, Park 101 and other venues welcome families during daytime games. Many offer food menus suitable for kids and casual seating areas outside the main bar sections."
-relatedServices:
-  - "Sports Bar & Grill"
-  - "Rooftop Dining"
-  - "Group Events"
+relatedServices: ["sports", "venue", "private-events"]
 serviceAreas:
   - "Carlsbad Village"
   - "Carlsbad"

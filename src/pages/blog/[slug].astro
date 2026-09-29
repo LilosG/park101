@@ -2,6 +2,7 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { getCategoryMeta } from '../../data/blog-categories';
+import { relatedPages, type RelatedPageKey } from '../../data/related-pages';
 import FaqList from '../../components/core/FaqList.astro';
 import FaqSchema from '../../components/core/FaqSchema.astro';
 import BlogPostCard from '../../components/blog/BlogPostCard.astro';
@@ -27,7 +28,8 @@ const relatedPosts = allPosts
   .filter((p: any) => p.id !== post.id && p.data.category === post.data.category)
   .slice(0, 3);
 
-const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+// Count words, not Markdown syntax (table pipes, list markers), so reformatting a post never changes its reading time.
+const wordCount = post.body ? post.body.split(/\s+/).filter((word: string) => /[\p{L}\p{N}]/u.test(word)).length : 0;
 const readingTime = Math.max(1, Math.round(wordCount / 200));
 
 const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
@@ -75,39 +77,9 @@ const breadcrumbSchema = {
   ],
 };
 
-const relatedPageMap: Record<string, { href: string; label: string; description: string }> = {
-  menu: {
-    href: '/menu',
-    label: 'Food & Drink Menu',
-    description: 'Browse burgers, wings, tacos, shareable plates and cocktails.',
-  },
-  brunch: {
-    href: '/brunch',
-    label: 'Rooftop Brunch',
-    description: 'See daily brunch details, menu highlights and reservations.',
-  },
-  venue: {
-    href: '/venue',
-    label: 'Rooftop & Venue',
-    description: 'Explore the rooftop, courtyard, indoor bar and game day setup.',
-  },
-  events: {
-    href: '/events',
-    label: 'Events & Game Day',
-    description: 'See live music, sports viewing and weekly events in Carlsbad.',
-  },
-  'private-events': {
-    href: '/private-events',
-    label: 'Private Events',
-    description: 'Plan birthdays, corporate events, watch parties and venue buyouts.',
-  },
-};
-
 const faqs = (post.data.faqs ?? []).map(({ question, answer }: { question: string; answer: string }) => ({ q: question, a: answer }));
 
-const relatedPages = (post.data.relatedServices ?? [])
-  .map((key: string) => relatedPageMap[key])
-  .filter(Boolean);
+const relatedPageLinks = (post.data.relatedServices ?? []).map((key: RelatedPageKey) => relatedPages[key]);
 ---
 
 <Layout title={pageTitle} description={post.data.description} canonical={canonical} ogImage={ogImageUrl} transparentNav={true}>
@@ -200,14 +172,14 @@ const relatedPages = (post.data.relatedServices ?? [])
     </section>
   )}
 
-  {relatedPages.length > 0 && (
+  {relatedPageLinks.length > 0 && (
     <section aria-labelledby="explore-park-101" class="bg-brand-cream px-6 sm:px-8 lg:px-12 pb-16">
       <div class="max-w-3xl mx-auto border-t border-brand-dark/10 pt-10">
         <h2 id="explore-park-101" class="font-display font-bold text-2xl text-brand-dark uppercase tracking-tight mb-6">
           Explore Park 101 in Carlsbad
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {relatedPages.map((item: { href: string; label: string; description: string }) => (
+          {relatedPageLinks.map((item: { href: string; label: string; description: string }) => (
             <a href={item.href} class="group border border-brand-dark/15 p-5 hover:border-brand-orange transition-colors duration-150">
               <span class="block font-display font-bold text-base uppercase text-brand-dark group-hover:text-brand-orange transition-colors duration-150">
                 {item.label}

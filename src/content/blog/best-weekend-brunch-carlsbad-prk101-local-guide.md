@@ -6,7 +6,7 @@ publishDate: 2026-09-08
 category: "food-drink"
 image: "/src/assets/venue/park-101-outdoor-patio-celebration-crowd-carlsbad.jpg"
 imageAlt: "Park 101 outdoor patio with brunch crowd enjoying ocean views and tri tip dishes"
-relatedServices: ["brunch", "weekend-dining"]
+relatedServices: ["brunch"]
 serviceAreas: ["Carlsbad Village", "Carlsbad"]
 faqs:
   - question: "What time does brunch start on weekends in Carlsbad?"
