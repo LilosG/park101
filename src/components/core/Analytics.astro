@@ -50,7 +50,12 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 
         // Toast conversion + phone click tracking.
         document.addEventListener('click', function (e) {
-          const link = e.target.closest('a[href*="toasttab.com"], a[href*="toast.app"], a[href^="tel:"]');
+          // Eligibility can change after the script loads through privacy controls,
+          // GPC, or GA's measurement-specific disable flag.
+          if (navigator.globalPrivacyControl === true || readOptOut() || window['ga-disable-' + GA_ID] === true) return;
+          const target = e.target;
+          if (!(target instanceof Element)) return;
+          const link = target.closest('a[href*="toasttab.com"], a[href*="toast.app"], a[href^="tel:"]');
           if (!link) return;
 
           let eventName = 'toast_link_click';
@@ -72,10 +77,12 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
           }
 
           if (typeof window.gtag === 'function') {
-            window.gtag('event', eventName, {
+            const params = {
               link_url: link.href,
               page_path: window.location.pathname,
-            });
+            };
+            if (link.dataset.ctaLocation) params.cta_location = link.dataset.ctaLocation;
+            try { window.gtag('event', eventName, params); } catch (err) {}
           }
         }, { passive: true });
       }
@@ -90,8 +97,10 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
         },
         optIn: function () {
           writeOptOut(false);
-          window['ga-disable-' + GA_ID] = false;
-          initAnalytics();
+          if (navigator.globalPrivacyControl !== true) {
+            window['ga-disable-' + GA_ID] = false;
+            initAnalytics();
+          }
         }
       };
 

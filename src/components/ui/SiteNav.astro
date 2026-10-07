@@ -32,11 +32,11 @@ const navLinks = navigation.mainLinks;
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-0.5" aria-label={navigation.labels.mainAria}>
+      <nav class="hidden lg:flex items-center gap-0.5 min-w-0" aria-label={navigation.labels.mainAria}>
         {navLinks.map((link) => (
           <a
             href={link.href}
-            class={`nav-link px-2.5 py-2 text-xs font-display font-bold uppercase tracking-wider transition-colors duration-200 whitespace-nowrap ${
+            class={`nav-link px-1.5 xl:px-2.5 py-2 text-xs font-display font-bold uppercase tracking-wider transition-colors duration-200 whitespace-nowrap ${
               currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href + '/'))
                 ? 'nav-link-active'
                 : ''
@@ -48,18 +48,23 @@ const navLinks = navigation.mainLinks;
       </nav>
 
       <!-- Desktop CTAs -->
-      <div class="hidden lg:flex items-center gap-3 flex-shrink-0">
+      <div class="hidden lg:flex items-center gap-1.5 xl:gap-3 flex-shrink-0">
+        <a
+          href={`tel:${siteProfile.contact.phoneDial}`}
+          data-cta-location="nav_desktop"
+          class="nav-phone inline-flex min-h-11 items-center px-2 py-2 text-xs font-display font-bold tracking-wider whitespace-nowrap rounded-sm transition-colors duration-200 hover:text-brand-orange"
+        >{siteProfile.contact.phone}</a>
         <a
           href={siteProfile.ordering.toastUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-4 py-2 text-xs font-display font-bold uppercase tracking-wider border border-current nav-cta-outline transition-all duration-200 hover:bg-brand-orange hover:border-brand-orange hover:text-brand-white rounded-sm whitespace-nowrap"
+          class="px-3 xl:px-4 py-2 text-xs font-display font-bold uppercase tracking-wider border border-current nav-cta-outline transition-all duration-200 hover:bg-brand-orange hover:border-brand-orange hover:text-brand-white rounded-sm whitespace-nowrap"
         >{navigation.labels.desktopOrder}</a>
         <a
           href={siteProfile.ordering.reservationsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-4 py-2 text-xs font-display font-bold uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm whitespace-nowrap"
+          class="px-3 xl:px-4 py-2 text-xs font-display font-bold uppercase tracking-wider bg-brand-orange text-brand-white hover:bg-brand-orange-dark transition-colors duration-200 rounded-sm whitespace-nowrap"
         >{navigation.labels.desktopReserve}</a>
       </div>
 
@@ -85,6 +90,7 @@ const navLinks = navigation.mainLinks;
   id="mobile-menu"
   class="fixed inset-0 z-40 bg-brand-dark flex flex-col justify-start px-6 sm:px-8 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(2rem,env(safe-area-inset-bottom))] overflow-y-auto overscroll-contain opacity-0 invisible transition-opacity duration-300"
   aria-hidden="true"
+  inert
 >
   <!-- Close button -->
   <button
@@ -143,6 +149,7 @@ const navLinks = navigation.mainLinks;
     background: transparent;
   }
   .nav-transparent .nav-link,
+  .nav-transparent .nav-phone,
   .nav-transparent #mobile-menu-btn {
     color: var(--color-brand-white);
   }
@@ -157,6 +164,7 @@ const navLinks = navigation.mainLinks;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
   }
   .nav-solid .nav-link,
+  .nav-solid .nav-phone,
   .nav-solid #mobile-menu-btn {
     color: var(--color-brand-white);
   }
@@ -176,6 +184,7 @@ const navLinks = navigation.mainLinks;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
   }
   .nav-scrolled .nav-link,
+  .nav-scrolled .nav-phone,
   .nav-scrolled #mobile-menu-btn {
     color: var(--color-brand-white) !important;
   }
@@ -203,49 +212,109 @@ const navLinks = navigation.mainLinks;
     height: 100dvh;
     -webkit-overflow-scrolling: touch;
   }
+
+  .nav-phone:focus-visible {
+    outline: 2px solid var(--color-brand-white);
+    outline-offset: 2px;
+  }
 </style>
 
 <script>
-  const header = document.getElementById('site-nav');
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileCloseBtn = document.getElementById('mobile-close-btn');
-  const isTransparent = header?.dataset.transparent === 'true';
+  let disposeNav: (() => void) | undefined;
+  let initializedHeader: HTMLElement | null = null;
 
-  // Transparent nav solidifies on scroll
-  if (isTransparent && header) {
+  function initNav() {
+    const header = document.getElementById('site-nav');
+    const menuButton = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const closeButton = document.getElementById('mobile-close-btn');
+    if (!header || !menuButton || !menu || !closeButton) return;
+    if (header === initializedHeader) return;
+    disposeNav?.();
+    initializedHeader = header;
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+    const desktop = matchMedia('(min-width: 64rem)');
+    const covered = [header, document.getElementById('main-content'), document.querySelector('footer'), document.getElementById('mobile-action-bar'), document.getElementById('lilos-consent-banner')].filter((el): el is HTMLElement => el instanceof HTMLElement);
+    let previousInert: boolean[] = [];
+    let previousBodyStyle = '';
+    let scrollY = 0;
+    let isOpen = false;
+
     const onScroll = () => {
-      if (window.scrollY > 50) {
-        header.classList.add('nav-scrolled');
-        header.classList.remove('nav-transparent');
-      } else {
-        header.classList.remove('nav-scrolled');
-        header.classList.add('nav-transparent');
+      if (header.dataset.transparent !== 'true') return;
+      header.classList.toggle('nav-scrolled', window.scrollY > 50);
+      header.classList.toggle('nav-transparent', window.scrollY <= 50);
+    };
+
+    const closeMenu = (restoreFocus = true) => {
+      if (!isOpen) return;
+      isOpen = false;
+      menu.classList.remove('menu-open');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.inert = true;
+      menuButton.setAttribute('aria-expanded', 'false');
+      header.classList.remove('mobile-drawer-open');
+      document.body.classList.remove('mobile-drawer-open');
+      covered.forEach((el, index) => { el.inert = previousInert[index]; });
+      document.body.style.cssText = previousBodyStyle;
+      window.scrollTo({ top: scrollY, behavior: 'instant' });
+      onScroll();
+      if (restoreFocus) {
+        (desktop.matches ? header.querySelector<HTMLElement>('nav a') : menuButton)?.focus();
       }
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const openMenu = () => {
+      if (isOpen || desktop.matches) return;
+      isOpen = true;
+      scrollY = window.scrollY;
+      previousBodyStyle = document.body.style.cssText;
+      previousInert = covered.map(el => el.inert);
+      covered.forEach(el => { el.inert = true; });
+      menu.inert = false;
+      menu.classList.add('menu-open');
+      menu.setAttribute('aria-hidden', 'false');
+      menuButton.setAttribute('aria-expanded', 'true');
+      header.classList.add('mobile-drawer-open');
+      document.body.classList.add('mobile-drawer-open');
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    };
+
+    menuButton.addEventListener('click', openMenu, { signal });
+    closeButton.addEventListener('click', () => closeMenu(), { signal });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => closeMenu(), { signal }));
+    document.addEventListener('keydown', event => {
+      if (!isOpen) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeMenu();
+      } else if (event.key === 'Tab') {
+        const focusable = [...menu.querySelectorAll<HTMLElement>('a, button')];
+        const first = focusable[0];
+        const last = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    }, { signal });
+    desktop.addEventListener('change', () => { if (desktop.matches) closeMenu(); }, { signal });
+    window.addEventListener('scroll', onScroll, { passive: true, signal });
     onScroll();
+
+    disposeNav = () => { closeMenu(false); controller.abort(); initializedHeader = null; };
+    document.addEventListener('astro:before-swap', () => disposeNav?.(), { once: true, signal });
   }
 
-  // Open mobile drawer
-  mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.add('menu-open');
-    mobileMenu?.setAttribute('aria-hidden', 'false');
-    mobileMenuBtn.setAttribute('aria-expanded', 'true');
-    header?.classList.add('mobile-drawer-open');
-    document.body.style.overflow = 'hidden';
-  });
-
-  // Close mobile drawer
-  const closeMenu = () => {
-    mobileMenu?.classList.remove('menu-open');
-    mobileMenu?.setAttribute('aria-hidden', 'true');
-    mobileMenuBtn?.setAttribute('aria-expanded', 'false');
-    header?.classList.remove('mobile-drawer-open');
-    document.body.style.overflow = '';
-  };
-
-  mobileCloseBtn?.addEventListener('click', closeMenu);
-  mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  initNav();
+  document.addEventListener('astro:page-load', initNav);
 </script>
