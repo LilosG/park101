@@ -90,6 +90,7 @@
   /* ─── Spacing ───────────────────────────────────────────── */
   /* Height of the fixed site header. The nav, hero spacers and anchor offsets all read this. */
   --site-header-height: 5rem;
+  --mobile-action-bar-height: calc(3.5rem + env(safe-area-inset-bottom));
   --spacing-section:    5rem;
   --spacing-section-lg: 7.5rem;
 
@@ -121,6 +122,7 @@
   html {
     /* Keep in-page anchor targets clear of the fixed header. */
     scroll-padding-top: var(--site-header-height);
+    scroll-padding-bottom: var(--mobile-action-bar-height);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -132,7 +134,13 @@
     font-family: var(--font-body);
     font-size: var(--text-base);
     line-height: 1.6;
+    padding-bottom: var(--mobile-action-bar-height);
   }
+}
+
+@media (min-width: 64rem) {
+  html { scroll-padding-bottom: 0; }
+  body { padding-bottom: 0; }
 }
 
 /* ─── Typography Base ─────────────────────────────────────── */

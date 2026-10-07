@@ -28,7 +28,7 @@ const {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: var(--mobile-action-bar-height);
     z-index: 9999;
     background: var(--consent-bg, #14161a);
     color: var(--consent-text, #f4f4f5);
@@ -41,6 +41,14 @@ const {
 
   .lilos-consent-banner[hidden] {
     display: none;
+  }
+
+  :global(body.mobile-drawer-open) .lilos-consent-banner {
+    visibility: hidden;
+  }
+
+  @media (min-width: 64rem) {
+    .lilos-consent-banner { bottom: 0; }
   }
 
   .lilos-consent-inner {

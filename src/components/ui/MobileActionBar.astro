@@ -1,0 +1,90 @@
+---
+import { getEntry } from 'astro:content';
+
+const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
+---
+
+<nav id="mobile-action-bar" class="mobile-action-bar" aria-label="Quick actions">
+  <a href={siteProfile.ordering.reservationsUrl} target="_blank" rel="noopener noreferrer" data-cta-location="mobile_bottom_bar">
+    RESERVE
+  </a>
+  <a href={`tel:${siteProfile.contact.phoneDial}`} data-cta-location="mobile_bottom_bar">
+    CALL US
+  </a>
+</nav>
+
+<style>
+  .mobile-action-bar {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: env(safe-area-inset-bottom);
+    background: var(--color-brand-dark);
+    box-shadow: 0 -2px 12px rgb(27 20 15 / 20%);
+  }
+
+  .mobile-action-bar a {
+    display: flex;
+    min-width: 0;
+    min-height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 0.5rem;
+    color: var(--color-brand-white);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-cta);
+    text-align: center;
+    overflow-wrap: anywhere;
+    transition: background-color 150ms ease;
+  }
+
+  .mobile-action-bar a:first-child { background: var(--color-brand-orange-dark); }
+  .mobile-action-bar a:last-child { background: var(--color-brand-dark); }
+  .mobile-action-bar a:first-child:hover { background: var(--color-brand-brown); }
+  .mobile-action-bar a:last-child:hover { background: var(--color-brand-dark-light); }
+  .mobile-action-bar a:active { filter: brightness(1.15); }
+  .mobile-action-bar a:focus-visible {
+    position: relative;
+    z-index: 1;
+    outline: 3px solid var(--color-brand-white);
+    outline-offset: -5px;
+    box-shadow: inset 0 0 0 6px var(--color-brand-dark);
+  }
+
+  @media (min-width: 64rem) {
+    .mobile-action-bar { display: none; }
+  }
+</style>
+
+<script>
+  // The bar can grow when text is enlarged or wraps. Use its actual height for
+  // footer, scroll and consent clearance; CSS provides a no-JS fallback.
+  let observedBar: HTMLElement | null = null;
+  let observer: ResizeObserver | undefined;
+
+  function measureBar() {
+    const bar = document.getElementById('mobile-action-bar');
+    if (!bar || bar === observedBar || !('ResizeObserver' in window)) return;
+    observer?.disconnect();
+    observedBar = bar;
+    const syncHeight = () => {
+      document.documentElement.style.setProperty('--mobile-action-bar-height', `${bar.getBoundingClientRect().height}px`);
+    };
+    observer = new ResizeObserver(syncHeight);
+    observer.observe(bar);
+    syncHeight();
+  }
+
+  measureBar();
+  document.addEventListener('astro:page-load', measureBar);
+  document.addEventListener('astro:before-swap', () => {
+    observer?.disconnect();
+    observedBar = null;
+    document.documentElement.style.removeProperty('--mobile-action-bar-height');
+  });
+</script>
