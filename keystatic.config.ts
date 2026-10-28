@@ -14,6 +14,7 @@ import {
 import { menuItemSchema } from "./src/schemas/menu-items";
 import { navigationSchema } from "./src/schemas/navigation";
 import {
+  giftCardsPageSchema,
   brunchPageSchema,
   contactPageSchema,
   eventsPageSchema,
@@ -82,6 +83,7 @@ export default config({
     navigation: {
       Website: [
         "home",
+        "giftCardsPage",
         "contactPage",
         "menuPage",
         "brunchPage",
@@ -102,6 +104,7 @@ export default config({
     },
   },
   singletons: {
+    giftCardsPage: singletonFromSchema({ label: "Gift Cards", path: "src/content/giftCardsPage/giftCardsPage", schema: giftCardsPageSchema }),
     siteSettings: singletonFromSchema({
       label: "Site Settings",
       path: "src/content/siteSettings/site-settings",

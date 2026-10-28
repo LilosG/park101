@@ -58,6 +58,7 @@ export const blogSchema = z.looseObject({
     ...label('Answer Summary', 'Optional concise answer used by search and answer engines.'),
     multiline: true,
   }),
+  giftCardCta: z.boolean().default(false).meta(label('Show Gift Card Invitation', 'Link to the gift-card page below this article.')),
   relatedServices: z
     .array(
       z.enum(relatedPageKeys).meta({

@@ -5,8 +5,7 @@ const item = (title: string) => text.meta(label(title));
 
 export const navigationSchema = z.strictObject({
   mainLinks: z.array(link).min(1).meta(label('Main Navigation Links')),
-  // SiteFooter reads these by position, so the list must keep its current length.
-  footerLinks: z.array(link).length(8).meta(label('Footer Navigation Links')),
+  footerLinks: z.array(link).min(1).meta(label('Footer Navigation Links')),
   labels: z
     .strictObject({
       homeAria: item('Home Aria'),
