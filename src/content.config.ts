@@ -5,6 +5,7 @@ import { eventTypeSchema, privateEventSchema, upcomingEventSchema } from './sche
 import { menuItemSchema } from './schemas/menu-items';
 import { navigationSchema } from './schemas/navigation';
 import {
+  giftCardsPageSchema,
   brunchPageSchema,
   contactPageSchema,
   eventsPageSchema,
@@ -25,6 +26,7 @@ export const collections = {
   }),
   siteSettings: defineCollection({ loader: json('siteSettings'), schema: siteSettingsSchema }),
   navigation: defineCollection({ loader: json('navigation'), schema: navigationSchema }),
+  giftCardsPage: defineCollection({ loader: json('giftCardsPage'), schema: giftCardsPageSchema }),
   home: defineCollection({ loader: json('home'), schema: homePageSchema }),
   menuPage: defineCollection({ loader: json('menuPage'), schema: menuPageSchema }),
   brunchPage: defineCollection({ loader: json('brunchPage'), schema: brunchPageSchema }),

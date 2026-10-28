@@ -1,5 +1,8 @@
 import { z } from 'astro/zod';
 import {
+  assetImage,
+  link,
+  externalUrl,
   faq,
   hero,
   introBlock,
@@ -130,4 +133,25 @@ export const privateEventsIndexSchema = z.strictObject({
     .array(faq)
     .min(1)
     .meta(label('Frequently Asked Questions', 'Add, edit, remove, or reorder the questions shown on this page.')),
+});
+
+/** Gift details, destinations and editorial links share the existing schema-driven CMS. */
+export const giftCardsPageSchema = z.strictObject({
+  seo: seo(),
+  hero,
+  heroImage: assetImage('Hero Image'),
+  heroImageAlt: text.meta(label('Hero Image Description')),
+  intro: introBlock,
+  introImage: assetImage('Introduction Image'),
+  introImageAlt: text.meta(label('Introduction Image Description')),
+  purchaseUrl: externalUrl.meta(label('Toast Gift Card Purchase URL')),
+  balanceUrl: externalUrl.meta(label('Toast Balance Check URL')),
+  purchaseLabel: text.meta(label('Purchase Button Label')),
+  balanceLabel: text.meta(label('Balance Link Label')),
+  stepsHeading: text.meta(label('How It Works Heading')),
+  steps: z.array(step).length(3).meta(label('Purchase Steps')),
+  guidesHeading: text.meta(label('Gift Guides Heading')),
+  guides: z.array(link).length(2).meta(label('Gift Guides')),
+  faqs: factFaqs,
+  final: sectionWithBody('Closing Invitation'),
 });

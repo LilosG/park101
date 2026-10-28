@@ -3,11 +3,11 @@ title: "Carlsbad Food Guide: Where to Eat in Carlsbad Village & Beyond"
 description: "Discover the best Carlsbad restaurants, cafes, and food spots. Local dining guide with real addresses, hours, and what to order."
 publishDate: 2026-10-13
 category: "guide"
-image: "/images/venue/park-101-outdoor-waterfront-casual-dining-carlsbad.jpg"
+image: "/src/assets/venue/park-101-outdoor-waterfront-rooftop-bar-carlsbad.jpg"
 imageAlt: "Park 101 outdoor dining patio with casual group atmosphere in Carlsbad Village"
 relatedServices:
-  - sports-dining
-  - group-reservations
+  - sports
+  - private-events
 relatedCities:
   - carlsbad
   - legoland-area

@@ -66,6 +66,10 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
               const host = new URL(link.href).hostname;
               if (host === 'toast.app' || host.endsWith('.toast.app') || host.includes('tables.toasttab.com')) {
                 eventName = 'reservation_click';
+              } else if (new URL(link.href).pathname.includes('/egiftcards/')) {
+                eventName = 'gift_card_click';
+              } else if (new URL(link.href).pathname.endsWith('/findcard')) {
+                eventName = 'gift_card_balance_click';
               } else if (host.includes('order.toasttab.com')) {
                 eventName = 'order_click';
               } else if (link.href.includes('invoice/lead')) {

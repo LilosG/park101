@@ -1,0 +1,85 @@
+{
+  "seo": {
+    "title": "Park 101 Gift Cards | Carlsbad Village Restaurant & Bar",
+    "description": "Give a little Carlsbad Village. Buy a Park 101 digital gift card through Toast for food, drinks and a day worth getting together for. Send by email or text.",
+    "ogImage": "/images/venue/park-101-rooftop-deck-bar-seating-carlsbad.jpg"
+  },
+  "hero": {
+    "eyebrow": "Carlsbad Village \u00b7 Digital Gift Cards",
+    "heading": "Give them a reason<br />to get together.",
+    "body": "A rooftop catch-up. Brunch after the beach. The game everyone wants to watch. Give a Park 101 gift card and let them make it their kind of day."
+  },
+  "heroImage": "/src/assets/venue/park-101-outdoor-rooftop-bar-string-lights-carlsbad.jpg",
+  "heroImageAlt": "Park 101 courtyard with string lights and an outdoor game screen in Carlsbad Village",
+  "intro": {
+    "eyebrow": "A little coast. A lot of possibility.",
+    "heading": "Good food.<br />Their kind of plans.",
+    "body": "For the friend who always brings everyone together, the family down the street or someone who could use a proper afternoon off. Park 101 brings food, cocktails, rooftop seating and game-day energy together in the heart of Carlsbad Village. A digital gift card gives them the choice of what comes next."
+  },
+  "introImage": "/src/assets/food/park-101-prk-food-spread-carlsbad.jpg",
+  "introImageAlt": "A spread of food at Park 101 in Carlsbad",
+  "purchaseUrl": "https://order.toasttab.com/egiftcards/park-101-3040-carlsbad-blvd",
+  "balanceUrl": "https://www.toasttab.com//park-101-3040-carlsbad-blvd/findcard",
+  "purchaseLabel": "Buy a Gift Card",
+  "balanceLabel": "Check Gift Card Balance",
+  "stepsHeading": "A thoughtful gift. A few simple steps.",
+  "steps": [
+    {
+      "step": "01",
+      "title": "Choose your amount",
+      "body": "Open Park 101\u2019s secure Toast checkout and select a gift amount that feels right."
+    },
+    {
+      "step": "02",
+      "title": "Make it personal",
+      "body": "Add their name and a message. Send by email or text, or send the card to yourself first."
+    },
+    {
+      "step": "03",
+      "title": "Pick the moment",
+      "body": "Choose today or schedule a later delivery in Toast. They receive a digital gift card and decide when to plan their visit."
+    }
+  ],
+  "guidesHeading": "A good gift starts with knowing them.",
+  "guides": [
+    {
+      "label": "A Local\u2019s Guide to Restaurant Gift Cards in Carlsbad Village",
+      "href": "/blog/restaurant-gift-cards-carlsbad-village"
+    },
+    {
+      "label": "A Better Game-Day Gift for the Carlsbad Sports Fan",
+      "href": "/blog/gifts-for-sports-fans-carlsbad"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I buy a Park 101 gift card?",
+      "a": "Use the Buy a Gift Card button to open Park 101\u2019s gift-card checkout on Toast. Choose an amount, add a personal message and select your delivery option."
+    },
+    {
+      "q": "Can I send a gift card by email or text?",
+      "a": "Yes. Park 101\u2019s Toast checkout offers email delivery, text delivery and the option to send the card to yourself first. You can choose today or schedule a later delivery."
+    },
+    {
+      "q": "Where is Park 101?",
+      "a": "Find Park 101 at [address] in Carlsbad Village. Explore the menu, rooftop and current events on our website before planning your visit."
+    },
+    {
+      "q": "How do I check my gift card balance?",
+      "a": "Use the Check Gift Card Balance link on this page to open Park 101\u2019s Toast balance form. Have your gift card details ready."
+    },
+    {
+      "q": "Does a gift card reserve a table or admission to an event?",
+      "a": "A gift card gives the recipient value to use at Park 101; it does not reserve seating or include admission to a ticketed event. Check current event details and arrange reservations separately."
+    },
+    {
+      "q": "Who can help with a gift card question?",
+      "a": "For help with a Park 101 gift card, contact the restaurant at [phone]. Purchase and delivery details are shown in Toast during checkout."
+    }
+  ],
+  "final": {
+    "eyebrow": "Give them something to look forward to",
+    "heading": "Their next good day starts here.",
+    "body": "Send a Park 101 digital gift card and leave the plans up to them. Purchase securely through Toast."
+  }
+}

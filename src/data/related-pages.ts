@@ -4,6 +4,7 @@
  * Every key maps to a route that exists today in src/pages.
  */
 export const relatedPages = {
+  'gift-cards': { href: '/gift-cards', label: 'Park 101 Gift Cards', description: 'Send a digital gift for food, drinks and time together in Carlsbad Village.' },
   menu: {
     href: '/menu',
     label: 'Food & Drink Menu',

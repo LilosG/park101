@@ -5,9 +5,10 @@ interface Props {
   body: string;
   ctaLabel: string;
   ctaHref: string;
+  ctaExternal?: boolean;
 }
 
-const { eyebrow, heading, body, ctaLabel, ctaHref } = Astro.props;
+const { eyebrow, heading, body, ctaLabel, ctaHref, ctaExternal = true } = Astro.props;
 ---
 
 <section class="relative bg-brand-steel-dark py-20 px-6 sm:px-8 lg:px-12 text-center">
@@ -18,11 +19,12 @@ const { eyebrow, heading, body, ctaLabel, ctaHref } = Astro.props;
     <p class="font-body font-light text-brand-cream/80 text-base sm:text-lg leading-relaxed mb-8">{body}</p>
     <a
       href={ctaHref}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={ctaExternal ? "_blank" : undefined}
+      rel={ctaExternal ? "noopener noreferrer" : undefined}
       class="inline-block px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-brand-white font-display font-bold uppercase tracking-button text-sm transition-colors duration-200"
     >
       {ctaLabel}
     </a>
+    <slot />
   </div>
 </section>
