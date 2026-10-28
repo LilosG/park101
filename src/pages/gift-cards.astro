@@ -1,5 +1,5 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/core/PageHero.astro';
 import SplitIntro from '../components/core/SplitIntro.astro';
@@ -8,7 +8,7 @@ import FaqList from '../components/core/FaqList.astro';
 import FaqSchema from '../components/core/FaqSchema.astro';
 import { resolveContentImage } from '../lib/images';
 import { fillFacts } from '../lib/site-facts';
-const page = (await getEntry('giftCardsPage', 'giftCardsPage'))!.data;
+const page = (await getCollection('giftCardsPage'))[0].data;
 const site = (await getEntry('siteSettings', 'site-settings'))!.data;
 const faqs = page.faqs.map(item => ({ ...item, a: fillFacts(item.a, site) }));
 const canonical = `${site.url}/gift-cards`;
