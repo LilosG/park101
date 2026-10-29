@@ -1,96 +1,39 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LegalPage from '../layouts/LegalPage.astro';
 import { getEntry } from 'astro:content';
-
 const siteProfile = (await getEntry('siteSettings', 'site-settings'))!.data;
-// Fixed policy date, taken from git history: src/pages/privacy.astro was added on 2026-09-03 and has not changed since.
-const lastUpdated = '2026-09-03';
-const lastUpdatedLabel = new Date(`${lastUpdated}T00:00:00Z`).toLocaleDateString('en-US', {
-  month: 'long',
-  year: 'numeric',
-  timeZone: 'UTC',
-});
 ---
+<LegalPage title="Privacy Policy" description="How Park 101 handles website analytics, customer inquiries, and AI-enabled business messaging, with privacy choices and contact details.">
+    <p>This policy explains how {siteProfile.name} (“we,” “us,” or “our”) handles personal information in connection with this website, customer inquiries, and business messaging, including Google Business Profile AI-enabled messaging when available.</p>
 
-<Layout
-  title="Privacy Policy & Your Choices in Carlsbad, CA | Park 101"
-  description="Read Park 101's privacy policy for our Carlsbad, CA restaurant at 3040 Carlsbad Boulevard: what we collect, why, and how to manage your privacy choices."
->
-  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+    <h2>Information We Collect and Why</h2>
+    <ul>
+      <li><strong>Inquiries and correspondence:</strong> Your name, email address, phone number, message, and details you choose to provide, such as an event date or party size. We use these to answer questions, follow up on requests, and assist with restaurant services.</li>
+      <li><strong>Business messaging:</strong> When you message us, we may receive your phone number, available profile information, messages and attachments you send, and related conversation and delivery information. We use this information to provide automated or staff responses and manage your inquiry.</li>
+      <li><strong>Website activity:</strong> Google Analytics may collect pages viewed, referring websites, approximate location derived from IP address, device and browser information, and online identifiers such as analytics cookie IDs. We use this to measure traffic and interactions, such as reservation, ordering, gift card, and phone link clicks, and improve the website.</li>
+      <li><strong>Privacy preferences:</strong> This website stores your analytics preference locally in your browser so it can honor your choice.</li>
+    </ul>
 
-    <h1 class="font-display font-bold uppercase tracking-display text-brand-steel text-4xl sm:text-5xl mb-4">
-      Park 101 Privacy Policy in Carlsbad, CA
-    </h1>
-    <p class="text-sm text-brand-dark/50 mb-12">Park 101 — Carlsbad, CA</p>
+    <h2>Google Business Profile and AI-Enabled Messaging</h2>
+    <p>When available, messaging through our Google Business Profile uses Google's RCS for Business service. An AI agent may answer common questions using our Business Profile and website information. Staff can review conversations, take over a chat, and respond when a question requires personal assistance.</p>
+    <p>Google, its service providers, and participating mobile carriers may process message content and related information to deliver and operate messaging, generate automated responses, and maintain service security. Google's RCS terms also permit processing message content to train AI models for spam detection and prevention. Relevant carriers may have access to messages sent over their networks.</p>
+    <p>See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and the <a href="https://developers.google.com/business-communications/rcs-business-messaging/terms-and-policies/tos">RCS for Business terms</a> for Google's applicable practices. Our <a href="/terms#messaging">messaging terms</a> explain automated responses, human assistance, and messaging choices.</p>
+    <p>Please do not send payment card or bank details, passwords, government identification numbers, or sensitive medical information in chat. For allergies or dietary requirements, contact restaurant staff directly before ordering; automated answers should not be relied upon for food safety.</p>
 
-    <!-- ── Notice at Collection ─────────────────────────────── -->
-    <h2 class="font-display font-bold uppercase tracking-wide text-brand-steel text-2xl sm:text-3xl mt-12 mb-5">
-      Notice at Collection
-    </h2>
+    <h2>How Information Is Shared</h2>
+    <p>Information may be processed by authorized restaurant staff and service providers supporting our website, analytics, communications, and customer service. Messaging also involves Google and participating carriers as described above. We may disclose information where required by law or reasonably necessary to protect safety, prevent fraud, or defend legal rights.</p>
+    <p>Our website links to Toast services for reservations, ordering, gift cards, and event inquiries. Information you submit through those services is handled under their privacy policies and may also be provided to us to fulfill your request. Review <a href="https://pos.toasttab.com/privacy">Toast's Privacy Statement</a> before using those services.</p>
 
-    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
-      What we collect
-    </h3>
-    <p class="text-brand-dark leading-relaxed mb-4">
-      When you visit this website, Google Analytics collects internet and network activity
-      information on our behalf, including: pages you viewed, the website that referred you
-      here, an approximate location derived from your IP address, and your device and browser
-      type. It also collects online identifiers such as cookie IDs assigned by Google Analytics.
-      We do not collect your name, email address, or any information you do not voluntarily
-      submit through a contact or reservation form.
-    </p>
+    <h2>Website Analytics</h2>
+    <p>Google Analytics is configured with advertising storage, ad user data, ad personalization, Google Signals, and ads personalization signals disabled. We do not use this website analytics data for cross-context behavioral advertising. Google Analytics event data is retained for 14 months, after which it is automatically deleted.</p>
+    <p>You can opt out of Google Analytics measurement on this site using the control below. This browser setting controls this website's analytics; it does not stop a separate messaging conversation, delete prior messages, or change privacy settings on Google, Toast, or other services.</p>
 
-    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
-      Why we collect it
-    </h3>
-    <p class="text-brand-dark leading-relaxed mb-4">
-      We use this data solely to measure site traffic and understand how visitors use our
-      website, so we can improve it. We use it for no other purpose.
-    </p>
-
-    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
-      Who receives it
-    </h3>
-    <p class="text-brand-dark leading-relaxed mb-4">
-      The data is sent to Google, acting as our service provider under Google's data processing
-      terms. Google processes the data on our behalf to generate aggregate analytics reports.
-      We do not sell your personal information. We do not share your personal information for
-      cross-context behavioral advertising.
-    </p>
-
-    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
-      What we do not do
-    </h3>
-    <p class="text-brand-dark leading-relaxed mb-4">
-      Google Signals and ads personalization are disabled on this property. We have configured
-      Google Analytics to deny all ad-related storage, ad user data sharing, and ad
-      personalization signals. The analytics data collected here is not used for advertising.
-    </p>
-
-    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
-      Retention
-    </h3>
-    <p class="text-brand-dark leading-relaxed mb-4">
-      Event data is retained for 14 months in Google Analytics, after which it is automatically
-      deleted.
-    </p>
-
-    <h3 class="font-display font-bold uppercase tracking-wide text-brand-orange text-base mt-8 mb-2">
-      Opting out of analytics
-    </h3>
-    <p class="text-brand-dark leading-relaxed mb-4">
-      You can opt out of Google Analytics tracking at any time using the control below.
-      If your browser sends a <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener noreferrer" class="text-brand-orange underline underline-offset-2">Global Privacy Control</a> signal,
-      we honor it automatically and do not load analytics.
-    </p>
-
-    <!-- ── Your Privacy Choices ─────────────────────────────── -->
     <h2 id="choices" class="font-display font-bold uppercase tracking-wide text-brand-steel text-2xl sm:text-3xl mt-16 mb-5">
       Your Privacy Choices
     </h2>
     <p class="text-brand-dark leading-relaxed mb-6">
       Use the control below to opt out of or back into Google Analytics measurement on this site.
-      Your preference is stored locally in your browser and does not expire.
+      Your preference is stored locally in this browser without an automatic expiration. Clearing browser storage removes the saved preference.
     </p>
 
     <div id="privacy-choices-panel" class="border border-brand-cream-dark rounded-md p-6 bg-brand-white">
@@ -103,6 +46,18 @@ const lastUpdatedLabel = new Date(`${lastUpdated}T00:00:00Z`).toLocaleDateString
         Loading&hellip;
       </button>
     </div>
+
+
+    <h2>Messaging Choices and Privacy Requests</h2>
+    <p>You can stop business messages by replying STOP or using the block or unsubscribe options in your messaging app. For help, or to request access to, correction of, or deletion of information we hold about you, contact us using the details below. We may need to verify your identity, and legal requirements or the rights of others may limit a request. Requests concerning information held independently by Google, your carrier, or a booking or ordering provider should also be directed to that provider.</p>
+    <p>Starting a customer-service conversation does not enroll you in promotional messaging. Any separate marketing messaging requires the applicable consent.</p>
+
+    <h2>Retention and Security</h2>
+    <p>Retention depends on the type of information, the purpose of the inquiry or transaction, applicable service settings, and legal or recordkeeping requirements. Contact us for information about a particular record or to request deletion. Google, carriers, and other providers apply their own retention practices to information they hold; deleting information from our records does not necessarily delete their copies.</p>
+    <p>No internet transmission or storage system can be guaranteed completely secure. Please use the designated reservation or ordering provider for payment information rather than sending it by chat.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>Our website and messaging are not directed to children under 13. If you believe a child has provided personal information to us, please contact us so we can address it.</p>
 
     <!-- ── California Residents ─────────────────────────────── -->
     <h2 class="font-display font-bold uppercase tracking-wide text-brand-steel text-2xl sm:text-3xl mt-16 mb-5">
@@ -141,9 +96,19 @@ const lastUpdatedLabel = new Date(`${lastUpdated}T00:00:00Z`).toLocaleDateString
       respond to verifiable requests within 45 days.
     </p>
 
-    <p class="text-xs text-brand-dark/40 mt-16">Last updated: <time datetime={lastUpdated}>{lastUpdatedLabel}</time></p>
-  </section>
-</Layout>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy as our services or practices change. The date above identifies the latest revision. Where required, we will provide additional notice or obtain consent.</p>
+
+    <h2 id="contact">Contact Us</h2>
+    <p>For privacy questions or requests, contact:</p>
+    <address class="not-italic">
+      {siteProfile.name}<br />
+      {siteProfile.contact.address.street}<br />
+      {siteProfile.contact.address.city}, {siteProfile.contact.address.state} {siteProfile.contact.address.zip}<br />
+      <a href={`tel:${siteProfile.contact.phoneDial}`}>{siteProfile.contact.phone}</a>
+    </address>
+</LegalPage>
 
 <script is:inline>
   (function () {
