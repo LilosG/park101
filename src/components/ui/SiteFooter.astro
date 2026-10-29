@@ -166,10 +166,12 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== siteProfile.url);
       <p class="text-xs text-brand-white/30">
         &copy; {new Date().getFullYear()} {siteProfile.name}. All rights reserved.
       </p>
-      <div class="flex items-center gap-6">
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3">
         <p class="text-xs text-brand-white/20">
           {siteProfile.contact.neighborhood}, {siteProfile.contact.address.state} &mdash; {siteProfile.tagline}
         </p>
+        <a href="/privacy" class="text-xs text-brand-white/75 hover:text-brand-white underline underline-offset-2 transition-colors duration-150">Privacy Policy</a>
+        <a href="/terms" class="text-xs text-brand-white/75 hover:text-brand-white underline underline-offset-2 transition-colors duration-150">Terms of Service</a>
         <a href="/privacy#choices"
           class="text-xs text-brand-white/30 hover:text-brand-orange transition-colors duration-150">
           Your Privacy Choices
